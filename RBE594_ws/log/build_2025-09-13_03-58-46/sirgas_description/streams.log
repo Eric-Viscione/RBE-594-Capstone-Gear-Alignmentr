@@ -1,0 +1,36 @@
+[0.006s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.025s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.125s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.165s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.240s] -- Configuring done (0.2s)
+[0.242s] -- Generating done (0.0s)
+[0.242s] -- Build files have been written to: /home/tamar/RBE594_ws/build/sirgas_description
+[0.258s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.267s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description
+[0.285s] -- Install configuration: ""
+[0.286s] -- Execute custom install script
+[0.287s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
+[0.288s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
+[0.288s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
+[0.288s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
+[0.289s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Peg_Board.stl
+[0.289s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
+[0.289s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
+[0.289s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+[0.289s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
+[0.290s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description
+[0.290s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description
+[0.290s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh
+[0.299s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.dsv
+[0.299s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.sh
+[0.316s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.dsv
+[0.316s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.bash
+[0.316s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.sh
+[0.317s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.zsh
+[0.317s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.dsv
+[0.317s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.dsv
+[0.336s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/packages/sirgas_description
+[0.337s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig.cmake
+[0.337s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig-version.cmake
+[0.337s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.xml
+[0.340s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description

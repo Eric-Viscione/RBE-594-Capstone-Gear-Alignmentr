@@ -1,0 +1,223 @@
+[0.009s] Invoking command in '/home/tamar/RBE594_ws/build/ur_controllers': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_controllers
+[0.053s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.053s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.053s]   CMake.
+[0.053s] 
+[0.053s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.053s]   to tell CMake that the project requires at least <min> but has been updated
+[0.053s]   to work with policies introduced by <max> or earlier.
+[0.053s] 
+[0.053s] [0m
+[0.103s] -- The C compiler identification is GNU 11.4.0
+[0.140s] -- The CXX compiler identification is GNU 11.4.0
+[0.151s] -- Detecting C compiler ABI info
+[0.236s] -- Detecting C compiler ABI info - done
+[0.254s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.255s] -- Detecting C compile features
+[0.255s] -- Detecting C compile features - done
+[0.281s] -- Detecting CXX compiler ABI info
+[0.364s] -- Detecting CXX compiler ABI info - done
+[0.373s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.373s] -- Detecting CXX compile features
+[0.373s] -- Detecting CXX compile features - done
+[0.378s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.492s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[0.530s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.551s] -- Found angles: 1.15.0 (/opt/ros/humble/share/angles/cmake)
+[0.554s] -- Found controller_interface: 2.49.0 (/opt/ros/humble/share/controller_interface/cmake)
+[0.584s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.587s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.593s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.601s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.611s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.780s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.784s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.808s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.815s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.876s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.877s] -- Found Threads: TRUE
+[0.939s] -- Found joint_trajectory_controller: 2.43.0 (/opt/ros/humble/share/joint_trajectory_controller/cmake)
+[0.996s] -- Found std_srvs: 4.8.0 (/opt/ros/humble/share/std_srvs/cmake)
+[1.007s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.015s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.016s] -- Found Eigen3: TRUE (found version "3.4.0")
+[1.016s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.070s] -- Found ur_dashboard_msgs: 2.8.1 (/home/tamar/RBE594_ws/install/ur_dashboard_msgs/share/ur_dashboard_msgs/cmake)
+[1.080s] -- Found ur_msgs: 2.2.0 (/home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake)
+[1.108s] -- Found ament_cmake_gmock: 1.3.11 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[1.110s] -- Found controller_manager: 2.49.0 (/opt/ros/humble/share/controller_manager/cmake)
+[1.135s] -- Found ros2_control_test_assets: 2.49.0 (/opt/ros/humble/share/ros2_control_test_assets/cmake)
+[1.137s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[1.138s] [0mCMake Deprecation Warning at /opt/ros/humble/src/gmock_vendor/CMakeLists.txt:2 (cmake_minimum_required):
+[1.138s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[1.138s]   CMake.
+[1.138s] 
+[1.138s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[1.138s]   to tell CMake that the project requires at least <min> but has been updated
+[1.138s]   to work with policies introduced by <max> or earlier.
+[1.138s] 
+[1.138s] [0m
+[1.141s] -- Found ament_cmake_gtest: 1.3.11 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.141s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.142s] [0mCMake Deprecation Warning at /opt/ros/humble/src/gtest_vendor/CMakeLists.txt:2 (cmake_minimum_required):
+[1.142s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[1.142s]   CMake.
+[1.142s] 
+[1.142s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[1.142s]   to tell CMake that the project requires at least <min> but has been updated
+[1.142s]   to work with policies introduced by <max> or earlier.
+[1.142s] 
+[1.142s] [0m
+[1.190s] -- Configuring done (1.1s)
+[1.260s] -- Generating done (0.1s)
+[1.264s] -- Build files have been written to: /home/tamar/RBE594_ws/build/ur_controllers
+[1.271s] Invoked command in '/home/tamar/RBE594_ws/build/ur_controllers' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_controllers
+[1.272s] Invoking command in '/home/tamar/RBE594_ws/build/ur_controllers': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_controllers -- -j32 -l32
+[1.328s] [  2%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/tool_contact_controller_parameters.yaml `[0m
+[1.329s] [  5%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/speed_scaling_state_broadcaster_parameters.yaml `[0m
+[1.330s] [  8%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/opt/ros/humble/src/gtest_vendor/src/gtest-all.cc.o[0m
+[1.330s] [ 11%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/gpio_controller_parameters.yaml `[0m
+[1.330s] [ 14%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/src/gmock-all.cc.o[0m
+[1.330s] [ 17%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/force_mode_controller_parameters.yaml `[0m
+[1.330s] [ 20%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller_parameters.yaml `[0m
+[1.331s] [ 26%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/freedrive_mode_controller_parameters.yaml `[0m
+[1.331s] [ 26%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/passthrough_trajectory_controller_parameters.yaml `[0m
+[1.332s] [ 29%] [1m[34mRunning `/opt/ros/humble/bin/generate_parameter_library_cpp /home/tamar/RBE594_ws/build/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/ur_configuration_controller_parameters.yaml `[0m
+[1.333s] [ 32%] [32mBuilding CXX object gmock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o[0m
+[1.405s] [ 35%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/scaled_joint_trajectory_controller_parameters.hpp[0m
+[1.409s] [ 38%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/ur_configuration_controller_parameters.hpp[0m
+[1.412s] [ 41%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/tool_contact_controller_parameters.hpp[0m
+[1.415s] [ 41%] [0mBuilt target scaled_joint_trajectory_controller_parameters[0m
+[1.419s] [ 44%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/gpio_controller_parameters.hpp[0m
+[1.419s] [ 44%] [0mBuilt target ur_configuration_controller_parameters[0m
+[1.421s] [ 47%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/freedrive_mode_controller_parameters.hpp[0m
+[1.422s] [ 47%] [0mBuilt target tool_contact_controller_parameters[0m
+[1.428s] [ 47%] [0mBuilt target gpio_controller_parameters[0m
+[1.430s] [ 47%] [0mBuilt target freedrive_mode_controller_parameters[0m
+[1.430s] [ 50%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/passthrough_trajectory_controller_parameters.hpp[0m
+[1.440s] [ 50%] [0mBuilt target passthrough_trajectory_controller_parameters[0m
+[1.444s] [ 52%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/speed_scaling_state_broadcaster_parameters.hpp[0m
+[1.445s] [ 55%] [1m[34mCreating deprecated header file /home/tamar/RBE594_ws/build/ur_controllers/include/force_mode_controller_parameters.hpp[0m
+[1.453s] [ 55%] [0mBuilt target speed_scaling_state_broadcaster_parameters[0m
+[1.454s] [ 55%] [0mBuilt target force_mode_controller_parameters[0m
+[1.461s] [ 58%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/tool_contact_controller.cpp.o[0m
+[1.461s] [ 61%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/scaled_joint_trajectory_controller.cpp.o[0m
+[1.461s] [ 67%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/force_mode_controller.cpp.o[0m
+[1.461s] [ 67%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/speed_scaling_state_broadcaster.cpp.o[0m
+[1.461s] [ 73%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/freedrive_mode_controller.cpp.o[0m
+[1.461s] [ 73%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/gpio_controller.cpp.o[0m
+[1.462s] [ 76%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/passthrough_trajectory_controller.cpp.o[0m
+[1.462s] [ 79%] [32mBuilding CXX object CMakeFiles/ur_controllers.dir/src/ur_configuration_controller.cpp.o[0m
+[1.824s] [ 82%] [1m[32mLinking CXX static library libgmock_main.a[0m
+[1.837s] [ 82%] [0mBuilt target gmock_main[0m
+[2.740s] [ 85%] [1m[32mLinking CXX static library libgmock.a[0m
+[2.771s] [ 85%] [0mBuilt target gmock[0m
+[5.589s] [ 88%] [1m[32mLinking CXX shared library libur_controllers.so[0m
+[6.242s] [ 88%] [0mBuilt target ur_controllers[0m
+[6.249s] [ 91%] [32mBuilding CXX object CMakeFiles/test_load_freedrive_mode_controller.dir/test/test_load_freedrive_mode_controller.cpp.o[0m
+[6.249s] [ 94%] [32mBuilding CXX object CMakeFiles/test_load_force_mode_controller.dir/test/test_load_force_mode_controller.cpp.o[0m
+[8.238s] [ 97%] [1m[32mLinking CXX executable test_load_freedrive_mode_controller[0m
+[8.245s] [100%] [1m[32mLinking CXX executable test_load_force_mode_controller[0m
+[8.429s] [100%] [0mBuilt target test_load_force_mode_controller[0m
+[8.430s] [100%] [0mBuilt target test_load_freedrive_mode_controller[0m
+[8.434s] Invoked command in '/home/tamar/RBE594_ws/build/ur_controllers' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_controllers -- -j32 -l32
+[8.436s] Invoking command in '/home/tamar/RBE594_ws/build/ur_controllers': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_controllers
+[8.471s] -- Install configuration: ""
+[8.471s] -- Execute custom install script
+[8.471s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.473s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.475s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.476s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.478s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.480s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.481s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.483s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.485s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.486s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster_parameters.hpp
+[8.487s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller_parameters.hpp
+[8.488s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller_parameters.hpp
+[8.488s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers//controller_plugins.xml
+[8.488s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/lib/libur_controllers.so
+[8.490s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/force_mode_controller.hpp
+[8.492s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/freedrive_mode_controller.hpp
+[8.494s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/gpio_controller.hpp
+[8.496s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/passthrough_trajectory_controller.hpp
+[8.499s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp
+[8.502s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/speed_scaling_state_broadcaster.hpp
+[8.506s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/tool_contact_controller.hpp
+[8.509s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/include/ur_controllers/ur_configuration_controller.hpp
+[8.512s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/controller_plugins.xml
+[8.513s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/library_path.sh
+[8.516s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/library_path.dsv
+[8.520s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ament_index/resource_index/package_run_dependencies/ur_controllers
+[8.525s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ament_index/resource_index/parent_prefix_path/ur_controllers
+[8.530s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/ament_prefix_path.sh
+[8.536s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/ament_prefix_path.dsv
+[8.543s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/path.sh
+[8.551s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/environment/path.dsv
+[8.558s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/local_setup.bash
+[8.568s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/local_setup.sh
+[8.573s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/local_setup.zsh
+[8.581s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/local_setup.dsv
+[8.589s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/package.dsv
+[8.598s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ament_index/resource_index/packages/ur_controllers
+[8.605s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ament_index/resource_index/controller_interface__pluginlib__plugin/ur_controllers
+[8.612s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.620s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.628s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/cmake/ament_cmake_export_libraries-extras.cmake
+[8.636s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/cmake/ur_controllersConfig.cmake
+[8.643s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/cmake/ur_controllersConfig-version.cmake
+[8.652s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_controllers/share/ur_controllers/package.xml
+[8.664s] Invoked command in '/home/tamar/RBE594_ws/build/ur_controllers' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_controllers

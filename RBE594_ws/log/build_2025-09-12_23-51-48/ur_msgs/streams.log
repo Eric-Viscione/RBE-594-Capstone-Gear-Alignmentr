@@ -1,0 +1,606 @@
+[0.013s] Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/ur_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_msgs
+[0.063s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.063s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.063s]   CMake.
+[0.063s] 
+[0.063s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.063s]   to tell CMake that the project requires at least <min> but has been updated
+[0.063s]   to work with policies introduced by <max> or earlier.
+[0.063s] 
+[0.063s] [0m
+[0.203s] -- The C compiler identification is GNU 11.4.0
+[0.329s] -- The CXX compiler identification is GNU 11.4.0
+[0.338s] -- Detecting C compiler ABI info
+[0.375s] -- Detecting C compiler ABI info - done
+[0.389s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.389s] -- Detecting C compile features
+[0.389s] -- Detecting C compile features - done
+[0.397s] -- Detecting CXX compiler ABI info
+[0.436s] -- Detecting CXX compiler ABI info - done
+[0.449s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.449s] -- Detecting CXX compile features
+[0.450s] -- Detecting CXX compile features - done
+[0.455s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.538s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[0.585s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.619s] -- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[0.711s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.721s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.740s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.768s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.812s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.851s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.871s] -- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.003s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.446s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.056s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.287s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.288s] [33mCMake Warning (dev) at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):
+[2.288s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[2.289s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[2.289s]   the cmake_policy command to set the policy and suppress this warning.
+[2.289s] 
+[2.289s] Call Stack (most recent call first):
+[2.289s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[2.289s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[2.289s]   CMakeLists.txt:37 (rosidl_generate_interfaces)
+[2.289s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.289s] [0m
+[2.304s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6")
+[2.306s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.306s] [33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package):
+[2.306s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[2.307s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[2.307s]   the cmake_policy command to set the policy and suppress this warning.
+[2.307s] 
+[2.307s] Call Stack (most recent call first):
+[2.307s]   /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)
+[2.307s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[2.307s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[2.307s]   CMakeLists.txt:37 (rosidl_generate_interfaces)
+[2.307s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.307s] [0m
+[2.322s] [33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:140 (find_package):
+[2.322s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[2.322s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[2.322s]   the cmake_policy command to set the policy and suppress this warning.
+[2.322s] 
+[2.322s] Call Stack (most recent call first):
+[2.322s]   /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)
+[2.322s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[2.322s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+[2.322s]   CMakeLists.txt:37 (rosidl_generate_interfaces)
+[2.322s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.322s] [0m
+[2.331s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5")
+[2.332s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.332s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.332s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.344s] -- Found PythonExtra: .so
+[2.410s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.417s] -- Added test 'lint_cmake' to check CMake code style
+[2.422s] -- Added test 'xmllint' to check XML markup files
+[2.427s] -- Configuring done (2.4s)
+[2.464s] -- Generating done (0.0s)
+[2.469s] -- Build files have been written to: /home/tamar/RBE594_ws/build/ur_msgs
+[2.475s] Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/ur_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_msgs
+[2.476s] Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+[2.547s] [  1%] [1m[34mGenerating C code for ROS interfaces[0m
+[2.551s] [  1%] [1m[34mGenerating C++ code for ROS interfaces[0m
+[2.552s] [  1%] [0mBuilt target ament_cmake_python_symlink_ur_msgs[0m
+[2.663s] running egg_info
+[2.664s] creating ur_msgs.egg-info
+[2.664s] writing ur_msgs.egg-info/PKG-INFO
+[2.664s] writing dependency_links to ur_msgs.egg-info/dependency_links.txt
+[2.664s] writing top-level names to ur_msgs.egg-info/top_level.txt
+[2.664s] writing manifest file 'ur_msgs.egg-info/SOURCES.txt'
+[2.665s] reading manifest file 'ur_msgs.egg-info/SOURCES.txt'
+[2.665s] writing manifest file 'ur_msgs.egg-info/SOURCES.txt'
+[2.676s] [  1%] [0mBuilt target ament_cmake_python_build_ur_msgs_egg[0m
+[3.288s] [  1%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/analog__functions.c.o[0m
+[3.288s] [  2%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/digital__functions.c.o[0m
+[3.289s] [  3%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/io_states__functions.c.o[0m
+[3.289s] [  4%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/robot_mode_data_msg__functions.c.o[0m
+[3.289s] [  5%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/robot_state_rt_msg__functions.c.o[0m
+[3.289s] [  5%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/masterboard_data_msg__functions.c.o[0m
+[3.289s] [  6%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/msg/detail/tool_data_msg__functions.c.o[0m
+[3.289s] [  6%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/set_payload__functions.c.o[0m
+[3.289s] [  7%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/set_analog_output__functions.c.o[0m
+[3.289s] [  8%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/set_speed_slider_fraction__functions.c.o[0m
+[3.290s] [  9%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/set_io__functions.c.o[0m
+[3.290s] [ 10%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/get_robot_software_version__functions.c.o[0m
+[3.290s] [ 10%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/srv/detail/set_force_mode__functions.c.o[0m
+[3.290s] [ 11%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_c.dir/rosidl_generator_c/ur_msgs/action/detail/tool_contact__functions.c.o[0m
+[3.292s] [ 11%] [0mBuilt target ur_msgs__cpp[0m
+[3.296s] [ 13%] [1m[34mGenerating C++ introspection for ROS interfaces[0m
+[3.296s] [ 13%] [1m[34mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.296s] [ 13%] [1m[34mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.377s] [ 14%] [1m[32mLinking C shared library libur_msgs__rosidl_generator_c.so[0m
+[3.395s] [ 14%] [0mBuilt target ur_msgs__rosidl_generator_c[0m
+[3.400s] [ 16%] [1m[34mGenerating C type support dispatch for ROS interfaces[0m
+[3.400s] [ 16%] [1m[34mGenerating C type support for eProsima Fast-RTPS[0m
+[3.400s] [ 17%] [1m[34mGenerating C introspection for ROS interfaces[0m
+[4.201s] [ 18%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/analog__type_support.cpp.o[0m
+[4.201s] [ 19%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/digital__type_support.cpp.o[0m
+[4.201s] [ 20%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/io_states__type_support.cpp.o[0m
+[4.201s] [ 20%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/robot_state_rt_msg__type_support.cpp.o[0m
+[4.201s] [ 22%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/masterboard_data_msg__type_support.cpp.o[0m
+[4.201s] [ 22%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/robot_mode_data_msg__type_support.cpp.o[0m
+[4.201s] [ 23%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/tool_data_msg__type_support.cpp.o[0m
+[4.201s] [ 23%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/set_analog_output__type_support.cpp.o[0m
+[4.208s] [ 24%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.cpp.o[0m
+[4.208s] [ 25%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/set_io__type_support.cpp.o[0m
+[4.208s] [ 26%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/set_payload__type_support.cpp.o[0m
+[4.209s] [ 26%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/get_robot_software_version__type_support.cpp.o[0m
+[4.212s] [ 27%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/srv/detail/set_force_mode__type_support.cpp.o[0m
+[4.217s] [ 28%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ur_msgs/action/detail/tool_contact__type_support.cpp.o[0m
+[4.329s] [ 30%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/analog__type_support.cpp.o[0m
+[4.329s] [ 30%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/digital__type_support.cpp.o[0m
+[4.329s] [ 30%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/io_states__type_support.cpp.o[0m
+[4.329s] [ 31%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/robot_state_rt_msg__type_support.cpp.o[0m
+[4.329s] [ 32%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/masterboard_data_msg__type_support.cpp.o[0m
+[4.330s] [ 32%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/robot_mode_data_msg__type_support.cpp.o[0m
+[4.330s] [ 33%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/set_analog_output__type_support.cpp.o[0m
+[4.331s] [ 34%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/msg/tool_data_msg__type_support.cpp.o[0m
+[4.334s] [ 35%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/set_payload__type_support.cpp.o[0m
+[4.334s] [ 35%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/set_speed_slider_fraction__type_support.cpp.o[0m
+[4.346s] [ 36%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/get_robot_software_version__type_support.cpp.o[0m
+[4.346s] [ 37%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/set_io__type_support.cpp.o[0m
+[4.347s] [ 38%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/srv/set_force_mode__type_support.cpp.o[0m
+[4.347s] [ 38%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ur_msgs/action/tool_contact__type_support.cpp.o[0m
+[4.441s] [ 38%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/analog__type_support.cpp.o[0m
+[4.462s] [ 39%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/digital__type_support.cpp.o[0m
+[4.474s] [ 40%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/io_states__type_support.cpp.o[0m
+[4.474s] [ 41%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/robot_state_rt_msg__type_support.cpp.o[0m
+[4.480s] [ 41%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/masterboard_data_msg__type_support.cpp.o[0m
+[4.480s] [ 42%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/robot_mode_data_msg__type_support.cpp.o[0m
+[4.486s] [ 43%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/msg/tool_data_msg__type_support.cpp.o[0m
+[4.500s] [ 44%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/set_analog_output__type_support.cpp.o[0m
+[4.500s] [ 45%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/set_speed_slider_fraction__type_support.cpp.o[0m
+[4.501s] [ 45%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/set_payload__type_support.cpp.o[0m
+[4.503s] [ 47%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/set_io__type_support.cpp.o[0m
+[4.503s] [ 47%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/get_robot_software_version__type_support.cpp.o[0m
+[4.504s] [ 47%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/srv/set_force_mode__type_support.cpp.o[0m
+[4.507s] [ 48%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ur_msgs/action/tool_contact__type_support.cpp.o[0m
+[4.533s] [ 49%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/analog__type_support_c.cpp.o[0m
+[4.534s] [ 50%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/robot_state_rt_msg__type_support_c.cpp.o[0m
+[4.534s] [ 50%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/digital__type_support_c.cpp.o[0m
+[4.534s] [ 51%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/io_states__type_support_c.cpp.o[0m
+[4.535s] [ 51%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/robot_mode_data_msg__type_support_c.cpp.o[0m
+[4.535s] [ 52%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/masterboard_data_msg__type_support_c.cpp.o[0m
+[4.535s] [ 53%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/set_analog_output__type_support_c.cpp.o[0m
+[4.535s] [ 53%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/set_speed_slider_fraction__type_support_c.cpp.o[0m
+[4.535s] [ 55%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/set_payload__type_support_c.cpp.o[0m
+[4.535s] [ 55%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/msg/detail/tool_data_msg__type_support_c.cpp.o[0m
+[4.535s] [ 57%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/set_io__type_support_c.cpp.o[0m
+[4.536s] [ 57%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/get_robot_software_version__type_support_c.cpp.o[0m
+[4.536s] [ 57%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/action/detail/tool_contact__type_support_c.cpp.o[0m
+[4.536s] [ 58%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ur_msgs/srv/detail/set_force_mode__type_support_c.cpp.o[0m
+[4.538s] [ 59%] [1m[32mLinking CXX shared library libur_msgs__rosidl_typesupport_c.so[0m
+[4.565s] [ 59%] [0mBuilt target ur_msgs__rosidl_typesupport_c[0m
+[4.591s] [ 60%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/analog__type_support.c.o[0m
+[4.591s] [ 61%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/digital__type_support.c.o[0m
+[4.591s] [ 60%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/io_states__type_support.c.o[0m
+[4.591s] [ 63%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/masterboard_data_msg__type_support.c.o[0m
+[4.591s] [ 63%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/robot_state_rt_msg__type_support.c.o[0m
+[4.592s] [ 64%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/robot_mode_data_msg__type_support.c.o[0m
+[4.592s] [ 65%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/set_analog_output__type_support.c.o[0m
+[4.592s] [ 65%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/msg/detail/tool_data_msg__type_support.c.o[0m
+[4.592s] [ 66%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/set_payload__type_support.c.o[0m
+[4.592s] [ 66%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.c.o[0m
+[4.593s] [ 67%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/set_io__type_support.c.o[0m
+[4.593s] [ 68%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/set_force_mode__type_support.c.o[0m
+[4.595s] [ 69%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/srv/detail/get_robot_software_version__type_support.c.o[0m
+[4.598s] [ 69%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ur_msgs/action/detail/tool_contact__type_support.c.o[0m
+[4.623s] [ 70%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/analog__type_support.cpp.o[0m
+[4.624s] [ 71%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/digital__type_support.cpp.o[0m
+[4.624s] [ 71%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/io_states__type_support.cpp.o[0m
+[4.624s] [ 73%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/robot_mode_data_msg__type_support.cpp.o[0m
+[4.624s] [ 73%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/tool_data_msg__type_support.cpp.o[0m
+[4.624s] [ 73%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/masterboard_data_msg__type_support.cpp.o[0m
+[4.624s] [ 74%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/msg/detail/dds_fastrtps/robot_state_rt_msg__type_support.cpp.o[0m
+[4.624s] [ 75%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/set_analog_output__type_support.cpp.o[0m
+[4.624s] [ 76%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/set_payload__type_support.cpp.o[0m
+[4.624s] [ 76%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/set_io__type_support.cpp.o[0m
+[4.625s] [ 78%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/set_speed_slider_fraction__type_support.cpp.o[0m
+[4.625s] [ 78%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/get_robot_software_version__type_support.cpp.o[0m
+[4.625s] [ 79%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/srv/detail/dds_fastrtps/set_force_mode__type_support.cpp.o[0m
+[4.634s] [ 80%] [32mBuilding CXX object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ur_msgs/action/detail/dds_fastrtps/tool_contact__type_support.cpp.o[0m
+[4.645s] [ 81%] [1m[32mLinking C shared library libur_msgs__rosidl_typesupport_introspection_c.so[0m
+[4.682s] [ 81%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_c[0m
+[4.686s] [ 82%] [1m[32mLinking CXX shared library libur_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[4.742s] [ 82%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_cpp[0m
+[4.767s] [ 83%] [1m[32mLinking CXX shared library libur_msgs__rosidl_typesupport_cpp.so[0m
+[4.793s] [ 83%] [0mBuilt target ur_msgs__rosidl_typesupport_cpp[0m
+[4.837s] [ 84%] [1m[32mLinking CXX shared library libur_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[4.888s] [ 84%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_c[0m
+[4.945s] [ 84%] [1m[32mLinking CXX shared library libur_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.988s] [ 84%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[4.994s] [ 84%] [0mBuilt target ur_msgs[0m
+[5.001s] [ 85%] [1m[34mGenerating Python code for ROS interfaces[0m
+[6.467s] [ 85%] [0mBuilt target ur_msgs__py[0m
+[6.474s] [ 86%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_analog_s.c.o[0m
+[6.474s] [ 86%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_digital_s.c.o[0m
+[6.474s] [ 87%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_tool_data_msg_s.c.o[0m
+[6.474s] [ 89%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_io_states_s.c.o[0m
+[6.474s] [ 89%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_robot_state_rt_msg_s.c.o[0m
+[6.474s] [ 90%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_set_analog_output_s.c.o[0m
+[6.475s] [ 91%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_set_payload_s.c.o[0m
+[6.475s] [ 92%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_masterboard_data_msg_s.c.o[0m
+[6.475s] [ 92%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_set_force_mode_s.c.o[0m
+[6.475s] [ 93%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_get_robot_software_version_s.c.o[0m
+[6.475s] [ 93%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/msg/_robot_mode_data_msg_s.c.o[0m
+[6.475s] [ 94%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/action/_tool_contact_s.c.o[0m
+[6.475s] [ 94%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_set_speed_slider_fraction_s.c.o[0m
+[6.475s] [ 95%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_generator_py.dir/rosidl_generator_py/ur_msgs/srv/_set_io_s.c.o[0m
+[6.584s] [ 96%] [1m[32mLinking C shared library rosidl_generator_py/ur_msgs/libur_msgs__rosidl_generator_py.so[0m
+[6.603s] [ 96%] [0mBuilt target ur_msgs__rosidl_generator_py[0m
+[6.610s] [ 98%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[6.610s] [ 98%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[6.610s] [ 99%] [32mBuilding C object CMakeFiles/ur_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[6.688s] [ 99%] [1m[32mLinking C shared library rosidl_generator_py/ur_msgs/ur_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.690s] [ 99%] [1m[32mLinking C shared library rosidl_generator_py/ur_msgs/ur_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.691s] [100%] [1m[32mLinking C shared library rosidl_generator_py/ur_msgs/ur_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[6.707s] [100%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[6.708s] [100%] [0mBuilt target ur_msgs__rosidl_typesupport_c__pyext[0m
+[6.715s] [100%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[6.719s] Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+[6.720s] Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs
+[6.757s] -- Install configuration: ""
+[6.757s] -- Execute custom install script
+[6.757s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/rosidl_interfaces/ur_msgs
+[6.759s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__functions.h
+[6.761s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__struct.h
+[6.763s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__type_support.h
+[6.764s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/tool_contact.h
+[6.766s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/analog.h
+[6.768s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__functions.h
+[6.769s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__struct.h
+[6.771s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__type_support.h
+[6.772s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__functions.h
+[6.774s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__struct.h
+[6.775s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__type_support.h
+[6.777s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__functions.h
+[6.780s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__struct.h
+[6.782s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__type_support.h
+[6.782s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__functions.h
+[6.783s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__struct.h
+[6.785s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__type_support.h
+[6.786s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__functions.h
+[6.788s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__struct.h
+[6.790s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__type_support.h
+[6.791s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__functions.h
+[6.793s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__struct.h
+[6.794s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__type_support.h
+[6.796s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__functions.h
+[6.797s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__struct.h
+[6.799s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__type_support.h
+[6.801s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/digital.h
+[6.802s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/io_states.h
+[6.803s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/masterboard_data_msg.h
+[6.805s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_mode_data_msg.h
+[6.806s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_state_rt_msg.h
+[6.808s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_generator_c__visibility_control.h
+[6.810s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/tool_data_msg.h
+[6.811s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__functions.h
+[6.813s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__struct.h
+[6.815s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__type_support.h
+[6.816s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__functions.h
+[6.818s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__struct.h
+[6.820s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__type_support.h
+[6.823s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__functions.h
+[6.825s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__struct.h
+[6.828s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__type_support.h
+[6.831s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__functions.h
+[6.834s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__struct.h
+[6.838s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__type_support.h
+[6.843s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__functions.h
+[6.850s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__struct.h
+[6.856s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__type_support.h
+[6.865s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__functions.h
+[6.872s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__struct.h
+[6.880s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.h
+[6.887s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/get_robot_software_version.h
+[6.895s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_analog_output.h
+[6.902s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_force_mode.h
+[6.908s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_io.h
+[6.916s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_payload.h
+[6.925s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_speed_slider_fraction.h
+[6.930s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/library_path.sh
+[6.937s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/library_path.dsv
+[6.946s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_fastrtps_c.h
+[6.954s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_fastrtps_c.h
+[6.962s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_fastrtps_c.h
+[6.967s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_fastrtps_c.h
+[6.974s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_fastrtps_c.h
+[6.982s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_fastrtps_c.h
+[6.990s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_fastrtps_c.h
+[6.997s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_fastrtps_c.h
+[7.004s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.011s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_fastrtps_c.h
+[7.018s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_fastrtps_c.h
+[7.020s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_fastrtps_c.h
+[7.028s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_c.h
+[7.035s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_fastrtps_c.h
+[7.042s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_fastrtps_c.h
+[7.051s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__builder.hpp
+[7.059s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__struct.hpp
+[7.067s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__traits.hpp
+[7.075s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__type_support.hpp
+[7.081s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/tool_contact.hpp
+[7.090s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/analog.hpp
+[7.097s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__builder.hpp
+[7.106s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__struct.hpp
+[7.113s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__traits.hpp
+[7.121s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__type_support.hpp
+[7.128s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__builder.hpp
+[7.135s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__struct.hpp
+[7.143s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__traits.hpp
+[7.152s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__type_support.hpp
+[7.157s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__builder.hpp
+[7.163s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__struct.hpp
+[7.171s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__traits.hpp
+[7.179s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__type_support.hpp
+[7.188s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__builder.hpp
+[7.195s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__struct.hpp
+[7.203s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__traits.hpp
+[7.211s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__type_support.hpp
+[7.217s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__builder.hpp
+[7.219s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__struct.hpp
+[7.226s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__traits.hpp
+[7.233s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__type_support.hpp
+[7.240s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__builder.hpp
+[7.248s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__struct.hpp
+[7.256s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__traits.hpp
+[7.262s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__type_support.hpp
+[7.269s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__builder.hpp
+[7.278s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__struct.hpp
+[7.286s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__traits.hpp
+[7.293s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__type_support.hpp
+[7.300s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/digital.hpp
+[7.309s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/io_states.hpp
+[7.318s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/masterboard_data_msg.hpp
+[7.325s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_mode_data_msg.hpp
+[7.332s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_state_rt_msg.hpp
+[7.342s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.350s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/tool_data_msg.hpp
+[7.356s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__builder.hpp
+[7.360s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__struct.hpp
+[7.366s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__traits.hpp
+[7.372s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__type_support.hpp
+[7.378s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__builder.hpp
+[7.384s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__struct.hpp
+[7.391s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__traits.hpp
+[7.399s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__type_support.hpp
+[7.405s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__builder.hpp
+[7.408s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__struct.hpp
+[7.415s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__traits.hpp
+[7.422s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__type_support.hpp
+[7.430s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__builder.hpp
+[7.439s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__struct.hpp
+[7.447s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__traits.hpp
+[7.454s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__type_support.hpp
+[7.462s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__builder.hpp
+[7.471s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__struct.hpp
+[7.479s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__traits.hpp
+[7.486s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__type_support.hpp
+[7.493s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__builder.hpp
+[7.502s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__struct.hpp
+[7.509s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__traits.hpp
+[7.518s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.hpp
+[7.525s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/get_robot_software_version.hpp
+[7.531s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_analog_output.hpp
+[7.538s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_force_mode.hpp
+[7.542s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_io.hpp
+[7.549s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_payload.hpp
+[7.556s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_speed_slider_fraction.hpp
+[7.565s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_fastrtps_cpp.hpp
+[7.573s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_fastrtps_cpp.hpp
+[7.582s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_fastrtps_cpp.hpp
+[7.589s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_fastrtps_cpp.hpp
+[7.598s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[7.604s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[7.609s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[7.617s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[7.624s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.633s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_fastrtps_cpp.hpp
+[7.640s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_fastrtps_cpp.hpp
+[7.647s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_fastrtps_cpp.hpp
+[7.656s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_cpp.hpp
+[7.662s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_fastrtps_cpp.hpp
+[7.668s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_fastrtps_cpp.hpp
+[7.676s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_introspection_c.h
+[7.684s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_introspection_c.h
+[7.691s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_introspection_c.h
+[7.699s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_introspection_c.h
+[7.705s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_introspection_c.h
+[7.713s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_introspection_c.h
+[7.721s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_introspection_c.h
+[7.731s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_introspection_c.h
+[7.737s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.745s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_introspection_c.h
+[7.752s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_introspection_c.h
+[7.761s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_introspection_c.h
+[7.769s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_introspection_c.h
+[7.776s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_introspection_c.h
+[7.784s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_introspection_c.h
+[7.794s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_introspection_cpp.hpp
+[7.801s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_introspection_cpp.hpp
+[7.809s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_introspection_cpp.hpp
+[7.816s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_introspection_cpp.hpp
+[7.825s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[7.833s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[7.841s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_introspection_cpp.hpp
+[7.848s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[7.854s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_introspection_cpp.hpp
+[7.863s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_introspection_cpp.hpp
+[7.871s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_introspection_cpp.hpp
+[7.879s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_introspection_cpp.hpp
+[7.884s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_introspection_cpp.hpp
+[7.890s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_introspection_cpp.hpp
+[7.894s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/pythonpath.sh
+[7.900s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/pythonpath.dsv
+[7.907s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/PKG-INFO
+[7.911s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/SOURCES.txt
+[7.917s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/dependency_links.txt
+[7.923s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/top_level.txt
+[7.929s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/__init__.py
+[7.936s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_c.c
+[7.945s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.951s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[7.958s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/__init__.py
+[7.965s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/_tool_contact.py
+[7.972s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/_tool_contact_s.c
+[7.979s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/libur_msgs__rosidl_generator_py.so
+[7.988s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/__init__.py
+[7.994s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_analog.py
+[8.001s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_analog_s.c
+[8.009s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_digital.py
+[8.018s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_digital_s.c
+[8.026s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_io_states.py
+[8.033s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_io_states_s.c
+[8.041s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_masterboard_data_msg.py
+[8.050s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_masterboard_data_msg_s.c
+[8.057s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_mode_data_msg.py
+[8.065s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_mode_data_msg_s.c
+[8.073s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_state_rt_msg.py
+[8.082s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_state_rt_msg_s.c
+[8.090s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_tool_data_msg.py
+[8.097s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_tool_data_msg_s.c
+[8.105s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/__init__.py
+[8.113s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_get_robot_software_version.py
+[8.121s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_get_robot_software_version_s.c
+[8.129s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_analog_output.py
+[8.137s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_analog_output_s.c
+[8.143s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_force_mode.py
+[8.150s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_force_mode_s.c
+[8.159s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_io.py
+[8.168s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_io_s.c
+[8.175s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_payload.py
+[8.182s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_payload_s.c
+[8.189s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_speed_slider_fraction.py
+[8.195s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_speed_slider_fraction_s.c
+[8.203s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[8.212s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[8.219s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[8.227s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[8.227s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[8.227s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[8.228s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Analog.idl
+[8.235s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Digital.idl
+[8.244s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/IOStates.idl
+[8.250s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotStateRTMsg.idl
+[8.257s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/MasterboardDataMsg.idl
+[8.266s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotModeDataMsg.idl
+[8.274s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/ToolDataMsg.idl
+[8.280s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput.idl
+[8.288s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload.idl
+[8.297s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction.idl
+[8.306s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO.idl
+[8.314s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion.idl
+[8.321s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode.idl
+[8.329s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/action/ToolContact.idl
+[8.336s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Analog.msg
+[8.342s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Digital.msg
+[8.349s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/IOStates.msg
+[8.358s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotStateRTMsg.msg
+[8.365s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/MasterboardDataMsg.msg
+[8.373s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotModeDataMsg.msg
+[8.380s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/ToolDataMsg.msg
+[8.387s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput.srv
+[8.395s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput_Request.msg
+[8.402s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput_Response.msg
+[8.405s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload.srv
+[8.413s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload_Request.msg
+[8.420s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload_Response.msg
+[8.427s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction.srv
+[8.434s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction_Request.msg
+[8.437s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction_Response.msg
+[8.444s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO.srv
+[8.451s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO_Request.msg
+[8.458s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO_Response.msg
+[8.467s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion.srv
+[8.475s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion_Request.msg
+[8.482s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion_Response.msg
+[8.490s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode.srv
+[8.499s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode_Request.msg
+[8.507s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode_Response.msg
+[8.514s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/action/ToolContact.action
+[8.523s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/package_run_dependencies/ur_msgs
+[8.531s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/parent_prefix_path/ur_msgs
+[8.539s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/ament_prefix_path.sh
+[8.546s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/ament_prefix_path.dsv
+[8.554s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/path.sh
+[8.561s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/path.dsv
+[8.568s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.bash
+[8.575s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.sh
+[8.579s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.zsh
+[8.587s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.dsv
+[8.596s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/package.dsv
+[8.604s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/packages/ur_msgs
+[8.611s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake-extras.cmake
+[8.619s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.628s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.635s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[8.642s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[8.649s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[8.658s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[8.666s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgsConfig.cmake
+[8.673s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgsConfig-version.cmake
+[8.681s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/package.xml
+[8.685s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_c.so
+[8.686s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_c.so" to ""
+[8.686s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_c.so
+[8.686s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[8.687s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_cpp.so
+[8.687s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[8.688s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_c.so
+[8.688s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_c.so" to ""
+[8.688s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_c.so
+[8.688s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_c.so" to ""
+[8.689s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_cpp.so
+[8.689s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[8.689s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_cpp.so
+[8.690s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_cpp.so" to ""
+[8.730s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/__init__.py'...
+[8.730s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/__init__.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/_tool_contact.py'...
+[8.730s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/__init__.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_analog.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_digital.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_io_states.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_masterboard_data_msg.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_mode_data_msg.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_state_rt_msg.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_tool_data_msg.py'...
+[8.730s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/__init__.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_get_robot_software_version.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_analog_output.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_force_mode.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_io.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_payload.py'...
+[8.730s] Compiling '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_speed_slider_fraction.py'...
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_py.so
+[8.732s] -- Set non-toolchain portion of runtime path of "/home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_py.so" to ""
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cppExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cppExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_pyExport.cmake
+[8.732s] -- Installing: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_pyExport-noconfig.cmake
+[8.733s] Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs

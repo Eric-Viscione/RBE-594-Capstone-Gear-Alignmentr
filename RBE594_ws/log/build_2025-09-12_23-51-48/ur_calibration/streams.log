@@ -1,0 +1,113 @@
+[0.027s] Invoking command in '/home/tamar/RBE594_ws/build/ur_calibration': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_calibration -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_calibration
+[0.086s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.086s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.086s]   CMake.
+[0.086s] 
+[0.086s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.086s]   to tell CMake that the project requires at least <min> but has been updated
+[0.086s]   to work with policies introduced by <max> or earlier.
+[0.086s] 
+[0.086s] [0m
+[0.122s] -- The C compiler identification is GNU 11.4.0
+[0.198s] -- The CXX compiler identification is GNU 11.4.0
+[0.216s] -- Detecting C compiler ABI info
+[0.287s] -- Detecting C compiler ABI info - done
+[0.308s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.309s] -- Detecting C compile features
+[0.309s] -- Detecting C compile features - done
+[0.325s] -- Detecting CXX compiler ABI info
+[0.411s] -- Detecting CXX compiler ABI info - done
+[0.423s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.423s] -- Detecting CXX compile features
+[0.424s] -- Detecting CXX compile features - done
+[0.428s] [0mur_calibration: You did not request a specific build type: selecting 'RelWithDebInfo'.[0m
+[0.433s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.543s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[0.581s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.604s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.633s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.637s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.643s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.651s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.662s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.693s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.695s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.712s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.718s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.761s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.764s] -- Found Threads: TRUE
+[0.809s] -- Found ur_robot_driver: 2.8.1 (/home/tamar/RBE594_ws/install/ur_robot_driver/share/ur_robot_driver/cmake)
+[0.973s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.974s] -- Found Eigen3: TRUE (found version "3.4.0")
+[0.974s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.042s] -- Found yaml_cpp_vendor: 8.0.2 (/opt/ros/humble/share/yaml_cpp_vendor/cmake)
+[1.070s] -- Found ament_cmake_gmock: 1.3.11 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[1.072s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[1.073s] [0mCMake Deprecation Warning at /opt/ros/humble/src/gmock_vendor/CMakeLists.txt:2 (cmake_minimum_required):
+[1.073s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[1.073s]   CMake.
+[1.073s] 
+[1.073s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[1.073s]   to tell CMake that the project requires at least <min> but has been updated
+[1.073s]   to work with policies introduced by <max> or earlier.
+[1.073s] 
+[1.073s] [0m
+[1.075s] -- Found ament_cmake_gtest: 1.3.11 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.076s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.076s] [0mCMake Deprecation Warning at /opt/ros/humble/src/gtest_vendor/CMakeLists.txt:2 (cmake_minimum_required):
+[1.077s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[1.077s]   CMake.
+[1.077s] 
+[1.077s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[1.077s]   to tell CMake that the project requires at least <min> but has been updated
+[1.077s]   to work with policies introduced by <max> or earlier.
+[1.077s] 
+[1.077s] [0m
+[1.106s] -- Configuring done (1.0s)
+[1.144s] -- Generating done (0.0s)
+[1.147s] -- Build files have been written to: /home/tamar/RBE594_ws/build/ur_calibration
+[1.153s] Invoked command in '/home/tamar/RBE594_ws/build/ur_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_calibration -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_calibration
+[1.154s] Invoking command in '/home/tamar/RBE594_ws/build/ur_calibration': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_calibration -- -j32 -l32
+[1.213s] [  8%] [32mBuilding CXX object CMakeFiles/calibration.dir/src/calibration.cpp.o[0m
+[1.213s] [ 16%] [32mBuilding CXX object gmock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o[0m
+[1.213s] [ 33%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/opt/ros/humble/src/gtest_vendor/src/gtest-all.cc.o[0m
+[1.213s] [ 33%] [32mBuilding CXX object CMakeFiles/calibration.dir/src/calibration_consumer.cpp.o[0m
+[1.214s] [ 41%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/src/gmock-all.cc.o[0m
+[1.744s] [ 50%] [1m[32mLinking CXX static library libgmock_main.a[0m
+[1.756s] [ 50%] [0mBuilt target gmock_main[0m
+[4.869s] [ 58%] [1m[32mLinking CXX static library libcalibration.a[0m
+[4.928s] [ 58%] [0mBuilt target calibration[0m
+[4.935s] [ 66%] [32mBuilding CXX object CMakeFiles/calibration_correction.dir/src/calibration_correction.cpp.o[0m
+[5.253s] [ 75%] [1m[32mLinking CXX static library libgmock.a[0m
+[5.304s] [ 75%] [0mBuilt target gmock[0m
+[5.311s] [ 83%] [32mBuilding CXX object CMakeFiles/calibration_test.dir/test/calibration_test.cpp.o[0m
+[7.553s] [ 91%] [1m[32mLinking CXX executable calibration_correction[0m
+[7.713s] [ 91%] [0mBuilt target calibration_correction[0m
+[8.671s] [100%] [1m[32mLinking CXX executable calibration_test[0m
+[8.825s] [100%] [0mBuilt target calibration_test[0m
+[8.829s] Invoked command in '/home/tamar/RBE594_ws/build/ur_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_calibration -- -j32 -l32
+[8.829s] Invoking command in '/home/tamar/RBE594_ws/build/ur_calibration': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_calibration
+[8.864s] -- Install configuration: "RelWithDebInfo"
+[8.864s] -- Execute custom install script
+[8.864s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/lib/ur_calibration/calibration_correction
+[8.866s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/include/ur_calibration/calibration.hpp
+[8.868s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/include/ur_calibration/calibration_consumer.hpp
+[8.870s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/launch/calibration_correction.launch.py
+[8.871s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ament_index/resource_index/package_run_dependencies/ur_calibration
+[8.873s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ament_index/resource_index/parent_prefix_path/ur_calibration
+[8.875s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/environment/ament_prefix_path.sh
+[8.876s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/environment/ament_prefix_path.dsv
+[8.878s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/environment/path.sh
+[8.880s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/environment/path.dsv
+[8.882s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/local_setup.bash
+[8.885s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/local_setup.sh
+[8.888s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/local_setup.zsh
+[8.892s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/local_setup.dsv
+[8.896s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/package.dsv
+[8.901s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ament_index/resource_index/packages/ur_calibration
+[8.907s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.914s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.920s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/cmake/ur_calibrationConfig.cmake
+[8.928s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/cmake/ur_calibrationConfig-version.cmake
+[8.938s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_calibration/share/ur_calibration/package.xml
+[8.952s] Invoked command in '/home/tamar/RBE594_ws/build/ur_calibration' returned '0': CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver:/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/ur_client_library:/home/tamar/RBE594_ws/install/ur:/home/tamar/RBE594_ws/install/ur_calibration:/home/tamar/RBE594_ws/install/ur_bringup:/home/tamar/RBE594_ws/install/ur_moveit_config:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_robot_driver/lib:/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/home/tamar/RBE594_ws/install/ur_client_library/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_calibration

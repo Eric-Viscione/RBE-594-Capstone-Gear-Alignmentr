@@ -1,97 +1,109 @@
 #'''
 import os
+import shutil
+import subprocess
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, Command
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def launch_setup(context, *args, **kwargs):
-    # Get the package name from the launch argument
-    pkg_name = LaunchConfiguration('package_name').perform(context)
+    ros_distro_value = LaunchConfiguration('ros_distro').perform(context)
     
-    # Get the URDF file path
-    urdf_path = os.path.join(
-        get_package_share_directory(pkg_name),
+    # Determine the Gazebo package and executable based on the ROS distribution
+    gazebo_package = ''
+    gazebo_launch_executable = ''
+    spawn_executable = ''
+    spawn_arguments = []
+    world_arg = {}
+    
+    # Get package share directory paths
+    sirgas_description_dir = get_package_share_directory('sirgas_description')
+
+    if ros_distro_value == 'humble':
+        gazebo_package = 'gazebo_ros'
+        gazebo_launch_executable = 'gazebo.launch.py'
+        spawn_executable = 'spawn_entity.py'
+        spawn_arguments = ['-topic', 'robot_description', '-entity', 'peg_board_assembly']
+        world_arg = {'world': 'empty.world'}
+    else: # Default to Jazzy
+        gazebo_package = 'ros_gz_sim'
+        gazebo_launch_executable = 'gz_sim.launch.py'
+        spawn_executable = 'create'
+        spawn_arguments = ['-topic', 'robot_description', '-name', 'peg_board_assembly']
+        world_arg = {'gz_args': 'empty.sdf'}
+
+    # Path to the peg board URDF
+    peg_board_urdf_path = os.path.join(
+        sirgas_description_dir,
         'urdf',
         'pba.urdf.xacro'
     )
     
-    # Check if the URDF file exists
-    if not os.path.exists(urdf_path):
-        raise FileNotFoundError(f"URDF file not found at: {urdf_path}")
+    # Find xacro executable and process the file directly
+    xacro_executable = shutil.which('xacro')
+    if xacro_executable is None:
+        raise RuntimeError("xacro executable not found in PATH. Please install it.")
+        
+    try:
+        # Run xacro as a subprocess to get the processed URDF as a string
+        peg_board_description_content = subprocess.check_output(
+            [xacro_executable, '--inorder', peg_board_urdf_path],
+            universal_newlines=True
+        )
+    except subprocess.CalledProcessError as e:
+        raise RuntimeError(f"Failed to process xacro file: {e}")
 
-    # Process the xacro file to get the URDF content
-    robot_description_content = Command(['xacro ', urdf_path])
-    robot_description = {'robot_description': robot_description_content}
+    # Gazebo launch file
+    gazebo_ros_dir = get_package_share_directory(gazebo_package)
+    gazebo_launch_file_path = os.path.join(gazebo_ros_dir, 'launch', gazebo_launch_executable)
 
-    # Gazebo launch
-    gazebo_ros_dir = get_package_share_directory('gazebo_ros')
-    gazebo_launch_file_path = os.path.join(gazebo_ros_dir, 'launch', 'gazebo.launch.py')
-
+    # Start Gazebo with an empty world
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gazebo_launch_file_path),
-        launch_arguments={'world': 'empty.world'}.items()
+        launch_arguments=world_arg.items()
     )
 
-    # Node to spawn the robot in Gazebo
-    spawn_entity = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'peg_board_assembly'],
-        output='screen'
-    )
-
-    # Node to publish the robot state
-    robot_state_publisher_node = Node(
+    # Publish the robot state
+    peg_board_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[robot_description]
-    )
-    
-    # RVIZ launch
-    # We will declare a separate RVIZ config file to load
-    rviz_config_path = os.path.join(
-        get_package_share_directory(pkg_name),
-        'rviz',
-        'config.rviz'
-    )
-    
-    # A robot state publisher is required to make RVIZ work with the model.
-    # We will spawn a joint state publisher to work along with the robot state publisher.
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher'
+        parameters=[{'robot_description': peg_board_description_content}],
+        # Remap is crucial here to use the correct topic for spawning
+        remappings=[('/robot_description', '/robot_description')]
     )
 
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rviz_config_path]
+    # Spawn the peg board entity in Gazebo
+    spawn_peg_board = Node(
+        package=gazebo_package,
+        executable=spawn_executable,
+        arguments=spawn_arguments,
+        output='screen'
     )
-
+    
     return [
         gazebo_server,
-        robot_state_publisher_node,
-        spawn_entity,
-        joint_state_publisher_node,
-        rviz_node
+        peg_board_state_publisher,
+        spawn_peg_board,
     ]
 
+
 def generate_launch_description():
+    # Declare the ros_distro argument to switch between Humble and Jazzy
+    ros_distro = DeclareLaunchArgument(
+        'ros_distro',
+        default_value='jazzy',
+        description='ROS 2 distribution to use (e.g., "humble" or "jazzy")'
+    )
+
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'package_name',
-            default_value='sirgas_description',
-            description='Name of the package containing the URDF.'
-        ),
-        OpaqueFunction(function=launch_setup)
+        ros_distro,
+        OpaqueFunction(function=launch_setup),
     ])
+
 '''
 
 import os

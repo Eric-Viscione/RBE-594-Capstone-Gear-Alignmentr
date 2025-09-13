@@ -1,4 +1,0 @@
-Invoking command in '/home/tamar/RBE594_ws/build/moveit_resources_fanuc_description': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/moveit_resources_fanuc_description -- -j32 -l32
-Invoked command in '/home/tamar/RBE594_ws/build/moveit_resources_fanuc_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/moveit_resources_fanuc_description -- -j32 -l32
-Invoking command in '/home/tamar/RBE594_ws/build/moveit_resources_fanuc_description': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/moveit_resources_fanuc_description
-Invoked command in '/home/tamar/RBE594_ws/build/moveit_resources_fanuc_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/moveit_resources_fanuc_description

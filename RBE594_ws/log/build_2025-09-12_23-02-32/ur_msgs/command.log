@@ -1,4 +1,0 @@
-Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
-Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
-Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs
-Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs
