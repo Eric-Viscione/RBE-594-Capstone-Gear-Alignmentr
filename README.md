@@ -1,1 +1,1 @@
-# RBE-594-Capstone-Gear-Alignmentr
+# RBE-594-Capstone-Gear-Alignment
