@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/build/ur_msgs/rosidl_generator_cpp/ur_msgs/srv/detail/get_robot_software_version__traits.hpp

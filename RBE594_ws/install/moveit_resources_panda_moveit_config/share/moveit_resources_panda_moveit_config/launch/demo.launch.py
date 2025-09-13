@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/src/moveit_resources/panda_moveit_config/launch/demo.launch.py

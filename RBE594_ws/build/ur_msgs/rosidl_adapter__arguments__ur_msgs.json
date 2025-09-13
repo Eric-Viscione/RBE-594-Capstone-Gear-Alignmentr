@@ -1,0 +1,19 @@
+{
+  "package_name": "ur_msgs",
+  "non_idl_tuples": [
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/Analog.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/Digital.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/IOStates.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/RobotStateRTMsg.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/MasterboardDataMsg.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/RobotModeDataMsg.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:msg/ToolDataMsg.msg",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/SetAnalogOutput.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/SetPayload.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/SetSpeedSliderFraction.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/SetIO.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/GetRobotSoftwareVersion.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:srv/SetForceMode.srv",
+    "/home/tamar/RBE594_ws/src/ur_msgs:action/ToolContact.action"
+  ]
+}

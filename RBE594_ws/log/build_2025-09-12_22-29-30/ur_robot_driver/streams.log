@@ -1,0 +1,46 @@
+[0.010s] Invoking command in '/home/tamar/RBE594_ws/build/ur_robot_driver': AMENT_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/home/tamar/RBE594_ws/install/sirgas_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_robot_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_robot_driver
+[0.054s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.054s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.054s]   CMake.
+[0.054s] 
+[0.054s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.054s]   to tell CMake that the project requires at least <min> but has been updated
+[0.054s]   to work with policies introduced by <max> or earlier.
+[0.054s] 
+[0.054s] [0m
+[0.057s] [0mur_robot_driver: You did not request a specific build type: selecting 'RelWithDebInfo'.[0m
+[0.057s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.175s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.180s] -- Found controller_manager: 2.49.0 (/opt/ros/humble/share/controller_manager/cmake)
+[0.202s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.203s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.207s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.212s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.219s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.325s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.326s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.337s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.389s] -- Found rclpy: 3.3.16 (/opt/ros/humble/share/rclpy/cmake)
+[0.389s] -- Found std_srvs: 4.8.0 (/opt/ros/humble/share/std_srvs/cmake)
+[0.395s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.396s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.397s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.436s] [31mCMake Error at CMakeLists.txt:37 (find_package):
+[0.436s]   By not providing "Findur_client_library.cmake" in CMAKE_MODULE_PATH this
+[0.436s]   project has asked CMake to find a package configuration file provided by
+[0.436s]   "ur_client_library", but CMake did not find one.
+[0.436s] 
+[0.436s]   Could not find a package configuration file provided by "ur_client_library"
+[0.436s]   with any of the following names:
+[0.436s] 
+[0.436s]     ur_client_libraryConfig.cmake
+[0.436s]     ur_client_library-config.cmake
+[0.436s] 
+[0.436s]   Add the installation prefix of "ur_client_library" to CMAKE_PREFIX_PATH or
+[0.436s]   set "ur_client_library_DIR" to a directory containing one of the above
+[0.436s]   files.  If "ur_client_library" provides a separate development package or
+[0.436s]   SDK, be sure it has been installed.
+[0.436s] 
+[0.436s] [0m
+[0.436s] -- Configuring incomplete, errors occurred!
+[0.439s] Invoked command in '/home/tamar/RBE594_ws/build/ur_robot_driver' returned '1': AMENT_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_controllers:/home/tamar/RBE594_ws/install/ur_msgs:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/home/tamar/RBE594_ws/install/sirgas_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_controllers/lib:/home/tamar/RBE594_ws/install/ur_msgs/lib:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages:/home/tamar/RBE594_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_robot_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_robot_driver

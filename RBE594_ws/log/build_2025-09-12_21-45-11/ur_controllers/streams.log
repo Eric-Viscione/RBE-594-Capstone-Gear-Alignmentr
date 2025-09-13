@@ -1,0 +1,47 @@
+[0.007s] Invoking command in '/home/tamar/RBE594_ws/build/ur_controllers': AMENT_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_controllers
+[0.045s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.045s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.045s]   CMake.
+[0.045s] 
+[0.045s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.045s]   to tell CMake that the project requires at least <min> but has been updated
+[0.045s]   to work with policies introduced by <max> or earlier.
+[0.045s] 
+[0.045s] [0m
+[0.048s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.141s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.146s] -- Found angles: 1.15.0 (/opt/ros/humble/share/angles/cmake)
+[0.147s] -- Found controller_interface: 2.49.0 (/opt/ros/humble/share/controller_interface/cmake)
+[0.166s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.167s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.170s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.176s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.183s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.289s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.290s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.300s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.329s] -- Found joint_trajectory_controller: 2.43.0 (/opt/ros/humble/share/joint_trajectory_controller/cmake)
+[0.361s] -- Found std_srvs: 4.8.0 (/opt/ros/humble/share/std_srvs/cmake)
+[0.366s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.368s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.368s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.402s] -- Found ur_dashboard_msgs: 2.8.1 (/home/tamar/RBE594_ws/install/ur_dashboard_msgs/share/ur_dashboard_msgs/cmake)
+[0.418s] [31mCMake Error at CMakeLists.txt:24 (find_package):
+[0.418s]   By not providing "Findur_msgs.cmake" in CMAKE_MODULE_PATH this project has
+[0.418s]   asked CMake to find a package configuration file provided by "ur_msgs", but
+[0.418s]   CMake did not find one.
+[0.418s] 
+[0.418s]   Could not find a package configuration file provided by "ur_msgs" with any
+[0.418s]   of the following names:
+[0.418s] 
+[0.418s]     ur_msgsConfig.cmake
+[0.418s]     ur_msgs-config.cmake
+[0.418s] 
+[0.418s]   Add the installation prefix of "ur_msgs" to CMAKE_PREFIX_PATH or set
+[0.418s]   "ur_msgs_DIR" to a directory containing one of the above files.  If
+[0.418s]   "ur_msgs" provides a separate development package or SDK, be sure it has
+[0.418s]   been installed.
+[0.418s] 
+[0.418s] [0m
+[0.418s] -- Configuring incomplete, errors occurred!
+[0.422s] Invoked command in '/home/tamar/RBE594_ws/build/ur_controllers' returned '1': AMENT_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs:/home/tamar/RBE594_ws/install/moveit_resources:/home/tamar/RBE594_ws/install/moveit_resources_pr2_description:/home/tamar/RBE594_ws/install/moveit_resources_panda_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_panda_description:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_moveit_config:/home/tamar/RBE594_ws/install/moveit_resources_fanuc_description:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/opt/ros/humble LD_LIBRARY_PATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tamar/RBE594_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_controllers

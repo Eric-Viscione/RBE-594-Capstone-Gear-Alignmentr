@@ -1,0 +1,357 @@
+[0.013s] Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+[0.061s] [  0%] [0mBuilt target ur_msgs__cpp[0m
+[0.061s] [  0%] [0mBuilt target ament_cmake_python_symlink_ur_msgs[0m
+[0.063s] [ 12%] [0mBuilt target ur_msgs__rosidl_generator_c[0m
+[0.069s] [ 24%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[0.070s] [ 36%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_c[0m
+[0.070s] [ 48%] [0mBuilt target ur_msgs__rosidl_typesupport_c[0m
+[0.072s] [ 60%] [0mBuilt target ur_msgs__rosidl_typesupport_cpp[0m
+[0.072s] [ 72%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_cpp[0m
+[0.074s] [ 84%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_c[0m
+[0.079s] [ 84%] [0mBuilt target ur_msgs[0m
+[0.085s] [ 85%] [0mBuilt target ur_msgs__py[0m
+[0.096s] [ 96%] [0mBuilt target ur_msgs__rosidl_generator_py[0m
+[0.103s] [ 97%] [0mBuilt target ur_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.103s] [ 99%] [0mBuilt target ur_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[0.103s] [100%] [0mBuilt target ur_msgs__rosidl_typesupport_c__pyext[0m
+[0.171s] running egg_info
+[0.171s] writing ur_msgs.egg-info/PKG-INFO
+[0.171s] writing dependency_links to ur_msgs.egg-info/dependency_links.txt
+[0.171s] writing top-level names to ur_msgs.egg-info/top_level.txt
+[0.172s] reading manifest file 'ur_msgs.egg-info/SOURCES.txt'
+[0.173s] writing manifest file 'ur_msgs.egg-info/SOURCES.txt'
+[0.183s] [100%] [0mBuilt target ament_cmake_python_build_ur_msgs_egg[0m
+[0.191s] Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+[0.191s] Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs
+[0.228s] -- Install configuration: ""
+[0.229s] -- Execute custom install script
+[0.229s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/rosidl_interfaces/ur_msgs
+[0.230s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__functions.h
+[0.230s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/tool_contact.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/analog.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__functions.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__struct.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__type_support.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/digital.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/io_states.h
+[0.231s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/masterboard_data_msg.h
+[0.232s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_mode_data_msg.h
+[0.232s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_state_rt_msg.h
+[0.232s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.232s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/tool_data_msg.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__functions.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__struct.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__type_support.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__functions.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__struct.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__type_support.h
+[0.233s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__functions.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__struct.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__type_support.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__functions.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__struct.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__type_support.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__functions.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__struct.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__type_support.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__functions.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__struct.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/get_robot_software_version.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_analog_output.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_force_mode.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_io.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_payload.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_speed_slider_fraction.h
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/library_path.sh
+[0.234s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/library_path.dsv
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_fastrtps_c.h
+[0.235s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_fastrtps_c.h
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_c.h
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_fastrtps_c.h
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_fastrtps_c.h
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__builder.hpp
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__struct.hpp
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__traits.hpp
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__type_support.hpp
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/tool_contact.hpp
+[0.236s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/analog.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__builder.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__struct.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__traits.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__type_support.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__builder.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__struct.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__traits.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__type_support.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__builder.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__struct.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__traits.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__type_support.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__builder.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__struct.hpp
+[0.237s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__traits.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__type_support.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__builder.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__struct.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__traits.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__type_support.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__builder.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__struct.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__traits.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__type_support.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__builder.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__struct.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__traits.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__type_support.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/digital.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/io_states.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/masterboard_data_msg.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_mode_data_msg.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/robot_state_rt_msg.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/tool_data_msg.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__builder.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__struct.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__traits.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__type_support.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__builder.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__struct.hpp
+[0.238s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__traits.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__type_support.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__builder.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__struct.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__traits.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__type_support.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__builder.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__struct.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__traits.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__type_support.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__builder.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__struct.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__traits.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__type_support.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__builder.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__struct.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__traits.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__type_support.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/get_robot_software_version.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_analog_output.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_force_mode.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_io.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_payload.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/set_speed_slider_fraction.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[0.240s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[0.241s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.241s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_fastrtps_cpp.hpp
+[0.241s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_fastrtps_cpp.hpp
+[0.241s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_fastrtps_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_fastrtps_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_fastrtps_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_introspection_c.h
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/action/detail/tool_contact__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/analog__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/digital__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/io_states__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/masterboard_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_mode_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/robot_state_rt_msg__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/msg/detail/tool_data_msg__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/get_robot_software_version__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_analog_output__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_force_mode__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_io__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_payload__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/include/ur_msgs/ur_msgs/srv/detail/set_speed_slider_fraction__rosidl_typesupport_introspection_cpp.hpp
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/pythonpath.sh
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/pythonpath.dsv
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/PKG-INFO
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/SOURCES.txt
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/dependency_links.txt
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs-2.2.0-py3.10.egg-info/top_level.txt
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/__init__.py
+[0.242s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_c.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/_ur_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/__init__.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/_tool_contact.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action/_tool_contact_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/libur_msgs__rosidl_generator_py.so
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/__init__.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_analog.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_analog_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_digital.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_digital_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_io_states.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_io_states_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_masterboard_data_msg.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_masterboard_data_msg_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_mode_data_msg.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_mode_data_msg_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_state_rt_msg.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_robot_state_rt_msg_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_tool_data_msg.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg/_tool_data_msg_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/__init__.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_get_robot_software_version.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_get_robot_software_version_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_analog_output.py
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_analog_output_s.c
+[0.243s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_force_mode.py
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_force_mode_s.c
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_io.py
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_io_s.c
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_payload.py
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_payload_s.c
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_speed_slider_fraction.py
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv/_set_speed_slider_fraction_s.c
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/ur_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Analog.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Digital.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/IOStates.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotStateRTMsg.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/MasterboardDataMsg.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotModeDataMsg.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/ToolDataMsg.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/action/ToolContact.idl
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Analog.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/Digital.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/IOStates.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotStateRTMsg.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/MasterboardDataMsg.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/RobotModeDataMsg.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/msg/ToolDataMsg.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput.srv
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput_Request.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetAnalogOutput_Response.msg
+[0.244s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload.srv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload_Request.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetPayload_Response.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction.srv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction_Request.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetSpeedSliderFraction_Response.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO.srv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO_Request.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetIO_Response.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion.srv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion_Request.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/GetRobotSoftwareVersion_Response.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode.srv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode_Request.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/srv/SetForceMode_Response.msg
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/action/ToolContact.action
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/package_run_dependencies/ur_msgs
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/parent_prefix_path/ur_msgs
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/ament_prefix_path.sh
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/ament_prefix_path.dsv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/path.sh
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/environment/path.dsv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.bash
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.sh
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.zsh
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/local_setup.dsv
+[0.245s] -- Symlinking: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/package.dsv
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ament_index/resource_index/packages/ur_msgs
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake-extras.cmake
+[0.245s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgsConfig.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgsConfig-version.cmake
+[0.246s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/package.xml
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_c.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_c.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_c.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_c.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_introspection_cpp.so
+[0.246s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_typesupport_cpp.so
+[0.259s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs'...
+[0.260s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/action'...
+[0.260s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/msg'...
+[0.260s] Listing '/home/tamar/RBE594_ws/install/ur_msgs/local/lib/python3.10/dist-packages/ur_msgs/srv'...
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/lib/libur_msgs__rosidl_generator_py.so
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_cppExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cppExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/ur_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_pyExport.cmake
+[0.262s] -- Up-to-date: /home/tamar/RBE594_ws/install/ur_msgs/share/ur_msgs/cmake/export_ur_msgs__rosidl_generator_pyExport-noconfig.cmake
+[0.271s] Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs

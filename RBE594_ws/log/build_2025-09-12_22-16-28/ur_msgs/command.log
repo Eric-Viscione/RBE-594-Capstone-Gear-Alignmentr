@@ -1,0 +1,6 @@
+Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/ur_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_msgs
+Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/ur_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/ur_msgs
+Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/ur_msgs -- -j32 -l32
+Invoking command in '/home/tamar/RBE594_ws/build/ur_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs
+Invoked command in '/home/tamar/RBE594_ws/build/ur_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/ur_msgs

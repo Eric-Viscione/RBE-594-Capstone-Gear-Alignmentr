@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/build/moveit_resources/ament_cmake_environment_hooks/local_setup.sh

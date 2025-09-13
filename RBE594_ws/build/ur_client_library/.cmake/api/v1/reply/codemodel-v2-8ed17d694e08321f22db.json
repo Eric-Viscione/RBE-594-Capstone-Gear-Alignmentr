@@ -1,0 +1,202 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-bec101a2d2de1e1c7a4f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "examples",
+					"jsonFile" : "directory-examples-RelWithDebInfo-1c8b83b621b6ef38a245.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "examples",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ur_client_library",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "ur_driver_examples",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "dashboard_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-dashboard_example-RelWithDebInfo-92320931a7a1779206c3.json",
+					"name" : "dashboard_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "driver_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-driver_example-RelWithDebInfo-00488e7ea6c87ff42aa1.json",
+					"name" : "driver_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "force_mode_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-force_mode_example-RelWithDebInfo-0889c261cfe35339feca.json",
+					"name" : "force_mode_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "freedrive_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-freedrive_example-RelWithDebInfo-4a9807cd4698bdd37d42.json",
+					"name" : "freedrive_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "instruction_executor::@714eac15f71a94114fdf",
+					"jsonFile" : "target-instruction_executor-RelWithDebInfo-51e9aef0caf64587adae.json",
+					"name" : "instruction_executor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "primary_pipeline_calibration_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-primary_pipeline_calibration_example-RelWithDebInfo-4ac42642d8dd5d5bf4a2.json",
+					"name" : "primary_pipeline_calibration_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "primary_pipeline_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-primary_pipeline_example-RelWithDebInfo-373e44b4b7466951cada.json",
+					"name" : "primary_pipeline_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "rtde_client_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-rtde_client_example-RelWithDebInfo-b627be1851d3362c1936.json",
+					"name" : "rtde_client_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "script_sender_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-script_sender_example-RelWithDebInfo-8dffebf60e182373efd5.json",
+					"name" : "script_sender_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "spline_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-spline_example-RelWithDebInfo-1a03e60c65beff443686.json",
+					"name" : "spline_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "tool_contact_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-tool_contact_example-RelWithDebInfo-777b0681fe7d89a8b042.json",
+					"name" : "tool_contact_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "trajectory_point_interface_example::@714eac15f71a94114fdf",
+					"jsonFile" : "target-trajectory_point_interface_example-RelWithDebInfo-38514296be95f2193587.json",
+					"name" : "trajectory_point_interface_example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urcl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urcl-RelWithDebInfo-c90eb8e6267e763effea.json",
+					"name" : "urcl",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tamar/RBE594_ws/build/ur_client_library",
+		"source" : "/home/tamar/RBE594_ws/src/Universal_Robots_Client_Library"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

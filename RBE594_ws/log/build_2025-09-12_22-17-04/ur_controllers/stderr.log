@@ -1,0 +1,205 @@
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::return_type ur_controllers::ScaledJointTrajectoryController::update(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:140:74:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator&&[m[K’ (operand types are ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ and ‘[01m[Kbool[m[K’)
+  140 | _external_msg != *new_external_msg && ([32m[Krt_has_pending_goal_[m[K [01;31m[K&&[m[K [34m[K!active_goal[m[K) == false) {
+      |                                        [32m[K~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~~~~~[m[K
+      |                                        [32m[K|[m[K                       [34m[K|[m[K
+      |                                        [32m[K|[m[K                       [34m[Kbool[m[K
+      |                                        [32m[Krealtime_tools::RealtimeBuffer<bool>[m[K
+
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:140:74:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator&&(bool, bool)[m[K’ (built-in)
+  140 | _external_msg != *new_external_msg && ([01;36m[Krt_has_pending_goal_ && !active_goal[m[K) == false) {
+      |                                        [01;36m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:140:74:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:207:33:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator![m[K’ (operand type is ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’)
+  207 |       if (!before_last_point && [01;31m[K!rt_is_holding_[m[K && cmd_timeout_ > 0.0 && time_difference > cmd_timeout_) {
+      |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:207:33:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator!(bool)[m[K’ (built-in)
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:207:33:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+In file included from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface_base.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:28[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst std::mutex& operator!(const std::mutex&)[m[K’
+   55 | inline const std::mutex & [01;36m[Koperator[m[K!(const std::mutex & a)
+      |                           [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kconst std::mutex&[m[K’
+   55 | inline const std::mutex & operator!([01;36m[Kconst std::mutex & a[m[K)
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:221:52:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator![m[K’ (operand type is ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’)
+  221 |         if ((before_last_point || first_sample) && [01;31m[K!rt_is_holding_[m[K &&
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:221:52:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator!(bool)[m[K’ (built-in)
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:221:52:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+In file included from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface_base.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:28[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst std::mutex& operator!(const std::mutex&)[m[K’
+   55 | inline const std::mutex & [01;36m[Koperator[m[K!(const std::mutex & a)
+      |                           [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kconst std::mutex&[m[K’
+   55 | inline const std::mutex & operator!([01;36m[Kconst std::mutex & a[m[K)
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:227:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator![m[K’ (operand type is ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’)
+  227 |         if (!before_last_point && [01;31m[K!rt_is_holding_[m[K &&
+      |                                   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:227:35:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator!(bool)[m[K’ (built-in)
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:227:35:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+In file included from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface_base.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:28[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst std::mutex& operator!(const std::mutex&)[m[K’
+   55 | inline const std::mutex & [01;36m[Koperator[m[K!(const std::mutex & a)
+      |                           [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kconst std::mutex&[m[K’
+   55 | inline const std::mutex & operator!([01;36m[Kconst std::mutex & a[m[K)
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:297:34:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ and ‘[01m[Kbool[m[K’)
+  297 |           rt_has_pending_goal_ = [01;31m[Kfalse[m[K;
+      |                                  [01;31m[K^~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/control_toolbox/control_toolbox/pid.hpp:41[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:27[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krealtime_tools::RealtimeBuffer<T>& realtime_tools::RealtimeBuffer<T>::operator=(const realtime_tools::RealtimeBuffer<T>&) [with T = bool][m[K’
+   88 |   RealtimeBuffer & [01;36m[Koperator[m[K=(const RealtimeBuffer & source)
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kbool[m[K’ to ‘[01m[Kconst realtime_tools::RealtimeBuffer<bool>&[m[K’
+   88 |   RealtimeBuffer & operator=([01;36m[Kconst RealtimeBuffer & source[m[K)
+      |                              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:313:36:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ and ‘[01m[Kbool[m[K’)
+  313 |             rt_has_pending_goal_ = [01;31m[Kfalse[m[K;
+      |                                    [01;31m[K^~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/control_toolbox/control_toolbox/pid.hpp:41[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:27[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krealtime_tools::RealtimeBuffer<T>& realtime_tools::RealtimeBuffer<T>::operator=(const realtime_tools::RealtimeBuffer<T>&) [with T = bool][m[K’
+   88 |   RealtimeBuffer & [01;36m[Koperator[m[K=(const RealtimeBuffer & source)
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kbool[m[K’ to ‘[01m[Kconst realtime_tools::RealtimeBuffer<bool>&[m[K’
+   88 |   RealtimeBuffer & operator=([01;36m[Kconst RealtimeBuffer & source[m[K)
+      |                              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:330:36:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ and ‘[01m[Kbool[m[K’)
+  330 |             rt_has_pending_goal_ = [01;31m[Kfalse[m[K;
+      |                                    [01;31m[K^~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/control_toolbox/control_toolbox/pid.hpp:41[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:27[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krealtime_tools::RealtimeBuffer<T>& realtime_tools::RealtimeBuffer<T>::operator=(const realtime_tools::RealtimeBuffer<T>&) [with T = bool][m[K’
+   88 |   RealtimeBuffer & [01;36m[Koperator[m[K=(const RealtimeBuffer & source)
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.hpp:88:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kbool[m[K’ to ‘[01m[Kconst realtime_tools::RealtimeBuffer<bool>&[m[K’
+   88 |   RealtimeBuffer & operator=([01;36m[Kconst RealtimeBuffer & source[m[K)
+      |                              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:338:53:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator![m[K’ (operand type is ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’)
+  338 |       } else if (tolerance_violated_while_moving && [01;31m[K!rt_has_pending_goal_[m[K) {
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:338:53:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator!(bool)[m[K’ (built-in)
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:338:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+In file included from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface_base.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:28[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst std::mutex& operator!(const std::mutex&)[m[K’
+   55 | inline const std::mutex & [01;36m[Koperator[m[K!(const std::mutex & a)
+      |                           [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kconst std::mutex&[m[K’
+   55 | inline const std::mutex & operator!([01;36m[Kconst std::mutex & a[m[K)
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:344:61:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator![m[K’ (operand type is ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’)
+  344 |       } else if (!before_last_point && !within_goal_time && [01;31m[K!rt_has_pending_goal_[m[K) {
+      |                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:344:61:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator!(bool)[m[K’ (built-in)
+[01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:344:61:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kbool[m[K’
+In file included from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:30[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:26[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface_base.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/controller_interface/controller_interface.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/joint_trajectory_controller/joint_trajectory_controller/joint_trajectory_controller.hpp:28[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/include/ur_controllers/scaled_joint_trajectory_controller.hpp:43[m[K,
+                 from [01m[K/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_controllers/src/scaled_joint_trajectory_controller.cpp:41[m[K:
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst std::mutex& operator!(const std::mutex&)[m[K’
+   55 | inline const std::mutex & [01;36m[Koperator[m[K!(const std::mutex & a)
+      |                           [01;36m[K^~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:55:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krealtime_tools::RealtimeBuffer<bool>[m[K’ to ‘[01m[Kconst std::mutex&[m[K’
+   55 | inline const std::mutex & operator!([01;36m[Kconst std::mutex & a[m[K)
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~^[m[K
+gmake[2]: *** [CMakeFiles/ur_controllers.dir/build.make:107: CMakeFiles/ur_controllers.dir/src/scaled_joint_trajectory_controller.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:493: CMakeFiles/ur_controllers.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

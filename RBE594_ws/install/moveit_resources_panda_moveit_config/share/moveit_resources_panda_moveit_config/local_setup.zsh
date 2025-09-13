@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/build/moveit_resources_panda_moveit_config/ament_cmake_environment_hooks/local_setup.zsh

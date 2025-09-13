@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/build/ur_msgs/rosidl_generator_py/ur_msgs/msg/_robot_mode_data_msg_s.c

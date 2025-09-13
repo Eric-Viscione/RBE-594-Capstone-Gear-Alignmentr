@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/build/ur_msgs/rosidl_generator_c/ur_msgs/srv/detail/set_force_mode__type_support.h
