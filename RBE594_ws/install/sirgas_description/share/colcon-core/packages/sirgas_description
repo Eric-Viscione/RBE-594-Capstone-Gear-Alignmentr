@@ -1,1 +1,1 @@
-rviz:xacro
+controller_interface:controller_manager:geometry_msgs:hardware_interface:pluginlib:rclcpp:rclcpp_action:realtime_tools:rviz:std_msgs:trajectory_msgs:ur_dashboard_msgs:ur_msgs:xacro

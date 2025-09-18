@@ -16,7 +16,7 @@ set(_ur_description_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT ur_description_FIND_QUIETLY)
-  message(STATUS "Found ur_description: 2.6.0 (${ur_description_DIR})")
+  message(STATUS "Found ur_description: 2.7.0 (${ur_description_DIR})")
 endif()
 
 # warn when using a deprecated package

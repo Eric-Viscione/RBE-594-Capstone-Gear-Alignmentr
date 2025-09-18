@@ -1,2 +1,0 @@
-Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
-Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '2': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32

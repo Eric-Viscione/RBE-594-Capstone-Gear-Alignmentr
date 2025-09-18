@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
+    COMMAND "/home/tamar/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -310,8 +310,8 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "DESTINATION" "share/sirgas_description/")
-ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/sirgas_description" DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "DESTINATION" "share/sirgas_description/")
+# install(DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "DESTINATION" "share/sirgas_description/")
+ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/sirgas_description" DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "DESTINATION" "share/sirgas_description/")
 
 # install(FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/sirgas_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/sirgas_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
@@ -319,14 +319,14 @@ ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description"
 # install(FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/sirgas_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/sirgas_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
-# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/sirgas_description/environment")
-ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/sirgas_description/environment")
+# install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/sirgas_description/environment")
+ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/sirgas_description/environment")
 
 # install(FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/sirgas_description/environment")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/sirgas_description/environment")
 
-# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/sirgas_description/environment")
-ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/sirgas_description/environment")
+# install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/sirgas_description/environment")
+ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/sirgas_description/environment")
 
 # install(FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/sirgas_description/environment")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/sirgas_description/environment")

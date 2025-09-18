@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_msgs/rosidl_cmake/srv/SetForceMode_Response.msg

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/tamar/RBE594_ws/build/ur_simulation_gz/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

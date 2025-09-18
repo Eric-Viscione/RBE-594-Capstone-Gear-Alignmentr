@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_msgs/rosidl_typesupport_introspection_cpp/ur_msgs/msg/detail/digital__rosidl_typesupport_introspection_cpp.hpp

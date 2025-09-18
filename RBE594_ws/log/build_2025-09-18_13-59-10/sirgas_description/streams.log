@@ -1,0 +1,46 @@
+[0.005s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/sirgas_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/sirgas_description
+[0.051s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.051s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.051s]   CMake.
+[0.051s] 
+[0.051s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.051s]   to tell CMake that the project requires at least <min> but has been updated
+[0.051s]   to work with policies introduced by <max> or earlier.
+[0.051s] 
+[0.051s] [0m
+[0.054s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.169s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.214s] -- Configuring done (0.2s)
+[0.215s] -- Generating done (0.0s)
+[0.216s] -- Build files have been written to: /home/tamar/RBE594_ws/build/sirgas_description
+[0.218s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake /home/tamar/RBE594_ws/src/sirgas_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/sirgas_description
+[0.218s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.264s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.306s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description
+[0.340s] -- Install configuration: ""
+[0.340s] -- Execute custom install script
+[0.340s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
+[0.342s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
+[0.344s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
+[0.345s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
+[0.347s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Peg_Board.stl
+[0.349s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
+[0.351s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
+[0.352s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+[0.354s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
+[0.356s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description
+[0.359s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description
+[0.363s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh
+[0.367s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.dsv
+[0.373s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.sh
+[0.379s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.dsv
+[0.385s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.bash
+[0.394s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.sh
+[0.401s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.zsh
+[0.403s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.dsv
+[0.408s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.dsv
+[0.417s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/packages/sirgas_description
+[0.425s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig.cmake
+[0.432s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig-version.cmake
+[0.439s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.xml
+[0.450s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /home/tamar/.local/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description

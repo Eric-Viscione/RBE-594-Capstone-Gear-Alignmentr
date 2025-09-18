@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/tamar/RBE594_ws/build/ur_client_library/cmake_install.cmake",
-		"/home/tamar/RBE594_ws/build/ur_client_library/examples/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

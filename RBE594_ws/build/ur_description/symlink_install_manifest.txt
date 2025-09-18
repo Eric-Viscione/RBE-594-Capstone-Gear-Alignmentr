@@ -47,6 +47,10 @@
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur7e/joint_limits.yaml
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur7e/physical_parameters.yaml
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur7e/visual_parameters.yaml
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur8long/default_kinematics.yaml
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur8long/joint_limits.yaml
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur8long/physical_parameters.yaml
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/config/ur8long/visual_parameters.yaml
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/launch/view_ur.launch.py
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur10/collision/base.stl
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur10/collision/forearm.stl
@@ -174,6 +178,12 @@
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist1.dae
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist2.dae
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur5e/visual/wrist3.dae
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/LICENSE.txt
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/collision/forearm.stl
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/collision/upperarm.stl
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/visual/UR8Long_DIFF_8bit_2K.jpg
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/visual/forearm.dae
+/home/tamar/RBE594_ws/install/ur_description/share/ur_description/meshes/ur8long/visual/upperarm.dae
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/rviz/view_robot.rviz
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/urdf/inc/ur_common.xacro
 /home/tamar/RBE594_ws/install/ur_description/share/ur_description/urdf/inc/ur_transmissions.xacro

@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_moveit_config/ament_cmake_environment_hooks/pythonpath.sh

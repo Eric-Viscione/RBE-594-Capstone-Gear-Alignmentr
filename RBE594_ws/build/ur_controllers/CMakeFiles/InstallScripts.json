@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/tamar/RBE594_ws/build/ur_controllers/cmake_install.cmake",
-		"/home/tamar/RBE594_ws/build/ur_controllers/gmock/cmake_install.cmake",
-		"/home/tamar/RBE594_ws/build/ur_controllers/gtest/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

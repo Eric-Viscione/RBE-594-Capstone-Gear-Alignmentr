@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/tamar/RBE594_ws/build/ur_robot_driver/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

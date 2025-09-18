@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_calibration/ament_cmake_environment_hooks/local_setup.zsh

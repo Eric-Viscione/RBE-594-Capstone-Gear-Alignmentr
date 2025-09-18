@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Driver/ur_bringup/launch/ur10e.launch.py

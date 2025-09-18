@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_msgs/rosidl_generator_cpp/ur_msgs/msg/detail/io_states__type_support.hpp

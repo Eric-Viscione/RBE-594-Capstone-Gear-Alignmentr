@@ -1,4 +1,0 @@
-[0.004s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
-[0.010s] gmake: /home/tamar/.local/lib/python3.10/site-packages/cmake/data/bin/cmake: No such file or directory
-[0.010s] gmake: *** [Makefile:226: cmake_check_build_system] Error 127
-[0.011s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '2': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32

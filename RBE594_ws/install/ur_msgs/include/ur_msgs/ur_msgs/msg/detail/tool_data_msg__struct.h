@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/ur_msgs/rosidl_generator_c/ur_msgs/msg/detail/tool_data_msg__struct.h

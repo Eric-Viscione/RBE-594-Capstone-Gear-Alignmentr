@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/tamar/RBE594_ws/build/sirgas_description/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

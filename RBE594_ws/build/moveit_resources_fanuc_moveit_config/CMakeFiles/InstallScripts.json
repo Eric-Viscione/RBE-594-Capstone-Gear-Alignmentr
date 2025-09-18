@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/tamar/RBE594_ws/build/moveit_resources_fanuc_moveit_config/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
