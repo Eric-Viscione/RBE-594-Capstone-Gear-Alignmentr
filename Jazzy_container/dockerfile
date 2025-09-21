@@ -1,0 +1,81 @@
+FROM osrf/ros:jazzy-desktop-full
+
+# Combine apt-get commands to reduce image layers
+RUN apt-get update && apt-get install -y \
+    nano \
+    gedit \
+    bash-completion \
+    python3-argcomplete \
+    sudo \
+    python3-pip \
+    python3-venv \
+    python3-dev \
+    curl gnupg2 \
+    software-properties-common \
+    x11-apps \
+    cmake \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add ROS 2 apt repository and keys
+RUN add-apt-repository universe \
+    && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/ros.gpg > /dev/null \
+    && echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" > /etc/apt/sources.list.d/ros2.list
+
+# Add NVIDIA CUDA repository and install toolkit, including GPG key
+RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null \
+    && echo "deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" | tee /etc/apt/sources.list.d/cuda.list > /dev/null \
+    && echo "deb http://archive.ubuntu.com/ubuntu/ focal main universe" | tee /etc/apt/sources.list.d/focal.list > /dev/null \
+    && apt-get update \
+    && apt-get install -y libtinfo5 \
+    && rm /etc/apt/sources.list.d/focal.list \
+    && apt-get update \
+    && apt-get install -y \
+    cuda-toolkit-12-3 \
+    nvidia-container-toolkit
+
+# Define build arguments for the new user and group.
+ARG USERNAME=tamar
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+# Check if a user with the UID 1000 exists. If so, rename them and their group to 'tamar'.
+RUN ORIGINAL_USER=$(getent passwd $USER_UID | cut -d: -f1) && \
+    if [ "$ORIGINAL_USER" != "$USERNAME" ]; then \
+        usermod -l $USERNAME $ORIGINAL_USER && \
+        usermod -d /home/$USERNAME -m $USERNAME && \
+        groupmod -n $USERNAME $ORIGINAL_USER; \
+    fi && \
+    # Set up sudo for the user
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Ensure home directory permissions are correct
+RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/
+
+# Set environment variables for the display.
+ENV DISPLAY=:0
+ENV QT_X11_NO_MITSHM=1
+
+# Copy entrypoint and bashrc to the user's home directory
+COPY entrypoint.sh /entrypoint.sh
+COPY bashrc /home/$USERNAME/.bashrc
+
+USER $USERNAME
+
+ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
+
+CMD ["bash"]
+
+# Creates a container named capstone with a link to the RBE594_ws folder as well as the ability to use GUIs like on your local machine
+# docker run -it --gpus all --name capstone \
+#    -v ~/RBE594_ws:/home/tamar/RBE594_ws \
+#    -e DISPLAY=$DISPLAY \
+#    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+#    -v $HOME/.Xauthority:/home/tamar/.Xauthority \
+#    rbe594_ws
+
+# Starts a terminal with access to the container
+# docker start -i capstone
+
+# Creates a new terminal with access to the terminal that's different from other terminals
+# docker exec -it capstone bash

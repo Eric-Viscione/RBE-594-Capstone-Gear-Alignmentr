@@ -1,0 +1,25 @@
+## Export
+export TURTLEBOT3_MODEL=waffle
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+## Source
+source /opt/ros/jazzy/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+source /usr/share/gazebo/setup.bash
+
+
+## Alias
+alias bash="source ~/.bashrc"
+alias virtual="source vEnv/bin/activate"
+alias cb="colcon build"
+alias cbp="colcon build --packages-select"
+alias cbs="colcon build --symlink-install"
+alias cpkg="ros2 pkg create"
+alias rr="ros2 run"
+alias rl="ros2 launch"
+alias rtl="ros2 topic list"
+alias rte="ros2 topic echo"
+alias rsl="ros2 service list"
+alias rsc="ros2 service call"
+alias ril="ros2 interface list"
+alias ris="ros2 interface show"
