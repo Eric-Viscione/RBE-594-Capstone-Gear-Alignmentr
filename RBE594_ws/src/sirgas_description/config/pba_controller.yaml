@@ -1,0 +1,32 @@
+# Configuration for the ROS 2 Controllers for the Peg Board Assembly
+
+controller_manager:
+  ros__parameters:
+    # Controller update rate (default is 100 Hz)
+    update_rate: 100  
+
+    # 1. Joint State Broadcaster
+    # Essential for publishing joint positions/velocities for RViz and other nodes
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    
+    # 2. Velocity Controller for the starter gear
+    # We use JointGroupVelocityController for robustness, configured for one joint
+    pb_starter_joint_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+# Parameters specific to the starter gear controller
+pb_starter_joint_controller:
+  ros__parameters:
+    # Explicitly list the joint(s) this controller will manage.
+    # The starter joint is named 'pb_starter_joint' in your URDF.
+    joints:
+      - pb_starter_joint
+    
+    # Optional: If the gear doesn't move or is unstable, you may need to tune PID gains.
+    # For initial testing, the default/simulated physics often work without these.
+    # pid:
+    #   pb_starter_joint:
+    #     p: 10.0
+    #     i: 0.01
+    #     d: 0.1
