@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!-- Load robot description -->
+    <let name="urdf_path" 
+         value="$(find-pkg-share sirgas_description)/urdf/pba.urdf.xacro" />
+    
+    <arg name="use_sim_time" default="true" />
+    
+    <!-- Launch Ignition Gazebo -->
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="use_sim_time" value="$(var use_sim_time)" />
+        <arg name="gz_args" value="-r empty.sdf" />
+    </include>
+
+    <!-- Wait for Gazebo to start -->
+    <timer period="3.0"/>
+
+    <!-- Load robot description -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="use_sim_time" value="$(var use_sim_time)" />
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <!-- Spawn robot in Gazebo -->
+    <node pkg="ros_gz_sim" exec="create"
+          args="-topic robot_description -name peg_board_assembly -z 0.0"
+          output="screen" />
+
+    <!-- Wait for robot to spawn -->
+    <timer period="5.0"/>
+
+    <!-- Load controller configuration -->
+    <let name="controller_config_path" 
+         value="$(find-pkg-share sirgas_description)/config/pba_controller.yaml" />
+
+    <!-- Load controllers -->
+    <node pkg="controller_manager" exec="ros2_control_node" 
+          output="screen" respawn="true">
+        <param from="$(var controller_config_path)" />
+        <param name="use_sim_time" value="$(var use_sim_time)" />
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <!-- Wait for controller manager to start -->
+    <timer period="8.0"/>
+
+    <!-- Spawn joint state broadcaster -->
+    <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster"
+          output="screen" />
+
+    <!-- Wait for joint state broadcaster -->
+    <timer period="10.0"/>
+
+    <!-- Spawn velocity controller -->
+    <node pkg="controller_manager" exec="spawner" args="forward_velocity_controller"
+          output="screen" />
+
+</launch>

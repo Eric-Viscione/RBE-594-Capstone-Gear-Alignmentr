@@ -38,7 +38,7 @@
         <origin rpy="0 0 0" xyz="-0.375 0 0.125"/>
         <axis xyz="0 0 1"/>
         <limit effort="1500.0" lower="${-2*pi}" upper="${2*pi}" velocity="10.0"/>
-        <dynamics damping="0" friction="0"/>
+        <dynamics damping="0.1" friction="0.01"/>
     </joint>
 
     <link name="starter_gear">
@@ -70,10 +70,10 @@
         <origin rpy="0 0 0" xyz="0 0 0.125"/>
         <axis xyz="0 0 1"/>
         <limit effort="1500.0" lower="${-2*pi}" upper="${2*pi}" velocity="10.0"/>
-        <dynamics damping="0" friction="0"/>
+        <dynamics damping="0.1" friction="0.01"/>
         
         <mimic joint="pb_starter_joint" multiplier="-1.76923" offset="0"/>
-        </joint>
+    </joint>
 
     <link name="first_gear">
         <visual>
@@ -104,10 +104,10 @@
         <origin rpy="0 0 0" xyz="0.25 0 0.125"/>
         <axis xyz="0 0 1"/>
         <limit effort="1500.0" lower="${-2*pi}" upper="${2*pi}" velocity="10.0"/>
-        <dynamics damping="0" friction="0"/>
+        <dynamics damping="0.1" friction="0.01"/>
         
         <mimic joint="pb_first_joint" multiplier="-1.0" offset="0"/>
-        </joint>
+    </joint>
 
     <link name="second_gear">
         <visual>
@@ -138,10 +138,10 @@
         <origin rpy="0 0 0" xyz="0.45 0 0.125"/>
         <axis xyz="0 0 1"/>
         <limit effort="1500.0" lower="${-2*pi}" upper="${2*pi}" velocity="10.0"/>
-        <dynamics damping="0" friction="0"/>
+        <dynamics damping="0.1" friction="0.01"/>
         
         <mimic joint="pb_second_joint" multiplier="-1.625" offset="0"/>
-        </joint>
+    </joint>
 
     <link name="third_gear">
         <visual>
@@ -166,42 +166,44 @@
         </inertial>
     </link>
 
-    <xacro:macro name="peg_board_assembly_ros2_control">
-        <ros2_control name="GazeboSystem" type="system">
-            <hardware>
-                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-            </hardware>
-            
-            <joint name="pb_starter_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <param name="sim_hardware_interface">velocity_controllers/VelocityJointInterface</param>
-            </joint>
-            
-            <joint name="pb_first_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <param name="sim_hardware_interface">velocity_controllers/VelocityJointInterface</param>
-            </joint>
+     <!-- ROS 2 Control configuration -->
+     <!-- Only the master joint (pb_starter_joint) gets command interfaces -->
+     <!-- Mimic joints only get state interfaces -->
+    <ros2_control name="peg_board_control" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+        <joint name="pb_starter_joint">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="pb_first_joint">
+            <!-- Only state interfaces for mimic joints -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="pb_second_joint">
+            <!-- Only state interfaces for mimic joints -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="pb_third_joint">
+            <!-- Only state interfaces for mimic joints -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
 
-            <joint name="pb_second_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <param name="sim_hardware_interface">velocity_controllers/VelocityJointInterface</param>
-            </joint>
+    <!-- Fixed Ignition Gazebo plugin for ROS 2 Control -->
+    <gazebo>
+        <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find sirgas_description)/config/pba_controller.yaml</parameters>
+            <controller_manager_node_name>controller_manager</controller_manager_node_name>
+        </plugin>
+    </gazebo>
 
-            <joint name="pb_third_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-                <param name="sim_hardware_interface">velocity_controllers/VelocityJointInterface</param>
-            </joint>
-        </ros2_control>
-    </xacro:macro>
-
-    <xacro:peg_board_assembly_ros2_control/>
-    
-    </robot>
+</robot>
