@@ -1,105 +1,140 @@
 import os
-import shutil
-import subprocess
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
 from launch_ros.actions import Node
 
-def launch_setup(context, *args, **kwargs):
-    ros_distro_value = LaunchConfiguration('ros_distro').perform(context)
+def generate_launch_description():
+    # --- Arguments ---
+    use_sim_time = LaunchConfiguration('use_sim_time')
     
-    # Determine the Gazebo package and executable based on the ROS distribution
-    gazebo_package = ''
-    gazebo_launch_executable = ''
-    spawn_executable = ''
-    spawn_arguments = []
-    world_arg = {}
-    
-    # Get package share directory paths
-    sirgas_description_dir = get_package_share_directory('sirgas_description')
-
-    if ros_distro_value == 'humble':
-        gazebo_package = 'gazebo_ros'
-        gazebo_launch_executable = 'gazebo.launch.py'
-        spawn_executable = 'spawn_entity.py'
-        spawn_arguments = ['-topic', 'robot_description', '-entity', 'peg_board_assembly']
-        world_arg = {'world': 'empty.world'}
-    else: # Default to Jazzy
-        gazebo_package = 'ros_gz_sim'
-        gazebo_launch_executable = 'gz_sim.launch.py'
-        spawn_executable = 'create'
-        spawn_arguments = ['-topic', 'robot_description', '-name', 'peg_board_assembly']
-        world_arg = {'gz_args': 'empty.sdf'}
-
-    # Path to the peg board URDF
-    peg_board_urdf_path = os.path.join(
-        sirgas_description_dir,
-        'urdf',
-        'pba.urdf.xacro'
+    declare_use_sim_time_arg = DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='true',
+        description='Use simulation (Gazebo) clock if true'
     )
     
-    # Find xacro executable and process the file directly
-    xacro_executable = shutil.which('xacro')
-    if xacro_executable is None:
-        raise RuntimeError("xacro executable not found in PATH. Please install it.")
-        
-    try:
-        # Run xacro as a subprocess to get the processed URDF as a string
-        peg_board_description_content = subprocess.check_output(
-            [xacro_executable, '--inorder', peg_board_urdf_path],
-            universal_newlines=True
-        )
-    except subprocess.CalledProcessError as e:
-        raise RuntimeError(f"Failed to process xacro file: {e}")
-
-    # Gazebo launch file
-    gazebo_ros_dir = get_package_share_directory(gazebo_package)
-    gazebo_launch_file_path = os.path.join(gazebo_ros_dir, 'launch', gazebo_launch_executable)
-
-    # Start Gazebo with an empty world
-    gazebo_server = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(gazebo_launch_file_path),
-        launch_arguments=world_arg.items()
+    # --- Paths ---
+    pkg_sirgas_description = get_package_share_directory('sirgas_description')
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+    
+    urdf_path = PathJoinSubstitution(
+        [pkg_sirgas_description, 'urdf', 'pba.urdf.xacro']
+    )
+    
+    controller_config_path = PathJoinSubstitution(
+        [pkg_sirgas_description, 'config', 'pba_controller.yaml']
     )
 
-    # Publish the robot state
-    peg_board_state_publisher = Node(
+    # Robot Description command for xacro
+    robot_description_content = Command(['xacro ', urdf_path])
+    
+    # --- Actions (Defined bottom-up for correct TimerAction chaining) ---
+
+    # 1. Spawn velocity controller (final step in the chain)
+    velocity_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['forward_velocity_controller'],
+        output='screen',
+    )
+    
+    # Wait for joint state broadcaster (2.0s delay after joint state broadcaster is spawned)
+    # Original delay was 10.0s, which is 2.0s after the 8.0s CM start.
+    timer_wait_for_jsb = TimerAction(
+        period=2.0, 
+        actions=[velocity_controller_spawner]
+    )
+
+    # 2. Spawn joint state broadcaster
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+        output='screen',
+    )
+    
+    # Wait for controller manager to start (3.0s delay after controller manager starts)
+    # Original delay was 8.0s, which is 3.0s after the 5.0s robot spawn.
+    ros2_control_node = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        parameters=[
+            controller_config_path, 
+            {'use_sim_time': use_sim_time},
+            {'robot_description': robot_description_content}
+        ],
+        output='screen',
+        respawn=True
+    )
+    timer_wait_for_controller_manager = TimerAction(
+        period=3.0, 
+        actions=[
+            joint_state_broadcaster_spawner,
+            timer_wait_for_jsb
+        ]
+    )
+
+    # 3. Load controllers (ros2_control_node)
+    
+    # Wait for robot to spawn (2.0s delay after robot is spawned)
+    # Original delay was 5.0s, which is 2.0s after the 3.0s Gazebo start.
+    timer_wait_for_spawn = TimerAction(
+        period=2.0, 
+        actions=[
+            ros2_control_node,
+            timer_wait_for_controller_manager
+        ]
+    )
+    
+    # 4. Robot State Publisher & Spawning
+    robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': peg_board_description_content}],
-        # Remap is crucial here to use the correct topic for spawning
-        remappings=[('/robot_description', '/robot_description')]
+        parameters=[{
+            'use_sim_time': use_sim_time,
+            'robot_description': robot_description_content
+        }],
+        output='screen'
     )
-
-    # Spawn the peg board entity in Gazebo
-    spawn_peg_board = Node(
-        package=gazebo_package,
-        executable=spawn_executable,
-        arguments=spawn_arguments,
+    spawn_robot_node = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-topic', 'robot_description', 
+            '-name', 'peg_board_assembly', 
+            '-z', '0.0'
+        ],
         output='screen'
     )
     
-    return [
-        gazebo_server,
-        peg_board_state_publisher,
-        spawn_peg_board,
-    ]
-
-
-def generate_launch_description():
-    # Declare the ros_distro argument to switch between Humble and Jazzy
-    ros_distro = DeclareLaunchArgument(
-        'ros_distro',
-        default_value='jazzy',
-        description='ROS 2 distribution to use (e.g., "humble" or "jazzy")'
+    # Wait for Gazebo to start (3.0s delay after Gazebo launch)
+    timer_wait_for_gazebo = TimerAction(
+        period=3.0, 
+        actions=[
+            robot_state_publisher_node,
+            spawn_robot_node,
+            timer_wait_for_spawn
+        ]
+    )
+    
+    # 5. Launch Ignition Gazebo
+    gz_sim_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
+        ),
+        launch_arguments={
+            'gz_args': '-r empty.sdf',
+            'use_sim_time': use_sim_time
+        }.items(),
     )
 
     return LaunchDescription([
-        ros_distro,
-        OpaqueFunction(function=launch_setup),
+        declare_use_sim_time_arg,
+        
+        # Start Gazebo, then wait 3.0s and execute the actions in timer_wait_for_gazebo
+        gz_sim_launch,
+        timer_wait_for_gazebo,
     ])
-
