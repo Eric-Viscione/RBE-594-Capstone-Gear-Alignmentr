@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="april_tag_panel"
+               params="parent_link tag_id:=0 size:=0.16 x:=0 y:=0 z:=0 roll:=0 pitch:=0 yaw:=0 thickness:=0.0005 texture_pkg:=sirgas_description">
+
+    <link name="april_tag_${tag_id}_link">
+      <visual name="april_tag_${tag_id}_vis">
+        <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/>
+        <geometry>
+          <box size="${size} ${size} ${thickness}"/>
+        </geometry>
+
+        <!-- URDF-compliant material (must have name) -->
+        <material name="april_tag_${tag_id}_mat">
+          <color rgba="1 1 1 1"/>
+          <texture filename="package://${texture_pkg}/meshes/apriltags/tag_${tag_id}.png"/>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/>
+        <geometry>
+          <box size="${size} ${size} ${thickness}"/>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+      </inertial>
+    </link>
+
+    <joint name="april_tag_${tag_id}_fixed" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="april_tag_${tag_id}_link"/>
+    </joint>
+  </xacro:macro>
+</robot>
