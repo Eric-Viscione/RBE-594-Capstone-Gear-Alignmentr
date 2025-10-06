@@ -1,0 +1,60 @@
+# Configuration file for ROS 2 controllers (Humble and Jazzy compatible)
+
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Controller update rate in Hz
+    
+    # 1. Controller for the input/driver joint (Starter Gear)
+    # This controller takes external commands (e.g., from a user node) and applies them to the pb_starter_joint.
+    gear_drive_controller:
+      type: velocity_controllers/JointGroupVelocityController
+      joints:
+        - pb_starter_joint
+    
+    # 2. Custom Controller for Gear Constraint Logic
+    # This controller is CRUCIAL for simulation. It reads the state of the 
+    # 'pb_starter_joint' and writes the correct velocity/effort to the 
+    # dependent joints based on the defined gear ratios.
+    gear_constraint_controller:
+      # NOTE: This type MUST be created by you. It is a placeholder for a custom ROS 2 controller.
+      # Example: your_package_name/GearConstraintController
+      type: custom_controllers/GearConstraintController 
+      
+      # Joints managed by this controller (all joints with a transmission)
+      joints:
+        - pb_starter_joint
+        - pb_first_joint
+        - pb_second_joint
+        - pb_third_joint
+
+      ros__parameters:
+        # Define the input joint that receives external commands (e.g., from a robotic arm)
+        input_joint: pb_starter_joint
+        
+        # Define the coupled joints and their required velocity scaling (gear ratio)
+        # Ratio = Output Gear Speed / Input Gear Speed (for this stage)
+        # Negative ratio indicates opposite rotation direction, which is typical for meshed gears.
+        gear_couplings:
+          # Coupling 1: Starter Gear (input) to First Gear
+          pb_first_joint:
+            source_joint: pb_starter_joint
+            ratio: -0.5 # Example: Starter gear turns 2x for every 1x turn of the First gear
+          
+          # Coupling 2: First Gear (input) to Second Gear
+          pb_second_joint:
+            source_joint: pb_first_joint
+            ratio: -1.0 # Example: 1:1 ratio, opposite rotation
+            
+          # Coupling 3: Second Gear (input) to Third Gear
+          pb_third_joint:
+            source_joint: pb_second_joint
+            ratio: -0.667 # Example: Second gear turns 1.5x for every 1x turn of the Third gear
+          
+        # Set command interfaces (Velocity is preferred for gear simulation)
+        command_interfaces:
+          - velocity
+          
+        # Set state interfaces
+        state_interfaces:
+          - position
+          - velocity

@@ -1,6 +1,33 @@
-import os
-import subprocess
-from ament_index_python.packages import get_package_share_directory
+# Copyright (c) 2021 Stogl Robotics Consulting UG (haftungsbeschränkt)
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#
+#    * Redistributions in binary form must reproduce the above copyright
+#      notice, this list of conditions and the following disclaimer in the
+#      documentation and/or other materials provided with the distribution.
+#
+#    * Neither the name of the {copyright_holder} nor the names of its
+#      contributors may be used to endorse or promote products derived from
+#      this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# Author: Denis Stogl
+
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
@@ -12,11 +39,14 @@ from launch.conditions import IfCondition, UnlessCondition
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import (
+    Command,
+    FindExecutable,
     LaunchConfiguration,
     PathJoinSubstitution,
 )
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+
 
 def launch_setup(context, *args, **kwargs):
     # Initialize Arguments
@@ -24,6 +54,7 @@ def launch_setup(context, *args, **kwargs):
     safety_limits = LaunchConfiguration("safety_limits")
     safety_pos_margin = LaunchConfiguration("safety_pos_margin")
     safety_k_position = LaunchConfiguration("safety_k_position")
+    # General arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
     description_package = LaunchConfiguration("description_package")
@@ -34,59 +65,47 @@ def launch_setup(context, *args, **kwargs):
     launch_rviz = LaunchConfiguration("launch_rviz")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
     world_file = LaunchConfiguration("world_file")
-    ros_distro_value = LaunchConfiguration("ros_distro").perform(context)
-
-    # Determine Gazebo and spawn executables based on ROS distribution
-    gazebo_package = ''
-    gazebo_launch_executable = ''
-    spawn_executable = ''
-    world_arg = {}
-
-    if ros_distro_value == 'humble':
-        gazebo_package = 'gazebo_ros'
-        gazebo_launch_executable = 'gazebo.launch.py'
-        spawn_executable = 'spawn_entity.py'
-        world_arg = {'world': world_file}
-    else:  # Default to Jazzy/Rolling
-        gazebo_package = 'ros_gz_sim'
-        gazebo_launch_executable = 'gz_sim.launch.py'
-        spawn_executable = 'create'
-        world_arg = {'gz_args': [" -r -v 4 ", world_file]}
 
     initial_joint_controllers = PathJoinSubstitution(
         [FindPackageShare(runtime_config_package), "config", controllers_file]
     )
 
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare(description_package), "rviz", "ur20_view.rviz"]
+        [FindPackageShare(description_package), "rviz", "view_robot.rviz"]
     )
 
-    xacro_file_path = PathJoinSubstitution(
-        [FindPackageShare(description_package), "urdf", description_file]
-    ).perform(context)
-
-    # Use subprocess to process the xacro file
-    xacro_args = [
-        f"safety_limits:={safety_limits.perform(context)}",
-        f"safety_pos_margin:={safety_pos_margin.perform(context)}",
-        f"safety_k_position:={safety_k_position.perform(context)}",
-        f"name:=ur",
-        f"ur_type:={ur_type.perform(context)}",
-        f"prefix:={prefix.perform(context)}",
-        f"sim_ignition:=false" if ros_distro_value == 'humble' else f"sim_ignition:=true",
-        f"sim_gazebo:=true" if ros_distro_value == 'humble' else f"sim_gazebo:=false",
-        f"simulation_controllers:={initial_joint_controllers.perform(context)}",
-    ]
-
-    try:
-        robot_description_content = subprocess.check_output(
-            ['xacro', xacro_file_path] + xacro_args,
-            stderr=subprocess.STDOUT
-        ).decode('utf-8')
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to process xacro file: {e.output.decode('utf-8')}")
-        raise
-
+    robot_description_content = Command(
+        [
+            PathJoinSubstitution([FindExecutable(name="xacro")]),
+            " ",
+            PathJoinSubstitution(
+                [FindPackageShare(description_package), "urdf", description_file]
+            ),
+            " ",
+            "safety_limits:=",
+            safety_limits,
+            " ",
+            "safety_pos_margin:=",
+            safety_pos_margin,
+            " ",
+            "safety_k_position:=",
+            safety_k_position,
+            " ",
+            "name:=",
+            "ur",
+            " ",
+            "ur_type:=",
+            ur_type,
+            " ",
+            "prefix:=",
+            prefix,
+            " ",
+            "sim_ignition:=true",
+            " ",
+            "simulation_controllers:=",
+            initial_joint_controllers,
+        ]
+    )
     robot_description = {"robot_description": robot_description_content}
 
     robot_state_publisher_node = Node(
@@ -111,6 +130,7 @@ def launch_setup(context, *args, **kwargs):
         arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
     )
 
+    # Delay rviz start after `joint_state_broadcaster`
     delay_rviz_after_joint_state_broadcaster_spawner = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
@@ -119,6 +139,7 @@ def launch_setup(context, *args, **kwargs):
         condition=IfCondition(launch_rviz),
     )
 
+    # There may be other controllers of the joints, but this is the initially-started one
     initial_joint_controller_spawner_started = Node(
         package="controller_manager",
         executable="spawner",
@@ -131,106 +152,64 @@ def launch_setup(context, *args, **kwargs):
         arguments=[initial_joint_controller, "-c", "/controller_manager", "--stopped"],
         condition=UnlessCondition(start_joint_controller),
     )
-    
-    # Conditional Gazebo launch and robot spawning based on ROS distribution
-    if ros_distro_value == 'humble':
-        gz_spawn_entity = Node(
-            package=gazebo_package,
-            executable=spawn_executable,
-            output="screen",
-            arguments=[
-                "-topic", "robot_description",
-                "-entity", "ur",
-            ],
-        )
 
-        gz_launch_description_with_gui = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(get_package_share_directory(gazebo_package), "launch", gazebo_launch_executable)
-            ),
-            launch_arguments={"gui": "true", "world": world_file}.items(),
-            condition=IfCondition(gazebo_gui),
-        )
+    # GZ nodes
+    gz_spawn_entity = Node(
+        package="ros_gz_sim",
+        executable="create",
+        output="screen",
+        arguments=[
+            "-string",
+            robot_description_content,
+            "-name",
+            "ur",
+            "-allow_renaming",
+            "true",
+        ],
+    )
+    gz_launch_description_with_gui = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
+        ),
+        launch_arguments={"gz_args": [" -r -v 4 ", world_file]}.items(),
+        condition=IfCondition(gazebo_gui),
+    )
 
-        gz_launch_description_without_gui = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(get_package_share_directory(gazebo_package), "launch", gazebo_launch_executable)
-            ),
-            launch_arguments={"gui": "false", "world": world_file}.items(),
-            condition=UnlessCondition(gazebo_gui),
-        )
-        
-        nodes_to_start = [
-            robot_state_publisher_node,
-            joint_state_broadcaster_spawner,
-            delay_rviz_after_joint_state_broadcaster_spawner,
-            initial_joint_controller_spawner_stopped,
-            initial_joint_controller_spawner_started,
-            gz_spawn_entity,
-            gz_launch_description_with_gui,
-            gz_launch_description_without_gui,
-        ]
-    else: # Jazzy/Ignition
-        gz_spawn_entity = Node(
-            package=gazebo_package,
-            executable=spawn_executable,
-            output="screen",
-            arguments=[
-                "-string",
-                robot_description_content,
-                "-name",
-                "ur",
-                "-allow_renaming",
-                "true",
-            ],
-        )
-        gz_launch_description_with_gui = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
-            ),
-            launch_arguments={"gz_args": [" -r -v 4 ", world_file]}.items(),
-            condition=IfCondition(gazebo_gui),
-        )
-        gz_launch_description_without_gui = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
-            ),
-            launch_arguments={"gz_args": [" -s -r -v 4 ", world_file]}.items(),
-            condition=UnlessCondition(gazebo_gui),
-        )
-        gz_sim_bridge = Node(
-            package="ros_gz_bridge",
-            executable="parameter_bridge",
-            arguments=[
-                "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
-            ],
-            output="screen",
-        )
-        nodes_to_start = [
-            robot_state_publisher_node,
-            joint_state_broadcaster_spawner,
-            delay_rviz_after_joint_state_broadcaster_spawner,
-            initial_joint_controller_spawner_stopped,
-            initial_joint_controller_spawner_started,
-            gz_spawn_entity,
-            gz_launch_description_with_gui,
-            gz_launch_description_without_gui,
-            gz_sim_bridge,
-        ]
+    gz_launch_description_without_gui = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
+        ),
+        launch_arguments={"gz_args": [" -s -r -v 4 ", world_file]}.items(),
+        condition=UnlessCondition(gazebo_gui),
+    )
+
+    # Make the /clock topic available in ROS
+    gz_sim_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
+        ],
+        output="screen",
+    )
+
+    nodes_to_start = [
+        robot_state_publisher_node,
+        joint_state_broadcaster_spawner,
+        delay_rviz_after_joint_state_broadcaster_spawner,
+        initial_joint_controller_spawner_stopped,
+        initial_joint_controller_spawner_started,
+        gz_spawn_entity,
+        gz_launch_description_with_gui,
+        gz_launch_description_without_gui,
+        gz_sim_bridge,
+    ]
 
     return nodes_to_start
 
+
 def generate_launch_description():
     declared_arguments = []
-    # ROS Distribution Argument
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "ros_distro",
-            default_value="humble",
-            description='ROS 2 distribution to use ("humble" or "jazzy").',
-        )
-    )
-    
     # UR specific arguments
     declared_arguments.append(
         DeclareLaunchArgument(
@@ -287,20 +266,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "controllers_file",
-            default_value="ur20_controllers.yaml",
-            description="YAML file with the controllers configuration.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "initial_positions_file",
-            default_value=PathJoinSubstitution(
-                [
-                    FindPackageShare("sirgas_description"),
-                    "config",
-                    "initial_positions.yaml",
-                ]
-            ),
+            default_value="ur20_starter_controllers.yaml",
             description="YAML file with the controllers configuration.",
         )
     )
@@ -353,7 +319,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "world_file",
-            default_value="empty.world", # Changed to empty.world for Humble
+            default_value="empty.sdf",
             description="Gazebo world file (absolute path or filename from the gazebosim worlds collection) containing a custom world.",
         )
     )

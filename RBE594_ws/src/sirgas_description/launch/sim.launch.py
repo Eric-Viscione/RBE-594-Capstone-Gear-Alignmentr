@@ -1,142 +1,197 @@
-import os
-import shutil
-import subprocess
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+import launch
 from launch.substitutions import LaunchConfiguration
-from launch_ros.actions import Node
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+import launch_ros
+import os
+import xacro
 
-def launch_setup(context, *args, **kwargs):
-    pkg_name = 'sirgas_description'
-    ros_distro_value = LaunchConfiguration('ros_distro').perform(context)
-    
-    gazebo_package = ''
-    gazebo_launch_executable = ''
-    spawn_executable = ''
-    world_arg = {}
+# Define the package name
+packageName = 'sirgas_description'
 
-    if ros_distro_value == 'humble':
-        gazebo_package = 'gazebo_ros'
-        gazebo_launch_executable = 'gazebo.launch.py'
-        spawn_executable = 'spawn_entity.py'
-        world_arg = {'world': 'empty.world'}
-    else:
-        gazebo_package = 'ros_gz_sim'
-        gazebo_launch_executable = 'gz_sim.launch.py'
-        spawn_executable = 'create'
-        world_arg = {'gz_args': 'empty.sdf'}
+# ----------------- UR20 -----------------
+# Relative path of the xacro file with respect to the package path
+ur20_xacroRelativePath = 'urdf/ur20_starter.urdf.xacro'
 
-    # Use subprocess to process the xacro files
-    def process_xacro(file_path):
-        try:
-            cmd = ['xacro', '--inorder', file_path]
-            return subprocess.check_output(cmd).decode('utf-8')
-        except FileNotFoundError:
-            raise RuntimeError("xacro executable not found in PATH. Please install it.")
-        except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"xacro command failed for {file_path}: {e.output.decode('utf-8')}")
+# RViz config file path respect to the package path
+# rvizRelativePath = 'rviz/config.rviz'
 
-    sirgas_description_dir = get_package_share_directory(pkg_name)
-    
-    pba_urdf_path = os.path.join(sirgas_description_dir, 'urdf', 'pba.urdf.xacro')
-    ur20_starter_urdf_path = os.path.join(sirgas_description_dir, 'urdf', 'ur20_starter.urdf.xacro')
-    ur20_picker_urdf_path = os.path.join(sirgas_description_dir, 'urdf', 'ur20_picker.urdf.xacro')
+# Relative path of the ros2_control configuration file with respect to the package path
+ur20_ros2controlRelativePath = 'config/ur20_starter_controllers.yaml'
 
-    pba_description_content = process_xacro(pba_urdf_path)
-    ur20_starter_description_content = process_xacro(ur20_starter_urdf_path)
-    ur20_picker_description_content = process_xacro(ur20_picker_urdf_path)
+# ----------------- PEG BOARD ASSEMBLY (PBA) -----------------
+# Relative path of the xacro file with respect to the package path
+pba_xacroRelativePath = 'urdf/pba.urdf.xacro'
 
-    gazebo_ros_dir = get_package_share_directory(gazebo_package)
-    gazebo_launch_file_path = os.path.join(gazebo_ros_dir, 'launch', gazebo_launch_executable)
+# Relative path of the ros2_control configuration file with respect to the package path
+pba_ros2controlRelativePath = 'config/pba_controller.yaml'
 
-    gazebo_server = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(gazebo_launch_file_path),
-        launch_arguments=world_arg.items()
-    )
-
-    peg_board_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='peg_board_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': pba_description_content}],
-        remappings=[('/robot_description', '/peg_board_assembly/robot_description')]
-    )
-
-    spawn_peg_board = Node(
-        package=gazebo_package,
-        executable=spawn_executable,
-        arguments=[
-            '-topic', '/peg_board_assembly/robot_description', 
-            '-entity', 'peg_board_assembly'
-        ],
-        output='screen'
-    )
-
-    ur20_starter_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='ur20_starter_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': ur20_starter_description_content}],
-        remappings=[('/robot_description', '/ur20_starter/robot_description')]
-    )
-
-    spawn_ur20_starter = Node(
-        package=gazebo_package,
-        executable=spawn_executable,
-        arguments=[
-            '-topic', '/ur20_starter/robot_description',
-            '-entity', 'ur20_starter',
-            '-x', '-0.5',
-            '-y', '0.5',
-            '-z', '0.0',
-        ],
-        output='screen'
-    )
-    
-    ur20_picker_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='ur20_picker_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': ur20_picker_description_content}],
-        remappings=[('/robot_description', '/ur20_picker/robot_description')]
-    )
-
-    spawn_ur20_picker = Node(
-        package=gazebo_package,
-        executable=spawn_executable,
-        arguments=[
-            '-topic', '/ur20_picker/robot_description',
-            '-entity', 'ur20_picker',
-            '-x', '0.5',
-            '-y', '-0.5',
-            '-z', '0.0',
-        ],
-        output='screen'
-    )
-
-    return [
-        gazebo_server,
-        peg_board_state_publisher,
-        spawn_peg_board,
-        ur20_starter_state_publisher,
-        spawn_ur20_starter,
-        ur20_picker_state_publisher,
-        spawn_ur20_picker
-    ]
 
 def generate_launch_description():
-    ros_distro = DeclareLaunchArgument(
-        'ros_distro',
-        default_value='humble',
-        description='ROS 2 distribution to use ("humble" or "jazzy").'
+    # Absolute package path
+    pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
+
+    # ----------------- UR20 -----------------
+    # Absolute xacro model path
+    ur20_xacroModelPath = os.path.join(pkgPath, ur20_xacroRelativePath)
+    
+    # Absolute ros_control controller path (needed to be passed to spawner)
+    ur20_ros2ControllerPath = os.path.join(pkgPath, ur20_ros2controlRelativePath)
+
+    # Get the UR20 robot description from the xacro model file
+    ur20_robot_desc = xacro.process_file(ur20_xacroModelPath).toxml()
+    
+    # Define a parameter with the UR20 robot xacro description for robot_state_publisher
+    robot_description = {'robot_description': ur20_robot_desc}
+
+    # ----------------- PEG BOARD ASSEMBLY (PBA) -----------------
+    # Absolute xacro model path
+    pba_xacroModelPath = os.path.join(pkgPath, pba_xacroRelativePath)
+    
+    # Absolute ros_control controller path (needed to be passed to spawner)
+    pba_ros2ControllerPath = os.path.join(pkgPath, pba_ros2controlRelativePath)
+    
+    # NEW: Get the PBA robot description from the xacro model file
+    pba_robot_desc = xacro.process_file(pba_xacroModelPath).toxml() 
+
+
+    # Declare arguments
+    declared_arguments = []
+    declared_arguments.append(
+        launch.actions.DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='true',
+            description='Use simulation (Gazebo) clock if true'))
+    
+    # Launch configurations
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    
+    # Gazebo simulation
+    gazebo = launch.actions.IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                launch_ros.substitutions.FindPackageShare(package='ros_gz_sim').find('ros_gz_sim'),
+                'launch/gz_sim.launch.py')
+        ),
+        launch_arguments={
+            'gz_args': '-r -v 3 empty.sdf',
+            'ros_args': '--ros-args --param use_sim_time:=true'}.items()
+    )
+    
+    # Bridge to ROS topics (Clock is for use_sim_time)
+    gazebo_bridge = launch_ros.actions.Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        output='screen')
+
+    # GSM Spawn: Spawns the GSM robot using the shared robot_description topic
+    # The -x argument is added here to set the default initial position.
+    gsm_gz_spawn_entity = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-topic',
+            'robot_description',
+            '-name',
+            'ur20_starter',
+            '-allow_renaming',
+            'true',
+            '-y',
+            '1.0'] 
+    )
+    
+    # PBA Spawn: Spawns the PBA robot using the description string directly
+    pba_gz_spawn_entity = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            pba_robot_desc,
+            '-name',
+            'peg_board_assembly',
+            '-allow_renaming',
+            'true']
+    )
+    
+    # Robot state publisher node
+    robot_state_publisher_node = launch_ros.actions.Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='both',
+        parameters=[robot_description, {'use_sim_time': use_sim_time}])
+    
+    # Joint State Broadcaster (Handles all robots' joint state broadcasters)
+    ur20_joint_state_broadcaster_node = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster', '-c', '/ur20_starter_controller_manager'],
+        output='screen',
+        )
+    
+    pba_joint_state_broadcaster_node = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster', '-c', '/pba_controller_manager'],
+        output='screen',
+        )
+    
+    #  UR20 Controller Spawner
+    ur20_jt_controller_spawner = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'joint_trajectory_controller',
+            '-c', 
+            '/ur20_starter_controller_manager',  # <-- Specify the custom controller manager
+        ]
     )
 
-    return LaunchDescription([
-        ros_distro,
-        OpaqueFunction(function=launch_setup),
-    ])
+    ur20_v_controller_spawner = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'forward_velocity_controller',
+            '-c', 
+            '/ur20_starter_controller_manager',  # <-- Specify the custom controller manager
+        ]
+    )
+
+    ur20_p_controller_spawner = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'forward_position_controller',
+            '-c', 
+            '/ur20_starter_controller_manager',  # <-- Specify the custom controller manager
+        ]
+    )
+        
+    # PBA Velocity Controller Spawner
+    pba_controller_spawner = launch_ros.actions.Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'forward_velocity_controller', 
+            '-c', 
+            '/pba_controller_manager', # <-- Specify the custom controller manager
+        ]
+    )
+    
+    nodeList = [
+        gazebo,
+        gazebo_bridge,
+        gsm_gz_spawn_entity, 
+        pba_gz_spawn_entity, 
+        robot_state_publisher_node,
+        pba_joint_state_broadcaster_node,
+        ur20_joint_state_broadcaster_node,
+        pba_joint_state_broadcaster_node,
+        ur20_jt_controller_spawner,
+        ur20_v_controller_spawner,
+        ur20_p_controller_spawner,
+        pba_controller_spawner,
+        ]
+
+    return launch.LaunchDescription(declared_arguments + nodeList)

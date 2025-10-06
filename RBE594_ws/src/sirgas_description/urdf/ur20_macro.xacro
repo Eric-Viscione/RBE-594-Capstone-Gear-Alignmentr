@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="$(find ur_description)/urdf/inc/ur_transmissions.xacro" />
-  <xacro:include filename="$(find ur_description)/urdf/inc/ur_common.xacro" />
+  <xacro:include filename="$(find sirgas_description)/urdf/inc/ur_transmissions.xacro" />
+  <xacro:include filename="$(find sirgas_description)/urdf/inc/ur_common.xacro" />
 
   <xacro:macro name="ur_robot" params="
     name
@@ -19,7 +19,7 @@
     safety_k_position:=20
     use_fake_hardware:=false
     fake_sensor_commands:=false
-    sim_gazebo:=false
+    sim_gazebo:=true
     sim_ignition:=false
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}

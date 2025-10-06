@@ -1,28 +1,19 @@
-pba_controller_manager:
+controller_manager:
   ros__parameters:
     update_rate: 100
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
-      ros__parameters:
-        # Explicitly list ONLY PBA joints
-        joints:
-          - pb_starter_joint
-          - pb_first_joint
-          - pb_second_joint
-          - pb_third_joint
 
     forward_velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
 
 forward_velocity_controller:
   ros__parameters:
+    # Only control the master joint - mimic joints will follow automatically
     joints:
-      - pb_starter_joint
+      - mh_gr_joint
     interface_name: velocity
     state_interfaces:
       - position
-      - velocity
-      - effort
-    command_interfaces:
       - velocity
