@@ -1,0 +1,6 @@
+Invoking command in '/home/ev/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ev/RBE594_ws/src/sirgas_description -DCMAKE_INSTALL_PREFIX=/home/ev/RBE594_ws/install/sirgas_description
+Invoked command in '/home/ev/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ev/RBE594_ws/src/sirgas_description -DCMAKE_INSTALL_PREFIX=/home/ev/RBE594_ws/install/sirgas_description
+Invoking command in '/home/ev/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ev/RBE594_ws/build/sirgas_description -- -j12 -l12
+Invoked command in '/home/ev/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ev/RBE594_ws/build/sirgas_description -- -j12 -l12
+Invoking command in '/home/ev/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ev/RBE594_ws/build/sirgas_description
+Invoked command in '/home/ev/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ev/RBE594_ws/build/sirgas_description

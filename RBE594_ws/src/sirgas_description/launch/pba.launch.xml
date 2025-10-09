@@ -9,9 +9,9 @@
     <let name="urdf_path" 
          value="$(find-pkg-share sirgas_description)/urdf/pba.urdf.xacro" />
     
-    <arg name="use_sim_time" default="true" />
-    
+    <arg name="use_sim_time" default="true"/>    
     <!-- Launch Ignition Gazebo -->
+
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="use_sim_time" value="$(var use_sim_time)" />
         <arg name="gz_args" value="-r empty.sdf" />
@@ -20,6 +20,9 @@
     <!-- Wait for Gazebo to start -->
     <timer period="3.0"/>
 
+  <!-- Bridge the simulation clock into ROS 2 -->
+  <node pkg="ros_gz_bridge" exec="parameter_bridge" name="bridge_clock" output="screen"
+        args="/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"/>
     <!-- Load robot description -->
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="use_sim_time" value="$(var use_sim_time)" />
@@ -60,12 +63,13 @@
     <node pkg="controller_manager" exec="spawner" args="forward_velocity_controller"
           output="screen" />
 
-    <!-- Spawn the static camera model -->
+    <!-- Spawn the static camera model (unchanged) -->
     <node pkg="ros_gz_sim" exec="create" name="spawn_sim_cam" output="screen"
-      args="-file $(find-pkg-share sirgas_description)/meshes/sim_cam/model.sdf -name sim_cam -x 0 -y 0 -z 1.2"/>
+    args="-file $(find-pkg-share sirgas_description)/meshes/sim_cam/model.sdf -name sim_cam -x 0 -y 0 -z 1.2"/>
 
-    <!-- Bridge gz image -> ROS Image -->
+    <!-- Bridges (GZ <-> ROS). Bidirectional is fine here -->
     <node pkg="ros_gz_bridge" exec="parameter_bridge" name="bridge_sim_cam" output="screen"
-        args="/sim_cam/image@sensor_msgs/msg/Image@gz.msgs.Image"/>
+    args="/sim_cam/image@sensor_msgs/msg/Image@gz.msgs.Image
+            /sim_cam/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo"/>
 
 </launch>

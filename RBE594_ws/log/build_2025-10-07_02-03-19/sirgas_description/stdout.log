@@ -26,7 +26,7 @@
 -- Using RMW implementation 'rmw_fastrtps_cpp' as default
 -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
 -- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
--- Configuring done (1.3s)
+-- Configuring done (1.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/ev/RBE594_ws/build/sirgas_description
 -- Install configuration: ""
@@ -57,6 +57,7 @@
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/apriltags/tag_1.png
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf
+-- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//world/.keep
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/ur20_view.rviz
 -- Symlinking: /home/ev/RBE594_ws/install/sirgas_description/share/sirgas_description//config/initial_positions.yaml
