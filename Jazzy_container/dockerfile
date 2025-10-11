@@ -51,7 +51,8 @@ RUN ORIGINAL_USER=$(getent passwd $USER_UID | cut -d: -f1) && \
 
 # Ensure home directory permissions are correct
 RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/
-
+ENV XDG_RUNTIME_DIR=/tmp/runtime-tamar
+#export LIBGL_ALWAYS_SOFTWARE=1
 # Set environment variables for the display.
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
@@ -67,12 +68,12 @@ ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
 CMD ["bash"]
 
 # Creates a container named capstone with a link to the RBE594_ws folder as well as the ability to use GUIs like on your local machine
-# docker run -it --gpus all --name capstone \
-#    -v ~/RBE594_ws:/home/tamar/RBE594_ws \
-#    -e DISPLAY=$DISPLAY \
-#    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-#    -v $HOME/.Xauthority:/home/tamar/.Xauthority \
-#    rbe594_ws
+docker run -it --gpus all --name capstone \
+-v ~/Desktop/RBE-594-Capstone-Gear-Alignmentr/RBE594_ws:/home/tamar/RBE594_ws \
+   -e DISPLAY=$DISPLAY \
+   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+   -v $HOME/.Xauthority:/home/tamar/.Xauthority \
+   capstone
 
 # Starts a terminal with access to the container
 # docker start -i capstone

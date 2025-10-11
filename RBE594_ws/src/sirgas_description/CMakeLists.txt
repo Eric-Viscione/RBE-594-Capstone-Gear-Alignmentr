@@ -14,7 +14,7 @@ find_package(trajectory_msgs REQUIRED)
 
 # Install directories
 install(
-  DIRECTORY urdf launch meshes world rviz config
+  DIRECTORY urdf launch meshes worlds rviz config
   DESTINATION share/${PROJECT_NAME}/
 )
 ament_package()

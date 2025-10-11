@@ -1,8 +1,8 @@
-# Install script for directory: /home/ev/RBE594_ws/src/sirgas_description
+# Install script for directory: /home/tamar/RBE594_ws/src/sirgas_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ev/RBE594_ws/install/sirgas_description")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE594_ws/install/sirgas_description")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ev/RBE594_ws/build/sirgas_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ev/RBE594_ws/build/sirgas_description/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tamar/RBE594_ws/build/sirgas_description/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,0 +1,55 @@
+[0.000000] (-) TimerEvent: {}
+[0.000182] (sirgas_description) JobQueued: {'identifier': 'sirgas_description', 'dependencies': OrderedDict()}
+[0.000213] (sirgas_description) JobStarted: {'identifier': 'sirgas_description'}
+[0.010698] (sirgas_description) JobProgress: {'identifier': 'sirgas_description', 'progress': 'cmake'}
+[0.011486] (sirgas_description) Command: {'cmd': ['/usr/bin/cmake', '/home/tamar/RBE594_ws/src/sirgas_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/sirgas_description'], 'cwd': '/home/tamar/RBE594_ws/build/sirgas_description', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '732ec8e448c5', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp/runtime-tamar', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/sirgas_description', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.065451] (sirgas_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099020] (-) TimerEvent: {}
+[0.121130] (sirgas_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.136211] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199113] (-) TimerEvent: {}
+[0.222397] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.231327] (sirgas_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.231580] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.232021] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.240482] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299230] (-) TimerEvent: {}
+[0.339100] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.348314] (sirgas_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.348561] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.349067] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.354300] (sirgas_description) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.399340] (-) TimerEvent: {}
+[0.499558] (-) TimerEvent: {}
+[0.507598] (sirgas_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.578739] (sirgas_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.599681] (-) TimerEvent: {}
+[0.651653] (sirgas_description) StdoutLine: {'line': b'-- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)\n'}
+[0.655992] (sirgas_description) StdoutLine: {'line': b'-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.699820] (-) TimerEvent: {}
+[0.721020] (sirgas_description) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.741597] (sirgas_description) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.764787] (sirgas_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.789898] (sirgas_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.799899] (-) TimerEvent: {}
+[0.891378] (sirgas_description) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.892633] (sirgas_description) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/jazzy/share/rmw_implementation_cmake/cmake/get_default_rmw_implementation.cmake:60 (message):\n'}
+[0.892744] (sirgas_description) StderrLine: {'line': b"  Could not find ROS middleware implementation 'rmw_cyclonedds_cpp'.  Choose\n"}
+[0.892900] (sirgas_description) StderrLine: {'line': b'  one of the following: rmw_fastrtps_cpp\n'}
+[0.892980] (sirgas_description) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.893042] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rmw_implementation/cmake/rmw_implementation-extras.cmake:19 (get_default_rmw_implementation)\n'}
+[0.893204] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rmw_implementation/cmake/rmw_implementationConfig.cmake:41 (include)\n'}
+[0.893268] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rcl/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[0.893326] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rcl/cmake/rclConfig.cmake:41 (include)\n'}
+[0.893382] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/libstatistics_collector/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[0.893437] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/libstatistics_collector/cmake/libstatistics_collectorConfig.cmake:41 (include)\n'}
+[0.893490] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rclcpp/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[0.893543] (sirgas_description) StderrLine: {'line': b'  /opt/ros/jazzy/share/rclcpp/cmake/rclcppConfig.cmake:41 (include)\n'}
+[0.893596] (sirgas_description) StderrLine: {'line': b'  CMakeLists.txt:11 (find_package)\n'}
+[0.893649] (sirgas_description) StderrLine: {'line': b'\n'}
+[0.893712] (sirgas_description) StderrLine: {'line': b'\x1b[0m\n'}
+[0.893765] (sirgas_description) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.897765] (sirgas_description) CommandEnded: {'returncode': 1}
+[0.899968] (-) TimerEvent: {}
+[0.920159] (sirgas_description) JobEnded: {'identifier': 'sirgas_description', 'rc': 1}
+[0.931611] (-) EventReactorShutdown: {}
