@@ -1,0 +1,2 @@
+[controller_interface.controllers]
+GearConstraintController = custom_gear_controllers.gear_constraint_controller:GearConstraintController

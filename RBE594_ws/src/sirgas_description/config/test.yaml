@@ -1,8 +1,9 @@
-ur20_starter_controller_manager:
+combined_controller_manager:
   ros__parameters:
     update_rate: 500  # Hz
 
-    joint_state_broadcaster:
+    # --- UR20 Starter Controllers ---
+    ur20_joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
     io_and_status_controller:
@@ -11,20 +12,31 @@ ur20_starter_controller_manager:
     speed_scaling_state_broadcaster:
       type: ur_controllers/SpeedScalingStateBroadcaster
 
-    joint_trajectory_controller:
+    ur20_joint_trajectory_controller: # Renamed for clarity
       type: joint_trajectory_controller/JointTrajectoryController
 
     scaled_joint_trajectory_controller:
       type: ur_controllers/ScaledJointTrajectoryController
 
-    forward_velocity_controller:
+    ur20_forward_velocity_controller: # Renamed for clarity
       type: velocity_controllers/JointGroupVelocityController
 
     forward_position_controller:
       type: position_controllers/JointGroupPositionController
+      
+    # --- PBA Controllers ---
+    pba_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
 
+    pba_velocity_controller: # Renamed for clarity
+      type: velocity_controllers/JointGroupVelocityController
+
+# --------------------------------------------------------------------------------------------------
 # Controller configurations at ROOT level (not nested)
-joint_state_broadcaster:
+# --------------------------------------------------------------------------------------------------
+
+# --- UR20 Starter Configurations ---
+ur20_joint_state_broadcaster:
   ros__parameters:
     state_publish_rate: 100.0
 
@@ -32,7 +44,7 @@ speed_scaling_state_broadcaster:
   ros__parameters:
     state_publish_rate: 100.0
 
-joint_trajectory_controller:
+ur20_joint_trajectory_controller:
   ros__parameters:
     joints:
       - ur20_starter/shoulder_pan_joint
@@ -73,6 +85,7 @@ scaled_joint_trajectory_controller:
     state_interfaces:
       - position
       - velocity
+      - effort
     speed_scaling_interface_name: ""
     state_publish_rate: 100.0
     action_monitor_rate: 20.0
@@ -87,7 +100,7 @@ scaled_joint_trajectory_controller:
       wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
       wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
 
-forward_velocity_controller:
+ur20_forward_velocity_controller:
   ros__parameters:
     joints:
       - ur20_starter/shoulder_pan_joint
@@ -98,7 +111,33 @@ forward_velocity_controller:
       - ur20_starter/wrist_3_joint
     interface_name: velocity
 
-pba_forward_velocity_controller:
+ur20_forward_position_controller:
+  ros__parameters:
+    joints:
+      - ur20_starter/shoulder_pan_joint
+      - ur20_starter/shoulder_lift_joint
+      - ur20_starter/elbow_joint
+      - ur20_starter/wrist_1_joint
+      - ur20_starter/wrist_2_joint
+      - ur20_starter/wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+      - effort
+
+# --- PBA Configurations ---
+pba_joint_state_broadcaster:
+  ros__parameters:
+    state_publish_rate: 100.0
+    joints:
+      - pb_starter_joint
+      - pb_first_joint  
+      - pb_second_joint
+      - pb_third_joint
+
+pba_velocity_controller:
   ros__parameters:
     joints:
       - pb_starter_joint
@@ -107,20 +146,3 @@ pba_forward_velocity_controller:
       - position
       - velocity
       - effort
-    command_interfaces:
-      - velocity
-
-forward_position_controller:
-  ros__parameters:
-    joints:
-      - ur20_starter/shoulder_pan_joint
-      - ur20_starter/shoulder_lift_joint
-      - ur20_starter/elbow_joint
-      - ur20_starter/wrist_1_joint
-      - ur20_starter/wrist_2_joint
-      - ur20_starter/wrist_3_joint
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-      - velocity

@@ -1,0 +1,88 @@
+[0.112s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.148s] -- The C compiler identification is GNU 11.4.0
+[0.243s] -- The CXX compiler identification is GNU 11.4.0
+[0.248s] -- Detecting C compiler ABI info
+[0.289s] -- Detecting C compiler ABI info - done
+[0.292s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.292s] -- Detecting C compile features
+[0.293s] -- Detecting C compile features - done
+[0.295s] -- Detecting CXX compiler ABI info
+[0.340s] -- Detecting CXX compiler ABI info - done
+[0.343s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.343s] -- Detecting CXX compile features
+[0.344s] -- Detecting CXX compile features - done
+[0.345s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.373s] -- Found Python3: /home/tamar/vEnv/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.401s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.413s] -- Found xacro: 2.1.1 (/opt/ros/humble/share/xacro/cmake)
+[0.414s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.433s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.435s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.439s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.444s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.451s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.470s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.471s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.480s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.485s] -- Looking for pthread.h
+[0.538s] -- Looking for pthread.h - found
+[0.538s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.577s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.577s] -- Found Threads: TRUE  
+[0.599s] -- Found trajectory_msgs: 4.8.0 (/opt/ros/humble/share/trajectory_msgs/cmake)
+[0.650s] -- Configuring done
+[0.651s] -- Generating done
+[0.652s] -- Build files have been written to: /home/tamar/RBE594_ws/build/sirgas_description
+[0.668s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake --build /home/tamar/RBE594_ws/build/sirgas_description -- -j32 -l32
+[0.673s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_description': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description
+[0.678s] -- Install configuration: ""
+[0.679s] -- Execute custom install script
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20.ros2_control.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_macro.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_picker.urdf.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_starter.urdf.xacro
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gr.launch.py
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
+[0.679s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.xml
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim.launch.py
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim2.launch.py
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim3.launch.py
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Gear_Rotator.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Motor_Housing.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Peg_Board.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/ur20_view.rviz
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/gear_coupling_controller.yaml
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/initial_positions.yaml
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/load_controllers.sh
+[0.680s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/pba_controller.yaml
+[0.681s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_controllers.yaml
+[0.681s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_picker_controllers.yaml
+[0.681s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_starter_controllers.yaml
+[0.681s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description
+[0.681s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description
+[0.681s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh
+[0.685s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.dsv
+[0.685s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.sh
+[0.690s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.dsv
+[0.690s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.bash
+[0.690s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.sh
+[0.690s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.zsh
+[0.690s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.dsv
+[0.690s] -- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.dsv
+[0.695s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/packages/sirgas_description
+[0.695s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig.cmake
+[0.695s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig-version.cmake
+[0.695s] -- Up-to-date symlink: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.xml
+[0.696s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake --install /home/tamar/RBE594_ws/build/sirgas_description

@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<robot name="camera" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <link name="world"/>
+    
+    <xacro:property name="camera_size" value="0.05" />
+    <xacro:property name="camera_mass" value="0.1" />
+
+    <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+    </material>
+
+    <joint name="camera_world_joint" type="fixed">
+        <parent link="world"/>
+        <child link="camera_link"/>
+        <origin rpy="0 0 0" xyz="0 0 0.1"/> 
+    </joint>
+
+    <link name="camera_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${camera_size} ${camera_size} ${camera_size}" /> 
+            </geometry>
+            <material name="LightGrey"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${camera_size} ${camera_size} ${camera_size}" /> 
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${camera_mass}"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="${(camera_mass/12.0) * (camera_size*camera_size + camera_size*camera_size)}" ixy="0" ixz="0"
+                     iyy="${(camera_mass/12.0) * (camera_size*camera_size + camera_size*camera_size)}" iyz="0"
+                     izz="${(camera_mass/12.0) * (camera_size*camera_size + camera_size*camera_size)}"/>
+        </inertial>
+    </link>
+
+    <!-- CORRECT Gazebo sensor configuration for ROS2 Jazzy -->
+    <gazebo reference="camera_link">
+        <material>Gazebo/Grey</material> 
+        <sensor name="camera_sensor" type="camera">
+            <camera>
+                <horizontal_fov>1.047</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+            </camera>
+            <always_on>true</always_on>
+            <update_rate>30.0</update_rate>
+            <visualize>true</visualize>
+            <!-- NO PLUGIN - let Gazebo Sim handle it automatically -->
+        </sensor>
+    </gazebo>
+
+</robot>

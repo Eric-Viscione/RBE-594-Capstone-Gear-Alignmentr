@@ -41,7 +41,7 @@ def generate_launch_description():
     ur20_robot_desc = xacro.process_file(ur20_xacroModelPath).toxml()
     
     # Define a parameter with the UR20 robot xacro description for robot_state_publisher
-    robot_description = {'robot_description': ur20_robot_desc}
+    ur20_robot_description = {'robot_description': ur20_robot_desc}
 
     # ----------------- PEG BOARD ASSEMBLY (PBA) -----------------
     # Absolute xacro model path
@@ -52,6 +52,9 @@ def generate_launch_description():
     
     # NEW: Get the PBA robot description from the xacro model file
     pba_robot_desc = xacro.process_file(pba_xacroModelPath).toxml() 
+
+    # Define a parameter with the UR20 robot xacro description for robot_state_publisher
+    pba_robot_description = {'robot_description': pba_robot_desc}
 
 
     # Declare arguments
@@ -84,9 +87,9 @@ def generate_launch_description():
         arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
         output='screen')
 
-    # GSM Spawn: Spawns the GSM robot using the shared robot_description topic
+    # UR20 Spawn: Spawns the UR20 robot using the shared robot_description topic
     # The -x argument is added here to set the default initial position.
-    gsm_gz_spawn_entity = launch_ros.actions.Node(
+    ur20_gz_spawn_entity = launch_ros.actions.Node(
         package='ros_gz_sim',
         executable='create',
         output='screen',
@@ -96,9 +99,7 @@ def generate_launch_description():
             '-name',
             'ur20_starter',
             '-allow_renaming',
-            'true',
-            '-y',
-            '1.0'] 
+            'true',] 
     )
     
     # PBA Spawn: Spawns the PBA robot using the description string directly
@@ -107,8 +108,8 @@ def generate_launch_description():
         executable='create',
         output='screen',
         arguments=[
-            '-string',
-            pba_robot_desc,
+            '-topic',
+            '/pba/robot_description',
             '-name',
             'peg_board_assembly',
             '-allow_renaming',
@@ -116,24 +117,33 @@ def generate_launch_description():
     )
     
     # Robot state publisher node
-    robot_state_publisher_node = launch_ros.actions.Node(
+    ur20_robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='both',
-        parameters=[robot_description, {'use_sim_time': use_sim_time}])
+        parameters=[ur20_robot_description, {'use_sim_time': use_sim_time}])
+    
+    pba_robot_state_publisher_node = launch_ros.actions.Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='both',
+        namespace='pba',
+        parameters=[pba_robot_description, {'use_sim_time': use_sim_time}],
+        remappings=[('/robot_description', '/pba/robot_description')]
+        )
     
     # Joint State Broadcaster (Handles all robots' joint state broadcasters)
     ur20_joint_state_broadcaster_node = launch_ros.actions.Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', '-c', '/ur20_starter_controller_manager'],
+        arguments=['ur20_joint_state_broadcaster', '-c', '/ur20_starter_controller_manager'],
         output='screen',
         )
     
     pba_joint_state_broadcaster_node = launch_ros.actions.Node(
         package='controller_manager',
         executable='spawner',
-        arguments=['joint_state_broadcaster', '-c', '/pba_controller_manager'],
+        arguments=['pba_joint_state_broadcaster', '-c', '/pba_controller_manager'],
         output='screen',
         )
     
@@ -173,7 +183,7 @@ def generate_launch_description():
         package='controller_manager',
         executable='spawner',
         arguments=[
-            'forward_velocity_controller', 
+            'velocity_controller', 
             '-c', 
             '/pba_controller_manager', # <-- Specify the custom controller manager
         ]
@@ -182,15 +192,15 @@ def generate_launch_description():
     nodeList = [
         gazebo,
         gazebo_bridge,
-        gsm_gz_spawn_entity, 
+        ur20_gz_spawn_entity, 
         pba_gz_spawn_entity, 
-        robot_state_publisher_node,
-        pba_joint_state_broadcaster_node,
+        ur20_robot_state_publisher_node,
+        pba_robot_state_publisher_node,
         ur20_joint_state_broadcaster_node,
         pba_joint_state_broadcaster_node,
         ur20_jt_controller_spawner,
         ur20_v_controller_spawner,
-        ur20_p_controller_spawner,
+        # ur20_p_controller_spawner,
         pba_controller_spawner,
         ]
 

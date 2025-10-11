@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/tamar/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -319,14 +319,14 @@ ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_RO
 # install(FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ur_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ur_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
-# install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ur_description/environment")
-ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ur_description/environment")
+# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ur_description/environment")
+ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ur_description/environment")
 
 # install(FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ur_description/environment")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ur_description/environment")
 
-# install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ur_description/environment")
-ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ur_description/environment")
+# install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ur_description/environment")
+ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ur_description/environment")
 
 # install(FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ur_description/environment")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/Universal_Robots_ROS2_Description" FILES "/home/tamar/RBE594_ws/build/ur_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ur_description/environment")

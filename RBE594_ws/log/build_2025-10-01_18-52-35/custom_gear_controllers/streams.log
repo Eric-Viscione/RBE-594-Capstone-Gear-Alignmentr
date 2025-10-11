@@ -1,0 +1,16 @@
+[0.263s] Invoking command in '/home/tamar/RBE594_ws/build/custom_gear_controllers': PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data
+[0.377s] running develop
+[0.449s] running egg_info
+[0.449s] writing custom_gear_controllers.egg-info/PKG-INFO
+[0.449s] writing dependency_links to custom_gear_controllers.egg-info/dependency_links.txt
+[0.450s] writing entry points to custom_gear_controllers.egg-info/entry_points.txt
+[0.450s] writing requirements to custom_gear_controllers.egg-info/requires.txt
+[0.450s] writing top-level names to custom_gear_controllers.egg-info/top_level.txt
+[0.450s] reading manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[0.450s] writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[0.451s] running build_ext
+[0.451s] Creating /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.10/site-packages/custom-gear-controllers.egg-link (link to .)
+[0.451s] 
+[0.451s] Installed /home/tamar/RBE594_ws/build/custom_gear_controllers
+[0.451s] running symlink_data
+[0.461s] Invoked command in '/home/tamar/RBE594_ws/build/custom_gear_controllers' returned '0': PS1=(vEnv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data

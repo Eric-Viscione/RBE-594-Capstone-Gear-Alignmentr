@@ -1,0 +1,9 @@
+<library path="custom_gear_controllers" name="custom_controllers/GearConstraintController">
+  <class name="custom_gear_controllers::gear_constraint_controller::GearConstraintController"
+         type="custom_gear_controllers.gear_constraint_controller.GearConstraintController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+      A custom controller to enforce meshed gear ratios between joints using software.
+    </description>
+  </class>
+</library>

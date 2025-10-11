@@ -203,6 +203,8 @@
         <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
             <parameters>$(find sirgas_description)/config/pba_controller.yaml</parameters>
             <controller_manager_name>pba_controller_manager</controller_manager_name>
+            <robot_param>peg_board_assembly</robot_param>
+            <robot_param_node>/pba/robot_description</robot_param_node>
         </plugin>
     </gazebo>
 
