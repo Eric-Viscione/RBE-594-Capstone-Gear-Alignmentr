@@ -31,6 +31,13 @@ combined_controller_manager:
     pba_velocity_controller: # Renamed for clarity
       type: velocity_controllers/JointGroupVelocityController
 
+    # --- Gripper Controllers ---
+    gripper_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    gripper_position_controller:
+      type: position_controllers/JointGroupPositionController
+
 # --------------------------------------------------------------------------------------------------
 # Controller configurations at ROOT level (not nested)
 # --------------------------------------------------------------------------------------------------
@@ -146,3 +153,25 @@ pba_velocity_controller:
       - position
       - velocity
       - effort
+
+# --- Gripper Configurations ---
+gripper_joint_state_broadcaster:
+  ros__parameters:
+    state_publish_rate: 100.0
+    joints:
+      - finger_joint
+      - left_inner_knuckle_joint
+      - left_inner_finger_joint
+      - right_inner_knuckle_joint
+      - right_inner_finger_joint
+      - right_outer_knuckle_joint
+
+gripper_position_controller:
+  ros__parameters:
+    joints:
+      - finger_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity

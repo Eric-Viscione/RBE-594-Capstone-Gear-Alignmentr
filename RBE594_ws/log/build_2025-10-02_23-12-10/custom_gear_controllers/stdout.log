@@ -1,0 +1,14 @@
+running develop
+running egg_info
+writing custom_gear_controllers.egg-info/PKG-INFO
+writing dependency_links to custom_gear_controllers.egg-info/dependency_links.txt
+writing entry points to custom_gear_controllers.egg-info/entry_points.txt
+writing requirements to custom_gear_controllers.egg-info/requires.txt
+writing top-level names to custom_gear_controllers.egg-info/top_level.txt
+reading manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom-gear-controllers.egg-link (link to .)
+
+Installed /home/tamar/RBE594_ws/build/custom_gear_controllers
+running symlink_data

@@ -1,0 +1,13 @@
+[0.100s] Invoking command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description': PS1=(vEnv) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake /home/tamar/RBE594_ws/src/robotiq_arg85_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/robotiq_arg85_description
+[0.109s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.247s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:53 (message):
+[0.247s]   ament_package_xml() package name 'robotiq_arg85_description' in
+[0.247s]   '/package.xml' does not match current PROJECT_NAME 'sirgas_description'.
+[0.247s]   You must call project() with the same package name before.
+[0.247s] Call Stack (most recent call first):
+[0.247s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:63 (ament_package_xml)
+[0.247s]   CMakeLists.txt:17 (ament_package)
+[0.247s] 
+[0.247s] [0m
+[0.247s] -- Configuring incomplete, errors occurred!
+[0.249s] Invoked command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description' returned '1': PS1=(vEnv) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake /home/tamar/RBE594_ws/src/robotiq_arg85_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/robotiq_arg85_description

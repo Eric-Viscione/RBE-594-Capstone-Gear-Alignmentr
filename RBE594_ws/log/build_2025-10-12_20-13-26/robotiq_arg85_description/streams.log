@@ -1,0 +1,40 @@
+[0.110s] Invoking command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description': PS1=(vEnv) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake /home/tamar/RBE594_ws/src/robotiq_arg85_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/robotiq_arg85_description
+[0.116s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.116s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[0.116s]   CMake.
+[0.116s] 
+[0.116s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.116s]   CMake that the project does not need compatibility with older versions.
+[0.116s] 
+[0.116s] [0m
+[0.124s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.204s] -- Found Python3: /home/tamar/vEnv/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.304s] [31mCMake Error at CMakeLists.txt:23 (install):
+[0.304s]   install FILES given no DESTINATION!
+[0.304s] 
+[0.304s] [0m
+[0.359s] [33mCMake Warning (dev) at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:41 (if):
+[0.359s]   Policy CMP0057 is not set: Support new IN_LIST if() operator.  Run "cmake
+[0.359s]   --help-policy CMP0057" for policy details.  Use the cmake_policy command to
+[0.359s]   set the policy and suppress this warning.
+[0.359s] 
+[0.359s]   IN_LIST will be interpreted as an operator when the policy is set to NEW.
+[0.359s]   Since the policy is not set the OLD behavior will be used.
+[0.359s] Call Stack (most recent call first):
+[0.359s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.359s]   CMakeLists.txt:30 (ament_package)
+[0.359s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.359s] [0m
+[0.359s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:41 (if):
+[0.360s]   if given arguments:
+[0.360s] 
+[0.360s]     "ament_cmake_core" "IN_LIST" "_ARG_AMENT_EXECUTE_EXTENSIONS_EXCLUDE"
+[0.360s] 
+[0.360s]   Unknown arguments specified
+[0.360s] Call Stack (most recent call first):
+[0.360s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.360s]   CMakeLists.txt:30 (ament_package)
+[0.360s] 
+[0.360s] [0m
+[0.360s] -- Configuring incomplete, errors occurred!
+[0.361s] Invoked command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description' returned '1': PS1=(vEnv) ${debian_chroot:+($debian_chroot)}\u@\h:\w\$ VIRTUAL_ENV_PROMPT=(vEnv) /usr/bin/cmake /home/tamar/RBE594_ws/src/robotiq_arg85_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/robotiq_arg85_description
