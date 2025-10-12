@@ -55,7 +55,8 @@ RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/
 # Set environment variables for the display.
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
-
+##Run the below export to fix my rviz crashing
+#export LIBGL_ALWAYS_SOFTWARE=1
 # Copy entrypoint and bashrc to the user's home directory
 COPY entrypoint.sh /entrypoint.sh
 COPY bashrc /home/$USERNAME/.bashrc

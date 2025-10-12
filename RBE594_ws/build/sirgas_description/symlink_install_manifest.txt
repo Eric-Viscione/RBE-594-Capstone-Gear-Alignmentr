@@ -28,6 +28,8 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//world/.keep
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/camera.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/gsm.rviz

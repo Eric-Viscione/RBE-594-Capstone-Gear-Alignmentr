@@ -7,6 +7,8 @@ import xacro
 
 # Define the package name
 packageName = 'sirgas_description'
+ # Absolute package path
+pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
 
 # Relative path of the xacro file with respect to the package path
 xacroRelativePath = 'urdf/ur20_pba.urdf.xacro'
@@ -19,6 +21,10 @@ ros2controlRelativePath = 'config/test.yaml'
 
 # Define the new controller manager name
 controller_manager_name = '/combined_controller_manager'
+
+
+# Absolute camera SDF model path
+cameraSdfPath = os.path.join(pkgPath, 'meshes/sim_cam/model.sdf')
 
 def generate_launch_description():
     # Absolute package path
@@ -75,7 +81,43 @@ def generate_launch_description():
             'robot_system_position',
             '-allow_renaming',
             'true'])
+     # --- Camera Launch Logic Starts Here ---
+
+    # Camera Spawner Node
+    spawn_sim_cam = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        name='spawn_sim_cam',
+        output='screen',
+        arguments=[
+            '-file',
+            cameraSdfPath, # Use the absolute path defined above
+            '-name',
+            'sim_cam',
+            '-x', '0', '-y', '0', '-z', '2',
+            '-R', '0', '1.57', '-Y', '0' # Note: SDF's pose is roll/pitch/yaw
+        ]
+    )
+
+    # Timer Action for delay before starting the bridge (2.0 seconds)
+    timer_bridge_sim_cam = launch.actions.TimerAction(
+        period=2.0,
+        actions=[
+            # Camera Bridge Node
+            launch_ros.actions.Node(
+                package='ros_gz_bridge',
+                executable='parameter_bridge',
+                name='bridge_sim_cam',
+                output='screen',
+                arguments=[
+                    '/camera_feed/image@sensor_msgs/msg/Image@gz.msgs.Image',
+                    '/camera_feed/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'
+                ]
+            )
+        ]
+    )
     
+    # --- Camera Launch Logic Ends Here ---
     # Robot state publisher node
     robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',
@@ -135,6 +177,8 @@ def generate_launch_description():
         # rviz_node,
         ur20_jsb_spawner, # Use specific ur20 joint state broadcaster
         pba_jsb_spawner, # Use specific pba joint state broadcaster
+        spawn_sim_cam, # New: Camera Spawner
+        timer_bridge_sim_cam, # New: Timer and Camera Bridge
         ur20_jt_controller_spawner,
         # ur20_v_controller_spawner,
         pba_v_controller_spawner,
