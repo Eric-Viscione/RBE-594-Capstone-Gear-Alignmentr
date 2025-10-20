@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/orientation_constraint__functions.h"
-#include "moveit_msgs/msg/detail/orientation_constraint__struct.h"
 #include "moveit_msgs/msg/detail/orientation_constraint__type_support.h"
+#include "moveit_msgs/msg/detail/orientation_constraint__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/msg/detail/orientation_constraint__struct.h"
 
 #ifdef __cplusplus
 extern "C"

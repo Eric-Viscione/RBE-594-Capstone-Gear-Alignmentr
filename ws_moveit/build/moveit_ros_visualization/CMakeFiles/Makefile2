@@ -844,8 +844,8 @@ trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin_core.dir/clean:
 trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: rviz_plugin_render_tools/CMakeFiles/moveit_rviz_plugin_render_tools.dir/all
 trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: planning_scene_rviz_plugin/CMakeFiles/moveit_planning_scene_rviz_plugin_core.dir/all
 trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin_core.dir/all
-trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin_autogen_timestamp_deps.dir/all
 trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin_autogen.dir/all
+trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/all: trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/build.make trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/build.make trajectory_rviz_plugin/CMakeFiles/moveit_trajectory_rviz_plugin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tamar/ws_moveit/build/moveit_ros_visualization/CMakeFiles --progress-num=51,52,53 "Built target moveit_trajectory_rviz_plugin"

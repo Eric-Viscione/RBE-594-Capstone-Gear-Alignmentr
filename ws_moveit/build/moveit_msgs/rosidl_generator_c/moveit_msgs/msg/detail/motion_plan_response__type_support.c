@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/motion_plan_response__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/motion_plan_response__struct.h"
 #include "moveit_msgs/msg/detail/motion_plan_response__functions.h"
 

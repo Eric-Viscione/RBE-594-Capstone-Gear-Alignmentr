@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/joint_limits__type_support.h"
-#include "moveit_msgs/msg/detail/joint_limits__struct.h"
 #include "moveit_msgs/msg/detail/joint_limits__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/msg/detail/joint_limits__struct.h"
+#include "moveit_msgs/msg/detail/joint_limits__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

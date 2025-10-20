@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/planning_scene_world__functions.h"
 #include "moveit_msgs/msg/detail/planning_scene_world__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/planning_scene_world__type_support.h"
+#include "moveit_msgs/msg/detail/planning_scene_world__functions.h"
 
 #ifdef __cplusplus
 extern "C"

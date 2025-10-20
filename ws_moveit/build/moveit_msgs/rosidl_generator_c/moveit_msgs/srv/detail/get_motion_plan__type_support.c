@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/srv/detail/get_motion_plan__functions.h"
 #include "moveit_msgs/srv/detail/get_motion_plan__struct.h"
+#include "moveit_msgs/srv/detail/get_motion_plan__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/get_motion_plan__type_support.h"
 
 #ifdef __cplusplus

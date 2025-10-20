@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/constraints__functions.h"
 #include "moveit_msgs/msg/detail/constraints__struct.h"
+#include "moveit_msgs/msg/detail/constraints__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/constraints__type_support.h"
 
 #ifdef __cplusplus

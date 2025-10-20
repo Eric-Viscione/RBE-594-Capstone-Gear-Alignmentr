@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/object_color__struct.h"
 #include "moveit_msgs/msg/detail/object_color__type_support.h"
 #include "moveit_msgs/msg/detail/object_color__functions.h"
+#include "moveit_msgs/msg/detail/object_color__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

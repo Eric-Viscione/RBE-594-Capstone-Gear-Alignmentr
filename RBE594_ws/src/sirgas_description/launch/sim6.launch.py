@@ -8,27 +8,19 @@ from moveit_configs_utils import MoveItConfigsBuilder
 from moveit_configs_utils.launches import generate_move_group_launch
 
 # Define the package name
-packageName = 'sirgas_description'
+packageName = 'test_ws'
 
  # Absolute package path
 pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
 
 # Relative path of the xacro file with respect to the package path
-xacroRelativePath = os.path.join(
-    launch_ros.substitutions.FindPackageShare(package='test_ws').find('test_ws'),
-    'config',
-    'panda_pba_robots.urdf.xacro',
-    )
+xacroRelativePath = os.path.join(pkgPath, 'config', 'panda_pba_robots.urdf.xacro')
 
 # Absolute camera SDF model path
 cameraSdfPath = os.path.join(pkgPath, 'meshes/sim_cam/model.sdf')
 
 # RViz config file path respect to the package path
-rvizConfigPath = os.path.join(
-    launch_ros.substitutions.FindPackageShare(package='test_ws').find('test_ws'),
-    'config',
-    'moveit.rviz',
-    )
+rvizConfigPath = os.path.join(pkgPath, 'config', 'moveit.rviz')
 
 # Define the new controller manager name
 controller_manager_name = '/combined_controller_manager'
@@ -73,7 +65,9 @@ def generate_launch_description():
         .pilz_cartesian_limits(file_path='config/pilz_cartesian_limits.yaml')
         .sensors_3d('config/sensors_3d.yaml')
         .planning_scene_monitor(
-            publish_robot_description=True, publish_robot_description_semantic=True, publish_planning_scene=True
+            publish_robot_description=True, publish_robot_description_semantic=True, 
+            publish_planning_scene=True, publish_geometry_updates=True,
+            publish_state_updates=True, publish_transforms_updates=True
         )
         .planning_pipelines(
             pipelines=['ompl', 'chomp', 'pilz_industrial_motion_planner']
@@ -97,7 +91,8 @@ def generate_launch_description():
         executable='parameter_bridge',
         arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
         output='screen',
-        parameters=[{'use_sim_time': use_sim_time}])
+        parameters=[{'use_sim_time': use_sim_time}]
+        )
     
     gz_spawn_entity = launch_ros.actions.Node(
         package='ros_gz_sim',
@@ -110,7 +105,9 @@ def generate_launch_description():
             'robot_system_position',
             '-allow_renaming',
             'true'],
-            parameters=[{'use_sim_time': use_sim_time}])
+        parameters=[{'use_sim_time': use_sim_time}]
+            )
+            
      # --- Camera Launch Logic Starts Here ---
 
     # Camera Spawner Node

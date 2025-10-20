@@ -1,4 +1,0 @@
-Invoking command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description': /usr/bin/cmake --build /home/tamar/RBE594_ws/build/robotiq_arg85_description -- -j32 -l32
-Invoked command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description' returned '0': /usr/bin/cmake --build /home/tamar/RBE594_ws/build/robotiq_arg85_description -- -j32 -l32
-Invoking command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description': /usr/bin/cmake --install /home/tamar/RBE594_ws/build/robotiq_arg85_description
-Invoked command in '/home/tamar/RBE594_ws/build/robotiq_arg85_description' returned '0': /usr/bin/cmake --install /home/tamar/RBE594_ws/build/robotiq_arg85_description

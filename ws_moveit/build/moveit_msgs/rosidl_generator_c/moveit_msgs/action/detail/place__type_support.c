@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/action/detail/place__functions.h"
 #include "moveit_msgs/action/detail/place__struct.h"
 #include "moveit_msgs/action/detail/place__type_support.h"
+#include "moveit_msgs/action/detail/place__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

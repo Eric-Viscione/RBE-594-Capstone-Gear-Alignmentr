@@ -165,8 +165,8 @@ CMakeFiles/moveit_setup_assistant.dir/clean:
 # Target rules for target CMakeFiles/moveit_setup_assistant_updater.dir
 
 # All Build rule for target.
-CMakeFiles/moveit_setup_assistant_updater.dir/all: CMakeFiles/moveit_setup_assistant_updater_autogen_timestamp_deps.dir/all
 CMakeFiles/moveit_setup_assistant_updater.dir/all: CMakeFiles/moveit_setup_assistant_updater_autogen.dir/all
+CMakeFiles/moveit_setup_assistant_updater.dir/all: CMakeFiles/moveit_setup_assistant_updater_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/moveit_setup_assistant_updater.dir/build.make CMakeFiles/moveit_setup_assistant_updater.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/moveit_setup_assistant_updater.dir/build.make CMakeFiles/moveit_setup_assistant_updater.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=11,12,13 "Built target moveit_setup_assistant_updater"

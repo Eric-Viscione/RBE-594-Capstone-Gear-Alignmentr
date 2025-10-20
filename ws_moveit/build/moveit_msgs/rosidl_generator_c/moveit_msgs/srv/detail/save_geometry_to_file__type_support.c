@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/save_geometry_to_file__type_support.h"
-#include "moveit_msgs/srv/detail/save_geometry_to_file__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/save_geometry_to_file__struct.h"
+#include "moveit_msgs/srv/detail/save_geometry_to_file__functions.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -235,8 +235,8 @@ CMakeFiles/rviz_visual_tools_remote_control.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/rviz_visual_tools.dir/all: CMakeFiles/rviz_visual_tools_remote_control.dir/all
-CMakeFiles/rviz_visual_tools.dir/all: CMakeFiles/rviz_visual_tools_autogen_timestamp_deps.dir/all
 CMakeFiles/rviz_visual_tools.dir/all: CMakeFiles/rviz_visual_tools_autogen.dir/all
+CMakeFiles/rviz_visual_tools.dir/all: CMakeFiles/rviz_visual_tools_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rviz_visual_tools.dir/build.make CMakeFiles/rviz_visual_tools.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rviz_visual_tools.dir/build.make CMakeFiles/rviz_visual_tools.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tamar/ws_moveit/build/rviz_visual_tools/CMakeFiles --progress-num=11,12,13,14,15 "Built target rviz_visual_tools"

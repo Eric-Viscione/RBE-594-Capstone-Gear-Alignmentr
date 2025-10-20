@@ -26,10 +26,11 @@ data = [
     {
         "phase": "Phase 3: Control Algorithm Development (6 weeks)",
         "tasks": [
-            {"name": "3.1. Develop the 'Picker Robot's' control algorithm...", "start_week": 5, "duration": 3.5},
-            {"name": "3.2. Develop the 'Starter Robot's' control algorithm...", "start_week": 6, "duration": 3.5},
-            {"name": "3.3. Integrate the algorithms...", "start_week": 8.5, "duration": 2},
-            {"name": "3.4. Implement a motion planning algorithm...", "start_week": 9.5, "duration": 1.5},
+            # COMBINED: Original tasks 3.1, 3.2, and 3.3 are merged into one task.
+            # Start is week 5.0 (original 3.1 start). Duration is 6.0 weeks (to week 11.0).
+            {"name": "3.1. Develop the 'Panda Robot's' control algorithm...", "start_week": 5, "duration": 6.0}, 
+            
+            {"name": "3.2. Implement a motion planning algorithm...", "start_week": 9.5, "duration": 1.5}, # RENUMBERED (was 3.3)
         ],
     },
     {

@@ -4,9 +4,9 @@
 
 #include <string.h>
 
+#include "moveit_msgs/action/detail/execute_trajectory__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/action/detail/execute_trajectory__functions.h"
-#include "moveit_msgs/action/detail/execute_trajectory__struct.h"
 #include "moveit_msgs/action/detail/execute_trajectory__type_support.h"
 
 #ifdef __cplusplus

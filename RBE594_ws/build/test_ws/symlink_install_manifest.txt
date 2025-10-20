@@ -14,9 +14,7 @@
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/cmake/test_wsConfig-version.cmake
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/package.xml
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/demo.launch.py
-/home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/launches.py
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/move_group.launch.py
-/home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/moveit_configs_builder.py
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/moveit_rviz.launch.py
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/rsp.launch.py
 /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/setup_assistant.launch.py

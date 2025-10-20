@@ -67,8 +67,8 @@ include CMakeFiles/test_perception_autogen_timestamp_deps.dir/compiler_depend.ma
 include CMakeFiles/test_perception_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/test_perception_autogen_timestamp_deps: gtest/libgtest.a
-CMakeFiles/test_perception_autogen_timestamp_deps: libmoveit_setup_app_plugins.so
 CMakeFiles/test_perception_autogen_timestamp_deps: /usr/lib/qt5/bin/moc
+CMakeFiles/test_perception_autogen_timestamp_deps: libmoveit_setup_app_plugins.so
 CMakeFiles/test_perception_autogen_timestamp_deps: gtest/libgtest_main.a
 
 test_perception_autogen_timestamp_deps: CMakeFiles/test_perception_autogen_timestamp_deps

@@ -17,7 +17,6 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/camera.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gr.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gripper.launch.py
-/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/moveit_configs_builder.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.xml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim.launch.py
@@ -78,6 +77,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/load_controllers.sh
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/pba_controller.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/test.yaml
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/test2.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_controllers.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_picker_controllers.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_starter_controllers.yaml

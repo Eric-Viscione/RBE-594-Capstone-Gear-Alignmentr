@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/list_robot_states_in_warehouse__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/list_robot_states_in_warehouse__struct.h"
 #include "moveit_msgs/srv/detail/list_robot_states_in_warehouse__type_support.h"
 

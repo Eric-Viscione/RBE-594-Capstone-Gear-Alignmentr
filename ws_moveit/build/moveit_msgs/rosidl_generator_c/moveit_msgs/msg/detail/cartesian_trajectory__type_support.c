@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/cartesian_trajectory__type_support.h"
-#include "moveit_msgs/msg/detail/cartesian_trajectory__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/cartesian_trajectory__functions.h"
+#include "moveit_msgs/msg/detail/cartesian_trajectory__struct.h"
 
 #ifdef __cplusplus
 extern "C"

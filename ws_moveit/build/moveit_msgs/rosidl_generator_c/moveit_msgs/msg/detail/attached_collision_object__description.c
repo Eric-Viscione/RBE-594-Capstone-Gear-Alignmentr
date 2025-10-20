@@ -23,21 +23,21 @@ moveit_msgs__msg__AttachedCollisionObject__get_type_hash(
 #include <string.h>
 
 // Include directives for referenced types
-#include "geometry_msgs/msg/detail/pose__functions.h"
-#include "builtin_interfaces/msg/detail/duration__functions.h"
-#include "object_recognition_msgs/msg/detail/object_type__functions.h"
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
-#include "shape_msgs/msg/detail/mesh_triangle__functions.h"
 #include "shape_msgs/msg/detail/plane__functions.h"
-#include "geometry_msgs/msg/detail/polygon__functions.h"
-#include "shape_msgs/msg/detail/mesh__functions.h"
-#include "std_msgs/msg/detail/header__functions.h"
-#include "geometry_msgs/msg/detail/quaternion__functions.h"
-#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
-#include "builtin_interfaces/msg/detail/time__functions.h"
 #include "shape_msgs/msg/detail/solid_primitive__functions.h"
 #include "geometry_msgs/msg/detail/point__functions.h"
+#include "builtin_interfaces/msg/detail/time__functions.h"
+#include "geometry_msgs/msg/detail/pose__functions.h"
 #include "moveit_msgs/msg/detail/collision_object__functions.h"
+#include "std_msgs/msg/detail/header__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
+#include "geometry_msgs/msg/detail/quaternion__functions.h"
+#include "object_recognition_msgs/msg/detail/object_type__functions.h"
+#include "builtin_interfaces/msg/detail/duration__functions.h"
+#include "shape_msgs/msg/detail/mesh_triangle__functions.h"
+#include "shape_msgs/msg/detail/mesh__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
+#include "geometry_msgs/msg/detail/polygon__functions.h"
 #include "geometry_msgs/msg/detail/point32__functions.h"
 
 // Hashes for external referenced types

@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/contact_information__functions.h"
 #include "moveit_msgs/msg/detail/contact_information__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/contact_information__struct.h"
 
 #ifdef __cplusplus

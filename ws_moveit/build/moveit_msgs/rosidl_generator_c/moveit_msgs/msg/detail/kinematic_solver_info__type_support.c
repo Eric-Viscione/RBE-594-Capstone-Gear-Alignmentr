@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/msg/detail/kinematic_solver_info__struct.h"
 #include "moveit_msgs/msg/detail/kinematic_solver_info__type_support.h"
 #include "moveit_msgs/msg/detail/kinematic_solver_info__functions.h"
-#include "moveit_msgs/msg/detail/kinematic_solver_info__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

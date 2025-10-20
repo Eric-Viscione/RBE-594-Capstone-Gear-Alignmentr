@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/srv/detail/load_map__struct.h"
 #include "moveit_msgs/srv/detail/load_map__type_support.h"
+#include "moveit_msgs/srv/detail/load_map__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/load_map__functions.h"
 
 #ifdef __cplusplus

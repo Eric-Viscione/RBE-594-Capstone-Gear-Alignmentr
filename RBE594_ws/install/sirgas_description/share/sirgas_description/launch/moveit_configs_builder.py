@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/src/sirgas_description/launch/moveit_configs_builder.py

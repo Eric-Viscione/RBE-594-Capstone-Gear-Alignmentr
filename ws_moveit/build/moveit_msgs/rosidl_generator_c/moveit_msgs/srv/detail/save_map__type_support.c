@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/srv/detail/save_map__functions.h"
 #include "moveit_msgs/srv/detail/save_map__struct.h"
 #include "moveit_msgs/srv/detail/save_map__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/srv/detail/save_map__functions.h"
 
 #ifdef __cplusplus
 extern "C"

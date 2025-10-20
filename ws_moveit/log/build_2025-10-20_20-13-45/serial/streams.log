@@ -1,0 +1,59 @@
+[0.132s] Invoking command in '/home/tamar/ws_moveit/build/serial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/serial -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/serial
+[0.173s] -- The C compiler identification is GNU 13.3.0
+[0.205s] -- The CXX compiler identification is GNU 13.3.0
+[0.218s] -- Detecting C compiler ABI info
+[0.284s] -- Detecting C compiler ABI info - done
+[0.289s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.289s] -- Detecting C compile features
+[0.290s] -- Detecting C compile features - done
+[0.296s] -- Detecting CXX compiler ABI info
+[0.361s] -- Detecting CXX compiler ABI info - done
+[0.369s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.369s] -- Detecting CXX compile features
+[0.370s] -- Detecting CXX compile features - done
+[0.379s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.618s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.793s] -- Configuring done (0.7s)
+[0.798s] -- Generating done (0.0s)
+[0.800s] -- Build files have been written to: /home/tamar/ws_moveit/build/serial
+[0.816s] Invoked command in '/home/tamar/ws_moveit/build/serial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/serial -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/serial
+[0.816s] Invoking command in '/home/tamar/ws_moveit/build/serial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/serial -- -j32 -l32
+[0.854s] [ 25%] [32mBuilding CXX object CMakeFiles/serial.dir/src/impl/unix.cc.o[0m
+[0.856s] [ 50%] [32mBuilding CXX object CMakeFiles/serial.dir/src/serial.cc.o[0m
+[0.856s] [ 75%] [32mBuilding CXX object CMakeFiles/serial.dir/src/impl/list_ports/list_ports_linux.cc.o[0m
+[1.301s] [100%] [32m[1mLinking CXX static library libserial.a[0m
+[1.346s] [100%] Built target serial
+[1.354s] Invoked command in '/home/tamar/ws_moveit/build/serial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/serial -- -j32 -l32
+[1.355s] Invoking command in '/home/tamar/ws_moveit/build/serial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/serial
+[1.361s] -- Install configuration: "Release"
+[1.361s] -- Installing: /home/tamar/ws_moveit/install/serial/lib/libserial.a
+[1.361s] -- Installing: /home/tamar/ws_moveit/install/serial/include
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial/impl
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial/impl/win.h
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial/impl/unix.h
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial/serial.h
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/include/serial/v8stdint.h
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/library_path.sh
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/library_path.dsv
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/ament_index/resource_index/package_run_dependencies/serial
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/ament_index/resource_index/parent_prefix_path/serial
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/ament_prefix_path.sh
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/ament_prefix_path.dsv
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/path.sh
+[1.362s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/environment/path.dsv
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/local_setup.bash
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/local_setup.sh
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/local_setup.zsh
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/local_setup.dsv
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/package.dsv
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/ament_index/resource_index/packages/serial
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/export_serialExport.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/export_serialExport-release.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/ament_cmake_export_libraries-extras.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/ament_cmake_export_targets-extras.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/serialConfig.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/cmake/serialConfig-version.cmake
+[1.363s] -- Installing: /home/tamar/ws_moveit/install/serial/share/serial/package.xml
+[1.364s] Invoked command in '/home/tamar/ws_moveit/build/serial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/moveit_configs_utils:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/ws_moveit/install/moveit_configs_utils:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/serial

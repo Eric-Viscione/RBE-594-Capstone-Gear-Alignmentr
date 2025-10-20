@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/msg/detail/workspace_parameters__functions.h"
 #include "moveit_msgs/msg/detail/workspace_parameters__struct.h"
 #include "moveit_msgs/msg/detail/workspace_parameters__type_support.h"
+#include "moveit_msgs/msg/detail/workspace_parameters__functions.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -66,8 +66,8 @@ include CMakeFiles/test_controllers_autogen_timestamp_deps.dir/compiler_depend.m
 # Include the progress variables for this target.
 include CMakeFiles/test_controllers_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/test_controllers_autogen_timestamp_deps: /usr/lib/qt5/bin/moc
 CMakeFiles/test_controllers_autogen_timestamp_deps: libmoveit_setup_controllers.so
+CMakeFiles/test_controllers_autogen_timestamp_deps: /usr/lib/qt5/bin/moc
 CMakeFiles/test_controllers_autogen_timestamp_deps: gtest/libgtest_main.a
 CMakeFiles/test_controllers_autogen_timestamp_deps: gtest/libgtest.a
 
