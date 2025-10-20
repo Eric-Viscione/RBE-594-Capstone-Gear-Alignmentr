@@ -167,7 +167,7 @@
      <!-- ROS 2 Control configuration -->
      <!-- Only the master joint (pb_starter_joint) gets command interfaces -->
      <!-- Mimic joints only get state interfaces -->
-    <ros2_control name="combined_controller" type="system">  
+    <!-- <ros2_control name="combined_controller" type="system">  
         <hardware>
             <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </hardware>
@@ -202,6 +202,6 @@
             <parameters>$(find sirgas_description)/config/test.yaml</parameters>
             <controller_manager_name>combined_controller_manager</controller_manager_name>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 
 </robot>

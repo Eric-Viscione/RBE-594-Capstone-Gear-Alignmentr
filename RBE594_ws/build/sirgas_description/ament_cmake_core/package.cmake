@@ -5,7 +5,7 @@ set(sirgas_description_BUILD_DEPENDS "controller_interface" "geometry_msgs" "har
 set(sirgas_description_BUILDTOOL_DEPENDS "ament_cmake" "ros2_control" "ros2_controllers")
 set(sirgas_description_BUILD_EXPORT_DEPENDS "controller_interface" "geometry_msgs" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_action" "realtime_tools" "ur_dashboard_msgs" "ur_msgs" "std_msgs" "trajectory_msgs")
 set(sirgas_description_BUILDTOOL_EXPORT_DEPENDS )
-set(sirgas_description_EXEC_DEPENDS "rviz" "xacro" "controller_manager" "forward_command_controller" "joint_trajectory_controller" "robot_state_publisher" "ros_gz_bridge" "ros_gz_sim" "gz_ros2_control" "controller_interface" "geometry_msgs" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_action" "realtime_tools" "ur_dashboard_msgs" "ur_msgs" "std_msgs" "trajectory_msgs")
+set(sirgas_description_EXEC_DEPENDS "rviz" "xacro" "controller_manager" "forward_command_controller" "joint_trajectory_controller" "robot_state_publisher" "ros_gz_bridge" "ros_gz_sim" "gz_ros2_control" "moveit_ros_move_group" "moveit_kinematics" "moveit_planners" "moveit_simple_controller_manager" "joint_state_publisher_gui" "tf2_ros" "xacro" "controller_manager" "moveit_configs_utils" "moveit_ros_move_group" "moveit_ros_visualization" "moveit_ros_warehouse" "moveit_setup_assistant" "rviz2" "rviz_common" "rviz_default_plugins" "warehouse_ros_mongo" "controller_interface" "geometry_msgs" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_action" "realtime_tools" "ur_dashboard_msgs" "ur_msgs" "std_msgs" "trajectory_msgs")
 set(sirgas_description_TEST_DEPENDS "ament_lint_auto" "ament_lint_common")
 set(sirgas_description_GROUP_DEPENDS )
 set(sirgas_description_MEMBER_OF_GROUPS )

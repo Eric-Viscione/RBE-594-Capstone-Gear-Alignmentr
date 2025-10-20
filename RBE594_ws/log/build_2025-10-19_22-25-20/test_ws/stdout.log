@@ -1,0 +1,39 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/ament_index/resource_index/package_run_dependencies/test_ws
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/ament_index/resource_index/parent_prefix_path/test_ws
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/environment/path.sh
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/environment/path.dsv
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/local_setup.bash
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/local_setup.sh
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/local_setup.zsh
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/local_setup.dsv
+-- Symlinking: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/package.dsv
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/ament_index/resource_index/packages/test_ws
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/cmake/test_wsConfig.cmake
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/cmake/test_wsConfig-version.cmake
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/package.xml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/demo.launch.py
+-- Symlinking: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/launches.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/move_group.launch.py
+-- Symlinking: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/moveit_configs_builder.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/moveit_rviz.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/rsp.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/setup_assistant.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/spawn_controllers.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/static_virtual_joint_tfs.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/launch/warehouse_db.launch.py
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/initial_positions.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/joint_limits.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/kinematics.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/moveit.rviz
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/moveit_controllers.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/panda_pba_robots.ros2_control.xacro
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/panda_pba_robots.srdf
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/panda_pba_robots.urdf.xacro
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/pilz_cartesian_limits.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/ros2_controllers.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/config/sensors_3d.yaml
+-- Up-to-date symlink: /home/tamar/RBE594_ws/install/test_ws/share/test_ws/.setup_assistant

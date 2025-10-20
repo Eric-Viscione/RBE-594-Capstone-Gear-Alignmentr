@@ -295,9 +295,6 @@ ament_cmake_test_DIR:PATH=/opt/ros/jazzy/share/ament_cmake_test/cmake
 //The directory containing a CMake configuration file for ament_cmake_version.
 ament_cmake_version_DIR:PATH=/opt/ros/jazzy/share/ament_cmake_version/cmake
 
-//The directory containing a CMake configuration file for catkin.
-catkin_DIR:PATH=catkin_DIR-NOTFOUND
-
 //Value Computed by CMake
 robotiq_arg85_description_BINARY_DIR:STATIC=/home/tamar/RBE594_ws/build/robotiq_arg85_description
 
@@ -306,15 +303,6 @@ robotiq_arg85_description_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 robotiq_arg85_description_SOURCE_DIR:STATIC=/home/tamar/RBE594_ws/src/robotiq_arg85_description
-
-//Value Computed by CMake
-sirgas_description_BINARY_DIR:STATIC=/home/tamar/RBE594_ws/build/robotiq_arg85_description
-
-//Value Computed by CMake
-sirgas_description_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-sirgas_description_SOURCE_DIR:STATIC=/home/tamar/RBE594_ws/src/robotiq_arg85_description
 
 
 ########################
@@ -467,7 +455,7 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/tamar/vEnv/bin/python3][cfound components: Interpreter ][v3.12.3()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3][cfound components: Interpreter ][v3.12.3()]
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //Compiler reason failure
@@ -475,10 +463,10 @@ _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python3_EXECUTABLE:INTERNAL=/home/tamar/vEnv/bin/python3
+_Python3_EXECUTABLE:INTERNAL=/usr/bin/python3
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;32;;cpython-312-x86_64-linux-gnu;abi3;/usr/lib/python3.12;/home/tamar/vEnv/lib/python3.12;/home/tamar/vEnv/lib/python3.12/site-packages;/home/tamar/vEnv/lib/python3.12/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=cd225af0012920cab552fa10481c9ebe
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;32;;cpython-312-x86_64-linux-gnu;abi3;/usr/lib/python3.12;/usr/lib/python3.12;/usr/local/lib/python3.12/dist-packages;/usr/local/lib/python3.12/dist-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=4c8bfa8951e99fa32e4000a94f8c04a2
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

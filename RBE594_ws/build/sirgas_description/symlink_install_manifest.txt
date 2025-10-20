@@ -1,7 +1,10 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera2.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/panda.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/panda_pba.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba2.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/robotiq_arg85_description.urdf.xacro
@@ -14,6 +17,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/camera.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gr.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gripper.launch.py
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/moveit_configs_builder.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.xml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim.launch.py
@@ -21,6 +25,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim3.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim4.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim5.launch.py
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim6.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
@@ -31,6 +36,16 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/finger.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/hand.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link0.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link1.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link2.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link3.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link4.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link5.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link6.stl
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/collision/link7.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_coarse.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_fine.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_knuckle_coarse.STL
@@ -42,6 +57,16 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_coarse.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_fine.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/finger.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/hand.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link0.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link1.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link2.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link3.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link4.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link5.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link6.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link7.dae
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/camera.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config2.rviz

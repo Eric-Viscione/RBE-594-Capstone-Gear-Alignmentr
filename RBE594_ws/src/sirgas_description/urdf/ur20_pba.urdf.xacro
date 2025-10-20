@@ -13,13 +13,10 @@
     <!-- Import UR20 Gripper Robot - directly include without macro call -->
     <xacro:include filename="$(find sirgas_description)/urdf/robotiq_arg85_description.urdf.xacro" />
 
-    <joint name="wrist3_gripper_joint" type="continuous">
-        <parent link="ur20_starter/wrist_3_link"/>
+    <joint name="tool0_gripper_joint" type="fixed">
+        <parent link="ur20_starter/tool0"/>
         <child link="robotiq_85_base_link"/>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <axis xyz="0 0 1"/>
-        <limit effort="1500.0" velocity="10.0"/>
-        <dynamics damping="0.1" friction="0.01"/>
     </joint>
 
      <!-- Add ROS2 Control for Gripper -->

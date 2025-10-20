@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/src/test_ws/launch/moveit_rviz.launch.py

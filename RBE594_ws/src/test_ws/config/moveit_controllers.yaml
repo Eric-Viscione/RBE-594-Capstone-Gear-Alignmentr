@@ -1,0 +1,34 @@
+# MoveIt uses this configuration for controller management
+use_sim_time: true
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - panda_arm_controller
+    - hand_controller
+
+  panda_arm_controller:
+    type: FollowJointTrajectory
+    joints:
+      - panda_joint1
+      - panda_joint2
+      - panda_joint3
+      - panda_joint4
+      - panda_joint5
+      - panda_joint6
+      - panda_joint7
+    action_ns: panda_arm_controller
+    default: true
+    action_monitor_rate: 20.0
+    state_publish_rate: 50.0
+    allow_trajectory_execution: true
+    execution_duration_monitoring: false
+  hand_controller:
+    type: GripperCommand
+    joints:
+      - panda_finger_joint1
+    action_ns: hand_controller
+    default: true
+    action_monitor_rate: 20.0
+    state_publish_rate: 50.0
