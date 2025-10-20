@@ -1,0 +1,130 @@
+[0.016s] Invoking command in '/home/tamar/ws_moveit/build/moveit_visual_tools': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tamar/ws_moveit/src/moveit_visual_tools -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_visual_tools
+[0.054s] -- The C compiler identification is GNU 13.3.0
+[0.092s] -- The CXX compiler identification is GNU 13.3.0
+[0.103s] -- Detecting C compiler ABI info
+[0.168s] -- Detecting C compiler ABI info - done
+[0.176s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.176s] -- Detecting C compile features
+[0.176s] -- Detecting C compile features - done
+[0.183s] -- Detecting CXX compiler ABI info
+[0.252s] -- Detecting CXX compiler ABI info - done
+[0.260s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.261s] -- Detecting CXX compile features
+[0.261s] -- Detecting CXX compile features - done
+[0.262s] -- Found moveit_common: 2.12.3 (/home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake)
+[0.269s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.361s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.534s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system 
+[0.552s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.608s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.630s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.648s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.667s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.703s] -- Found graph_msgs: 0.2.0 (/opt/ros/jazzy/share/graph_msgs/cmake)
+[0.713s] -- Found moveit_core: 2.12.3 (/home/tamar/ws_moveit/install/moveit_core/share/moveit_core/cmake)
+[0.834s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.901s] -- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[0.963s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.967s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[0.999s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[1.062s] -- Found rclcpp_lifecycle: 28.1.12 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[1.091s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+[1.177s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.178s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.321s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.439s] -- Found moveit_ros_planning: 2.12.3 (/home/tamar/ws_moveit/install/moveit_ros_planning/share/moveit_ros_planning/cmake)
+[1.442s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[1.465s] -- Found rviz_visual_tools: 4.1.4 (/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake)
+[1.499s] -- Setting OGRE_DIR to: '/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'
+[1.500s] -- Found OGRE
+[1.500s] --   static     : OFF
+[1.500s] --   components : MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume
+[1.500s] --   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.500s] --   media      : /opt/ros/jazzy/opt/rviz_ogre_vendor/share/OGRE/Media
+[1.500s] -- OGRE_LIBRARIES: OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain
+[1.500s] -- OGRE_LIBRARY_DIRS: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib
+[1.500s] -- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.500s] -- OGRE_PLUGIN_DIR: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/OGRE
+[1.500s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.500s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.500s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.500s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.517s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.3")  
+[1.523s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+[1.614s] -- Found X11: /usr/include   
+[1.615s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[1.686s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[1.686s] -- Looking for gethostbyname
+[1.753s] -- Looking for gethostbyname - found
+[1.753s] -- Looking for connect
+[1.866s] -- Looking for connect - found
+[1.866s] -- Looking for remove
+[2.084s] -- Looking for remove - found
+[2.084s] -- Looking for shmat
+[2.357s] -- Looking for shmat - found
+[2.357s] -- Looking for IceConnectionNumber in ICE
+[2.680s] -- Looking for IceConnectionNumber in ICE - found
+[3.024s] -- Setting yaml-cpp_DIR to: '/opt/ros/jazzy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/share/cmake/yaml-cpp'
+[3.615s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[4.020s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.036s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.036s] -- Configured 'flake8' exclude dirs and/or files: 
+[4.056s] -- Added test 'lint_cmake' to check CMake code style
+[4.065s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[4.083s] -- Added test 'xmllint' to check XML markup files
+[4.106s] -- Configuring done (4.1s)
+[4.533s] -- Generating done (0.3s)
+[4.563s] -- Build files have been written to: /home/tamar/ws_moveit/build/moveit_visual_tools
+[4.587s] Invoked command in '/home/tamar/ws_moveit/build/moveit_visual_tools' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tamar/ws_moveit/src/moveit_visual_tools -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_visual_tools
+[4.591s] Invoking command in '/home/tamar/ws_moveit/build/moveit_visual_tools': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_visual_tools -- -j32 -l32
+[4.770s] [ 16%] [32mBuilding CXX object CMakeFiles/moveit_visual_tools.dir/src/imarker_robot_state.cpp.o[0m
+[4.781s] [ 33%] [32mBuilding CXX object CMakeFiles/moveit_visual_tools.dir/src/imarker_end_effector.cpp.o[0m
+[4.783s] [ 50%] [32mBuilding CXX object CMakeFiles/moveit_visual_tools.dir/src/moveit_visual_tools.cpp.o[0m
+[23.587s] [ 66%] [32m[1mLinking CXX shared library libmoveit_visual_tools.so[0m
+[23.845s] [ 66%] Built target moveit_visual_tools
+[23.867s] [ 83%] [32mBuilding CXX object CMakeFiles/moveit_visual_tools_demo.dir/src/moveit_visual_tools_demo.cpp.o[0m
+[29.529s] [100%] [32m[1mLinking CXX executable moveit_visual_tools_demo[0m
+[29.730s] [100%] Built target moveit_visual_tools_demo
+[29.739s] Invoked command in '/home/tamar/ws_moveit/build/moveit_visual_tools' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_visual_tools -- -j32 -l32
+[29.740s] Invoking command in '/home/tamar/ws_moveit/build/moveit_visual_tools': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_visual_tools
+[29.747s] -- Install configuration: "Release"
+[29.747s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/library_path.sh
+[29.747s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/library_path.dsv
+[29.747s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/lib/libmoveit_visual_tools.so
+[29.748s] -- Set non-toolchain portion of runtime path of "/home/tamar/ws_moveit/install/moveit_visual_tools/lib/libmoveit_visual_tools.so" to ""
+[29.748s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/lib/moveit_visual_tools/moveit_visual_tools_demo
+[29.748s] -- Set non-toolchain portion of runtime path of "/home/tamar/ws_moveit/install/moveit_visual_tools/lib/moveit_visual_tools/moveit_visual_tools_demo" to ""
+[29.748s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/include
+[29.748s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/include/moveit_visual_tools
+[29.748s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/include/moveit_visual_tools/imarker_robot_state.h
+[29.748s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/include/moveit_visual_tools/moveit_visual_tools.h
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/include/moveit_visual_tools/imarker_end_effector.h
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/launch
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/launch/demo_rviz.launch.py
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/launch/demo.rviz
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources/rrbot.urdf
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources/rrbot.srdf
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources/demo.png
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources/screenshot.png
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/resources/demo_mesh.stl
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/ament_index/resource_index/package_run_dependencies/moveit_visual_tools
+[29.749s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/ament_index/resource_index/parent_prefix_path/moveit_visual_tools
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/ament_prefix_path.sh
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/ament_prefix_path.dsv
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/path.sh
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/environment/path.dsv
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/local_setup.bash
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/local_setup.sh
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/local_setup.zsh
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/local_setup.dsv
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/package.dsv
+[29.750s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/ament_index/resource_index/packages/moveit_visual_tools
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/export_moveit_visual_toolsExport.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/export_moveit_visual_toolsExport-release.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_targets-extras.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig-version.cmake
+[29.751s] -- Installing: /home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/package.xml
+[29.751s] Invoked command in '/home/tamar/ws_moveit/build/moveit_visual_tools' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/rviz_visual_tools:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/rviz_visual_tools/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_visual_tools

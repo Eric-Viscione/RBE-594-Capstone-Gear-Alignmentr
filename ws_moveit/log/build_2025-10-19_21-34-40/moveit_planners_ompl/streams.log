@@ -1,0 +1,179 @@
+[0.014s] Invoking command in '/home/tamar/ws_moveit/build/moveit_planners_ompl': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_planners/ompl -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_planners_ompl
+[0.057s] -- The CXX compiler identification is GNU 13.3.0
+[0.068s] -- Detecting CXX compiler ABI info
+[0.141s] -- Detecting CXX compiler ABI info - done
+[0.149s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.149s] -- Detecting CXX compile features
+[0.149s] -- Detecting CXX compile features - done
+[0.151s] -- Found moveit_common: 2.12.3 (/home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake)
+[0.156s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.276s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.546s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time thread serialization 
+[0.548s] -- Found moveit_core: 2.12.3 (/home/tamar/ws_moveit/install/moveit_core/share/moveit_core/cmake)
+[0.570s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.645s] -- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[0.700s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.721s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.742s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.761s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.844s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.849s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[0.879s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.947s] -- Found rclcpp_lifecycle: 28.1.12 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[0.978s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+[1.094s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.094s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.235s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.352s] -- Found moveit_ros_planning: 2.12.3 (/home/tamar/ws_moveit/install/moveit_ros_planning/share/moveit_ros_planning/cmake)
+[1.355s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[1.384s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: serialization filesystem system 
+[1.386s] -- Found ompl: /opt/ros/jazzy/include/ompl-1.7;/usr/include;/usr/include/eigen3  
+[1.551s] -- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+[1.552s] -- Found OpenMP: TRUE (found version "4.5")  
+[1.563s] -- Found ament_cmake_gtest: 2.5.4 (/opt/ros/jazzy/share/ament_cmake_gtest/cmake)
+[1.568s] -- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.597s] -- The C compiler identification is GNU 13.3.0
+[1.606s] -- Detecting C compiler ABI info
+[1.685s] -- Detecting C compiler ABI info - done
+[1.693s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.693s] -- Detecting C compile features
+[1.694s] -- Detecting C compile features - done
+[1.695s] -- Found Threads: TRUE  
+[1.716s] -- Configuring done (1.7s)
+[1.824s] -- Generating done (0.1s)
+[1.842s] -- Build files have been written to: /home/tamar/ws_moveit/build/moveit_planners_ompl
+[1.850s] Invoked command in '/home/tamar/ws_moveit/build/moveit_planners_ompl' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_planners/ompl -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_planners_ompl
+[1.851s] Invoking command in '/home/tamar/ws_moveit/build/moveit_planners_ompl': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_planners_ompl -- -j32 -l32
+[1.913s] [  2%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/model_based_planning_context.cpp.o[0m
+[1.914s] [  5%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/joint_space/constrained_planning_state_space.cpp.o[0m
+[1.914s] [  7%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/joint_space/constrained_planning_state_space_factory.cpp.o[0m
+[1.914s] [ 10%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/joint_space/joint_model_state_space.cpp.o[0m
+[1.914s] [ 12%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/planning_context_manager.cpp.o[0m
+[1.916s] [ 15%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[1.918s] [ 17%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/model_based_state_space.cpp.o[0m
+[1.919s] [ 20%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/joint_space/joint_model_state_space_factory.cpp.o[0m
+[1.924s] [ 22%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/ompl_constraints.cpp.o[0m
+[1.924s] [ 25%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/model_based_state_space_factory.cpp.o[0m
+[1.929s] [ 27%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/work_space/pose_model_state_space_factory.cpp.o[0m
+[1.929s] [ 30%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/threadsafe_state_storage.cpp.o[0m
+[1.929s] [ 32%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/parameterization/work_space/pose_model_state_space.cpp.o[0m
+[1.929s] [ 35%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/ompl_interface.cpp.o[0m
+[1.934s] [ 37%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[1.977s] [ 40%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/projection_evaluators.cpp.o[0m
+[1.984s] [ 42%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/state_validity_checker.cpp.o[0m
+[1.992s] [ 45%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/constrained_sampler.cpp.o[0m
+[1.992s] [ 47%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/goal_union.cpp.o[0m
+[1.996s] [ 50%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/constraints_library.cpp.o[0m
+[2.028s] [ 52%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_interface.dir/src/detail/constrained_goal_sampler.cpp.o[0m
+[2.908s] [ 55%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[3.035s] [ 55%] Built target gtest_main
+[12.574s] [ 57%] [32m[1mLinking CXX static library libgtest.a[0m
+[12.629s] [ 57%] Built target gtest
+[20.321s] [ 60%] [32m[1mLinking CXX shared library libmoveit_ompl_interface.so[0m
+[20.715s] [ 60%] Built target moveit_ompl_interface
+[20.738s] [ 62%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_state_space.dir/test/test_state_space.cpp.o[0m
+[20.740s] [ 72%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_ompl_planner_plugin.dir/src/ompl_planner_manager.cpp.o[0m
+[20.740s] [ 72%] [32mBuilding CXX object ompl_interface/CMakeFiles/moveit_generate_state_database.dir/scripts/generate_state_database.cpp.o[0m
+[20.740s] [ 72%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_constrained_planning_state_space.dir/test/test_constrained_planning_state_space.cpp.o[0m
+[20.740s] [ 72%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_planning_context_manager.dir/test/test_planning_context_manager.cpp.o[0m
+[20.740s] [ 77%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_state_validity_checker.dir/test/test_state_validity_checker.cpp.o[0m
+[20.740s] [ 77%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_threadsafe_state_storage.dir/test/test_threadsafe_state_storage.cpp.o[0m
+[20.740s] [ 80%] [32mBuilding CXX object ompl_interface/CMakeFiles/test_constrained_state_validity_checker.dir/test/test_constrained_state_validity_checker.cpp.o[0m
+[24.571s] [ 82%] [32m[1mLinking CXX executable test_threadsafe_state_storage[0m
+[24.881s] [ 82%] Built target test_threadsafe_state_storage
+[25.260s] [ 85%] [32m[1mLinking CXX executable test_state_space[0m
+[25.681s] [ 85%] Built target test_state_space
+[27.321s] [ 87%] [32m[1mLinking CXX executable test_constrained_state_validity_checker[0m
+[27.601s] [ 87%] Built target test_constrained_state_validity_checker
+[27.723s] [ 90%] [32m[1mLinking CXX executable test_planning_context_manager[0m
+[27.876s] [ 92%] [32m[1mLinking CXX shared library libmoveit_ompl_planner_plugin.so[0m
+[27.962s] [ 92%] Built target test_planning_context_manager
+[28.059s] [ 92%] Built target moveit_ompl_planner_plugin
+[28.211s] [ 95%] [32m[1mLinking CXX executable test_constrained_planning_state_space[0m
+[28.357s] [ 97%] [32m[1mLinking CXX executable test_state_validity_checker[0m
+[28.481s] [ 97%] Built target test_constrained_planning_state_space
+[28.631s] [ 97%] Built target test_state_validity_checker
+[28.697s] [100%] [32m[1mLinking CXX executable generate_state_database[0m
+[28.914s] [100%] Built target moveit_generate_state_database
+[28.924s] Invoked command in '/home/tamar/ws_moveit/build/moveit_planners_ompl' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_planners_ompl -- -j32 -l32
+[28.925s] Invoking command in '/home/tamar/ws_moveit/build/moveit_planners_ompl': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_planners_ompl
+[28.929s] -- Install configuration: "Release"
+[28.929s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/lib/moveit_planners_ompl/generate_state_database
+[28.930s] -- Set non-toolchain portion of runtime path of "/home/tamar/ws_moveit/install/moveit_planners_ompl/lib/moveit_planners_ompl/generate_state_database" to ""
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/planning_context_manager.hpp
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/model_based_planning_context.h
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/projection_evaluators.hpp
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constraint_approximations.hpp
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constrained_sampler.h
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constrained_goal_sampler.hpp
+[28.930s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/ompl_constraints.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/goal_union.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/goal_union.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/state_validity_checker.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constrained_goal_sampler.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/state_validity_checker.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constrained_sampler.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constraints_library.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/threadsafe_state_storage.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constraint_approximations.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/ompl_constraints.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/projection_evaluators.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/threadsafe_state_storage.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/detail/constraints_library.hpp
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/ompl_interface.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/planning_context_manager.h
+[28.931s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/model_based_state_space_factory.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/joint_model_state_space.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/constrained_planning_state_space.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/constrained_planning_state_space_factory.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/constrained_planning_state_space_factory.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/constrained_planning_state_space.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/joint_model_state_space_factory.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/joint_model_state_space.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/joint_space/joint_model_state_space_factory.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/work_space
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/work_space/pose_model_state_space_factory.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/work_space/pose_model_state_space_factory.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/work_space/pose_model_state_space.h
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/work_space/pose_model_state_space.hpp
+[28.932s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/model_based_state_space.hpp
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/model_based_state_space.h
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/parameterization/model_based_state_space_factory.hpp
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/model_based_planning_context.hpp
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/include/moveit_planners/moveit/ompl_interface/ompl_interface.hpp
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_interface.so.2.12.3
+[28.933s] -- Set non-toolchain portion of runtime path of "/home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_interface.so.2.12.3" to ""
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_interface.so
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_planner_plugin.so.2.12.3
+[28.933s] -- Set non-toolchain portion of runtime path of "/home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_planner_plugin.so.2.12.3" to ""
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/lib/libmoveit_ompl_planner_plugin.so
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/library_path.sh
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/library_path.dsv
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/ompl_interface_plugin_description.xml
+[28.933s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/ament_index/resource_index/package_run_dependencies/moveit_planners_ompl
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/ament_index/resource_index/parent_prefix_path/moveit_planners_ompl
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/ament_prefix_path.sh
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/ament_prefix_path.dsv
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/path.sh
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/environment/path.dsv
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/local_setup.bash
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/local_setup.sh
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/local_setup.zsh
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/local_setup.dsv
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/package.dsv
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/ament_index/resource_index/packages/moveit_planners_ompl
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/ament_index/resource_index/moveit_core__pluginlib__plugin/moveit_planners_ompl
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/moveit_planners_omplTargetsExport.cmake
+[28.934s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/moveit_planners_omplTargetsExport-release.cmake
+[28.935s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/ament_cmake_export_targets-extras.cmake
+[28.935s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/ament_cmake_export_dependencies-extras.cmake
+[28.935s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/moveit_planners_omplConfig.cmake
+[28.935s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/cmake/moveit_planners_omplConfig-version.cmake
+[28.935s] -- Installing: /home/tamar/ws_moveit/install/moveit_planners_ompl/share/moveit_planners_ompl/package.xml
+[28.936s] Invoked command in '/home/tamar/ws_moveit/build/moveit_planners_ompl' returned '0': AMENT_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_configs_utils:/home/tamar/ws_moveit/install/moveit_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor:/home/tamar/ws_moveit/install/moveit_resources_fanuc_moveit_config:/home/tamar/ws_moveit/install/moveit_core:/home/tamar/ws_moveit/install/moveit_resources_pr2_description:/home/tamar/ws_moveit/install/moveit_resources_fanuc_description:/home/tamar/ws_moveit/install/moveit_msgs:/home/tamar/ws_moveit/install/moveit_common:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy LD_LIBRARY_PATH=/home/tamar/ws_moveit/install/moveit_ros_planning/lib:/home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib:/home/tamar/ws_moveit/install/moveit_core/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:${LD_LIBRARY_PATH} PATH=/home/tamar/ws_moveit/install/moveit_core/bin:${PATH} PYTHONPATH=/home/tamar/ws_moveit/install/moveit_msgs/lib/python3.12/site-packages:/home/tamar/ws_moveit/install/moveit_configs_utils/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_planners_ompl

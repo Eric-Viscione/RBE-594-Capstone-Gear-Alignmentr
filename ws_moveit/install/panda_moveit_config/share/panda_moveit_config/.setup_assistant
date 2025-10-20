@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: moveit_resources_panda_description
+    relative_path: urdf/panda.urdf.xacro
+  srdf:
+    relative_path: config/panda.srdf
+  package_settings:
+    author_name: Tamar Boone
+    author_email: tboone@wpi.edu
+    generated_timestamp: 1760750396
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort

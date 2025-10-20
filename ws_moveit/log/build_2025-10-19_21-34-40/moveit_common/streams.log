@@ -1,0 +1,30 @@
+[0.027s] Invoking command in '/home/tamar/ws_moveit/build/moveit_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_common -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_common
+[0.145s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.149s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.293s] -- Configuring done (0.3s)
+[0.295s] -- Generating done (0.0s)
+[0.295s] -- Build files have been written to: /home/tamar/ws_moveit/build/moveit_common
+[0.297s] Invoked command in '/home/tamar/ws_moveit/build/moveit_common' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_common -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_common
+[0.298s] Invoking command in '/home/tamar/ws_moveit/build/moveit_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_common -- -j32 -l32
+[0.319s] Invoked command in '/home/tamar/ws_moveit/build/moveit_common' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_common -- -j32 -l32
+[0.324s] Invoking command in '/home/tamar/ws_moveit/build/moveit_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_common
+[0.328s] -- Install configuration: "Release"
+[0.328s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/ament_index/resource_index/package_run_dependencies/moveit_common
+[0.328s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/ament_index/resource_index/parent_prefix_path/moveit_common
+[0.328s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/environment/ament_prefix_path.sh
+[0.328s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/environment/ament_prefix_path.dsv
+[0.328s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/environment/path.sh
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/environment/path.dsv
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/local_setup.bash
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/local_setup.sh
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/local_setup.zsh
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/local_setup.dsv
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/package.dsv
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/ament_index/resource_index/packages/moveit_common
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake/moveit_common-extras.cmake
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake/moveit_commonConfig.cmake
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake/moveit_commonConfig-version.cmake
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/package.xml
+[0.329s] -- Up-to-date: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake
+[0.329s] -- Installing: /home/tamar/ws_moveit/install/moveit_common/share/moveit_common/cmake/moveit_package.cmake
+[0.330s] Invoked command in '/home/tamar/ws_moveit/build/moveit_common' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_common

@@ -1,0 +1,6 @@
+Invoking command in '/home/tamar/ws_moveit/build/kortex_api': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/ros2_kortex/kortex_api -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/kortex_api
+Invoked command in '/home/tamar/ws_moveit/build/kortex_api' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/ros2_kortex/kortex_api -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/kortex_api
+Invoking command in '/home/tamar/ws_moveit/build/kortex_api': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/kortex_api -- -j32 -l32
+Invoked command in '/home/tamar/ws_moveit/build/kortex_api' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/kortex_api -- -j32 -l32
+Invoking command in '/home/tamar/ws_moveit/build/kortex_api': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/kortex_api
+Invoked command in '/home/tamar/ws_moveit/build/kortex_api' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/kortex_api

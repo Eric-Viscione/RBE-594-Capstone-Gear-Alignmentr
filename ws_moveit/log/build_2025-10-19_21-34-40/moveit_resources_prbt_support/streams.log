@@ -1,0 +1,63 @@
+[0.127s] Invoking command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_planners/test_configs/prbt_support -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_resources_prbt_support
+[0.159s] -- The C compiler identification is GNU 13.3.0
+[0.194s] -- The CXX compiler identification is GNU 13.3.0
+[0.206s] -- Detecting C compiler ABI info
+[0.264s] -- Detecting C compiler ABI info - done
+[0.269s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.269s] -- Detecting C compile features
+[0.269s] -- Detecting C compile features - done
+[0.275s] -- Detecting CXX compiler ABI info
+[0.340s] -- Detecting CXX compiler ABI info - done
+[0.349s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.349s] -- Detecting CXX compile features
+[0.350s] -- Detecting CXX compile features - done
+[0.358s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.480s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.649s] -- Configuring done (0.5s)
+[0.650s] -- Generating done (0.0s)
+[0.651s] -- Build files have been written to: /home/tamar/ws_moveit/build/moveit_resources_prbt_support
+[0.654s] Invoked command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/tamar/ws_moveit/src/moveit2/moveit_planners/test_configs/prbt_support -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/tamar/ws_moveit/install/moveit_resources_prbt_support
+[0.655s] Invoking command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_resources_prbt_support -- -j32 -l32
+[0.684s] Invoked command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/ws_moveit/build/moveit_resources_prbt_support -- -j32 -l32
+[0.685s] Invoking command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_resources_prbt_support
+[0.691s] -- Install configuration: "Release"
+[0.691s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/ament_index/resource_index/package_run_dependencies/moveit_resources_prbt_support
+[0.691s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/ament_index/resource_index/parent_prefix_path/moveit_resources_prbt_support
+[0.692s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/environment/ament_prefix_path.sh
+[0.692s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/environment/ament_prefix_path.dsv
+[0.692s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/environment/path.sh
+[0.692s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/environment/path.dsv
+[0.693s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/local_setup.bash
+[0.693s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/local_setup.sh
+[0.693s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/local_setup.zsh
+[0.693s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/local_setup.dsv
+[0.693s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/package.dsv
+[0.694s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/ament_index/resource_index/packages/moveit_resources_prbt_support
+[0.694s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/cmake/moveit_resources_prbt_supportConfig.cmake
+[0.694s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/cmake/moveit_resources_prbt_supportConfig-version.cmake
+[0.694s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/package.xml
+[0.694s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/urdf
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/urdf/prbt.ros2_control.xacro
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/urdf/simple_gripper_brackets.urdf.xacro
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/urdf/prbt_macro.xacro
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/urdf/prbt.xacro
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes
+[0.695s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/flange.dae
+[0.696s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_1.dae
+[0.696s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_5.dae
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_3.dae
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_5.stl
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_1.stl
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_2.stl
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/foot.stl
+[0.697s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_2.dae
+[0.698s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_3.stl
+[0.699s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_4.stl
+[0.699s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/link_4.dae
+[0.699s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/flange.stl
+[0.700s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/meshes/foot.dae
+[0.700s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/config
+[0.701s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/config/prbt_0_1.dcf
+[0.701s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/config/manipulator_controller.yaml
+[0.701s] -- Installing: /home/tamar/ws_moveit/install/moveit_resources_prbt_support/share/moveit_resources_prbt_support/config/manipulator_driver.yaml
+[0.714s] Invoked command in '/home/tamar/ws_moveit/build/moveit_resources_prbt_support' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/ws_moveit/build/moveit_resources_prbt_support
