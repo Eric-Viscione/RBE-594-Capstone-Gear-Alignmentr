@@ -1,0 +1,16 @@
+[1.315s] Invoking command in '/home/tamar/RBE594_ws/build/custom_gear_controllers': PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data
+[1.689s] running develop
+[1.955s] running egg_info
+[1.981s] writing custom_gear_controllers.egg-info/PKG-INFO
+[1.982s] writing dependency_links to custom_gear_controllers.egg-info/dependency_links.txt
+[1.982s] writing entry points to custom_gear_controllers.egg-info/entry_points.txt
+[1.982s] writing requirements to custom_gear_controllers.egg-info/requires.txt
+[1.982s] writing top-level names to custom_gear_controllers.egg-info/top_level.txt
+[2.036s] reading manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[2.037s] writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[2.065s] running build_ext
+[2.065s] Creating /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom-gear-controllers.egg-link (link to .)
+[2.066s] 
+[2.066s] Installed /home/tamar/RBE594_ws/build/custom_gear_controllers
+[2.066s] running symlink_data
+[2.106s] Invoked command in '/home/tamar/RBE594_ws/build/custom_gear_controllers' returned '0': PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data

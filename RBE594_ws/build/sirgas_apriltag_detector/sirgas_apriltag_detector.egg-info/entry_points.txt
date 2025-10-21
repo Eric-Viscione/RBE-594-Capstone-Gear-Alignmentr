@@ -1,0 +1,2 @@
+[console_scripts]
+apriltag_detector = sirgas_apriltag_detector.apriltag_detector:main

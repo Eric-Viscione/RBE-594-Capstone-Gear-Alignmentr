@@ -1,0 +1,201 @@
+[0.000000] (-) TimerEvent: {}
+[0.000170] (custom_gear_controllers) JobQueued: {'identifier': 'custom_gear_controllers', 'dependencies': OrderedDict()}
+[0.000230] (sirgas_description) JobQueued: {'identifier': 'sirgas_description', 'dependencies': OrderedDict()}
+[0.000267] (custom_gear_controllers) JobStarted: {'identifier': 'custom_gear_controllers'}
+[0.010804] (sirgas_description) JobStarted: {'identifier': 'sirgas_description'}
+[0.099673] (-) TimerEvent: {}
+[0.200292] (-) TimerEvent: {}
+[0.300799] (-) TimerEvent: {}
+[0.401104] (-) TimerEvent: {}
+[0.441289] (sirgas_description) JobProgress: {'identifier': 'sirgas_description', 'progress': 'cmake'}
+[0.441860] (sirgas_description) Command: {'cmd': ['/usr/bin/cmake', '/home/tamar/RBE594_ws/src/sirgas_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/install/sirgas_description'], 'cwd': '/home/tamar/RBE594_ws/build/sirgas_description', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '732ec8e448c5', 'ROS_PACKAGE_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/share', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/home/tamar/.ros/log', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/tamar/RBE594_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/x86_64-linux-gnu/pkgconfig:/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/pkgconfig', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp/runtime-tamar', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/sirgas_description', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/tamar/RBE594_ws/build/custom_gear_controllers:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/robotiq_arg85_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy'}), 'shell': False}
+[0.501213] (-) TimerEvent: {}
+[0.545659] (sirgas_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.601402] (-) TimerEvent: {}
+[0.702135] (-) TimerEvent: {}
+[0.760842] (sirgas_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.785116] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.802209] (-) TimerEvent: {}
+[0.891015] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.901713] (sirgas_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.901908] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.902299] (-) TimerEvent: {}
+[0.902417] (sirgas_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.917121] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.002425] (-) TimerEvent: {}
+[1.031275] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.043356] (sirgas_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.043675] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.044204] (sirgas_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.050769] (sirgas_description) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.102540] (-) TimerEvent: {}
+[1.202779] (-) TimerEvent: {}
+[1.282216] (sirgas_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.302893] (-) TimerEvent: {}
+[1.380951] (custom_gear_controllers) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/tamar/RBE594_ws/build/custom_gear_controllers/build', '--no-deps', 'symlink_data'], 'cwd': '/home/tamar/RBE594_ws/build/custom_gear_controllers', 'env': {'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '732ec8e448c5', 'ROS_PACKAGE_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/share', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/home/tamar/.ros/log', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/tamar/RBE594_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/x86_64-linux-gnu/pkgconfig:/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/pkgconfig', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp/runtime-tamar', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/custom_gear_controllers', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/home/tamar/RBE594_ws/build/custom_gear_controllers:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/robotiq_arg85_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.396971] (sirgas_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.402997] (-) TimerEvent: {}
+[1.503424] (-) TimerEvent: {}
+[1.604045] (-) TimerEvent: {}
+[1.678924] (sirgas_description) StdoutLine: {'line': b'-- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)\n'}
+[1.700050] (sirgas_description) StdoutLine: {'line': b'-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.704175] (-) TimerEvent: {}
+[1.804665] (-) TimerEvent: {}
+[1.857426] (sirgas_description) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[1.892788] (sirgas_description) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[1.904780] (-) TimerEvent: {}
+[1.940513] (sirgas_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.971974] (sirgas_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.004882] (-) TimerEvent: {}
+[2.069641] (custom_gear_controllers) StdoutLine: {'line': b'running develop\n'}
+[2.103177] (sirgas_description) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.104989] (-) TimerEvent: {}
+[2.111949] (sirgas_description) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.167394] (sirgas_description) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.205069] (-) TimerEvent: {}
+[2.272388] (sirgas_description) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[2.292878] (sirgas_description) StdoutLine: {'line': b'-- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)\n'}
+[2.303331] (custom_gear_controllers) StdoutLine: {'line': b'running egg_info\n'}
+[2.303570] (custom_gear_controllers) StdoutLine: {'line': b'creating custom_gear_controllers.egg-info\n'}
+[2.305146] (-) TimerEvent: {}
+[2.331664] (custom_gear_controllers) StdoutLine: {'line': b'writing custom_gear_controllers.egg-info/PKG-INFO\n'}
+[2.331931] (custom_gear_controllers) StdoutLine: {'line': b'writing dependency_links to custom_gear_controllers.egg-info/dependency_links.txt\n'}
+[2.332168] (custom_gear_controllers) StdoutLine: {'line': b'writing entry points to custom_gear_controllers.egg-info/entry_points.txt\n'}
+[2.332413] (custom_gear_controllers) StdoutLine: {'line': b'writing requirements to custom_gear_controllers.egg-info/requires.txt\n'}
+[2.332607] (custom_gear_controllers) StdoutLine: {'line': b'writing top-level names to custom_gear_controllers.egg-info/top_level.txt\n'}
+[2.332688] (custom_gear_controllers) StdoutLine: {'line': b"writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'\n"}
+[2.374529] (custom_gear_controllers) StdoutLine: {'line': b"reading manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'\n"}
+[2.375087] (custom_gear_controllers) StdoutLine: {'line': b"writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'\n"}
+[2.397332] (custom_gear_controllers) StdoutLine: {'line': b'running build_ext\n'}
+[2.397593] (custom_gear_controllers) StdoutLine: {'line': b'Creating /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom-gear-controllers.egg-link (link to .)\n'}
+[2.398116] (custom_gear_controllers) StdoutLine: {'line': b'\n'}
+[2.398335] (custom_gear_controllers) StdoutLine: {'line': b'Installed /home/tamar/RBE594_ws/build/custom_gear_controllers\n'}
+[2.398537] (custom_gear_controllers) StdoutLine: {'line': b'running symlink_data\n'}
+[2.398707] (custom_gear_controllers) StdoutLine: {'line': b'creating /home/tamar/RBE594_ws/install/custom_gear_controllers/share/ament_index\n'}
+[2.398874] (custom_gear_controllers) StdoutLine: {'line': b'creating /home/tamar/RBE594_ws/install/custom_gear_controllers/share/ament_index/resource_index\n'}
+[2.399014] (custom_gear_controllers) StdoutLine: {'line': b'creating /home/tamar/RBE594_ws/install/custom_gear_controllers/share/ament_index/resource_index/packages\n'}
+[2.399169] (custom_gear_controllers) StdoutLine: {'line': b'symbolically linking /home/tamar/RBE594_ws/build/custom_gear_controllers/resource/custom_gear_controllers -> /home/tamar/RBE594_ws/install/custom_gear_controllers/share/ament_index/resource_index/packages\n'}
+[2.399311] (custom_gear_controllers) StdoutLine: {'line': b'symbolically linking /home/tamar/RBE594_ws/build/custom_gear_controllers/package.xml -> /home/tamar/RBE594_ws/install/custom_gear_controllers/share/custom_gear_controllers\n'}
+[2.399433] (custom_gear_controllers) StdoutLine: {'line': b'symbolically linking /home/tamar/RBE594_ws/build/custom_gear_controllers/resource/gear_constraint_controller_plugin.xml -> /home/tamar/RBE594_ws/install/custom_gear_controllers/share/custom_gear_controllers\n'}
+[2.405228] (-) TimerEvent: {}
+[2.433941] (custom_gear_controllers) CommandEnded: {'returncode': 0}
+[2.444502] (custom_gear_controllers) JobEnded: {'identifier': 'custom_gear_controllers', 'rc': 0}
+[2.448274] (sirgas_description) StdoutLine: {'line': b'-- Configuring done (2.0s)\n'}
+[2.458196] (sirgas_description) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.461941] (sirgas_description) StdoutLine: {'line': b'-- Build files have been written to: /home/tamar/RBE594_ws/build/sirgas_description\n'}
+[2.473438] (sirgas_description) CommandEnded: {'returncode': 0}
+[2.475427] (sirgas_description) JobProgress: {'identifier': 'sirgas_description', 'progress': 'build'}
+[2.475482] (sirgas_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/tamar/RBE594_ws/build/sirgas_description', '--', '-j12', '-l12'], 'cwd': '/home/tamar/RBE594_ws/build/sirgas_description', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '732ec8e448c5', 'ROS_PACKAGE_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/share', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/home/tamar/.ros/log', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/tamar/RBE594_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/x86_64-linux-gnu/pkgconfig:/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/pkgconfig', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp/runtime-tamar', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/sirgas_description', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/tamar/RBE594_ws/build/custom_gear_controllers:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/robotiq_arg85_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy'}), 'shell': False}
+[2.505434] (-) TimerEvent: {}
+[2.605932] (-) TimerEvent: {}
+[2.638836] (sirgas_description) CommandEnded: {'returncode': 0}
+[2.640744] (sirgas_description) JobProgress: {'identifier': 'sirgas_description', 'progress': 'install'}
+[2.674782] (sirgas_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/tamar/RBE594_ws/build/sirgas_description'], 'cwd': '/home/tamar/RBE594_ws/build/sirgas_description', 'env': OrderedDict({'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '732ec8e448c5', 'ROS_PACKAGE_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/share', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/home/tamar/.ros/log', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/tamar/RBE594_ws/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/x86_64-linux-gnu/pkgconfig:/home/tamar/RBE594_ws/install/robotiq_arg85_description/lib/pkgconfig', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'XDG_RUNTIME_DIR': '/tmp/runtime-tamar', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/sirgas_description', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/tamar/RBE594_ws/build/custom_gear_controllers:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/tamar/RBE594_ws/install/ur_simulation_gz:/home/tamar/RBE594_ws/install/ur_description:/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/robotiq_arg85_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy'}), 'shell': False}
+[2.703945] (sirgas_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.705646] (sirgas_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.706089] (-) TimerEvent: {}
+[2.708017] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera.urdf.xacro\n'}
+[2.741725] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera_mount.urdf.xacro\n'}
+[2.774756] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro\n'}
+[2.806108] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro\n'}
+[2.806505] (-) TimerEvent: {}
+[2.839836] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro\n'}
+[2.873298] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro\n'}
+[2.905802] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba2.urdf.xacro\n'}
+[2.906665] (-) TimerEvent: {}
+[2.939106] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/robotiq_arg85_description.urdf.xacro\n'}
+[2.971956] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/sim_cam.urdf.xacro\n'}
+[3.004390] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20.ros2_control.xacro\n'}
+[3.006832] (-) TimerEvent: {}
+[3.037673] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_macro.xacro\n'}
+[3.070741] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_pba.urdf.xacro\n'}
+[3.103506] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_picker.urdf.xacro\n'}
+[3.107031] (-) TimerEvent: {}
+[3.137052] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_starter.urdf.xacro\n'}
+[3.170202] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_starter2.urdf.xacro\n'}
+[3.204391] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/camera.launch.py\n'}
+[3.207156] (-) TimerEvent: {}
+[3.237812] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gr.launch.py\n'}
+[3.270903] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gripper.launch.py\n'}
+[3.304094] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.py\n'}
+[3.307279] (-) TimerEvent: {}
+[3.338053] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/pba.launch.xml\n'}
+[3.371457] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim.launch.py\n'}
+[3.404649] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim2.launch.py\n'}
+[3.407438] (-) TimerEvent: {}
+[3.439592] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim3.launch.py\n'}
+[3.472986] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim4.launch.py\n'}
+[3.506077] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim5.launch.py\n'}
+[3.507608] (-) TimerEvent: {}
+[3.540392] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py\n'}
+[3.573686] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py\n'}
+[3.607796] (-) TimerEvent: {}
+[3.608328] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl\n'}
+[3.652181] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl\n'}
+[3.691477] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Gear_Rotator.stl\n'}
+[3.707989] (-) TimerEvent: {}
+[3.731488] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Motor_Housing.stl\n'}
+[3.774830] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Peg_Board.stl\n'}
+[3.808186] (-) TimerEvent: {}
+[3.829724] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl\n'}
+[3.876319] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl\n'}
+[3.908332] (-) TimerEvent: {}
+[3.920882] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl\n'}
+[3.957735] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_coarse.STL\n'}
+[3.994085] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_fine.STL\n'}
+[4.008502] (-) TimerEvent: {}
+[4.030315] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_knuckle_coarse.STL\n'}
+[4.064326] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_knuckle_fine.STL\n'}
+[4.096902] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_finger_coarse.STL\n'}
+[4.108676] (-) TimerEvent: {}
+[4.130872] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_finger_fine.STL\n'}
+[4.163953] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_knuckle_coarse.STL\n'}
+[4.196906] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_knuckle_fine.STL\n'}
+[4.208839] (-) TimerEvent: {}
+[4.230708] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_coarse.STL\n'}
+[4.263960] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_fine.STL\n'}
+[4.296278] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf\n'}
+[4.309019] (-) TimerEvent: {}
+[4.328161] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//world/.keep\n'}
+[4.359524] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/camera.rviz\n'}
+[4.389687] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz\n'}
+[4.409162] (-) TimerEvent: {}
+[4.421048] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config2.rviz\n'}
+[4.453053] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/gsm.rviz\n'}
+[4.483552] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/ur20_view.rviz\n'}
+[4.509283] (-) TimerEvent: {}
+[4.514935] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/gear_coupling_controller.yaml\n'}
+[4.548892] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/gsm_controller.yaml\n'}
+[4.580164] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/initial_positions.yaml\n'}
+[4.609463] (-) TimerEvent: {}
+[4.609853] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/load_controllers.sh\n'}
+[4.643244] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/pba_controller.yaml\n'}
+[4.676276] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/test.yaml\n'}
+[4.706560] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_controllers.yaml\n'}
+[4.709626] (-) TimerEvent: {}
+[4.738871] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_picker_controllers.yaml\n'}
+[4.771789] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_starter_controllers.yaml\n'}
+[4.804220] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description\n'}
+[4.809792] (-) TimerEvent: {}
+[4.838459] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description\n'}
+[4.874419] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh\n'}
+[4.907487] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.dsv\n'}
+[4.909954] (-) TimerEvent: {}
+[4.942377] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.sh\n'}
+[4.977689] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/path.dsv\n'}
+[5.010135] (-) TimerEvent: {}
+[5.010699] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.bash\n'}
+[5.044447] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.sh\n'}
+[5.077747] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.zsh\n'}
+[5.110301] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/local_setup.dsv\n'}
+[5.110731] (-) TimerEvent: {}
+[5.144189] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.dsv\n'}
+[5.177807] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/packages/sirgas_description\n'}
+[5.210913] (-) TimerEvent: {}
+[5.211382] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig.cmake\n'}
+[5.245133] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig-version.cmake\n'}
+[5.278351] (sirgas_description) StdoutLine: {'line': b'-- Symlinking: /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/package.xml\n'}
+[5.311087] (-) TimerEvent: {}
+[5.316987] (sirgas_description) CommandEnded: {'returncode': 0}
+[5.356541] (sirgas_description) JobEnded: {'identifier': 'sirgas_description', 'rc': 0}
+[5.358865] (-) EventReactorShutdown: {}

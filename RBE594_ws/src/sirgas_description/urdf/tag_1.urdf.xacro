@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="apriltag_model" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:property name="tag_size" value="0.05"/> 
+    <material name="AprilTag_Texture">
+    <texture filename="file://$(find sirgas_description)/urdf/apriltags/tag_1.png"/>
+    <color rgba="1 1 1 1"/>
+    </material>
+
+    <link name="tag_1_link">
+        <visual>
+            <origin rpy="0 ${-pi/2} 0" xyz="0 0 0"/> 
+            <geometry>
+                <box size="${tag_size} ${tag_size} 0.001"/> 
+            </geometry>
+            <material name="AprilTag_Texture"/> 
+        </visual>
+        
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${tag_size} ${tag_size} 0.001"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.001"/>
+            <inertia ixx="0.0000001" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.0000001" iyz="0.0" izx="0.0" izy="0.0" izz="0.0000001"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="tag_1_link">
+        <material>
+            <script>
+                <name>AprilTag_Texture</name> 
+                <uri>file://$(find sirgas_description)/urdf/apriltags/tag_1.png</uri>
+            </script>
+        </material>
+    </gazebo>
+</robot>

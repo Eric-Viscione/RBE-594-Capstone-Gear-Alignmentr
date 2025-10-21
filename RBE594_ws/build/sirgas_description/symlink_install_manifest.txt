@@ -1,16 +1,22 @@
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/apriltags/tag_1.png
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera_mount.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/apriltag_card.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/pba2.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/robotiq_arg85_description.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/sim_cam.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/tag_1.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20.ros2_control.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_macro.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_pba.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_picker.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_starter.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/ur20_starter2.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/apriltag_detector.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/camera.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gr.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/gripper.launch.py
@@ -23,6 +29,10 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim5.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/scripts/Apriltag.material
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/textures/tag36_11_00000.png
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.config
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.sdf
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Gear_Rotator.stl
@@ -42,6 +52,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_coarse.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_fine.STL
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//world/.keep
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/camera.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config2.rviz

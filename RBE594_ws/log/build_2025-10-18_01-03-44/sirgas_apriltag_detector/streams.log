@@ -1,0 +1,19 @@
+[1.188s] Invoking command in '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector': PYTHONPATH=/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/build --no-deps symlink_data --force
+[1.569s] running develop
+[1.821s] running egg_info
+[1.843s] writing sirgas_apriltag_detector.egg-info/PKG-INFO
+[1.844s] writing dependency_links to sirgas_apriltag_detector.egg-info/dependency_links.txt
+[1.844s] writing entry points to sirgas_apriltag_detector.egg-info/entry_points.txt
+[1.844s] writing requirements to sirgas_apriltag_detector.egg-info/requires.txt
+[1.844s] writing top-level names to sirgas_apriltag_detector.egg-info/top_level.txt
+[1.890s] reading manifest file 'sirgas_apriltag_detector.egg-info/SOURCES.txt'
+[1.892s] writing manifest file 'sirgas_apriltag_detector.egg-info/SOURCES.txt'
+[1.917s] running build_ext
+[1.917s] Creating /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas-apriltag-detector.egg-link (link to .)
+[1.918s] Installing apriltag_detector script to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/sirgas_apriltag_detector
+[1.918s] 
+[1.918s] Installed /home/tamar/RBE594_ws/build/sirgas_apriltag_detector
+[1.919s] running symlink_data
+[1.919s] symbolically linking /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/resource/sirgas_apriltag_detector -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/share/ament_index/resource_index/packages
+[1.919s] symbolically linking /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/package.xml -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/share/sirgas_apriltag_detector
+[1.955s] Invoked command in '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector' returned '0': PYTHONPATH=/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/build --no-deps symlink_data --force

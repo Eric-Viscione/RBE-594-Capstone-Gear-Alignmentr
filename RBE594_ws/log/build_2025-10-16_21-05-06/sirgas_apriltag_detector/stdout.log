@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing sirgas_apriltag_detector.egg-info/PKG-INFO
+writing dependency_links to sirgas_apriltag_detector.egg-info/dependency_links.txt
+writing entry points to sirgas_apriltag_detector.egg-info/entry_points.txt
+writing requirements to sirgas_apriltag_detector.egg-info/requires.txt
+writing top-level names to sirgas_apriltag_detector.egg-info/top_level.txt
+reading manifest file 'sirgas_apriltag_detector.egg-info/SOURCES.txt'
+writing manifest file 'sirgas_apriltag_detector.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas-apriltag-detector.egg-link (link to .)
+Installing apriltag_detector script to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/sirgas_apriltag_detector
+
+Installed /home/tamar/RBE594_ws/build/sirgas_apriltag_detector
+running symlink_data

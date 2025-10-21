@@ -1,0 +1,1 @@
+/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description/ament_cmake_core/sirgas_descriptionConfig.cmake

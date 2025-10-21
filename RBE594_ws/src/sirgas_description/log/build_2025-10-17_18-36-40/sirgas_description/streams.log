@@ -1,0 +1,121 @@
+[0.015s] Invoking command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake /home/tamar/RBE594_ws/src/sirgas_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description
+[0.133s] -- The C compiler identification is GNU 13.3.0
+[0.239s] -- The CXX compiler identification is GNU 13.3.0
+[0.257s] -- Detecting C compiler ABI info
+[0.353s] -- Detecting C compiler ABI info - done
+[0.363s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.364s] -- Detecting C compile features
+[0.365s] -- Detecting C compile features - done
+[0.375s] -- Detecting CXX compiler ABI info
+[0.485s] -- Detecting CXX compiler ABI info - done
+[0.498s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.498s] -- Detecting CXX compile features
+[0.499s] -- Detecting CXX compile features - done
+[0.510s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.723s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.792s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.875s] -- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)
+[0.883s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.958s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.983s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.014s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.045s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.178s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.185s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[1.244s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[1.353s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.376s] -- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[1.550s] -- Configuring done (1.5s)
+[1.560s] -- Generating done (0.0s)
+[1.563s] -- Build files have been written to: /home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description
+[1.579s] Invoked command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake /home/tamar/RBE594_ws/src/sirgas_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description
+[1.580s] Invoking command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description -- -j12 -l12
+[1.642s] Invoked command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake --build /home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description -- -j12 -l12
+[1.657s] Invoking command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description
+[1.667s] -- Install configuration: ""
+[1.667s] -- Execute custom install script
+[1.669s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/apriltags/tag_1.png
+[1.681s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/camera.urdf.xacro
+[1.693s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/camera_mount.urdf.xacro
+[1.707s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro
+[1.722s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/inc/apriltag_card.xacro
+[1.737s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro
+[1.748s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro
+[1.760s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/pba.urdf.xacro
+[1.772s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/pba2.urdf.xacro
+[1.784s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/robotiq_arg85_description.urdf.xacro
+[1.795s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/sim_cam.urdf.xacro
+[1.808s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/tag_1.urdf.xacro
+[1.822s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20.ros2_control.xacro
+[1.832s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20_macro.xacro
+[1.845s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20_pba.urdf.xacro
+[1.857s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20_picker.urdf.xacro
+[1.867s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20_starter.urdf.xacro
+[1.877s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//urdf/ur20_starter2.urdf.xacro
+[1.889s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/apriltag_detector.py
+[1.901s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/camera.launch.py
+[1.913s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/gr.launch.py
+[1.923s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/gripper.launch.py
+[1.933s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/pba.launch.py
+[1.942s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/pba.launch.xml
+[1.952s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/sim.launch.py
+[1.962s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/sim2.launch.py
+[1.972s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/sim3.launch.py
+[1.984s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/sim4.launch.py
+[1.995s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/sim5.launch.py
+[2.005s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py
+[2.018s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py
+[2.029s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/scripts/Apriltag.material
+[2.038s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/textures/tag36_11_00000.png
+[2.049s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.config
+[2.058s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.sdf
+[2.067s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
+[2.078s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
+[2.087s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Gear_Rotator.stl
+[2.099s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Motor_Housing.stl
+[2.112s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Peg_Board.stl
+[2.123s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Second_Gear.stl
+[2.132s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Starter_Gear.stl
+[2.142s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/Third_Gear.stl
+[2.153s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_coarse.STL
+[2.164s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_finger_fine.STL
+[2.173s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_knuckle_coarse.STL
+[2.184s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/inner_knuckle_fine.STL
+[2.194s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_finger_coarse.STL
+[2.207s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_finger_fine.STL
+[2.219s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_knuckle_coarse.STL
+[2.229s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/outer_knuckle_fine.STL
+[2.238s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_coarse.STL
+[2.248s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/gripper_meshes/robotiq_85_base_link_fine.STL
+[2.257s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//meshes/sim_cam/model.sdf
+[2.266s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//world/.keep
+[2.275s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//rviz/camera.rviz
+[2.285s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//rviz/config.rviz
+[2.296s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//rviz/config2.rviz
+[2.307s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//rviz/gsm.rviz
+[2.321s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//rviz/ur20_view.rviz
+[2.331s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/gear_coupling_controller.yaml
+[2.340s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/gsm_controller.yaml
+[2.351s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/initial_positions.yaml
+[2.360s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/load_controllers.sh
+[2.369s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/pba_controller.yaml
+[2.379s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/test.yaml
+[2.389s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/ur20_controllers.yaml
+[2.399s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/ur20_picker_controllers.yaml
+[2.414s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description//config/ur20_starter_controllers.yaml
+[2.424s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description
+[2.434s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description
+[2.444s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh
+[2.454s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.dsv
+[2.464s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/environment/path.sh
+[2.473s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/environment/path.dsv
+[2.483s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/local_setup.bash
+[2.493s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/local_setup.sh
+[2.504s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/local_setup.zsh
+[2.518s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/local_setup.dsv
+[2.529s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/package.dsv
+[2.538s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/ament_index/resource_index/packages/sirgas_description
+[2.549s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig.cmake
+[2.558s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/cmake/sirgas_descriptionConfig-version.cmake
+[2.568s] -- Symlinking: /home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description/share/sirgas_description/package.xml
+[2.579s] Invoked command in '/home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/opt/ros/jazzy /usr/bin/cmake --install /home/tamar/RBE594_ws/src/sirgas_description/build/sirgas_description

@@ -1,145 +1,164 @@
-import launch
-from launch.substitutions import LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-import launch_ros
 import os
+from ament_index_python.packages import get_package_share_directory   # ✅ add
+import launch
+from launch.substitutions import LaunchConfiguration, EnvironmentVariable
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import SetEnvironmentVariable
+import launch_ros
 import xacro
 
-# Define the package name
-packageName = 'sirgas_description'
+packageName = "sirgas_description"
+pkg_share = get_package_share_directory(packageName)
+cameraSdfPath = os.path.join(pkg_share, "meshes/sim_cam/model.sdf")
 
-# Relative path of the xacro file with respect to the package path
-xacroRelativePath = 'urdf/ur20_pba.urdf.xacro'
-
-# RViz config file path respect to the package path
-rvizRelativePath = 'rviz/gsm.rviz'
-
-# Relative path of the ros2_control configuration file with respect to the package path
-ros2controlRelativePath = 'config/test.yaml'
-
-# Define the new controller manager name
-controller_manager_name = '/combined_controller_manager'
+xacroRelativePath = "urdf/ur20_pba.urdf.xacro"
+rvizRelativePath  = "rviz/gsm.rviz"
+ros2controlRelativePath = "config/test.yaml"
+controller_manager_name = "/combined_controller_manager"
 
 def generate_launch_description():
-    # Absolute package path
-    pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
+    xacroModelPath     = os.path.join(pkg_share, xacroRelativePath)
+    rvizConfigPath     = os.path.join(pkg_share, rvizRelativePath)
+    ros2ControllerPath = os.path.join(pkg_share, ros2controlRelativePath)
 
-    # Absolute xacro model path
-    xacroModelPath = os.path.join(pkgPath, xacroRelativePath)
-
-    # Absolute RViz config file path
-    rvizConfigPath = os.path.join(pkgPath, rvizRelativePath)
-
-    # Absolute ros_control controller path
-    ros2ControllerPath = os.path.join(pkgPath, ros2controlRelativePath)
-
-    # Get the robot description from the xacro model file
-    robot_desc = xacro.process_file(xacroModelPath).toxml()
-
-    # Define a parameter with the robot xacro description
-    robot_description = {'robot_description': robot_desc}
-
-    # Declare arguments
-    declared_arguments = []
-    declared_arguments.append(
-        launch.actions.DeclareLaunchArgument(name='gui', default_value='true',
-                                             description='Start the RViz2 GUI.')
+    meshes_dir = os.path.join(pkg_share, "meshes")
+    set_gz_path = SetEnvironmentVariable(
+        name="GZ_SIM_RESOURCE_PATH",
+        value=f"{meshes_dir}:" + os.environ.get("GZ_SIM_RESOURCE_PATH", "")
+    )
+    set_ign_path = SetEnvironmentVariable(
+        name="IGN_GAZEBO_RESOURCE_PATH",
+        value=f"{meshes_dir}:" + os.environ.get("IGN_GAZEBO_RESOURCE_PATH", "")
     )
 
-    # Initialize Arguments
-    gui = LaunchConfiguration('gui')
+    robot_desc = xacro.process_file(xacroModelPath).toxml()
+    robot_description = {"robot_description": robot_desc}
 
-    # For starting Gazebo
+    declared_arguments = [
+        launch.actions.DeclareLaunchArgument(
+            name="gui", default_value="true", description="Start the RViz2 GUI."
+        )
+    ]
+    gui = LaunchConfiguration("gui")
+
     gazebo = launch.actions.IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [launch_ros.substitutions.FindPackageShare('ros_gz_sim'), '/launch/gz_sim.launch.py']
+            [launch_ros.substitutions.FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments=[('gz_args', ' -r -v 3 empty.sdf')],
-        condition=launch.conditions.IfCondition(gui))
-    
-    # Gazebo Bridge
+        launch_arguments=[("gz_args", " -r -v 3 empty.sdf")],
+        condition=launch.conditions.IfCondition(gui),
+    )
+
     gazebo_bridge = launch_ros.actions.Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
-        output='screen')
-    
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock]"],
+        output="screen",
+    )
+
     gz_spawn_entity = launch_ros.actions.Node(
-        package='ros_gz_sim',
-        executable='create',
-        output='screen',
+        package="ros_gz_sim",
+        executable="create",
+        output="screen",
         arguments=[
-            '-topic',
-            'robot_description',
-            '-name',
-            'robot_system_position',
-            '-allow_renaming',
-            'true'])
-    
-    # Robot state publisher node
+            "-topic", "robot_description",
+            "-name", "robot_system_position",
+            "-allow_renaming", "true",
+        ],
+    )
+
+    spawn_sim_cam = launch_ros.actions.Node(
+        package="ros_gz_sim",
+        executable="create",
+        name="spawn_sim_cam",
+        output="screen",
+        arguments=[
+            "-file", cameraSdfPath,
+            "-name", "sim_cam",
+            "-x", "0", "-y", "0", "-z", "2",
+            "-R", "0", "-P", "0", "-Y", "0"
+        ],
+    )
+
+   # spawn_apriltag = launch_ros.actions.Node(
+    #     package="ros_gz_sim",
+    #     executable="create",
+    #     name="spawn_apriltag_tag",
+    #     output="screen",
+    #     arguments=[
+    #         "-file", "model://Apriltag36_11_00000",
+    #         "-name", "apriltag_block",
+    #         "-x", "0.5", "-y", "0.5", "-z", "0.05",
+    #         "-R", "0", "-P", "0", "-Y", "0"
+    #     ]
+    # )
+
+    timer_bridge_sim_cam_independent = launch.actions.TimerAction(
+        period=2.0,
+        actions=[launch_ros.actions.Node(
+            package="ros_gz_bridge", executable="parameter_bridge", name="bridge_sim_cam",
+            output="screen",
+            arguments=[
+                "/camera_feed/image@sensor_msgs/msg/Image@gz.msgs.Image",
+                "/camera_feed/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
+            ],
+        )],
+    )
+
     robot_state_publisher_node = launch_ros.actions.Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='both',
-        parameters=[robot_description, {'use_sim_time': True}])
-    
-    # RViz Node
+        package="robot_state_publisher",
+        executable="robot_state_publisher",
+        output="both",
+        parameters=[robot_description, {"use_sim_time": True}],
+    )
+
     rviz_node = launch_ros.actions.Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', rvizConfigPath]
-        )
-    
-    # Joint State Broadcaster
-    # Use the specific broadcaster names from the combined_controllers.yaml (test.yaml)
+        package="rviz2", executable="rviz2", name="rviz2",
+        output="screen", arguments=["-d", rvizConfigPath],
+    )
+
     ur20_jsb_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['ur20_joint_state_broadcaster', '-c', controller_manager_name])
-    
+        package="controller_manager", executable="spawner",
+        arguments=["ur20_joint_state_broadcaster", "-c", controller_manager_name],
+    )
     pba_jsb_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['pba_joint_state_broadcaster', '-c', controller_manager_name])
-    
-    # Velocity Controllers (Ensure you use the names defined in test.yaml: ur20_forward_velocity_controller, pba_velocity_controller)
+        package="controller_manager", executable="spawner",
+        arguments=["pba_joint_state_broadcaster", "-c", controller_manager_name],
+    )
     pba_v_controller_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['pba_velocity_controller', '-c', controller_manager_name])
-    
+        package="controller_manager", executable="spawner",
+        arguments=["pba_velocity_controller", "-c", controller_manager_name],
+    )
     ur20_v_controller_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['ur20_forward_velocity_controller', '-c', controller_manager_name])
-    
-    # Joint Trajectory Controller
+        package="controller_manager", executable="spawner",
+        arguments=["ur20_forward_velocity_controller", "-c", controller_manager_name],
+    )
     ur20_jt_controller_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['ur20_joint_trajectory_controller', '-c', controller_manager_name])
-    
-    # Joint Position Controller
+        package="controller_manager", executable="spawner",
+        arguments=["ur20_joint_trajectory_controller", "-c", controller_manager_name],
+    )
     ur20_p_controller_spawner = launch_ros.actions.Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=['ur20_forward_position_controller', '-c', controller_manager_name])
-    
+        package="controller_manager", executable="spawner",
+        arguments=["ur20_forward_position_controller", "-c", controller_manager_name],
+    )
+
     nodeList = [
+        set_gz_path,            
+        set_ign_path,           
         gazebo,
         gazebo_bridge,
         gz_spawn_entity,
         robot_state_publisher_node,
-        # rviz_node,
-        ur20_jsb_spawner, # Use specific ur20 joint state broadcaster
-        pba_jsb_spawner, # Use specific pba joint state broadcaster
+        rviz_node,
+        ur20_jsb_spawner,
+        pba_jsb_spawner,
+        spawn_sim_cam,
+        timer_bridge_sim_cam_independent,
         ur20_jt_controller_spawner,
         # ur20_v_controller_spawner,
         pba_v_controller_spawner,
         # ur20_p_controller_spawner,
-        # ... (include all other necessary controller spawners like scaled_joint_trajectory_controller)
+        # spawn_apriltag,       
     ]
-    
+
     return launch.LaunchDescription(declared_arguments + nodeList)

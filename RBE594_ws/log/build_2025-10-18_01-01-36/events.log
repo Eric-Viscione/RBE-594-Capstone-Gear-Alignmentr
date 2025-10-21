@@ -1,0 +1,54 @@
+[0.000000] (-) TimerEvent: {}
+[0.000570] (-) JobUnselected: {'identifier': 'custom_gear_controllers'}
+[0.000644] (-) JobUnselected: {'identifier': 'sirgas_description'}
+[0.000690] (sirgas_apriltag_detector) JobQueued: {'identifier': 'sirgas_apriltag_detector', 'dependencies': OrderedDict()}
+[0.001717] (sirgas_apriltag_detector) JobStarted: {'identifier': 'sirgas_apriltag_detector'}
+[0.099592] (-) TimerEvent: {}
+[0.200198] (-) TimerEvent: {}
+[0.300716] (-) TimerEvent: {}
+[0.401027] (-) TimerEvent: {}
+[0.503018] (-) TimerEvent: {}
+[0.603434] (-) TimerEvent: {}
+[0.703946] (-) TimerEvent: {}
+[0.804214] (-) TimerEvent: {}
+[0.904479] (-) TimerEvent: {}
+[1.005517] (-) TimerEvent: {}
+[1.106004] (-) TimerEvent: {}
+[1.206956] (-) TimerEvent: {}
+[1.307617] (-) TimerEvent: {}
+[1.408636] (-) TimerEvent: {}
+[1.509067] (-) TimerEvent: {}
+[1.609394] (-) TimerEvent: {}
+[1.680780] (sirgas_apriltag_detector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/sirgas_apriltag_detector', 'build', '--build-base', '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/build', 'install', '--record', '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/tamar/RBE594_ws/src/sirgas_apriltag_detector', 'env': {'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'HOSTNAME': '99c8b64005df', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/tamar', 'OLDPWD': '/home/tamar/RBE594_ws/src/sirgas_apriltag_detector', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/tamar/RBE594_ws/install:/home/tamar/RBE594_ws/src/sirgas_description/install', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'AMENT_PREFIX_PATH': '/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/custom_gear_controllers:/home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description:/opt/ros/jazzy', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages:/home/tamar/RBE594_ws/build/sirgas_apriltag_detector:/home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages:/home/tamar/RBE594_ws/build/custom_gear_controllers:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/tamar/RBE594_ws/install/sirgas_description:/home/tamar/RBE594_ws/src/sirgas_description/install/sirgas_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.709509] (-) TimerEvent: {}
+[1.812573] (-) TimerEvent: {}
+[1.914617] (-) TimerEvent: {}
+[2.015195] (-) TimerEvent: {}
+[2.115443] (-) TimerEvent: {}
+[2.165737] (sirgas_apriltag_detector) StdoutLine: {'line': b'running egg_info\n'}
+[2.204767] (sirgas_apriltag_detector) StdoutLine: {'line': b'writing ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/PKG-INFO\n'}
+[2.205179] (sirgas_apriltag_detector) StdoutLine: {'line': b'writing dependency_links to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/dependency_links.txt\n'}
+[2.205469] (sirgas_apriltag_detector) StdoutLine: {'line': b'writing entry points to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/entry_points.txt\n'}
+[2.205713] (sirgas_apriltag_detector) StdoutLine: {'line': b'writing requirements to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/requires.txt\n'}
+[2.205902] (sirgas_apriltag_detector) StdoutLine: {'line': b'writing top-level names to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/top_level.txt\n'}
+[2.215518] (-) TimerEvent: {}
+[2.286751] (sirgas_apriltag_detector) StdoutLine: {'line': b"reading manifest file '../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/SOURCES.txt'\n"}
+[2.288788] (sirgas_apriltag_detector) StdoutLine: {'line': b"writing manifest file '../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/SOURCES.txt'\n"}
+[2.289069] (sirgas_apriltag_detector) StdoutLine: {'line': b'running build\n'}
+[2.289250] (sirgas_apriltag_detector) StdoutLine: {'line': b'running build_py\n'}
+[2.289685] (sirgas_apriltag_detector) StdoutLine: {'line': b'running install\n'}
+[2.303743] (sirgas_apriltag_detector) StdoutLine: {'line': b'running install_lib\n'}
+[2.315574] (-) TimerEvent: {}
+[2.336972] (sirgas_apriltag_detector) StdoutLine: {'line': b'running install_data\n'}
+[2.337284] (sirgas_apriltag_detector) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.372987] (sirgas_apriltag_detector) StdoutLine: {'line': b"removing '/home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector-0.0.1-py3.12.egg-info' (and everything under it)\n"}
+[2.376277] (sirgas_apriltag_detector) StdoutLine: {'line': b'Copying ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector-0.0.1-py3.12.egg-info\n'}
+[2.376461] (sirgas_apriltag_detector) StdoutLine: {'line': b'running install_scripts\n'}
+[2.415680] (-) TimerEvent: {}
+[2.516435] (-) TimerEvent: {}
+[2.616808] (-) TimerEvent: {}
+[2.638593] (sirgas_apriltag_detector) StdoutLine: {'line': b'Installing apriltag_detector script to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/sirgas_apriltag_detector\n'}
+[2.638851] (sirgas_apriltag_detector) StdoutLine: {'line': b"writing list of installed files to '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/install.log'\n"}
+[2.686989] (sirgas_apriltag_detector) CommandEnded: {'returncode': 0}
+[2.700210] (sirgas_apriltag_detector) JobEnded: {'identifier': 'sirgas_apriltag_detector', 'rc': 0}
+[2.701247] (-) EventReactorShutdown: {}

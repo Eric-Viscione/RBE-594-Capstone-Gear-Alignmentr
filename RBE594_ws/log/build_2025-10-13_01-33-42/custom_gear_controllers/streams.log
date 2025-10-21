@@ -1,0 +1,16 @@
+[1.291s] Invoking command in '/home/tamar/RBE594_ws/build/custom_gear_controllers': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data
+[1.793s] running develop
+[2.000s] running egg_info
+[2.024s] writing custom_gear_controllers.egg-info/PKG-INFO
+[2.024s] writing dependency_links to custom_gear_controllers.egg-info/dependency_links.txt
+[2.024s] writing entry points to custom_gear_controllers.egg-info/entry_points.txt
+[2.024s] writing requirements to custom_gear_controllers.egg-info/requires.txt
+[2.024s] writing top-level names to custom_gear_controllers.egg-info/top_level.txt
+[2.062s] reading manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[2.063s] writing manifest file 'custom_gear_controllers.egg-info/SOURCES.txt'
+[2.082s] running build_ext
+[2.082s] Creating /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom-gear-controllers.egg-link (link to .)
+[2.083s] 
+[2.083s] Installed /home/tamar/RBE594_ws/build/custom_gear_controllers
+[2.083s] running symlink_data
+[2.103s] Invoked command in '/home/tamar/RBE594_ws/build/custom_gear_controllers' returned '0': PS1=${debian_chroot:+($debian_chroot)}\u@\h:\w\$ PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tamar/RBE594_ws/build/custom_gear_controllers/build --no-deps symlink_data

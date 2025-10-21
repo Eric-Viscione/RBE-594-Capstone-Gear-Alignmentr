@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:macro name="attach_apriltag_card" params="
+      parent_link
+      tag_size:=0.05
+      tag_thickness:=0.001
+      xyz:='0 0 0'
+      rpy:='0 0 0'
+      link_name:='${parent_link}_apriltag'
+      mass:=0.01
+      material_script_uri_1:='model://Apriltag36_11_00000/materials/scripts'
+      material_script_uri_2:='model://Apriltag36_11_00000/materials/textures'
+      material_name:='Apriltag/Tag36_11_00000'
+    ">
+
+    <link name="${link_name}">
+      <visual>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+        <geometry>
+          <box size="${tag_size} ${tag_size} ${tag_thickness}"/>
+        </geometry>
+        <material name="${material_name}">
+          <script>
+            <uri>${material_script_uri_1}</uri>
+            <uri>${material_script_uri_2}</uri>
+            <name>${material_name}</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+        <geometry>
+          <box size="${tag_size} ${tag_size} ${tag_thickness}"/>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${mass}"/>
+        <inertia ixx="${mass*((tag_size*tag_size + tag_thickness*tag_thickness)/12.0)}"
+                 iyy="${mass*((tag_size*tag_size + tag_thickness*tag_thickness)/12.0)}"
+                 izz="${mass*((tag_size*tag_size + tag_size*tag_size)/12.0)}"
+                 ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+    </link>
+
+    <joint name="${link_name}_fixed" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${link_name}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+</robot>

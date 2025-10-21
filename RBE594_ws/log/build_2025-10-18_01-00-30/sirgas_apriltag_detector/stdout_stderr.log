@@ -1,0 +1,27 @@
+running develop
+Removing /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas-apriltag-detector.egg-link (link to .)
+running egg_info
+writing ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/PKG-INFO
+writing dependency_links to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/dependency_links.txt
+writing entry points to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/entry_points.txt
+writing requirements to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/requires.txt
+writing top-level names to ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/top_level.txt
+reading manifest file '../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/SOURCES.txt'
+writing manifest file '../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+creating /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector
+copying /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/build/lib/sirgas_apriltag_detector/__init__.py -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector
+copying /home/tamar/RBE594_ws/build/sirgas_apriltag_detector/build/lib/sirgas_apriltag_detector/apriltag_detector.py -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector
+byte-compiling /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector/apriltag_detector.py to apriltag_detector.cpython-312.pyc
+running install_data
+copying resource/sirgas_apriltag_detector -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/share/ament_index/resource_index/packages
+copying package.xml -> /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/share/sirgas_apriltag_detector
+running install_egg_info
+Copying ../../build/sirgas_apriltag_detector/sirgas_apriltag_detector.egg-info to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/python3.12/site-packages/sirgas_apriltag_detector-0.0.1-py3.12.egg-info
+running install_scripts
+Installing apriltag_detector script to /home/tamar/RBE594_ws/install/sirgas_apriltag_detector/lib/sirgas_apriltag_detector
+writing list of installed files to '/home/tamar/RBE594_ws/build/sirgas_apriltag_detector/install.log'

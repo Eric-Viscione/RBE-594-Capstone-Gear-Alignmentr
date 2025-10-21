@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="camera_mount_macro" params="parent_link mount_xyz mount_rpy">
+        
+        <gazebo reference="camera_link">
+            <sensor name="camera" type="camera">
+                <always_on>true</always_on>
+                <update_rate>20.0</update_rate> 
+                <pose>0 0 0 0 0 0</pose>
+                <camera>
+                    <horizontal_fov>1.0472</horizontal_fov> 
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip><near>0.02</near><far>50.0</far></clip>
+                    <topic>/camera_feed/image</topic> 
+                </camera>
+            </sensor>
+            
+            <material>Gazebo/Blue</material>
+        </gazebo>
+    </xacro:macro>
+</robot>

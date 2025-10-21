@@ -1,6 +1,13 @@
 package.xml
 setup.cfg
 setup.py
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/PKG-INFO
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/SOURCES.txt
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/dependency_links.txt
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/entry_points.txt
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/requires.txt
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/top_level.txt
+../../build/custom_gear_controllers/custom_gear_controllers.egg-info/zip-safe
 custom_gear_controllers/__init__.py
 custom_gear_controllers/gear_constraint_controller.py
 custom_gear_controllers.egg-info/PKG-INFO

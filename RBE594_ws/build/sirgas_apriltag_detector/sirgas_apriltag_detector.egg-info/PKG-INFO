@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: sirgas-apriltag-detector
+Version: 0.0.1
+Summary: AprilTag detector node (Python) for SIRGAS project.
+Maintainer: tamar
+Maintainer-email: tboone@wpi.edu
+License: TODO

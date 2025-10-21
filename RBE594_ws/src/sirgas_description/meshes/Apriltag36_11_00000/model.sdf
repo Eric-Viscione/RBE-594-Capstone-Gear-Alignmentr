@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="Apriltag36_11_00000">
+    <static>true</static>
+
+    <link name="tag_link">
+      <pose>0 0 0 0 0 0</pose>
+
+      <!-- Visual: thin square plate with the tag texture -->
+      <visual name="tag_visual">
+        <geometry>
+          <!-- Adjust size to your real tag; 0.16 m is a common test size -->
+          <box><size>0.16 0.005 0.16</size></box>
+        </geometry>
+        <material>
+          <pbr>
+            <metal>
+              <albedo_map>model://Apriltag36_11_00000/materials/textures/tag36_11_00000.png</albedo_map>
+              <!-- optional tweaks -->
+              <roughness>0.8</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <double_sided>true</double_sided>
+        </material>
+
+        <cast_shadows>false</cast_shadows>
+      </visual>
+
+      <!-- Collision so physics is happy (even if static) -->
+      <collision name="tag_collision">
+        <geometry>
+          <box><size>0.16 0.005 0.16</size></box>
+        </geometry>
+      </collision>
+
+      <!-- Tiny but nonzero inertial values -->
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1e-6</ixx><iyy>1e-6</iyy><izz>1e-6</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>

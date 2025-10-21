@@ -1,0 +1,20 @@
+[1.041s] Invoking command in '/home/tamar/RBE594_ws/src/custom_gear_controllers': PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/custom_gear_controllers build --build-base /home/tamar/RBE594_ws/build/custom_gear_controllers/build install --record /home/tamar/RBE594_ws/build/custom_gear_controllers/install.log --single-version-externally-managed install_data
+[1.300s] running egg_info
+[1.321s] writing ../../build/custom_gear_controllers/custom_gear_controllers.egg-info/PKG-INFO
+[1.321s] writing dependency_links to ../../build/custom_gear_controllers/custom_gear_controllers.egg-info/dependency_links.txt
+[1.321s] writing entry points to ../../build/custom_gear_controllers/custom_gear_controllers.egg-info/entry_points.txt
+[1.321s] writing requirements to ../../build/custom_gear_controllers/custom_gear_controllers.egg-info/requires.txt
+[1.321s] writing top-level names to ../../build/custom_gear_controllers/custom_gear_controllers.egg-info/top_level.txt
+[1.362s] reading manifest file '../../build/custom_gear_controllers/custom_gear_controllers.egg-info/SOURCES.txt'
+[1.363s] writing manifest file '../../build/custom_gear_controllers/custom_gear_controllers.egg-info/SOURCES.txt'
+[1.363s] running build
+[1.363s] running build_py
+[1.363s] running install
+[1.369s] running install_lib
+[1.390s] running install_data
+[1.390s] running install_egg_info
+[1.414s] removing '/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom_gear_controllers-0.0.0-py3.12.egg-info' (and everything under it)
+[1.415s] Copying ../../build/custom_gear_controllers/custom_gear_controllers.egg-info to /home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages/custom_gear_controllers-0.0.0-py3.12.egg-info
+[1.416s] running install_scripts
+[1.556s] writing list of installed files to '/home/tamar/RBE594_ws/build/custom_gear_controllers/install.log'
+[1.580s] Invoked command in '/home/tamar/RBE594_ws/src/custom_gear_controllers' returned '0': PYTHONPATH=/home/tamar/RBE594_ws/build/custom_gear_controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tamar/RBE594_ws/install/custom_gear_controllers/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/custom_gear_controllers build --build-base /home/tamar/RBE594_ws/build/custom_gear_controllers/build install --record /home/tamar/RBE594_ws/build/custom_gear_controllers/install.log --single-version-externally-managed install_data

@@ -3,7 +3,7 @@
 
     <!-- World fixed link -->
     <link name="world"/>
-    
+    <xacro:include filename="$(find sirgas_description)/urdf/inc/apriltag_card.xacro"/>
     <!-- Import UR20 Robot - directly include without macro call -->
     <xacro:include filename="$(find sirgas_description)/urdf/ur20_starter2.urdf.xacro" />
 

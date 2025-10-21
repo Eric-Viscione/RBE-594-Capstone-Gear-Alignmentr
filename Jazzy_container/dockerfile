@@ -14,6 +14,15 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     x11-apps \
     cmake \
+    # Installs CV-Bridge, image-transport, and other ROS vision tools
+    ros-jazzy-vision-opencv \
+    # Installs the Python 3 bindings for OpenCV (required for apriltag/cv_bridge)
+    python3-opencv \
+    ros-jazzy-rmw-cyclonedds-cpp \
+    # Include the standard UR dependencies, if you need them globally (optional, as you build locally)
+    ros-jazzy-ur-description \
+    ros-jazzy-ros2-control \
+    ros-jazzy-xacro \
     && rm -rf /var/lib/apt/lists/*
 
 # Add ROS 2 apt repository and keys
@@ -21,6 +30,7 @@ RUN add-apt-repository universe \
     && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/ros.gpg > /dev/null \
     && echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" > /etc/apt/sources.list.d/ros2.list
 
+RUN python3 -m pip install apriltag --break-system-packages
 # Add NVIDIA CUDA repository and install toolkit, including GPG key
 RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null \
     && echo "deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" | tee /etc/apt/sources.list.d/cuda.list > /dev/null \
@@ -55,6 +65,8 @@ RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/
 # Set environment variables for the display.
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
+ENV LIBGL_ALWAYS_SOFTWARE=1
+
 ##Run the below export to fix my rviz crashing
 #export LIBGL_ALWAYS_SOFTWARE=1
 # Copy entrypoint and bashrc to the user's home directory
@@ -68,13 +80,8 @@ ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
 CMD ["bash"]
 
 # Creates a container named capstone with a link to the RBE594_ws folder as well as the ability to use GUIs like on your local machine
-# docker run -it --gpus all --name capstone \
-#    -v ~/RBE594_ws:/home/tamar/RBE594_ws \
-#    -e DISPLAY=$DISPLAY \
-#    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-#    -v $HOME/.Xauthority:/home/tamar/.Xauthority \
-#    rbe594_ws
-
+# docker run -it --gpus all --name capstone    -v /home/ev/Desktop/RBE-594-Capstone-Gear-Alignmentr/RBE594_ws:/home/tamar/RBE594_ws    -e DISPLAY=$DISPLAY    -v /tmp/.X11-unix:/tmp/.X11-unix:rw    -v $HOME/.Xauthority:/home/tamar/.Xauthority    capstone
+# 
 # Starts a terminal with access to the container
 # docker start -i capstone
 

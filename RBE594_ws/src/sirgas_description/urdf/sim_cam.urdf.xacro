@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<xacro:macro name="sim_cam_block" params="parent_link:=world cam_name:=sim_cam xyz:='0 0 2' rpy:='0 1.57 0' topic:='/camera_feed/image' fps:='20' width:='640' height:='480' hfov:='1.0472' near:='0.02' far:='50.0'">
+
+  <!-- 1) The camera link -->
+  <link name="${cam_name}::camera_link">
+    <inertial>
+      <mass>0.1</mass>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- 2) Fix it to a parent (world by default, or any robot link) -->
+  <joint name="${cam_name}::fixed_joint" type="fixed">
+    <parent link="${parent_link}"/>
+    <child  link="${cam_name}::camera_link"/>
+    <origin xyz="${xyz}" rpy="${rpy}"/>
+  </joint>
+
+  <!-- 3) Gazebo Sim sensors system plugin (model-level) -->
+  <gazebo>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+  </gazebo>
+
+  <!-- 4) Sensor block passed through to SDFormat (Ignition/GZ reads this) -->
+  <gazebo reference="${cam_name}::camera_link">
+    <sensor name="${cam_name}::camera" type="camera">
+      <always_on>true</always_on>
+      <update_rate>${fps}</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <camera>
+        <horizontal_fov>${hfov}</horizontal_fov>
+        <image>
+          <width>${width}</width>
+          <height>${height}</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>${near}</near>
+          <far>${far}</far>
+        </clip>
+      </camera>
+      <!-- Keep the SAME topic you already bridge -->
+      <topic>${topic}</topic>
+    </sensor>
+  </gazebo>
+
+</xacro:macro>

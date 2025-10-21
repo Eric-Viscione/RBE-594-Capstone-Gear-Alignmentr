@@ -95,6 +95,16 @@
             <inertia ixx="0.00615061" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.00615163" iyz="0.0" izx="0.0" izy= "0.0" izz="0.01209542"/>
         </inertial>
     </link>
+    <xacro:attach_apriltag_card
+    parent_link="first_gear"
+    link_name="first_gear_apriltag"
+    tag_size="0.05"
+    tag_thickness="0.0015"
+    xyz="0 0 0.02"
+    rpy="0 0 0"
+    material_script_uri_1="model://Apriltag36_11_00000/materials/scripts"
+    material_script_uri_2="model://Apriltag36_11_00000/materials/textures"
+    material_name="Apriltag/Tag36_11_00000"/>
 
     <joint name="pb_second_joint" type="continuous">
         <parent link="peg_board"/>
