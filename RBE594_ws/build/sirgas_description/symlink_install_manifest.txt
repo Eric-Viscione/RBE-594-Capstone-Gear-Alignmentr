@@ -1,6 +1,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/camera2.urdf.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/gear_starter_motor.urdf.xacro
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/apriltag_card.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_common.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/inc/ur_transmissions.xacro
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//urdf/panda.urdf.xacro
@@ -27,6 +28,10 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/sim6.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter.launch.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//launch/ur20_starter_spawn.launch.py
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/scripts/Apriltag.material
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/materials/textures/tag36_11_00000.png
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.config
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Apriltag36_11_00000/model.sdf
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Assembly 1.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/First_Gear.stl
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/Gear_Rotator.stl
@@ -66,6 +71,7 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link5.dae
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link6.dae
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//meshes/visual/link7.dae
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//world/.keep
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/camera.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config.rviz
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//rviz/config2.rviz

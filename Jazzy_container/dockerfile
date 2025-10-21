@@ -1,79 +1,64 @@
 FROM osrf/ros:jazzy-desktop-full
 
-# Combine apt-get commands to reduce image layers
+# Dev tools + ROS deps + graphics libs in one layer
 RUN apt-get update && apt-get install -y \
-    nano \
-    gedit \
-    bash-completion \
-    python3-argcomplete \
-    sudo \
-    python3-pip \
-    python3-venv \
-    python3-dev \
-    curl gnupg2 \
-    software-properties-common \
-    x11-apps \
-    cmake \
+    nano gedit bash-completion python3-argcomplete sudo \
+    python3-pip python3-venv python3-dev curl gnupg2 software-properties-common \
+    x11-apps cmake git build-essential python3-colcon-common-extensions python3-vcstool ros-dev-tools \
+    ros-jazzy-vision-opencv python3-opencv ros-jazzy-xacro \
+    ros-jazzy-ros2-control ros-jazzy-ros2-controllers ros-jazzy-gz-ros2-control \
+    ros-jazzy-rmw-cyclonedds-cpp ros-jazzy-launch-param-builder ros-jazzy-srdfdom \
+    ros-jazzy-moveit ros-jazzy-ros-gz-bridge \
+    mesa-utils libgl1 libxrender1 libxkbcommon-x11-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Add ROS 2 apt repository and keys
-RUN add-apt-repository universe \
-    && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/ros.gpg > /dev/null \
-    && echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" > /etc/apt/sources.list.d/ros2.list
+# (Optional) CUDA toolchain only if you really need nvcc inside the container
+# If not required, delete this whole block (and keep --gpus all at runtime).
+# RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null \
+#     && echo "deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" | tee /etc/apt/sources.list.d/cuda.list > /dev/null \
+#     && apt-get update && apt-get install -y cuda-toolkit-12-3 && rm -rf /var/lib/apt/lists/*
 
-# Add NVIDIA CUDA repository and install toolkit, including GPG key
-RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null \
-    && echo "deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" | tee /etc/apt/sources.list.d/cuda.list > /dev/null \
-    && echo "deb http://archive.ubuntu.com/ubuntu/ focal main universe" | tee /etc/apt/sources.list.d/focal.list > /dev/null \
-    && apt-get update \
-    && apt-get install -y libtinfo5 \
-    && rm /etc/apt/sources.list.d/focal.list \
-    && apt-get update \
-    && apt-get install -y \
-    cuda-toolkit-12-3 \
-    nvidia-container-toolkit
-
-# Define build arguments for the new user and group.
+# --- User setup (unchanged) ---
 ARG USERNAME=tamar
 ARG USER_UID=1000
 ARG USER_GID=1000
-
-# Check if a user with the UID 1000 exists. If so, rename them and their group to 'tamar'.
 RUN ORIGINAL_USER=$(getent passwd $USER_UID | cut -d: -f1) && \
     if [ "$ORIGINAL_USER" != "$USERNAME" ]; then \
         usermod -l $USERNAME $ORIGINAL_USER && \
         usermod -d /home/$USERNAME -m $USERNAME && \
         groupmod -n $USERNAME $ORIGINAL_USER; \
     fi && \
-    # Set up sudo for the user
     echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
     chmod 0440 /etc/sudoers.d/$USERNAME
-
-# Ensure home directory permissions are correct
 RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/
 
-# Set environment variables for the display.
+# --- Environment ---
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
-##Run the below export to fix my rviz crashing
-#export LIBGL_ALWAYS_SOFTWARE=1
-# Copy entrypoint and bashrc to the user's home directory
+ENV LIBGL_ALWAYS_SOFTWARE=1
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=all
+
+# Entrypoint + bashrc
 COPY entrypoint.sh /entrypoint.sh
 COPY bashrc /home/$USERNAME/.bashrc
 
 USER $USERNAME
-
-ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
-
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 CMD ["bash"]
 
-# Creates a container named capstone with a link to the RBE594_ws folder as well as the ability to use GUIs like on your local machine
-# docker run -it --gpus all --name capstone \
-#    -v ~/RBE594_ws:/home/tamar/RBE594_ws \
-#    -e DISPLAY=$DISPLAY \
-#    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-#    -v $HOME/.Xauthority:/home/tamar/.Xauthority \
-#    rbe594_ws
+# xhost +local:docker
+# docker run -it --rm --gpus all \
+#   --name capstone \
+#   -e DISPLAY=$DISPLAY \
+#   -e QT_X11_NO_MITSHM=1 \
+#   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+#   -v $HOME/.Xauthority:/home/tamar/.Xauthority:ro \
+#   -v /home/ev/Desktop/RBE-594-Capstone-Gear-Alignmentr/RBE594_ws:/home/tamar/RBE594_ws \
+#   --network host \
+#   --ipc=host \
+#   capstone-jazzy:latest
 
 # Starts a terminal with access to the container
 # docker start -i capstone

@@ -1,0 +1,33 @@
+# === ROS 2 colcon workspaces & packages ===
+build/
+install/
+log/
+**/build/
+**/install/
+**/log/
+
+# CMake / Ninja
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+*.stamp
+*.ninja
+*.ninja_deps
+*.ninja_log
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Misc
+*.bak
+*.tmp

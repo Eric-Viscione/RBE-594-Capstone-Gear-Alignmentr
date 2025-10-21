@@ -12,6 +12,7 @@ packageName = 'test_ws'
 
  # Absolute package path
 pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
+#Relative path of the apriltag xacro 
 
 # Relative path of the xacro file with respect to the package path
 xacroRelativePath = os.path.join(pkgPath, 'config', 'panda_pba_robots.urdf.xacro')
@@ -89,7 +90,7 @@ def generate_launch_description():
     gazebo_bridge = launch_ros.actions.Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        arguments=['/clock@rosgraph_msgs/msg/Clock@gz.msgs.Clock'],
         output='screen',
         parameters=[{'use_sim_time': use_sim_time}]
         )
@@ -122,7 +123,7 @@ def generate_launch_description():
             '-name',
             'sim_cam',
             '-x', '0', '-y', '0', '-z', '2',
-            '-R', '0', '1.57', '-Y', '0' # Note: SDF's pose is roll/pitch/yaw
+            '-R', '0', 'P' ,'1.57', '-Y', '0' # Note: SDF's pose is roll/pitch/yaw
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )
