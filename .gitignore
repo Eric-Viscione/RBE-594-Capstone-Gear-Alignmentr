@@ -39,3 +39,19 @@ RBE594_ws/log/
 # Misc
 *.bak
 *.tmp
+# ROS 2 colcon
+RBE594_ws/build/
+RBE594_ws/install/
+RBE594_ws/log/
+
+# Python caches
+**/__pycache__/
+*.pyc
+# ROS 2 colcon
+RBE594_ws/build/
+RBE594_ws/install/
+RBE594_ws/log/
+
+# Python caches
+**/__pycache__/
+*.pyc
