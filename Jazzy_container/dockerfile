@@ -11,7 +11,22 @@ RUN apt-get update && apt-get install -y \
     ros-jazzy-moveit ros-jazzy-ros-gz-bridge \
     mesa-utils libgl1 libxrender1 libxkbcommon-x11-0 \
     && rm -rf /var/lib/apt/lists/*
+# Create a venv that can see system site-packages (ROS + cv2), then install apriltag there
+RUN python3 -m venv /opt/rosvenv --system-site-packages && \
+    /opt/rosvenv/bin/pip install --upgrade pip && \
+    /opt/rosvenv/bin/pip install --no-cache-dir apriltag
 
+# Make the venv the default Python for the container (so `#!/usr/bin/env python3` hits it)
+ENV VIRTUAL_ENV=/opt/rosvenv
+ENV PATH="/opt/rosvenv/bin:${PATH}"
+# Allow system-wide pip installs in this container (PEP 668)
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
+
+# Install the apriltag Python wrapper into the system Python
+RUN python3 -m pip install --no-cache-dir apriltag
+# If you prefer the pupil wrapper instead:
+# RUN python3 -m pip install --no-cache-dir pupil-apriltags
+# <<< Add this block >>>
 # (Optional) CUDA toolchain only if you really need nvcc inside the container
 # If not required, delete this whole block (and keep --gpus all at runtime).
 # RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg > /dev/null \

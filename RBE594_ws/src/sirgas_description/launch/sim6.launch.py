@@ -1,6 +1,9 @@
 import launch
 from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import SetEnvironmentVariable
+from launch_ros.substitutions import FindPackageShare
+from ament_index_python.packages import get_package_share_directory
 import launch_ros
 import os
 import xacro
@@ -9,17 +12,18 @@ from moveit_configs_utils.launches import generate_move_group_launch
 
 # Define the package name
 packageName = 'test_ws'
-
+test_ws_path = FindPackageShare('test_ws').find('test_ws')
+sirgas_path  = FindPackageShare('sirgas_description').find('sirgas_description')
  # Absolute package path
 pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
 #Relative path of the apriltag xacro 
 
 # Relative path of the xacro file with respect to the package path
-xacroRelativePath = os.path.join(pkgPath, 'config', 'panda_pba_robots.urdf.xacro')
-
+xacroRelativePath = os.path.join('config', 'panda_pba_robots.urdf.xacro')
 # Absolute camera SDF model path
-cameraSdfPath = os.path.join(pkgPath, 'meshes/sim_cam/model.sdf')
 
+sirgas_share = get_package_share_directory('sirgas_description')
+cameraSdfPath = os.path.join(sirgas_share, 'meshes', 'sim_cam', 'model.sdf')
 # RViz config file path respect to the package path
 rvizConfigPath = os.path.join(pkgPath, 'config', 'moveit.rviz')
 
@@ -50,7 +54,10 @@ def generate_launch_description():
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='true',
                                              description='Use simulation (Gazebo) clock if true')
     )
-
+    set_gz_resources = SetEnvironmentVariable(
+        name='GZ_SIM_RESOURCE_PATH',
+        value=f'{test_ws_path}/meshes:{sirgas_path}/meshes:' + os.environ.get('GZ_SIM_RESOURCE_PATH', '')
+    )
     # Initialize Arguments
     gui = LaunchConfiguration('gui')
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -118,12 +125,10 @@ def generate_launch_description():
         name='spawn_sim_cam',
         output='screen',
         arguments=[
-            '-file',
-            cameraSdfPath, # Use the absolute path defined above
-            '-name',
-            'sim_cam',
-            '-x', '0', '-y', '0', '-z', '2',
-            '-R', '0', 'P' ,'1.57', '-Y', '0' # Note: SDF's pose is roll/pitch/yaw
+            '-file', cameraSdfPath,
+            '-name', 'sim_cam',
+            '-x','0','-y','0','-z','2',
+            '-R','0','-P','0','-Y','0'
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )
@@ -201,6 +206,7 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}])
     
     nodeList = [
+        set_gz_resources,
         gazebo,
         gazebo_bridge,
         gz_spawn_entity,

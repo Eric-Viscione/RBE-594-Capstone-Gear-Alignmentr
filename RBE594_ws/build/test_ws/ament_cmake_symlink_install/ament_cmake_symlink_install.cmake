@@ -310,6 +310,15 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
+# install(DIRECTORY "config" "DESTINATION" "share/test_ws")
+ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/test_ws" DIRECTORY "config" "DESTINATION" "share/test_ws")
+
+# install(DIRECTORY "launch" "DESTINATION" "share/test_ws" "PATTERN_EXCLUDE" "setup_assistant.launch")
+ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/test_ws" DIRECTORY "launch" "DESTINATION" "share/test_ws" "PATTERN_EXCLUDE" "setup_assistant.launch")
+
+# install(FILES ".setup_assistant" "DESTINATION" "share/test_ws")
+ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/test_ws" FILES ".setup_assistant" "DESTINATION" "share/test_ws")
+
 # install(FILES "/home/tamar/RBE594_ws/build/test_ws/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/test_ws" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/test_ws" FILES "/home/tamar/RBE594_ws/build/test_ws/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/test_ws" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
@@ -351,12 +360,3 @@ ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/test_ws" FILES "/ho
 
 # install(FILES "/home/tamar/RBE594_ws/src/test_ws/package.xml" "DESTINATION" "share/test_ws")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/test_ws" FILES "/home/tamar/RBE594_ws/src/test_ws/package.xml" "DESTINATION" "share/test_ws")
-
-# install(DIRECTORY "launch" "DESTINATION" "share/test_ws" "PATTERN_EXCLUDE" "setup_assistant.launch")
-ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/test_ws" DIRECTORY "launch" "DESTINATION" "share/test_ws" "PATTERN_EXCLUDE" "setup_assistant.launch")
-
-# install(DIRECTORY "config" "DESTINATION" "share/test_ws")
-ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/test_ws" DIRECTORY "config" "DESTINATION" "share/test_ws")
-
-# install(FILES ".setup_assistant" "DESTINATION" "share/test_ws")
-ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/test_ws" FILES ".setup_assistant" "DESTINATION" "share/test_ws")
