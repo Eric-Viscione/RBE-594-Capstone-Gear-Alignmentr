@@ -87,6 +87,10 @@
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_controllers.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_picker_controllers.yaml
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//config/ur20_starter_controllers.yaml
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//scripts/move_panda.py
+/home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description//scripts/move_pba.py
+/home/tamar/RBE594_ws/install/sirgas_description/lib/sirgas_description/move_panda.py
+/home/tamar/RBE594_ws/install/sirgas_description/lib/sirgas_description/move_pba.py
 /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/package_run_dependencies/sirgas_description
 /home/tamar/RBE594_ws/install/sirgas_description/share/ament_index/resource_index/parent_prefix_path/sirgas_description
 /home/tamar/RBE594_ws/install/sirgas_description/share/sirgas_description/environment/ament_prefix_path.sh

@@ -310,8 +310,11 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "DESTINATION" "share/sirgas_description/")
-ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/sirgas_description" DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "DESTINATION" "share/sirgas_description/")
+# install(DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "scripts" "DESTINATION" "share/sirgas_description/")
+ament_cmake_symlink_install_directory("/home/tamar/RBE594_ws/src/sirgas_description" DIRECTORY "urdf" "launch" "meshes" "world" "rviz" "config" "scripts" "DESTINATION" "share/sirgas_description/")
+
+# install(PROGRAMS "scripts/move_panda.py" "scripts/move_pba.py" "DESTINATION" "lib/sirgas_description")
+ament_cmake_symlink_install_programs("/home/tamar/RBE594_ws/src/sirgas_description" PROGRAMS "scripts/move_panda.py" "scripts/move_pba.py" "DESTINATION" "lib/sirgas_description")
 
 # install(FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/sirgas_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/tamar/RBE594_ws/src/sirgas_description" FILES "/home/tamar/RBE594_ws/build/sirgas_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/sirgas_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

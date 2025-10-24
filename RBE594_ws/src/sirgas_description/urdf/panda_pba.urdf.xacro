@@ -60,6 +60,11 @@
             <state_interface name="velocity"/>
             <state_interface name="effort"/>
         </joint>
+        <joint name="panda_finger_joint2">
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
         
         <!-- PBA Robot -->
         <joint name="pb_starter_joint">
