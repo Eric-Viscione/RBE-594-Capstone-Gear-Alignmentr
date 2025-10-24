@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/src/sirgas_description/launch/sim6.launch.py

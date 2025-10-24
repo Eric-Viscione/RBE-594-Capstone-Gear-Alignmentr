@@ -21,6 +21,14 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+# ROS2 colcon workspaces
+RBE594_ws/build/
+RBE594_ws/install/
+RBE594_ws/log/
+
+# Python build junk
+**/__pycache__/
+*.pyc
 
 # Editors / OS
 .vscode/

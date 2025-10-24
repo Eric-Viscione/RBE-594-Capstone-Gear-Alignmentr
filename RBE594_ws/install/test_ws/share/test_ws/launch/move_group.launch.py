@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/src/test_ws/launch/move_group.launch.py

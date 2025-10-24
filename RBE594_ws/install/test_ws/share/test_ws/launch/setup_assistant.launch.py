@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/src/test_ws/launch/setup_assistant.launch.py

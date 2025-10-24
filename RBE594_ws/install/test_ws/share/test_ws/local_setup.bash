@@ -1,1 +1,0 @@
-/home/tamar/RBE594_ws/build/test_ws/ament_cmake_environment_hooks/local_setup.bash
