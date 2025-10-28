@@ -2,16 +2,22 @@
 <package format="3">
   <name>sirgas_apriltag_detector</name>
   <version>0.0.1</version>
-  <description>AprilTag detector node (Python).</description>
-  <maintainer email="tboone@wpi.edu">tamar</maintainer>
-  <license>TODO</license>
+  <description>AprilTag + black-square pose estimation nodes</description>
+  <maintainer email="you@example.com">tamar</maintainer>
+  <license>BSD-3-Clause</license>
 
+  <!-- Python build system -->
   <buildtool_depend>ament_python</buildtool_depend>
 
+  <!-- Runtime deps -->
   <exec_depend>rclpy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
   <exec_depend>cv_bridge</exec_depend>
   <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-tf-transformations</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

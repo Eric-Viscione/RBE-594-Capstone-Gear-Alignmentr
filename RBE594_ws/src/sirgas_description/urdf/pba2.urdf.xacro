@@ -96,12 +96,12 @@
         </inertial>
     </link>
     <xacro:attach_apriltag_card
-    parent_link="first_gear"
-    tag_size=".5"                
-    tag_thickness="0.002"           
-    xyz="0 .06 1.0"                  
-    rpy="0 3.14 0"                     
-    link_name="first_gear_apriltag"
+        parent_link="first_gear"
+        tag_size=".5"                
+        tag_thickness="0.002"           
+        xyz="0 .06 1.0"                  
+        rpy="0 3.14 0"                     
+        link_name="first_gear_apriltag"
     />
     <joint name="pb_second_joint" type="continuous">
         <parent link="peg_board"/>
