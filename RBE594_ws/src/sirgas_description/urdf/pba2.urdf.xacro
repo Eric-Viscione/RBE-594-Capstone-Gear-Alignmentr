@@ -170,6 +170,166 @@
             <inertia ixx="0.00095806" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.00095831" iyz="0.0" izx="0.0" izy= "0.0" izz="0.00180386"/>
         </inertial>
     </link>
+    <!-- ==================== LINER LINKS AND JOINTS ==================== -->
+
+    <!-- Liner 1 -->
+    <link name="liner1">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner1_pbs" type="fixed">
+    <parent link="peg_board"/>
+    <child link="liner1"/>
+    <origin xyz="-0.375 -0.02225 0.176" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 2 -->
+    <link name="liner2">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner2_pbs" type="fixed">
+    <parent link="starter_gear"/>
+    <child link="liner2"/>
+    <origin xyz="0.0 -0.028 0.051" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 3 -->
+    <link name="liner3">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner3_pbf" type="fixed">
+    <parent link="peg_board"/>
+    <child link="liner3"/>
+    <origin xyz="0.0 -0.02225 0.176" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 4 -->
+    <link name="liner4">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner4_pbf" type="fixed">
+    <parent link="first_gear"/>
+    <child link="liner4"/>
+    <origin xyz="0.0 -0.028 0.051" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 5 -->
+    <link name="liner5">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner5_pbf" type="fixed">
+    <parent link="peg_board"/>
+    <child link="liner5"/>
+    <origin xyz="0.25 -0.02225 0.176" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 6 -->
+    <link name="liner6">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner6_pb2" type="fixed">
+    <parent link="second_gear"/>
+    <child link="liner6"/>
+    <origin xyz="0.0 -0.028 0.051" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 7 -->
+    <link name="liner7">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner7_pbt" type="fixed">
+    <parent link="peg_board"/>
+    <child link="liner7"/>
+    <origin xyz="0.45 -0.02225 0.176" rpy="0 0 0"/>
+    </joint>
+
+
+    <!-- Liner 8 -->
+    <link name="liner8">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+        <box size="0.005 0.005 0.001"/>
+        </geometry>
+        <material name="Red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    </link>
+
+    <joint name="liner8_pbt" type="fixed">
+    <parent link="third_gear"/>
+    <child link="liner8"/>
+    <origin xyz="0.0 -0.028 0.051" rpy="0 0 0"/>
+    </joint>
 
      <!-- ROS 2 Control configuration -->
      <!-- Only the master joint (pb_starter_joint) gets command interfaces -->
