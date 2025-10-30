@@ -11,7 +11,7 @@
       link_name:='${parent_link}_apriltag'
       mass:=0.01
       texture_path:='package://sirgas_description/meshes/Apriltag36_11_00000/materials/textures/tag36_11_00000.png'
-      add_back_visual:=true
+      add_back_visual:=false
       back_epsilon:=0.0005">
 
     <link name="${link_name}">

@@ -22,7 +22,7 @@ def generate_launch_description():
         description='Camera optical frame id'
     )
     tag_frame_arg = DeclareLaunchArgument(
-        'tag_frame', default_value='first_gear_apriltag',
+        'tag_frame', default_value='first_gear_apriltag_detected',
         description='Child TF frame for the detected tag'
     )
     use_sim_time_arg = DeclareLaunchArgument(
@@ -48,11 +48,11 @@ def generate_launch_description():
             'camera_info_topic': camera_info_topic,
             'tag_size': tag_size,
             'camera_optical_frame': camera_optical_frame,
+            # set BOTH, in case the node uses one or the other
             'tag_frame': tag_frame,
+            'detected_tag_frame': tag_frame,
             'use_sim_time': use_sim_time,
         }],
-        # You can add remappings if your topics differ at runtime:
-        # remappings=[('/camera_feed/image', '/your/image'), ('/camera_feed/camera_info', '/your/camera_info')]
     )
 
     return LaunchDescription([
