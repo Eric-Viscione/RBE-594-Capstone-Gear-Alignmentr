@@ -63,7 +63,6 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
-    <!-- Gazebo rendering: visible from both sides + small emissive + PBR albedo -->
     <gazebo reference="${link_name}">
       <material>
         <double_sided>1</double_sided>
