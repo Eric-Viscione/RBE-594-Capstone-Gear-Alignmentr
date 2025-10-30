@@ -9,10 +9,35 @@ from sensor_msgs.msg import Image, CameraInfo
 from geometry_msgs.msg import PoseStamped, TransformStamped
 from tf2_ros import TransformBroadcaster
 from sensor_msgs.msg import Image as ImageMsg
+from tf2_ros import Buffer, TransformListener
+from geometry_msgs.msg import TransformStamped
 
 
-
-
+def transform_to_mat44(tf_msg):
+    t = tf_msg.transform.translation
+    q = tf_msg.transform.rotation
+    x, y, z, w = q.x, q.y, q.z, q.w
+    R = np.array([
+        [1-2*(y*y+z*z),   2*(x*y - z*w),   2*(x*z + y*w)],
+        [  2*(x*y + z*w), 1-2*(x*x+z*z),   2*(y*z - x*w)],
+        [  2*(x*z - y*w),   2*(y*z + x*w), 1-2*(x*x+y*y)]
+    ], dtype=np.float64)
+    T = np.eye(4, dtype=np.float64)
+    T[:3, :3] = R
+    T[:3,  3] = [t.x, t.y, t.z]
+    return T
+def rotmat_to_rpy_zyx(R):
+    # returns roll, pitch, yaw (ZYX convention)
+    sy = -R[2,0]
+    if abs(sy) < 1.0:
+        pitch = np.arcsin(sy)
+        roll  = np.arctan2(R[2,1], R[2,2])
+        yaw   = np.arctan2(R[1,0], R[0,0])
+    else:
+        pitch = np.pi/2 * np.sign(sy)
+        roll  = np.arctan2(-R[0,1], -R[0,2])
+        yaw   = 0.0
+    return roll, pitch, yaw
 def rotmat_to_quaternion(R):
     # R: 3x3 rotation matrix -> (x, y, z, w)
     m00,m01,m02 = R[0]; m10,m11,m12 = R[1]; m20,m21,m22 = R[2]
@@ -62,8 +87,7 @@ class BlackTagPose(Node):
         self.declare_parameter('camera_info_topic', '/camera_feed/camera_info')
         self.declare_parameter('tag_size', 0.50)  # meters
         self.declare_parameter('camera_optical_frame', 'camera_color_optical_frame')
-        self.declare_parameter('tag_frame', 'first_gear_apriltag')
-        
+        self.declare_parameter('detected_tag_frame', 'first_gear_apriltag_detected')        
         ##debug parameters
         self.debug_pub = self.create_publisher(ImageMsg, '/black_tag/debug/image', 1)
         self.declare_parameter('debug_dir', '/tmp')
@@ -78,8 +102,13 @@ class BlackTagPose(Node):
         self.D = np.zeros(5, dtype=np.float64)   # no distortion in sim
 
         self.tag_size = float(self.get_parameter('tag_size').value)
-        self.cam_frame = self.get_parameter('camera_optical_frame').value
-        self.tag_frame = self.get_parameter('tag_frame').value
+        # self.cam_frame = self.get_parameter('camera_optical_frame').value
+        # self.cam_frame = self.get_parameter('sim_cam/camera_link/camera').value
+        # self.cam_frame = 'sim_cam/camera_link/camera'
+        self.declare_parameter('world_frame', 'world')
+        self.world_frame = self.get_parameter('world_frame').value
+        self.cam_frame = 'camera_link'
+        self.tag_frame = self.get_parameter('detected_tag_frame').value
 
         self.pose_pub = self.create_publisher(PoseStamped, '/black_tag/pose', 10)
         self.tfbr = TransformBroadcaster(self)
@@ -95,6 +124,51 @@ class BlackTagPose(Node):
         self.get_logger().info('black_tag_detector: using HARD-CODED intrinsics (fx,fy,cx,cy).')
         self.get_logger().info(f"image_topic param: {self.get_parameter('image_topic').value}")
         self.get_logger().info(f"camera_info_topic param: {self.get_parameter('camera_info_topic').value}")
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
+        self.pose_pub = self.create_publisher(PoseStamped, '/black_tag/pose', 10)
+        self.pose_world_pub = self.create_publisher(PoseStamped, '/black_tag/pose_world', 10)  # <-- add this
+        self.tfbr = TransformBroadcaster(self)
+    def _publish_world_pose(self, msg_stamp, R_cam_tag, t_cam_tag):
+        # 1) Build T_cam_tag
+        T_cam_tag = np.eye(4)
+        T_cam_tag[:3,:3] = R_cam_tag
+        T_cam_tag[:3, 3] = t_cam_tag.reshape(3)
+
+        # 2) Get T_world_cam (use your world/base frame & your camera optical frame)
+        target_world = 'peg_board'  # or 'map' / your base frame
+        cam_frame    = self.cam_frame  # e.g., 'camera_color_optical_frame'
+        try:
+            tf_w_c = self.tf_buffer.lookup_transform(self.world_frame, self.cam_frame, rclpy.time.Time())
+        except Exception as e:
+            self.get_logger().warn(f'No TF {target_world}->{cam_frame}: {e}')
+            return
+
+        T_w_c = transform_to_mat44(tf_w_c)
+
+        # 3) Compose
+        T_w_tag = T_w_c @ T_cam_tag
+        R_w_tag = T_w_tag[:3,:3]
+        t_w_tag = T_w_tag[:3, 3]
+
+        # 4) Convert to rpy + quaternion and publish
+        roll, pitch, yaw = rotmat_to_rpy_zyx(R_w_tag)
+        qx, qy, qz, qw = rotmat_to_quaternion(R_w_tag)
+
+        ps = PoseStamped()
+        ps.header.stamp = msg_stamp
+        ps.header.frame_id = target_world
+        ps.pose.position.x, ps.pose.position.y, ps.pose.position.z = t_w_tag.tolist()
+        ps.pose.orientation.x = qx; ps.pose.orientation.y = qy
+        ps.pose.orientation.z = qz; ps.pose.orientation.w = qw
+        self.pose_pub.publish(ps)
+
+        # Optional: log RPY
+        self.get_logger().info(
+            f"tag in {target_world}: "
+            f"xyz=({t_w_tag[0]:.3f},{t_w_tag[1]:.3f},{t_w_tag[2]:.3f}) "
+            f"rpy=({roll:.3f},{pitch:.3f},{yaw:.3f})"
+        )
     def _caminfo_cb(self, msg: CameraInfo):
         self.K = np.array(msg.k, dtype=np.float64).reshape(3,3)
         self.D = np.array(msg.d, dtype=np.float64).reshape(-1)
@@ -108,7 +182,7 @@ class BlackTagPose(Node):
         img = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-        # Threshold for “black” squares (tune 20..50 as needed)
+        # Threshold for “black” squares 
         _, bw = cv2.threshold(gray, 30, 255, cv2.THRESH_BINARY_INV)
         bw = cv2.medianBlur(bw, 5)
 
@@ -148,27 +222,51 @@ class BlackTagPose(Node):
         if not ok:
             return
 
-        R,_ = cv2.Rodrigues(rvec)
-        T = np.eye(4); T[:3,:3] = R; T[:3,3] = tvec.ravel()
-        R,_ = cv2.Rodrigues(rvec)
-        qx, qy, qz, qw = rotmat_to_quaternion(R)    
+        R, _ = cv2.Rodrigues(rvec)
+        qx, qy, qz, qw = rotmat_to_quaternion(R)
 
-        ps = PoseStamped()
-        ps.header.stamp = msg.header.stamp
-        ps.header.frame_id = self.cam_frame
-        ps.pose.position.x, ps.pose.position.y, ps.pose.position.z = tvec.ravel().tolist()
-        ps.pose.orientation.x, ps.pose.orientation.y, ps.pose.orientation.z, ps.pose.orientation.w = qx,qy,qz,qw
-        
-        self.pose_pub.publish(ps)
+        # ---------- ADD: world-frame composition ----------
+        # Build T_cam_tag from solvePnP
+        T_cam_tag = np.eye(4, dtype=np.float64)
+        T_cam_tag[:3, :3] = R
+        T_cam_tag[:3,  3] = tvec.reshape(3)
 
-        tf = TransformStamped()
-        tf.header = ps.header
-        tf.child_frame_id = self.tag_frame
-        tf.transform.translation.x = ps.pose.position.x
-        tf.transform.translation.y = ps.pose.position.y
-        tf.transform.translation.z = ps.pose.position.z
-        tf.transform.rotation = ps.pose.orientation
-        self.tfbr.sendTransform(tf)
+        # Lookup world->camera (make sure self.world_frame and self.cam_frame exist in TF)
+        try:
+            tf_w_c = self.tf_buffer.lookup_transform(self.world_frame, self.cam_frame, rclpy.time.Time())
+        except Exception as e:
+            # If TF not ready yet, just skip this frame
+            if not hasattr(self, "_warned_tf"):
+                self.get_logger().warn(f"No TF {self.world_frame}->{self.cam_frame}: {e}")
+                self._warned_tf = True
+            # still publish camera-frame pose if you want; then return or continue
+            pass
+        else:
+            T_w_c   = transform_to_mat44(tf_w_c)
+            T_w_tag = T_w_c @ T_cam_tag
+            R_w_tag = T_w_tag[:3, :3]
+            t_w_tag = T_w_tag[:3,  3]
+
+            qx_w, qy_w, qz_w, qw_w = rotmat_to_quaternion(R_w_tag)
+
+            # Publish world-frame pose
+            psw = PoseStamped()
+            psw.header.stamp = msg.header.stamp
+            psw.header.frame_id = self.world_frame
+            psw.pose.position.x, psw.pose.position.y, psw.pose.position.z = t_w_tag.tolist()
+            psw.pose.orientation.x = qx_w; psw.pose.orientation.y = qy_w
+            psw.pose.orientation.z = qz_w; psw.pose.orientation.w = qw_w
+            self.pose_world_pub.publish(psw)
+
+            # Broadcast TF for the detected tag in world
+            tfw = TransformStamped()
+            tfw.header = psw.header
+            tfw.child_frame_id = self.tag_frame            # e.g., 'first_gear_apriltag_detected'
+            tfw.transform.translation.x = psw.pose.position.x
+            tfw.transform.translation.y = psw.pose.position.y
+            tfw.transform.translation.z = psw.pose.position.z
+            tfw.transform.rotation = psw.pose.orientation
+            self.tfbr.sendTransform(tfw)
         # Log contours only once (first frame we see contours)
         if not hasattr(self, "_dumped_contours"):
             self._dumped_contours = True

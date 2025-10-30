@@ -51,7 +51,7 @@ class MoveItPanda(Node):
         # Define poses from MoveIt assistant (from SRDF file)
         self.poses = {
             # Ready position from SRDF
-            'ready': [-1.5527, 0.0877, -0.08, -1.0748, -0.1121, 1.1697, 0.6243],
+            'ready': [1.5527, 0.0877, -0.08, -1.0748, -0.1121, 1.1697, 0.6243],
             # Home position (all zeros)
             'home': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6243],
             # Additional positions can be added here if defined in your MoveIt config
