@@ -99,7 +99,7 @@
         parent_link="first_gear"
         tag_size=".5"                
         tag_thickness="0.00001"           
-        xyz="0 .06 1.0"                  
+        xyz="0 .06 .02"                  
         rpy="0 3.0 0"                     
         link_name="first_gear_apriltag"
     />
