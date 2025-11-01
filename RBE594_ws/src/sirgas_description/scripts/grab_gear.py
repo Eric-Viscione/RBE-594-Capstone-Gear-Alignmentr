@@ -241,9 +241,9 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world" # Frame change
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 1e-5
-        orient_constraint.absolute_y_axis_tolerance = 1e-5
-        orient_constraint.absolute_z_axis_tolerance = 1e-5
+        orient_constraint.absolute_x_axis_tolerance = 1e-2
+        orient_constraint.absolute_y_axis_tolerance = 1e-2
+        orient_constraint.absolute_z_axis_tolerance = 1e-2
         orient_constraint.weight = 1.0
         constraints.orientation_constraints.append(orient_constraint)
         
