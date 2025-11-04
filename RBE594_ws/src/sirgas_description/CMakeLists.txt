@@ -24,7 +24,10 @@ install(
 install(PROGRAMS
   scripts/move_panda.py
   scripts/move_pba.py
+  scripts/move_to_gear.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
+
+
