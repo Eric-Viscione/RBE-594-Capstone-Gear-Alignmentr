@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/opt/ros/jazzy/src/gtest_vendor")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/tamar/ws_moveit/build/pilz_industrial_motion_planner")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/pilz_industrial_motion_planner")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

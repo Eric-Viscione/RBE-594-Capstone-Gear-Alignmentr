@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
-BuildDirectory: /home/tamar/ws_moveit/build/robotiq_driver
+SourceDirectory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
+BuildDirectory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: cc3e0c1cee19
+Site: tamar-MS-7E07
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver"
+ConfigureCommand: "/usr/bin/cmake" "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

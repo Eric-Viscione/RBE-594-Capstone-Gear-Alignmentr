@@ -16,7 +16,7 @@ set(_moveit_ros_occupancy_map_monitor_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_ros_occupancy_map_monitor_FIND_QUIETLY)
-  message(STATUS "Found moveit_ros_occupancy_map_monitor: 2.12.3 (${moveit_ros_occupancy_map_monitor_DIR})")
+  message(STATUS "Found moveit_ros_occupancy_map_monitor: 2.14.1 (${moveit_ros_occupancy_map_monitor_DIR})")
 endif()
 
 # warn when using a deprecated package

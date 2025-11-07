@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_tests")
-set(moveit_ros_tests_VERSION "2.12.3")
+set(moveit_ros_tests_VERSION "2.14.1")
 set(moveit_ros_tests_MAINTAINER "MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_tests_BUILD_DEPENDS "moveit_common" "rclcpp")
 set(moveit_ros_tests_BUILDTOOL_DEPENDS "ament_cmake")

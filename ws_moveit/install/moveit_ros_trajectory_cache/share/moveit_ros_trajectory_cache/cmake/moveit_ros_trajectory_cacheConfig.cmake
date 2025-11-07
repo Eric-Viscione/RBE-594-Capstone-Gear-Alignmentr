@@ -16,7 +16,7 @@ set(_moveit_ros_trajectory_cache_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_ros_trajectory_cache_FIND_QUIETLY)
-  message(STATUS "Found moveit_ros_trajectory_cache: 2.12.3 (${moveit_ros_trajectory_cache_DIR})")
+  message(STATUS "Found moveit_ros_trajectory_cache: 2.14.1 (${moveit_ros_trajectory_cache_DIR})")
 endif()
 
 # warn when using a deprecated package

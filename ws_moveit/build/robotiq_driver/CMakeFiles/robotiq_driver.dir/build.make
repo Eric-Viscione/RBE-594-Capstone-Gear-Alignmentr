@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/robotiq_driver
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver
 
 # Include any dependencies generated for this target.
 include CMakeFiles/robotiq_driver.dir/depend.make
@@ -70,116 +70,116 @@ include CMakeFiles/robotiq_driver.dir/progress.make
 include CMakeFiles/robotiq_driver.dir/flags.make
 
 CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp
+CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp
 CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp
 
 CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp > CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp > CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp -o CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/crc_utils.cpp -o CMakeFiles/robotiq_driver.dir/src/crc_utils.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp
+CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp
 CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp
 
 CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp > CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp > CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp -o CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/data_utils.cpp -o CMakeFiles/robotiq_driver.dir/src/data_utils.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp
+CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp
 CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp
 
 CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp > CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp > CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp -o CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/hardware_interface.cpp -o CMakeFiles/robotiq_driver.dir/src/hardware_interface.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp
+CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp
 CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp
 
 CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp > CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp > CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp -o CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver.cpp -o CMakeFiles/robotiq_driver.dir/src/default_driver.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp
+CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp
 CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp
 
 CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp > CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp > CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp -o CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_driver_factory.cpp -o CMakeFiles/robotiq_driver.dir/src/default_driver_factory.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp
+CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp
 CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp
 
 CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp > CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp > CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp -o CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/fake/fake_driver.cpp -o CMakeFiles/robotiq_driver.dir/src/fake/fake_driver.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp
+CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp
 CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp
 
 CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp > CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp > CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp -o CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial.cpp -o CMakeFiles/robotiq_driver.dir/src/default_serial.cpp.s
 
 CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o: CMakeFiles/robotiq_driver.dir/flags.make
-CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp
+CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp
 CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o: CMakeFiles/robotiq_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o -c /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o -MF CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o.d -o CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp
 
 CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp > CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp > CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.i
 
 CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp -o CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/src/default_serial_factory.cpp -o CMakeFiles/robotiq_driver.dir/src/default_serial_factory.cpp.s
 
 # Object files for target robotiq_driver
 robotiq_driver_OBJECTS = \
@@ -206,7 +206,7 @@ librobotiq_driver.so: CMakeFiles/robotiq_driver.dir/src/default_serial_factory.c
 librobotiq_driver.so: CMakeFiles/robotiq_driver.dir/build.make
 librobotiq_driver.so: /opt/ros/jazzy/lib/libmock_components.so
 librobotiq_driver.so: /opt/ros/jazzy/lib/libhardware_interface.so
-librobotiq_driver.so: /home/tamar/ws_moveit/install/serial/lib/libserial.a
+librobotiq_driver.so: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/serial/lib/libserial.a
 librobotiq_driver.so: /opt/ros/jazzy/lib/libjoint_saturation_limiter.so
 librobotiq_driver.so: /opt/ros/jazzy/lib/libjoint_limiter_interface.so
 librobotiq_driver.so: /opt/ros/jazzy/lib/libclass_loader.so
@@ -407,7 +407,7 @@ librobotiq_driver.so: /opt/ros/jazzy/lib/librosidl_runtime_c.so
 librobotiq_driver.so: /opt/ros/jazzy/lib/librcutils.so
 librobotiq_driver.so: /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0
 librobotiq_driver.so: CMakeFiles/robotiq_driver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library librobotiq_driver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library librobotiq_driver.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robotiq_driver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -419,6 +419,6 @@ CMakeFiles/robotiq_driver.dir/clean:
 .PHONY : CMakeFiles/robotiq_driver.dir/clean
 
 CMakeFiles/robotiq_driver.dir/depend:
-	cd /home/tamar/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles/robotiq_driver.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles/robotiq_driver.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/robotiq_driver.dir/depend
 

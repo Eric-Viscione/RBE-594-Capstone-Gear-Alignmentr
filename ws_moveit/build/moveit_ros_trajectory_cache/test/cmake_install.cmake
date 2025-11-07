@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2/moveit_ros/trajectory_cache/test
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_ros/trajectory_cache/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit_ros_trajectory_cache")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_trajectory_cache")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tamar/ws_moveit/build/moveit_ros_trajectory_cache/gtest/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_ros_trajectory_cache/gtest/cmake_install.cmake")
 endif()
 

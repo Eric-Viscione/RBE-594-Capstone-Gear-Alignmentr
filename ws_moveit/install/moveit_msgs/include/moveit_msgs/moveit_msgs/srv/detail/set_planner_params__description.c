@@ -69,8 +69,8 @@ moveit_msgs__srv__SetPlannerParams_Event__get_type_hash(
 
 // Include directives for referenced types
 #include "moveit_msgs/msg/detail/planner_params__functions.h"
-#include "service_msgs/msg/detail/service_event_info__functions.h"
 #include "builtin_interfaces/msg/detail/time__functions.h"
+#include "service_msgs/msg/detail/service_event_info__functions.h"
 
 // Hashes for external referenced types
 #ifndef NDEBUG

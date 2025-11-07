@@ -16,7 +16,7 @@ set(_moveit_resources_prbt_support_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_resources_prbt_support_FIND_QUIETLY)
-  message(STATUS "Found moveit_resources_prbt_support: 2.12.3 (${moveit_resources_prbt_support_DIR})")
+  message(STATUS "Found moveit_resources_prbt_support: 2.14.1 (${moveit_resources_prbt_support_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -4,67 +4,53 @@ import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
 from moveit_msgs.action import MoveGroup
-from moveit_msgs.msg import MotionPlanRequest, PlanningOptions, RobotState
+from moveit_msgs.msg import MotionPlanRequest, PlanningOptions, RobotState, CollisionObject, PlanningScene 
 from trajectory_msgs.msg import JointTrajectory
 from control_msgs.action import FollowJointTrajectory, GripperCommand
 from control_msgs.msg import GripperCommand as GripperCommandMsg 
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Pose, Point, Quaternion
 from action_msgs.msg import GoalStatus
+from shape_msgs.msg import SolidPrimitive # Import needed for the Cylinder
 import time
 from threading import Event
-import math 
 import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
+from moveit_msgs.msg import AttachedCollisionObject 
+
+# --- CONSTANTS FOR GRASPING ---
+GEAR_HEIGHT = 0.025   # Height 2.5 cm
+GEAR_DIAMETER = 0.07  # Diameter 7 cm (User corrected value)
+GEAR_RADIUS = GEAR_DIAMETER / 2.0 # 0.035m
+GEAR_BASE_Z = 0.125   # Base Z position
+GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) # 0.1375m
+# -----------------------------
 
 class MoveItPanda(Node):
     def __init__(self):
         super().__init__('moveit_panda')
         
-        # Action client for MoveIt MoveGroup action
-        self.moveit_action_client = ActionClient(
-            self, 
-            MoveGroup, 
-            '/move_action'
-        )
-        
-        # Action client for trajectory execution
-        self.trajectory_action_client = ActionClient(
-            self, 
-            FollowJointTrajectory, 
-            '/panda_arm_controller/follow_joint_trajectory'
-        )
-
-         # Action client for gripper control
-        self.gripper_action_client = ActionClient(
-            self,
-            GripperCommand,
-            '/hand_controller/gripper_cmd'
-        )
-        
-        # Subscribe to joint states for current robot state
-        self.joint_state_sub = self.create_subscription(
-            JointState,
-            '/joint_states',
-            self.joint_state_callback,
-            10
-        )
+        # Action clients and publishers
+        self.moveit_action_client = ActionClient(self, MoveGroup, '/move_action')
+        self.trajectory_action_client = ActionClient(self, FollowJointTrajectory, '/panda_arm_controller/follow_joint_trajectory')
+        self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
+        self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+        self.planning_scene_pub = self.create_publisher(PlanningScene, '/planning_scene', 10)
         
         self.current_joint_state = None
         self.joint_state_event = Event()
         
-        # Define poses from MoveIt assistant (from SRDF file)
+        # Define poses
         self.poses = {
-            # Ready position from SRDF
             'ready': [1.5527, 0.0877, -0.08, -1.0748, -0.1121, 1.1697, 0.6243],
-            # Home position (all zeros)
             'home': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6243],
         }
         
         # Gripper positions
         self.gripper_positions = {
             'close': 0.0,
-            'open': 0.04
+            'open': 0.04,
+            'grasp': 0.0325
         }
         
         self.get_logger().info("MoveIt Panda node initialized")
@@ -77,20 +63,17 @@ class MoveItPanda(Node):
         ]
         
         panda_positions = []
-        panda_velocities = []
         panda_names = []
         
         for i, name in enumerate(msg.name):
             if name in panda_joint_names:
                 panda_names.append(name)
                 panda_positions.append(msg.position[i])
-                panda_velocities.append(msg.velocity[i] if i < len(msg.velocity) else 0.0)
         
         filtered_state = JointState()
         filtered_state.header = msg.header
         filtered_state.name = panda_names
         filtered_state.position = panda_positions
-        filtered_state.velocity = panda_velocities
         
         self.current_joint_state = filtered_state
         self.joint_state_event.set()
@@ -98,13 +81,11 @@ class MoveItPanda(Node):
     def wait_for_joint_state(self, timeout=10.0):
         """Wait for joint state message"""
         self.get_logger().info("Waiting for joint state...")
-        
         if self.current_joint_state is not None:
             self.get_logger().info("Using cached joint state")
             return True
-            
         if not self.joint_state_event.wait(timeout):
-            self.get_logger().error("Timeout waiting for joint state!")
+            self.get_logger().error("Timeout waiting for joint state! Creating default state.")
             self.create_default_joint_state()
             return True
         return True
@@ -118,10 +99,142 @@ class MoveItPanda(Node):
             'panda_joint4', 'panda_joint5', 'panda_joint6', 'panda_joint7'
         ]
         self.current_joint_state.position = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        self.current_joint_state.velocity = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    def clear_gear_references(self):
+        """
+        Forcefully removes the 'first_gear' from both the attached list 
+        and the world list to ensure a clean state for the planning scene.
+        """
+        self.get_logger().warn("Executing FORCEFUL SCENE CLEANUP for 'first_gear'...")
+        
+        ps_msg = PlanningScene()
+        ps_msg.is_diff = True
+        
+        # 1. Remove from the world list (CollisionObject.REMOVE)
+        co_remove_world = CollisionObject()
+        co_remove_world.header.frame_id = "world"
+        co_remove_world.id = "first_gear"
+        co_remove_world.operation = CollisionObject.REMOVE 
+        ps_msg.world.collision_objects.append(co_remove_world)
+        
+        # 2. Remove from the attached list (AttachedCollisionObject REMOVE)
+        # This handles cases where it was attached but failed to remove from the world.
+        aco_detach = AttachedCollisionObject()
+        aco_detach.link_name = "panda_hand"
+        aco_detach.object.id = "first_gear"
+        aco_detach.object.operation = CollisionObject.REMOVE 
+        ps_msg.robot_state.attached_collision_objects.append(aco_detach)
+
+        # Must mark the robot_state section as a diff when modifying attached objects
+        ps_msg.robot_state.is_diff = True 
+
+        # Publish the combined cleanup message repeatedly for robustness
+        for i in range(10):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1)
+            
+        time.sleep(2.0) 
+        self.get_logger().warn("Forceful scene cleanup complete. Scene should be clear for planning.")
+
+    def add_gear_to_scene(self):
+        """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
+        self.get_logger().info(f"Adding 'first_gear' (Cylinder D={GEAR_DIAMETER}m, R={GEAR_RADIUS}m) to the planning scene...")
+        
+        gear_co = CollisionObject()
+        gear_co.header.frame_id = "world" 
+        gear_co.id = "first_gear"
+        
+        cylinder = SolidPrimitive()
+        cylinder.type = SolidPrimitive.CYLINDER
+        cylinder.dimensions = [GEAR_HEIGHT, GEAR_RADIUS] 
+        
+        gear_pose = Pose()
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = 0.0
+        gear_pose.position.z = GEAR_CENTER_Z 
+        gear_pose.orientation.w = 1.0 
+        
+        gear_co.primitives.append(cylinder) 
+        gear_co.primitive_poses.append(gear_pose) 
+        gear_co.operation = CollisionObject.ADD 
+        
+        ps_msg = PlanningScene()
+        ps_msg.world.collision_objects.append(gear_co)
+        ps_msg.is_diff = True 
+        
+        self.get_logger().info("Publishing 'first_gear' (CYLINDER) to planning scene...")
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1) 
+            
+        self.get_logger().info("'first_gear' (CYLINDER) should now be in the planning scene.")
+
+    def attach_gear_to_hand(self):
+        """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
+        self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
+        
+        # Re-create geometry and pose (CRITICAL: MoveIt needs this for successful attachment)
+        cylinder = SolidPrimitive()
+        cylinder.type = SolidPrimitive.CYLINDER
+        cylinder.dimensions = [GEAR_HEIGHT, GEAR_RADIUS] 
+        
+        # NOTE: The pose should be the pose relative to the link it is attached to (panda_hand), 
+        # but in this case, we use the world frame pose and let MoveIt transform it on attach.
+        gear_pose = Pose()
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = 0.0
+        gear_pose.position.z = GEAR_CENTER_Z 
+        gear_pose.orientation.w = 1.0 
+
+        aco = AttachedCollisionObject()
+        aco.link_name = "panda_hand" 
+        
+        aco.object.header.frame_id = "world"
+        aco.object.id = "first_gear"
+        aco.object.operation = CollisionObject.ADD 
+        
+        # FIX: Explicitly include geometry when attaching
+        aco.object.primitives.append(cylinder) 
+        aco.object.primitive_poses.append(gear_pose) 
+
+        # FIX: Define the links the attached object is allowed to touch
+        # This prevents self-collision errors (gear colliding with fingers)
+        aco.touch_links = ['panda_link7', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
+        
+        ps_msg = PlanningScene()
+        ps_msg.robot_state.attached_collision_objects.append(aco) 
+        ps_msg.robot_state.is_diff = True
+        ps_msg.is_diff = True
+        
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1)
+            
+        self.get_logger().info("'first_gear' is now attached to the hand.")
+
+    def remove_gear_from_world_after_attach(self):
+        """Explicitly removes the gear from the world collision list after attachment to prevent CheckStartStateCollision errors."""
+        self.get_logger().info("Explicitly removing 'first_gear' from world collision objects (leaving attached copy)...")
+        
+        co_remove_world = CollisionObject()
+        co_remove_world.header.frame_id = "world"
+        co_remove_world.id = "first_gear"
+        co_remove_world.operation = CollisionObject.REMOVE 
+        
+        ps_msg = PlanningScene()
+        ps_msg.world.collision_objects.append(co_remove_world)
+        ps_msg.is_diff = True
+        
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1)
+        
+        self.get_logger().info("'first_gear' explicitly removed from world collision objects.")
+    
+    # NOTE: The 'detach_gear_from_hand' function was removed as 'clear_gear_references' handles this robustly for final cleanup.
 
     def plan_with_moveit(self, target_joints=None, target_pose=None):
-        """Use MoveIt to plan a trajectory"""
+        """Use MoveIt to plan a trajectory (function body omitted for brevity but is necessary)"""
         self.get_logger().info("Planning with MoveIt...")
         
         if not self.moveit_action_client.wait_for_server(timeout_sec=10.0):
@@ -129,48 +242,35 @@ class MoveItPanda(Node):
             return None
 
         goal_msg = MoveGroup.Goal()
-        
-        # Motion plan request
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        
-        # --- ROBUST PLANNING PARAMETERS ---
         request.num_planning_attempts = 25  
         request.allowed_planning_time = 10.0 
-        # ----------------------------------
-        
         request.max_velocity_scaling_factor = 0.5
         request.max_acceleration_scaling_factor = 0.5
         
-        # Set start state to current joint state
         if self.current_joint_state:
             robot_state = RobotState()
             robot_state.joint_state = self.current_joint_state
             request.start_state = robot_state
-            self.get_logger().info(f"Using start state with joints: {self.current_joint_state.position}")
         
-        # Set goal - either joint target or pose target
         if target_joints:
             request.goal_constraints.append(self.create_joint_constraint(target_joints))
-            self.get_logger().info(f"Planning to joint target: {target_joints}")
         elif target_pose:
             request.goal_constraints.append(self.create_pose_constraint(target_pose))
-            self.get_logger().info(f"Planning to pose target: [{target_pose.position.x}, {target_pose.position.y}, {target_pose.position.z}]")
         else:
             self.get_logger().error("No target specified!")
             return None
         
-        # Planning options
         planning_options = PlanningOptions()
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 5
+        planning_options.replan_attempts = 10
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
         
-        self.get_logger().info("Sending planning request to MoveIt...")
         future = self.moveit_action_client.send_goal_async(goal_msg)
         rclpy.spin_until_future_complete(self, future)
         
@@ -179,7 +279,6 @@ class MoveItPanda(Node):
             self.get_logger().error("MoveIt goal rejected!")
             return None
             
-        self.get_logger().info("MoveIt goal accepted, waiting for result...")
         result_future = goal_handle.get_result_async()
         rclpy.spin_until_future_complete(self, result_future)
         
@@ -193,7 +292,7 @@ class MoveItPanda(Node):
             return None
 
     def create_joint_constraint(self, target_joints):
-        """Create joint constraints for planning"""
+        """Create joint constraints for planning (function body omitted for brevity but is necessary)"""
         from moveit_msgs.msg import Constraints, JointConstraint
         
         constraints = Constraints()
@@ -215,7 +314,7 @@ class MoveItPanda(Node):
         return constraints
 
     def create_pose_constraint(self, target_pose):
-        """Create pose constraints for planning, now relative to the 'world' frame."""
+        """Create pose constraints for planning (function body omitted for brevity but is necessary)"""
         from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
         from shape_msgs.msg import SolidPrimitive
         
@@ -223,34 +322,34 @@ class MoveItPanda(Node):
         
         # Position constraint
         pos_constraint = PositionConstraint()
-        pos_constraint.header.frame_id = "world" # Frame change
+        pos_constraint.header.frame_id = "world"
         pos_constraint.link_name = "panda_hand"
         
         # Create a small tolerance volume
         volume = SolidPrimitive()
         volume.type = SolidPrimitive.SPHERE
-        volume.dimensions = [0.02] 
+        volume.dimensions = [0.025] 
         
         pos_constraint.constraint_region.primitives.append(volume)
         pos_constraint.constraint_region.primitive_poses.append(target_pose)
-        pos_constraint.weight = 0.7 
+        pos_constraint.weight = 1.0 
         constraints.position_constraints.append(pos_constraint)
         
         # Orientation constraint (loose)
         orient_constraint = OrientationConstraint()
-        orient_constraint.header.frame_id = "world" # Frame change
+        orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 1e-2
-        orient_constraint.absolute_y_axis_tolerance = 1e-2
-        orient_constraint.absolute_z_axis_tolerance = 1e-2
+        orient_constraint.absolute_x_axis_tolerance = 5e-4
+        orient_constraint.absolute_y_axis_tolerance = 5e-4
+        orient_constraint.absolute_z_axis_tolerance = 5e-4
         orient_constraint.weight = 1.0
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
 
     def execute_trajectory(self, joint_trajectory):
-        """Execute trajectory using direct action client"""
+        """Execute trajectory using direct action client (function body omitted for brevity but is necessary)"""
         self.get_logger().info("Executing trajectory...")
         
         if not self.trajectory_action_client.wait_for_server(timeout_sec=5.0):
@@ -281,7 +380,7 @@ class MoveItPanda(Node):
             return False
 
     def move_to_joints(self, target_joints):
-        """Move to joint positions using MoveIt planning"""
+        """Move to joint positions using MoveIt planning (function body omitted for brevity but is necessary)"""
         if not self.wait_for_joint_state():
             self.get_logger().warn("Continuing with default joint state")
             
@@ -291,7 +390,7 @@ class MoveItPanda(Node):
         return False
 
     def move_gripper(self, position):
-        """Move gripper to specified position using action client, with a timeout."""
+        """Move gripper to specified position using action client, with a timeout. (function body omitted for brevity but is necessary)"""
         self.get_logger().info(f"Moving gripper to position: {position}")
         
         if not self.gripper_action_client.wait_for_server(timeout_sec=5.0):
@@ -315,27 +414,21 @@ class MoveItPanda(Node):
             
         self.get_logger().info("Gripper goal accepted, waiting for result...")
         
-        # --- MODIFIED: Use the standard wait_for_result with a timeout ---
         timeout_sec = 10.0
         
-        # Note: We must pass the future, not the GoalHandle, to the utility
-        # that handles waiting for action results.
         result_future = goal_handle.get_result_async()
         
-        # Spin until the result is complete or the timeout is reached
-        # rclpy.spin_until_future_complete will block until completion or timeout
         rclpy.spin_until_future_complete(self, result_future, timeout_sec=timeout_sec)
 
         # Check the status after spinning
         if not result_future.done():
-            # If the future is not done, it timed out.
             status = goal_handle.status
-            if position == self.gripper_positions['close'] and status == GoalStatus.STATUS_EXECUTING:
-                self.get_logger().warn(f"Gripper close action timed out after {timeout_sec}s. Assuming successful grasp and continuing.")
+            # Special case for grasping: if executing (stalled) or accepted, assume success
+            if position <= self.gripper_positions['open'] and status in [GoalStatus.STATUS_EXECUTING, GoalStatus.STATUS_ACCEPTED]:
+                self.get_logger().warn(f"Gripper action timed out after {timeout_sec}s while closing/grasping. Assuming successful grasp and continuing.")
                 return True
             else:
                  self.get_logger().error(f"Gripper action timed out after {timeout_sec}s!")
-                 # We can cancel the goal here if we want to clean up, but for a pick, continuing is often desired.
                  return False
         
         # If the future is done, we have a result.
@@ -359,13 +452,9 @@ class MoveItPanda(Node):
             
         self.get_logger().error(f"Gripper movement failed with status: {status}")
         return False
-        # --- END MODIFIED BLOCK ---
 
     def move_to_pose(self, target_pose: Pose):
-        """
-        Move the end-effector to a specified Pose (position and orientation) 
-        using MoveIt planning.
-        """
+        """Move the end-effector to a specified Pose (position and orientation) using MoveIt planning. (function body omitted for brevity but is necessary)"""
         if not self.wait_for_joint_state():
             self.get_logger().warn("Continuing with default joint state")
             
@@ -373,12 +462,17 @@ class MoveItPanda(Node):
         if trajectory:
             return self.execute_trajectory(trajectory)
         return False
-
+        
     def execute_complete_sequence(self):
-        """Execute the complete motion sequence"""
+        """
+        Execute the complete motion sequence.
+        """
         self.get_logger().info("Starting complete motion sequence...")
         
-        # 1. Move arm to ready position
+        # --- STEP 0: FORCEFUL CLEANUP ---
+        self.clear_gear_references()
+        
+        # 1. Move arm to ready position (Fixes StartStateCollision before adding object)
         self.get_logger().info("Step 1: Moving arm to ready position...")
         if self.move_to_joints(self.poses['ready']):
             self.get_logger().info("SUCCESS: Ready position reached!")
@@ -397,49 +491,59 @@ class MoveItPanda(Node):
         
         time.sleep(1.0)
         
-        # 3. Move end-effector to (0.0, 0.0, 0.25) in WORLD frame and face down (Pick Position)
-        self.get_logger().info("Step 3: Moving end-effector to (0.0, 0.0, 0.25) in WORLD frame and face down...")
-        
-        target_pose = Pose()
-        target_pose.position.x = 0.0
-        target_pose.position.y = 0.0
-        target_pose.position.z = 0.25
-        
-        # Orientation: "face down" (180-degree rotation around Y-axis)
-        target_pose.orientation.x = np.sqrt(2)/2
-        target_pose.orientation.y = np.sqrt(2)/2
-        target_pose.orientation.z = 0.0
-        target_pose.orientation.w = 0.0
-        
-        if self.move_to_pose(target_pose):
-            self.get_logger().info("SUCCESS: Target pose reached!")
-        else:
-            self.get_logger().error("FAILED: Could not reach target pose!")
-            return False
+        # 3. ADD GEAR CYLINDER TO SCENE 
+        self.get_logger().info("Step 3: Adding gear to the planning scene now that robot is in a clear position...")
+        self.add_gear_to_scene()
+        time.sleep(1.0)
 
+        # Define Poses
+        PICK_Z = 0.250 
+        PRE_PICK_Z = 0.35
+        # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
+        face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
+
+        # 4A. Move to Pre-Pick Waypoint (High Z)
+        pre_pick_pose = Pose(position=Point(x=0.0, y=0.0, z=PRE_PICK_Z), orientation=face_down_orientation)
+        
+        self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
+        if not self.move_to_pose(pre_pick_pose):
+            self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
+            return False
+        time.sleep(1.0)
+
+        # 4B. Move down to Final Pick Position (Low Z)
+        target_pose = Pose(position=Point(x=0.0, y=0.0, z=PICK_Z), orientation=face_down_orientation)
+        
+        self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
+        if self.move_to_pose(target_pose):
+            self.get_logger().info("SUCCESS: Final pick pose reached!")
+        else:
+            self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
+            return False
         time.sleep(2.0)
         
-        # 4. Operate gripper (Close) - Ensures grasp with stall handling
-        self.get_logger().info("Step 4: Closing gripper...")
-        # Max effort is already set to 10.0 in move_gripper, ensuring maximum grip force.
-        if self.move_gripper(self.gripper_positions['close']):
-            self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)!")
+        # 5. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
+        self.get_logger().info(f"Step 5: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
+        if self.move_gripper(self.gripper_positions['grasp']):
+            self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+            
+            # 5A: Attach gear to the hand
+            self.attach_gear_to_hand()
+
+            # 5B: Explicitly remove the original world copy to avoid CheckStartStateCollision
+            self.remove_gear_from_world_after_attach()
         else:
             self.get_logger().error("FAILED: Gripper failed to close!")
             return False
         
-        time.sleep(1.0)
+        time.sleep(3.0)
         
-        # --- NEW STEP 5: LIFT STRAIGHT UP 0.3m ---
+        # 6. LIFT STRAIGHT UP 0.3m
+        LIFT_DISTANCE = 0.30
+        LIFT_Z = PICK_Z + LIFT_DISTANCE 
+        lift_pose = Pose(position=Point(x=0.0, y=0.0, z=LIFT_Z), orientation=target_pose.orientation)
         
-        # The new Z position is the old Z (0.25) + lift distance (0.30) = 0.55m
-        lift_pose = Pose()
-        lift_pose.position.x = 0.0
-        lift_pose.position.y = 0.0
-        lift_pose.position.z = 0.55
-        lift_pose.orientation = target_pose.orientation # Maintain straight-down orientation
-        
-        self.get_logger().info("Step 5: Lifting gear straight up 0.3m to Z=0.55...")
+        self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
         if self.move_to_pose(lift_pose):
             self.get_logger().info("SUCCESS: Lift complete!")
         else:
@@ -448,14 +552,25 @@ class MoveItPanda(Node):
 
         time.sleep(2.0)
         
-        # 6. Move arm back to ready position (safe endpoint)
-        self.get_logger().info("Step 6: Moving arm back to ready position...")
-        if self.move_to_joints(self.poses['ready']):
+        # 7. Move arm back to ready position (safe endpoint)
+        self.get_logger().info("Step 7: Moving arm back to ready position...")
+        move_success = self.move_to_joints(self.poses['ready'])
+        
+        if move_success:
             self.get_logger().info("SUCCESS: Ready position reached!")
         else:
-            self.get_logger().error("FAILED: Could not reach ready position!")
+            self.get_logger().error("FAILED: Could not reach ready position! Proceeding to cleanup.")
+            # Do NOT return here, ensuring cleanup runs.
+
+        # FIX: The redundant call to detach_gear_from_hand() was removed.
+        # We rely solely on clear_gear_references() now for final, robust cleanup.
+        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---")
+        self.clear_gear_references() 
+
+        if not move_success:
+            self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
             return False
-        
+            
         self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
         return True
 
@@ -463,7 +578,6 @@ def main(args=None):
     rclpy.init(args=args)
     
     node = MoveItPanda()
-    # Using MultiThreadedExecutor is good practice when dealing with multiple action clients/subscriptions
     executor = MultiThreadedExecutor()
     executor.add_node(node)
     
@@ -471,7 +585,6 @@ def main(args=None):
         node.get_logger().info("Waiting for initialization...")
         time.sleep(5.0)
         
-        # Execute the complete sequence
         node.execute_complete_sequence()
             
     except Exception as e:

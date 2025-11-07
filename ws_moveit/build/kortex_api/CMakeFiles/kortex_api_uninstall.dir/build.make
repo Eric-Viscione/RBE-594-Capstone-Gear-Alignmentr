@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/ros2_kortex/kortex_api
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_api
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/kortex_api
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api
 
 # Utility rule file for kortex_api_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/kortex_api_uninstall.dir/compiler_depend.make
 include CMakeFiles/kortex_api_uninstall.dir/progress.make
 
 CMakeFiles/kortex_api_uninstall:
-	/usr/bin/cmake -P /home/tamar/ws_moveit/build/kortex_api/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 kortex_api_uninstall: CMakeFiles/kortex_api_uninstall
 kortex_api_uninstall: CMakeFiles/kortex_api_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/kortex_api_uninstall.dir/clean:
 .PHONY : CMakeFiles/kortex_api_uninstall.dir/clean
 
 CMakeFiles/kortex_api_uninstall.dir/depend:
-	cd /home/tamar/ws_moveit/build/kortex_api && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/ros2_kortex/kortex_api /home/tamar/ws_moveit/src/ros2_kortex/kortex_api /home/tamar/ws_moveit/build/kortex_api /home/tamar/ws_moveit/build/kortex_api /home/tamar/ws_moveit/build/kortex_api/CMakeFiles/kortex_api_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_api /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_api /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/CMakeFiles/kortex_api_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/kortex_api_uninstall.dir/depend
 

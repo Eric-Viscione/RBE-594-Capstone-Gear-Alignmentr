@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_mesh_filter.dir/src/gl_mesh.cpp.o"
   "CMakeFiles/moveit_mesh_filter.dir/src/gl_mesh.cpp.o.d"
   "CMakeFiles/moveit_mesh_filter.dir/src/gl_renderer.cpp.o"
@@ -12,7 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/moveit_mesh_filter.dir/src/stereo_camera_model.cpp.o.d"
   "libmoveit_mesh_filter.pdb"
   "libmoveit_mesh_filter.so"
-  "libmoveit_mesh_filter.so.2.12.3"
+  "libmoveit_mesh_filter.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

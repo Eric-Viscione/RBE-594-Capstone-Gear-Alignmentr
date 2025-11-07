@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/ros2_kortex/kortex_api
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_api
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/kortex_api")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,31 +43,31 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/client/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/client/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/common/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/common/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/messages/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/messages/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/client_stubs/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/client_stubs/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api/google" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/google/protobuf")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/kortex_api/google" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src/include/google/protobuf")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/kortex_api")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/kortex_api")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/kortex_api")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/kortex_api")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -75,7 +75,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/environment" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/environment" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -83,46 +83,46 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/environment" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/environment" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/packages/kortex_api")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_index/share/ament_index/resource_index/packages/kortex_api")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/cmake" TYPE FILE FILES "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/cmake" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api/cmake" TYPE FILE FILES
-    "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_core/kortex_apiConfig.cmake"
-    "/home/tamar/ws_moveit/build/kortex_api/ament_cmake_core/kortex_apiConfig-version.cmake"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_core/kortex_apiConfig.cmake"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/ament_cmake_core/kortex_apiConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/ws_moveit/src/ros2_kortex/kortex_api/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kortex_api" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_api/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -133,5 +133,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tamar/ws_moveit/build/kortex_api/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

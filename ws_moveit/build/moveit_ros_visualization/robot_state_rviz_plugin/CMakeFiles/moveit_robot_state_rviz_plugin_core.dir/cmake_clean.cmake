@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_robot_state_rviz_plugin_core_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/moveit_robot_state_rviz_plugin_core_autogen.dir/ParseCache.txt"
   "moveit_robot_state_rviz_plugin_core_autogen"
@@ -9,7 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/moveit_robot_state_rviz_plugin_core.dir/src/robot_state_display.cpp.o.d"
   "libmoveit_robot_state_rviz_plugin_core.pdb"
   "libmoveit_robot_state_rviz_plugin_core.so"
-  "libmoveit_robot_state_rviz_plugin_core.so.2.12.3"
+  "libmoveit_robot_state_rviz_plugin_core.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

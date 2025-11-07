@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2/moveit_planners/pilz_industrial_motion_planner/test
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/pilz_industrial_motion_planner/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/pilz_industrial_motion_planner")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/pilz_industrial_motion_planner")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,15 +44,15 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tamar/ws_moveit/build/pilz_industrial_motion_planner/test/unit_tests/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/pilz_industrial_motion_planner/test/unit_tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tamar/ws_moveit/build/pilz_industrial_motion_planner/test/integration_tests/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/pilz_industrial_motion_planner/test/integration_tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pilz_industrial_motion_planner" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/src/moveit2/moveit_planners/pilz_industrial_motion_planner/test/test_data")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pilz_industrial_motion_planner" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/pilz_industrial_motion_planner/test/test_data")
 endif()
 

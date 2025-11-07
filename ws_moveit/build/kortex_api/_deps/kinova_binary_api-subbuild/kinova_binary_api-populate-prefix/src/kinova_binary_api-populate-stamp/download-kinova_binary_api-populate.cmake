@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'")
+       file='/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'")
 
-  file("MD5" "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" actual_value)
+  file("MD5" "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "64bd86e7ab8bda90ef1fc7d6a356e080")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS "MD5 hash of
-    /home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip
+    /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip
   does not match expected value
     expected: '64bd86e7ab8bda90ef1fc7d6a356e080'
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" STREQUAL "")
+if("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,32 +79,32 @@ if("https://artifactory.kinovaapps.com:443/artifactory/generic-public/kortex/API
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
+if(EXISTS "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
+  file='/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
   MD5='64bd86e7ab8bda90ef1fc7d6a356e080'"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
+      file(REMOVE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
+  file='/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
+    file(REMOVE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
+   dst='/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip'
    timeout='none'
    inactivity timeout='none'"
 )
@@ -126,7 +126,7 @@ foreach(i RANGE ${retry_number})
 
       file(
         DOWNLOAD
-        "${url}" "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip"
+        "${url}" "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         # no INACTIVITY_TIMEOUT
@@ -143,7 +143,7 @@ foreach(i RANGE ${retry_number})
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
           message(STATUS "Hash mismatch, removing...")
-          file(REMOVE "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
+          file(REMOVE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip")
         else()
           message(STATUS "Downloading... done")
           return()

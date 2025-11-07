@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2/moveit_ros/tests
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_ros/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit_ros_tests")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_tests")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tamar/ws_moveit/build/moveit_ros_tests/gtest/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_ros_tests/gtest/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tamar/ws_moveit/build/moveit_ros_tests/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_ros_tests/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

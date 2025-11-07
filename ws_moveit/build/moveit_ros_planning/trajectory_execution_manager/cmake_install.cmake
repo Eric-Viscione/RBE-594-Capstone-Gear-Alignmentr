@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2/moveit_ros/planning/trajectory_execution_manager
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_ros/planning/trajectory_execution_manager
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit_ros_planning")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,10 +43,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_ros_planning" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/src/moveit2/moveit_ros/planning/trajectory_execution_manager/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_ros_planning" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_ros/planning/trajectory_execution_manager/include/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_ros_planning" TYPE FILE FILES "/home/tamar/ws_moveit/build/moveit_ros_planning/trajectory_execution_manager/moveit_trajectory_execution_manager_export.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_ros_planning" TYPE FILE FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_ros_planning/trajectory_execution_manager/moveit_trajectory_execution_manager_export.h")
 endif()
 

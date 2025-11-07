@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/robotiq_driver
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver
 
 # Utility rule file for format.
 
@@ -67,7 +67,7 @@ include CMakeFiles/format.dir/compiler_depend.make
 include CMakeFiles/format.dir/progress.make
 
 CMakeFiles/format:
-	cd /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver && clang-format -i `git ls-files *.hpp *.cpp`
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver && clang-format -i `git ls-files *.hpp *.cpp`
 
 format: CMakeFiles/format
 format: CMakeFiles/format.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/format.dir/clean:
 .PHONY : CMakeFiles/format.dir/clean
 
 CMakeFiles/format.dir/depend:
-	cd /home/tamar/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles/format.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles/format.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/format.dir/depend
 

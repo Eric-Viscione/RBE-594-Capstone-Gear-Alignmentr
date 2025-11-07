@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_simple_controller_manager")
-set(moveit_simple_controller_manager_VERSION "2.12.3")
+set(moveit_simple_controller_manager_VERSION "2.14.1")
 set(moveit_simple_controller_manager_MAINTAINER "Michael Görner <me@v4hn.de>, Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_simple_controller_manager_BUILD_DEPENDS "moveit_common" "moveit_core" "rclcpp" "pluginlib" "control_msgs" "rclcpp_action")
 set(moveit_simple_controller_manager_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

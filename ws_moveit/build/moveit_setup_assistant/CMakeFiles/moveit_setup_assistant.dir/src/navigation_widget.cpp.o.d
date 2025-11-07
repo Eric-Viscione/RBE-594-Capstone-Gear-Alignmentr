@@ -1,7 +1,7 @@
 CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o: \
- /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp \
  /usr/include/stdc-predef.h \
- /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/navigation_widget.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/navigation_widget.hpp \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListView \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \

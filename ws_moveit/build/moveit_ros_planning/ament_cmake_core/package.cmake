@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_planning")
-set(moveit_ros_planning_VERSION "2.12.3")
+set(moveit_ros_planning_VERSION "2.14.1")
 set(moveit_ros_planning_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Michael Görner <me@v4hn.de>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_planning_BUILD_DEPENDS "moveit_common" "pluginlib" "ament_index_cpp" "eigen" "fmt" "generate_parameter_library" "message_filters" "moveit_core" "moveit_msgs" "moveit_ros_occupancy_map_monitor" "rclcpp_action" "rclcpp_components" "rclcpp" "srdfdom" "std_msgs" "tf2_eigen" "tf2_geometry_msgs" "tf2_msgs" "tf2_ros" "tf2" "urdf")
 set(moveit_ros_planning_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

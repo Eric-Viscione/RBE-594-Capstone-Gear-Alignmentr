@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_robot_interaction")
-set(moveit_ros_robot_interaction_VERSION "2.12.3")
+set(moveit_ros_robot_interaction_VERSION "2.14.1")
 set(moveit_ros_robot_interaction_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Robert Haschke <rhaschke@techfak.uni-bielefeld.de>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_robot_interaction_BUILD_DEPENDS "moveit_common" "moveit_core" "moveit_ros_planning" "rclcpp" "tf2" "tf2_eigen" "tf2_geometry_msgs" "tf2_ros" "interactive_markers")
 set(moveit_ros_robot_interaction_BUILDTOOL_DEPENDS "ament_cmake")

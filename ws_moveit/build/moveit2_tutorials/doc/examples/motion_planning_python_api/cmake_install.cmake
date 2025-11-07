@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit2_tutorials")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit2_tutorials")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,15 +44,15 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/moveit2_tutorials" TYPE PROGRAM FILES
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/scripts/motion_planning_python_api_tutorial.py"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/scripts/motion_planning_python_api_planning_scene.py"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/scripts/motion_planning_python_api_tutorial.py"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/scripts/motion_planning_python_api_planning_scene.py"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit2_tutorials" TYPE DIRECTORY FILES
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/config"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/launch"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/config"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/motion_planning_python_api/launch"
     )
 endif()
 

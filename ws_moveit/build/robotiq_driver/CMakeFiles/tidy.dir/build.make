@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/robotiq_driver
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver
 
 # Utility rule file for tidy.
 
@@ -67,7 +67,7 @@ include CMakeFiles/tidy.dir/compiler_depend.make
 include CMakeFiles/tidy.dir/progress.make
 
 CMakeFiles/tidy:
-	cd /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver && clang-tidy -p /home/tamar/ws_moveit/build/robotiq_driver `git ls-files *.cpp`
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver && clang-tidy -p /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver `git ls-files *.cpp`
 
 tidy: CMakeFiles/tidy
 tidy: CMakeFiles/tidy.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/tidy.dir/clean:
 .PHONY : CMakeFiles/tidy.dir/clean
 
 CMakeFiles/tidy.dir/depend:
-	cd /home/tamar/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles/tidy.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles/tidy.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/tidy.dir/depend
 

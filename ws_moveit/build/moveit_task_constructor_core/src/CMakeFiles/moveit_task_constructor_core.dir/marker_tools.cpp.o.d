@@ -1,8 +1,8 @@
 src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
- /home/tamar/ws_moveit/src/moveit_task_constructor/core/src/marker_tools.cpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/core/src/marker_tools.cpp \
  /usr/include/stdc-predef.h \
- /home/tamar/ws_moveit/src/moveit_task_constructor/core/include/moveit/task_constructor/marker_tools.h \
- /home/tamar/ws_moveit/install/rviz_marker_tools/include/rviz_marker_tools/marker_creation.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/core/include/moveit/task_constructor/marker_tools.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_marker_tools/include/rviz_marker_tools/marker_creation.h \
  /usr/include/eigen3/Eigen/Geometry /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
@@ -476,11 +476,11 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /opt/ros/jazzy/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__traits.hpp \
  /opt/ros/jazzy/include/visualization_msgs/visualization_msgs/msg/detail/marker__type_support.hpp \
  /opt/ros/jazzy/include/visualization_msgs/visualization_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/class_forward.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/declare_ptr.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/planning_scene/planning_scene.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/robot_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/exceptions/exceptions.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/class_forward.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/declare_ptr.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/planning_scene/planning_scene.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/robot_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/exceptions/exceptions.hpp \
  /opt/ros/jazzy/include/srdfdom/srdfdom/model.h /usr/include/c++/13/map \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h /usr/include/tinyxml2.h \
@@ -499,15 +499,15 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /opt/ros/jazzy/include/urdfdom_headers/urdf_world/types.h \
  /opt/ros/jazzy/include/urdf/urdf/visibility_control.hpp \
  /opt/ros/jazzy/include/srdfdom/srdfdom/visibility_control.h \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model_group.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model_group.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model.hpp \
  /usr/include/c++/13/iostream \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/joint_limits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/joint_limits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/jazzy/include/random_numbers/random_numbers.h \
  /usr/include/boost/random/mersenne_twister.hpp \
  /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
@@ -592,21 +592,21 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /usr/include/boost/random/detail/int_float_pair.hpp \
  /usr/include/boost/random/uniform_01.hpp \
  /usr/include/boost/random/exponential_distribution.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/link_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/link_model.hpp \
  /opt/ros/jazzy/include/eigen_stl_containers/eigen_stl_containers/eigen_stl_vector_container.h \
  /usr/include/eigen3/Eigen/Core /usr/include/eigen3/Eigen/StdVector \
  /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
  /usr/include/eigen3/Eigen/src/StlSupport/details.h \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/check_isometry.h \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematics_base/kinematics_base.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematics_base/kinematics_base.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/pose.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/move_it_error_codes.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/move_it_error_codes.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__type_support.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/visibility_control.hpp \
@@ -933,18 +933,18 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/get_node_clock_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_clock_interface_traits.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/logger.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit_kinematics_base_export.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/logger.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit_kinematics_base_export.h \
  /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/fixed_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/floating_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/planar_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/revolute_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/prismatic_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/robot_state.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/attached_body.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/transforms/transforms.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/fixed_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/floating_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/planar_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/revolute_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/prismatic_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/robot_state.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/attached_body.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/transforms/transforms.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
@@ -978,86 +978,86 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_detector_allocator.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_env.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_matrix.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_common.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/allowed_collision_matrix.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_entry__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_entry__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/link_padding.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/link_scale.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/world.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/world_diff.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematic_constraints/kinematic_constraint.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_detector_allocator.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_env.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_matrix.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/collision_common.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/allowed_collision_matrix.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_entry__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_entry__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/allowed_collision_matrix__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/link_padding.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_padding__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/link_scale.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/link_scale__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/world.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/collision_detection/world_diff.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematic_constraints/kinematic_constraint.hpp \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/bodies.h \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/aabb.h \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/obb.h \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/shapes.h \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/constraints.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/constraints.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/solid_primitive__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/point32__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh_triangle__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/solid_primitive__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/polygon__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/point32__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh_triangle__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_trajectory/robot_trajectory.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_trajectory.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_trajectory/robot_trajectory.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_trajectory.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__struct.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory__struct.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__traits.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory__traits.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_state.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_state.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__struct.hpp \
  /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/multi_dof_joint_state__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/wrench__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__struct.hpp \
  /opt/ros/jazzy/include/object_recognition_msgs/object_recognition_msgs/msg/detail/object_type__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/plane__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__traits.hpp \
  /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/multi_dof_joint_state__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/wrench__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__traits.hpp \
  /opt/ros/jazzy/include/object_recognition_msgs/object_recognition_msgs/msg/detail/object_type__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/plane__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__type_support.hpp \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc \
  /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp \
@@ -1155,26 +1155,26 @@ src/CMakeFiles/moveit_task_constructor_core.dir/marker_tools.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_map.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_event_handler.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_service.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/planning_scene.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/object_color__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_world__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/planning_scene.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/object_color__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_world__struct.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__struct.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/object_color__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_world__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/object_color__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_world__traits.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__traits.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/planning_scene_components.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/planning_scene_components.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/planning_scene_components__type_support.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/octomap_with_pose.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__builder.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/detail/octomap_with_pose__type_support.hpp \
  /opt/ros/jazzy/include/octomap_msgs/octomap_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit_planning_scene_export.h
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit_planning_scene_export.h

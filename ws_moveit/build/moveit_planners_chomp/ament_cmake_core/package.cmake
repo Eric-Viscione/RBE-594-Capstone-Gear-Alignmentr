@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_planners_chomp")
-set(moveit_planners_chomp_VERSION "2.12.3")
+set(moveit_planners_chomp_VERSION "2.14.1")
 set(moveit_planners_chomp_MAINTAINER "Chittaranjan Srinivas Swaminathan <chitt@live.in>, MoveIt Release Team <moveit_releasers@googlegroups.com>, Henning Kayser <henningkayser@picknik.ai>")
 set(moveit_planners_chomp_BUILD_DEPENDS "moveit_common" "chomp_motion_planner" "moveit_core" "pluginlib" "rclcpp")
 set(moveit_planners_chomp_BUILDTOOL_DEPENDS "ament_cmake")

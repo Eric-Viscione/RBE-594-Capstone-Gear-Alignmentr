@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/single_plan_execution_plugin.dir/src/single_plan_execution.cpp.o"
   "CMakeFiles/single_plan_execution_plugin.dir/src/single_plan_execution.cpp.o.d"
   "libsingle_plan_execution_plugin.pdb"
   "libsingle_plan_execution_plugin.so"
-  "libsingle_plan_execution_plugin.so.2.12.3"
+  "libsingle_plan_execution_plugin.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

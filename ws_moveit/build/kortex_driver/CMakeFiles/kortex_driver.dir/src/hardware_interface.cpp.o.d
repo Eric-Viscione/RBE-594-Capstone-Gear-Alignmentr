@@ -1,5 +1,5 @@
 CMakeFiles/kortex_driver.dir/src/hardware_interface.cpp.o: \
- /home/tamar/ws_moveit/src/ros2_kortex/kortex_driver/src/hardware_interface.cpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_driver/src/hardware_interface.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/chrono \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -189,7 +189,7 @@ CMakeFiles/kortex_driver.dir/src/hardware_interface.cpp.o: \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/tamar/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/hardware_interface.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/hardware_interface.hpp \
  /usr/include/c++/13/atomic \
  /opt/ros/jazzy/include/rclcpp/rclcpp/macros.hpp \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
@@ -789,12 +789,12 @@ CMakeFiles/kortex_driver.dir/src/hardware_interface.cpp.o: \
  /opt/ros/jazzy/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__type_support.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/async_function_handler.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_helpers.hpp \
- /home/tamar/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/visibility_control.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/BaseClientRpc.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Frame.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/common.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/port.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/platform_macros.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/visibility_control.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/BaseClientRpc.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Frame.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/common.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/port.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/platform_macros.h \
  /usr/include/x86_64-linux-gnu/sys/param.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
@@ -807,67 +807,67 @@ CMakeFiles/kortex_driver.dir/src/hardware_interface.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
  /usr/include/x86_64-linux-gnu/asm/param.h \
  /usr/include/asm-generic/param.h /usr/include/byteswap.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/macros.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/logging.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/scoped_ptr.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/mutex.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/callback.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/type_traits.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/template_util.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/io/coded_stream.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/macros.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/logging.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/scoped_ptr.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/mutex.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/callback.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/type_traits.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/template_util.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/io/coded_stream.h \
  /usr/include/c++/13/climits \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomicops.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arena.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arena_impl.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomic_sequence_num.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arenastring.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/fastmem.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_message_table_driven.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_enum_util.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_type_handler.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/wire_format_lite_inl.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/message_lite.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/once.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/repeated_field.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/casts.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/wire_format_lite.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/hash.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_entry_lite.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_field_lite.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_message_util.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/has_bits.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/metadata.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/metadata_lite.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/unknown_field_set.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/message.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/descriptor.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/extension_set.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_enum_reflection.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Errors.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Base.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Common.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/ProductConfiguration.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Frame.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/IRouterClient.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/ITransportClient.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/KError.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/HeaderInfo.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/NotificationHandler.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/KBasicException.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/KDetailedException.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Frame.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/BaseCyclicClientRpc.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/BaseCyclic.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/InterconnectCyclicMessage.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/GripperCyclicMessage.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/RouterClient.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/FrameHandler.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/SessionManager.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/Session.pb.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/SessionClientRpc.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/TransportClientTcp.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomicops.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arena.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arena_impl.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/atomic_sequence_num.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/arenastring.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/fastmem.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_message_table_driven.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_enum_util.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_type_handler.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/wire_format_lite_inl.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/message_lite.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/once.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/repeated_field.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/casts.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/wire_format_lite.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/stubs/hash.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_entry_lite.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/map_field_lite.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_message_util.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/has_bits.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/metadata.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/metadata_lite.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/unknown_field_set.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/message.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/descriptor.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/extension_set.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/google/protobuf/generated_enum_reflection.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Errors.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Base.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Common.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/ProductConfiguration.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Frame.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/IRouterClient.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/ITransportClient.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/KError.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/HeaderInfo.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/NotificationHandler.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/KBasicException.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/KDetailedException.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Frame.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/BaseCyclicClientRpc.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/BaseCyclic.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/InterconnectCyclicMessage.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/GripperCyclicMessage.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/RouterClient.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/FrameHandler.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/SessionManager.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/Session.pb.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/SessionClientRpc.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/TransportClientTcp.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -894,9 +894,9 @@ CMakeFiles/kortex_driver.dir/src/hardware_interface.cpp.o: \
  /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/KinovaTcpUtilities.h \
- /home/tamar/ws_moveit/install/kortex_api/include/kortex_api/TransportClientUdp.h \
- /home/tamar/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/kortex_math_util.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/KinovaTcpUtilities.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/kortex_api/include/kortex_api/TransportClientUdp.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_kortex/kortex_driver/include/kortex_driver/kortex_math_util.hpp \
  /opt/ros/jazzy/include/pluginlib/pluginlib/class_list_macros.hpp \
  /opt/ros/jazzy/include/class_loader/class_loader/class_loader.hpp \
  /usr/include/console_bridge/console.h \

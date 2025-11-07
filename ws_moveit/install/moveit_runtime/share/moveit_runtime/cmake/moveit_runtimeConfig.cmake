@@ -16,7 +16,7 @@ set(_moveit_runtime_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_runtime_FIND_QUIETLY)
-  message(STATUS "Found moveit_runtime: 2.12.3 (${moveit_runtime_DIR})")
+  message(STATUS "Found moveit_runtime: 2.14.1 (${moveit_runtime_DIR})")
 endif()
 
 # warn when using a deprecated package

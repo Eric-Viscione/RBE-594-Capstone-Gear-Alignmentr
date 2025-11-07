@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_hybrid_planning")
-set(moveit_hybrid_planning_VERSION "2.12.3")
+set(moveit_hybrid_planning_VERSION "2.14.1")
 set(moveit_hybrid_planning_MAINTAINER "MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_hybrid_planning_BUILD_DEPENDS "moveit_common" "ament_index_cpp" "moveit_msgs" "moveit_core" "moveit_ros_planning" "moveit_ros_planning_interface" "pluginlib" "rclcpp" "rclcpp_action" "rclcpp_components" "std_msgs" "std_srvs" "tf2_ros" "trajectory_msgs")
 set(moveit_hybrid_planning_BUILDTOOL_DEPENDS "ament_cmake")

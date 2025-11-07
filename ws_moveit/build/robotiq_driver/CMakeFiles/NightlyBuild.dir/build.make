@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/robotiq_driver
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver
 
 # Utility rule file for NightlyBuild.
 
@@ -82,6 +82,6 @@ CMakeFiles/NightlyBuild.dir/clean:
 .PHONY : CMakeFiles/NightlyBuild.dir/clean
 
 CMakeFiles/NightlyBuild.dir/depend:
-	cd /home/tamar/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver /home/tamar/ws_moveit/build/robotiq_driver/CMakeFiles/NightlyBuild.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/CMakeFiles/NightlyBuild.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NightlyBuild.dir/depend
 

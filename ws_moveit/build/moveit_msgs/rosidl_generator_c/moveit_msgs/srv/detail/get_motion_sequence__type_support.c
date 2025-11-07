@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/srv/detail/get_motion_sequence__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
-#include "moveit_msgs/srv/detail/get_motion_sequence__struct.h"
 #include "moveit_msgs/srv/detail/get_motion_sequence__functions.h"
+#include "moveit_msgs/srv/detail/get_motion_sequence__struct.h"
+#include "moveit_msgs/srv/detail/get_motion_sequence__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

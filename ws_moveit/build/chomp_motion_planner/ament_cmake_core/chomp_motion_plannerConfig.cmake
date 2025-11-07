@@ -16,7 +16,7 @@ set(_chomp_motion_planner_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT chomp_motion_planner_FIND_QUIETLY)
-  message(STATUS "Found chomp_motion_planner: 2.12.3 (${chomp_motion_planner_DIR})")
+  message(STATUS "Found chomp_motion_planner: 2.14.1 (${chomp_motion_planner_DIR})")
 endif()
 
 # warn when using a deprecated package

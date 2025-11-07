@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_planners")
-set(moveit_planners_VERSION "2.12.3")
+set(moveit_planners_VERSION "2.14.1")
 set(moveit_planners_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_planners_BUILD_DEPENDS )
 set(moveit_planners_BUILDTOOL_DEPENDS "ament_cmake")

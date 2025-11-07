@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: sirgas_description
+    relative_path: urdf/panda_pba.urdf.xacro
+  srdf:
+    relative_path: config/panda_pba_robots.srdf
+  package_settings:
+    author_name: Tamar Boone
+    author_email: tboone@wpi.edu
+    generated_timestamp: 1762553717
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+      - effort

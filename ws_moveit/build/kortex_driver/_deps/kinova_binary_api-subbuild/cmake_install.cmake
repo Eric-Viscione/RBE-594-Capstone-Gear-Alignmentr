@@ -1,4 +1,4 @@
-# Install script for directory: /home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

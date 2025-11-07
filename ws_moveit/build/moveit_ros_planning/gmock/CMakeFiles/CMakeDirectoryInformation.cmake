@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/opt/ros/jazzy/src/gmock_vendor")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/tamar/ws_moveit/build/moveit_ros_planning")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_ros_planning")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

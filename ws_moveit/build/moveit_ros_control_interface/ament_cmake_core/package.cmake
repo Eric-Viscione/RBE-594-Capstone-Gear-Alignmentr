@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_control_interface")
-set(moveit_ros_control_interface_VERSION "2.12.3")
+set(moveit_ros_control_interface_VERSION "2.14.1")
 set(moveit_ros_control_interface_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_control_interface_BUILD_DEPENDS "moveit_common" "rclcpp_action" "controller_manager_msgs" "moveit_core" "moveit_simple_controller_manager" "pluginlib" "trajectory_msgs")
 set(moveit_ros_control_interface_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

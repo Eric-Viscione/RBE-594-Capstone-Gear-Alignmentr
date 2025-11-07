@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2/moveit_py/src/moveit/moveit_py_utils
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_py/src/moveit/moveit_py_utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit_py")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_py")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,12 +49,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmoveit_py_utils.so."
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tamar/ws_moveit/build/moveit_py/src/moveit/moveit_py_utils/libmoveit_py_utils.so.")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_py/src/moveit/moveit_py_utils/libmoveit_py_utils.so.")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmoveit_py_utils.so." AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmoveit_py_utils.so.")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmoveit_py_utils.so."
-         OLD_RPATH "/opt/ros/jazzy/lib:/home/tamar/ws_moveit/install/moveit_msgs/lib:"
+         OLD_RPATH "/opt/ros/jazzy/lib:/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libmoveit_py_utils.so.")
@@ -63,10 +63,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tamar/ws_moveit/build/moveit_py/src/moveit/moveit_py_utils/libmoveit_py_utils.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_py/src/moveit/moveit_py_utils/libmoveit_py_utils.so")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_py" TYPE DIRECTORY FILES "/home/tamar/ws_moveit/src/moveit2/moveit_py/src/moveit/moveit_py_utils/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/moveit_py" TYPE DIRECTORY FILES "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_py/src/moveit/moveit_py_utils/include/")
 endif()
 

@@ -16,7 +16,7 @@ set(_moveit_planners_stomp_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_planners_stomp_FIND_QUIETLY)
-  message(STATUS "Found moveit_planners_stomp: 2.12.3 (${moveit_planners_stomp_DIR})")
+  message(STATUS "Found moveit_planners_stomp: 2.14.1 (${moveit_planners_stomp_DIR})")
 endif()
 
 # warn when using a deprecated package

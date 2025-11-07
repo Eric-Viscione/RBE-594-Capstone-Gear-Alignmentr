@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/moveit2_tutorials")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit2_tutorials")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,12 +44,12 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit2_tutorials" TYPE DIRECTORY FILES
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/urdf"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/launch"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/meshes"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/config"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/worlds"
-    "/home/tamar/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/rviz2"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/urdf"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/launch"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/meshes"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/config"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/worlds"
+    "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2_tutorials/doc/examples/perception_pipeline/rviz2"
     )
 endif()
 

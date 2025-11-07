@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/msg/detail/allowed_collision_entry__functions.h"
-#include "moveit_msgs/msg/detail/allowed_collision_entry__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/allowed_collision_entry__struct.h"
+#include "moveit_msgs/msg/detail/allowed_collision_entry__functions.h"
+#include "moveit_msgs/msg/detail/allowed_collision_entry__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

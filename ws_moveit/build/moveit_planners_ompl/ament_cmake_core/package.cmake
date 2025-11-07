@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_planners_ompl")
-set(moveit_planners_ompl_VERSION "2.12.3")
+set(moveit_planners_ompl_VERSION "2.14.1")
 set(moveit_planners_ompl_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_planners_ompl_BUILD_DEPENDS "moveit_common" "moveit_core" "moveit_msgs" "moveit_ros_planning" "ompl" "rclcpp" "tf2_eigen" "tf2_ros" "libomp-dev" "pluginlib")
 set(moveit_planners_ompl_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

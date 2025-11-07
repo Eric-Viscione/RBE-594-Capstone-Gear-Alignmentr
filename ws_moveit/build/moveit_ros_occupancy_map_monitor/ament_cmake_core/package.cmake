@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_occupancy_map_monitor")
-set(moveit_ros_occupancy_map_monitor_VERSION "2.12.3")
+set(moveit_ros_occupancy_map_monitor_VERSION "2.14.1")
 set(moveit_ros_occupancy_map_monitor_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_occupancy_map_monitor_BUILD_DEPENDS "eigen" "moveit_common" "rclcpp" "moveit_core" "moveit_msgs" "liboctomap-dev" "pluginlib" "tf2_ros" "geometric_shapes")
 set(moveit_ros_occupancy_map_monitor_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

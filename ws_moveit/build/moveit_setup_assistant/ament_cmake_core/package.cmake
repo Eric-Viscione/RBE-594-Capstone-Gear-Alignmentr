@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_setup_assistant")
-set(moveit_setup_assistant_VERSION "2.12.3")
+set(moveit_setup_assistant_VERSION "2.14.1")
 set(moveit_setup_assistant_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Robert Haschke <rhaschke@techfak.uni-bielefeld.de>, MoveIt Release Team <moveit_releasers@googlegroups.com>, David V. Lu!! <davidvlu@gmail.com>")
 set(moveit_setup_assistant_BUILD_DEPENDS "ament_index_cpp" "pluginlib" "qtbase5-dev" "rclcpp" "moveit_setup_framework" "moveit_setup_srdf_plugins")
 set(moveit_setup_assistant_BUILDTOOL_DEPENDS "ament_cmake")

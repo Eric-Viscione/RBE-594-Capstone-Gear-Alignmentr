@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='moveit',
-    version='2.12.3',
+    version='2.14.1',
     packages=find_packages(
         include=('moveit', 'moveit.*')),
 )

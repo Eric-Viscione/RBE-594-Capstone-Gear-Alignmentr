@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_visualization")
-set(moveit_ros_visualization_VERSION "2.12.3")
+set(moveit_ros_visualization_VERSION "2.14.1")
 set(moveit_ros_visualization_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Jon Binney <jon.binney@gmail.com>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_visualization_BUILD_DEPENDS "class_loader" "eigen" "libqt5-opengl-dev" "qtbase5-dev" "moveit_common" "geometric_shapes" "interactive_markers" "moveit_ros_robot_interaction" "moveit_ros_planning_interface" "moveit_ros_warehouse" "object_recognition_msgs" "pluginlib" "rclcpp" "rclpy" "rviz2" "tf2_eigen")
 set(moveit_ros_visualization_BUILD_DEPENDS_pluginlib_VERSION_GTE "1.11.2")

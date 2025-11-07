@@ -1,8 +1,8 @@
-# Install script for directory: /home/tamar/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/tests
+# Install script for directory: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/ros2_robotiq_gripper/robotiq_driver/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tamar/ws_moveit/install/robotiq_driver")
+  set(CMAKE_INSTALL_PREFIX "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/robotiq_driver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tamar/ws_moveit/build/robotiq_driver/gmock/cmake_install.cmake")
-  include("/home/tamar/ws_moveit/build/robotiq_driver/gtest/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/gmock/cmake_install.cmake")
+  include("/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/robotiq_driver/gtest/cmake_install.cmake")
 
 endif()
 

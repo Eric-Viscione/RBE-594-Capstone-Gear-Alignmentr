@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DBOOST_MATH_DISABLE_FLOAT128
 
-CXX_INCLUDES = -I/home/tamar/ws_moveit/build/moveit_task_constructor_visualization/gmock -I/opt/ros/jazzy/src/gmock_vendor -I/home/tamar/ws_moveit/build/moveit_task_constructor_visualization/gmock/gmock_main_autogen/include -I/opt/ros/jazzy/src/gmock_vendor/include -I/opt/ros/jazzy/src/gmock_vendor/. -I/opt/ros/jazzy/src/gtest_vendor/include -I/opt/ros/jazzy/src/gtest_vendor
+CXX_INCLUDES = -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_visualization/gmock -I/opt/ros/jazzy/src/gmock_vendor -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_visualization/gmock/gmock_main_autogen/include -I/opt/ros/jazzy/src/gmock_vendor/include -I/opt/ros/jazzy/src/gmock_vendor/. -I/opt/ros/jazzy/src/gtest_vendor/include -I/opt/ros/jazzy/src/gtest_vendor
 
 CXX_FLAGS = -O3 -DNDEBUG -std=c++17 -Wall -Wextra -Wwrite-strings -Wunreachable-code -Wpointer-arith -Wredundant-decls -Wcast-qual -Wold-style-cast -Wformat=2 -Wno-maybe-uninitialized
 

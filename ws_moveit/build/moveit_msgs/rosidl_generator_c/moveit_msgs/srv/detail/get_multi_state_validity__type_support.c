@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/srv/detail/get_multi_state_validity__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/get_multi_state_validity__type_support.h"
 #include "moveit_msgs/srv/detail/get_multi_state_validity__functions.h"
-#include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/srv/detail/get_multi_state_validity__struct.h"
 
 #ifdef __cplusplus
 extern "C"

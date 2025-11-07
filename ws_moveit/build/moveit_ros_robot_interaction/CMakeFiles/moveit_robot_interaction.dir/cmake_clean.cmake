@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_robot_interaction.dir/src/interaction_handler.cpp.o"
   "CMakeFiles/moveit_robot_interaction.dir/src/interaction_handler.cpp.o.d"
   "CMakeFiles/moveit_robot_interaction.dir/src/interactive_marker_helpers.cpp.o"
@@ -14,7 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/moveit_robot_interaction.dir/src/robot_interaction.cpp.o.d"
   "libmoveit_robot_interaction.pdb"
   "libmoveit_robot_interaction.so"
-  "libmoveit_robot_interaction.so.2.12.3"
+  "libmoveit_robot_interaction.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

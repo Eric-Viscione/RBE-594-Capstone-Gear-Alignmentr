@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/moveit_task_constructor/demo
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/moveit_task_constructor_demo
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo
 
 # Include any dependencies generated for this target.
 include CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/progress.mak
 include CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/flags.make
 
 CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o: CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/flags.make
-CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o: /home/tamar/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp
+CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp
 CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o: CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o -MF CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o.d -o CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o -c /home/tamar/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o -MF CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o.d -o CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp
 
 CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp > CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp > CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.i
 
 CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp -o CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo/src/pick_place_demo.cpp -o CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.s
 
 # Object files for target moveit_task_constructor_demo_pick_place_demo
 moveit_task_constructor_demo_pick_place_demo_OBJECTS = \
@@ -93,13 +93,13 @@ moveit_task_constructor_demo_pick_place_demo_EXTERNAL_OBJECTS =
 pick_place_demo: CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/src/pick_place_demo.cpp.o
 pick_place_demo: CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/build.make
 pick_place_demo: libmoveit_task_constructor_demo_pick_place_task.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core_stage_plugins.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core_stages.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_move_group_interface.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_common_planning_interface_objects.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_planning_scene_interface.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_move_group/lib/libmoveit_move_group_capabilities_base.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core_stage_plugins.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core_stages.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_core/lib/libmoveit_task_constructor_core.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_move_group_interface.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_common_planning_interface_objects.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_planning_scene_interface.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_move_group/lib/libmoveit_move_group_capabilities_base.so.2.14.1
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_typesupport_fastrtps_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_typesupport_introspection_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_typesupport_fastrtps_cpp.so
@@ -108,52 +108,52 @@ pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_typesupport_cpp.so
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_generator_py.so
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_typesupport_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libstd_srvs__rosidl_generator_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_warehouse/lib/libmoveit_warehouse.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_constraint_sampler_manager_loader.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_plan_execution.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline_interfaces.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_trajectory_execution_manager.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_collision_plugin_loader.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_kinematics_plugin_loader.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_rdf_loader.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib/libmoveit_ros_occupancy_map_monitor.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_warehouse/lib/libmoveit_warehouse.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_constraint_sampler_manager_loader.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_plan_execution.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline_interfaces.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_trajectory_execution_manager.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_collision_plugin_loader.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_kinematics_plugin_loader.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_rdf_loader.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib/libmoveit_ros_occupancy_map_monitor.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.14.1
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libLinearMath.so
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.14.1
 pick_place_demo: /opt/ros/jazzy/lib/libkdl_parser.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.12.3
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.14.1
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.14.1
 pick_place_demo: /opt/ros/jazzy/lib/libsrdfdom.so.2.0.7
 pick_place_demo: /opt/ros/jazzy/lib/liburdf.so
 pick_place_demo: /opt/ros/jazzy/lib/x86_64-linux-gnu/libruckig.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.14.1
 pick_place_demo: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_sensor.so.4.0
 pick_place_demo: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_model_state.so.4.0
 pick_place_demo: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_model.so.4.0
 pick_place_demo: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_world.so.4.0
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.12.3
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.14.1
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.83.0
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so.1.83.0
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libboost_serialization.so.1.83.0
@@ -177,7 +177,7 @@ pick_place_demo: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_typesupport_c.so
 pick_place_demo: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_generator_c.so
 pick_place_demo: /opt/ros/jazzy/lib/librsl.so
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libsrdf_publisher_node.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libsrdf_publisher_node.so
 pick_place_demo: /opt/ros/jazzy/lib/libcomponent_manager.so
 pick_place_demo: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
@@ -201,29 +201,29 @@ pick_place_demo: /usr/lib/x86_64-linux-gnu/libtinyxml2.so.10.0.0
 pick_place_demo: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 pick_place_demo: /opt/ros/jazzy/lib/libstatic_transform_broadcaster_node.so
 pick_place_demo: /usr/lib/x86_64-linux-gnu/libcrypto.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_fastrtps_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_fastrtps_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_introspection_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_introspection_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_generator_py.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_generator_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_fastrtps_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_fastrtps_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_introspection_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_introspection_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_generator_py.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_typesupport_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_task_constructor_msgs/lib/libmoveit_task_constructor_msgs__rosidl_generator_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_c.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_c.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_cpp.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_cpp.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_cpp.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_py.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
 pick_place_demo: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libobject_recognition_msgs__rosidl_typesupport_fastrtps_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_fastrtps_c.so
@@ -247,7 +247,7 @@ pick_place_demo: /opt/ros/jazzy/lib/libshape_msgs__rosidl_typesupport_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libshape_msgs__rosidl_generator_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_c.so
 pick_place_demo: /opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_generator_c.so
-pick_place_demo: /home/tamar/ws_moveit/install/rviz_marker_tools/lib/librviz_marker_tools.so
+pick_place_demo: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_marker_tools/lib/librviz_marker_tools.so
 pick_place_demo: /opt/ros/jazzy/lib/libtf2_ros.so
 pick_place_demo: /opt/ros/jazzy/lib/libmessage_filters.so
 pick_place_demo: /opt/ros/jazzy/lib/librclcpp_action.so
@@ -376,7 +376,7 @@ pick_place_demo: /opt/ros/jazzy/lib/librcpputils.so
 pick_place_demo: /opt/ros/jazzy/lib/librosidl_runtime_c.so
 pick_place_demo: /opt/ros/jazzy/lib/librcutils.so
 pick_place_demo: CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pick_place_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pick_place_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -388,6 +388,6 @@ CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/clean:
 .PHONY : CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/clean
 
 CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/depend:
-	cd /home/tamar/ws_moveit/build/moveit_task_constructor_demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/moveit_task_constructor/demo /home/tamar/ws_moveit/src/moveit_task_constructor/demo /home/tamar/ws_moveit/build/moveit_task_constructor_demo /home/tamar/ws_moveit/build/moveit_task_constructor_demo /home/tamar/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit_task_constructor/demo /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_task_constructor_demo/CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/moveit_task_constructor_demo_pick_place_demo.dir/depend
 

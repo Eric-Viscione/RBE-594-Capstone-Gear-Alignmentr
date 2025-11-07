@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tamar/ws_moveit/build/moveit_core/include/moveit_core
+CXX_INCLUDES = -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_core/include/moveit_core
 
 CXX_FLAGS = -O3 -DNDEBUG -std=c++17 -Wall -Wextra -Wwrite-strings -Wunreachable-code -Wpointer-arith -Wredundant-decls -Wcast-qual -Wold-style-cast -Wformat=2 -Wno-maybe-uninitialized
 

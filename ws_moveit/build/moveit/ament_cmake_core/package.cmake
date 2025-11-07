@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "moveit")
-set(moveit_VERSION "2.12.3")
-set(moveit_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Michael Görner <me@v4hn.de>, Robert Haschke <rhaschke@techfak.uni-bielefeld.de>")
+set(moveit_VERSION "2.14.1")
+set(moveit_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, Michael Görner <me@v4hn.de>, Robert Haschke <rhaschke@techfak.uni-bielefeld.de>, Nathan Brooks <nathanbrooks@picknik.ai>")
 set(moveit_BUILD_DEPENDS )
 set(moveit_BUILDTOOL_DEPENDS "ament_cmake")
 set(moveit_BUILD_EXPORT_DEPENDS )

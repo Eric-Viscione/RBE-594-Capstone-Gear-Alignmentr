@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-build"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/tmp"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src"
-  "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-build"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/tmp"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src"
+  "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

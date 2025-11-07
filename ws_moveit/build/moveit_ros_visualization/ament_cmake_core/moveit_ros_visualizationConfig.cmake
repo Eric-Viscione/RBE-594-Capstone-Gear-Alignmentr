@@ -16,7 +16,7 @@ set(_moveit_ros_visualization_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_ros_visualization_FIND_QUIETLY)
-  message(STATUS "Found moveit_ros_visualization: 2.12.3 (${moveit_ros_visualization_DIR})")
+  message(STATUS "Found moveit_ros_visualization: 2.14.1 (${moveit_ros_visualization_DIR})")
 endif()
 
 # warn when using a deprecated package

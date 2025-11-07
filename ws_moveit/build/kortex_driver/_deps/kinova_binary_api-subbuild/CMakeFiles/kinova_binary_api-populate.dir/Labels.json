@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate-complete.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/CMakeFiles/kinova_binary_api-populate-complete.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-build.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-build.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-configure.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-configure.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-download.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-download.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-install.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-install.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-mkdir.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-patch.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-patch.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-test.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-test.rule"
 		},
 		{
-			"file" : "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-update.rule"
+			"file" : "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/kinova_binary_api-populate-stamp/kinova_binary_api-populate-update.rule"
 		}
 	],
 	"target" : 

@@ -16,7 +16,7 @@ set(_moveit_plugins_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_plugins_FIND_QUIETLY)
-  message(STATUS "Found moveit_plugins: 2.12.3 (${moveit_plugins_DIR})")
+  message(STATUS "Found moveit_plugins: 2.14.1 (${moveit_plugins_DIR})")
 endif()
 
 # warn when using a deprecated package

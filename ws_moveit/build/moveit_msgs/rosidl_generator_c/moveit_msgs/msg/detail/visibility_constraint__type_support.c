@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/visibility_constraint__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/visibility_constraint__type_support.h"
 #include "moveit_msgs/msg/detail/visibility_constraint__functions.h"
 

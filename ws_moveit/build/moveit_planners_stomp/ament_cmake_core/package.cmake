@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_planners_stomp")
-set(moveit_planners_stomp_VERSION "2.12.3")
+set(moveit_planners_stomp_VERSION "2.14.1")
 set(moveit_planners_stomp_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>")
 set(moveit_planners_stomp_BUILD_DEPENDS "generate_parameter_library" "stomp" "moveit_common" "moveit_core" "std_msgs" "tf2_eigen" "visualization_msgs" "rsl")
 set(moveit_planners_stomp_BUILDTOOL_DEPENDS "ament_cmake")

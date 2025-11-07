@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "moveit_msgs/srv/detail/query_planner_interfaces__type_support.h"
-#include "moveit_msgs/srv/detail/query_planner_interfaces__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/query_planner_interfaces__functions.h"
+#include "moveit_msgs/srv/detail/query_planner_interfaces__struct.h"
 
 #ifdef __cplusplus
 extern "C"

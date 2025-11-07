@@ -7,7 +7,7 @@ events:
       - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Linux - 6.8.0-85-generic - x86_64
+      The system is: Linux - 6.8.0-87-generic - x86_64
   -
     kind: "message-v1"
     backtrace:
@@ -28,7 +28,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/3.28.3/CompilerIdC/a.out
+        /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -50,7 +50,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+        /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/3.28.3/CompilerIdCXX/a.out
       
   -
     kind: "try_compile-v1"
@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,13 +71,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8590f/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8590f.dir/build.make CMakeFiles/cmTC_8590f.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk'
-        Building C object CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8c4cb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8c4cb.dir/build.make CMakeFiles/cmTC_8c4cb.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg'
+        Building C object CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -87,8 +87,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8590f.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnTvwNj.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8c4cb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccUhYEhW.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -105,15 +105,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/'
-         as -v --64 -o CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o /tmp/ccnTvwNj.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/'
+         as -v --64 -o CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o /tmp/ccUhYEhW.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_8590f
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8590f.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -o cmTC_8590f 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_8c4cb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c4cb.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -o cmTC_8c4cb 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -126,10 +126,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8590f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8590f.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAXjWUd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8590f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8590f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8590f.'
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c4cb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8c4cb.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cck9Bxz3.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8c4cb /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c4cb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8c4cb.'
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg'
         
       exitCode: 0
   -
@@ -163,13 +163,13 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk']
+        ignore line: [Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8590f/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8590f.dir/build.make CMakeFiles/cmTC_8590f.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-nQKxRk']
-        ignore line: [Building C object CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8c4cb/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8c4cb.dir/build.make CMakeFiles/cmTC_8c4cb.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6lE6mg']
+        ignore line: [Building C object CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -179,8 +179,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8590f.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnTvwNj.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8c4cb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccUhYEhW.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -197,15 +197,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o /tmp/ccnTvwNj.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o /tmp/ccUhYEhW.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_8590f]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8590f.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -o cmTC_8590f ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_8c4cb]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c4cb.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -o cmTC_8c4cb ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -218,13 +218,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8590f' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8590f.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAXjWUd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8590f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c4cb' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8c4cb.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cck9Bxz3.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8c4cb /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccAXjWUd.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cck9Bxz3.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -242,7 +242,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_8590f] ==> ignore
+          arg [cmTC_8c4cb] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -254,7 +254,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_8590f.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_8c4cb.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -294,8 +294,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -304,13 +304,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_15df7/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_15df7.dir/build.make CMakeFiles/cmTC_15df7.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP'
-        Building CXX object CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae7ce/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ae7ce.dir/build.make CMakeFiles/cmTC_ae7ce.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV'
+        Building CXX object CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -320,8 +320,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_15df7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cceKRgvz.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ae7ce.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccPRAOx5.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -342,15 +342,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/'
-         as -v --64 -o CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cceKRgvz.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/'
+         as -v --64 -o CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccPRAOx5.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_15df7
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15df7.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_15df7 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_ae7ce
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae7ce.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ae7ce 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -363,10 +363,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_15df7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_15df7.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccimnC0V.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_15df7 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_15df7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_15df7.'
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ae7ce' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ae7ce.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrS8kyw.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ae7ce /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ae7ce' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ae7ce.'
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV'
         
       exitCode: 0
   -
@@ -406,13 +406,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP']
+        ignore line: [Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_15df7/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_15df7.dir/build.make CMakeFiles/cmTC_15df7.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-eeQOZP']
-        ignore line: [Building CXX object CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae7ce/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ae7ce.dir/build.make CMakeFiles/cmTC_ae7ce.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-ARckHV']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -422,8 +422,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_15df7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cceKRgvz.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ae7ce.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccPRAOx5.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -444,15 +444,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cceKRgvz.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccPRAOx5.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_15df7]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15df7.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_15df7 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_ae7ce]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae7ce.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ae7ce ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -465,13 +465,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_15df7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_15df7.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccimnC0V.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_15df7 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ae7ce' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ae7ce.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrS8kyw.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ae7ce /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccimnC0V.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccrS8kyw.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -489,7 +489,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_15df7] ==> ignore
+          arg [cmTC_ae7ce] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -501,7 +501,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_15df7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_ae7ce.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -540,12 +540,12 @@ events:
       - "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake:141 (find_package)"
       - "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake:262 (boost_find_component)"
       - "/usr/share/cmake-3.28/Modules/FindBoost.cmake:594 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_core/share/moveit_core/cmake/ConfigExtras.cmake:3 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_core/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/share/moveit_core/cmake/ConfigExtras.cmake:3 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -555,17 +555,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bad8f/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_bad8f.dir/build.make CMakeFiles/cmTC_bad8f.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB'
-        Building C object CMakeFiles/cmTC_bad8f.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_bad8f.dir/src.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB/src.c
-        Linking C executable cmTC_bad8f
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bad8f.dir/link.txt --verbose=1
-        /usr/bin/cc -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_bad8f.dir/src.c.o -o cmTC_bad8f 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6L2BoB'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_06e2b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_06e2b.dir/build.make CMakeFiles/cmTC_06e2b.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F'
+        Building C object CMakeFiles/cmTC_06e2b.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_06e2b.dir/src.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F/src.c
+        Linking C executable cmTC_06e2b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06e2b.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_06e2b.dir/src.c.o -o cmTC_06e2b 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-r0ch5F'
         
       exitCode: 0
   -
@@ -577,16 +577,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -596,17 +596,17 @@ events:
       variable: "X11_LIB_X11_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_21df6/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_21df6.dir/build.make CMakeFiles/cmTC_21df6.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM'
-        Building C object CMakeFiles/cmTC_21df6.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_21df6.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM/CheckFunctionExists.c
-        Linking C executable cmTC_21df6
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21df6.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_21df6.dir/CheckFunctionExists.c.o -o cmTC_21df6  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-p6groM'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a644a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a644a.dir/build.make CMakeFiles/cmTC_a644a.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0'
+        Building C object CMakeFiles/cmTC_a644a.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_a644a.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0/CheckFunctionExists.c
+        Linking C executable cmTC_a644a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a644a.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_a644a.dir/CheckFunctionExists.c.o -o cmTC_a644a  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-E3GOx0'
         
       exitCode: 0
   -
@@ -618,16 +618,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for gethostbyname"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -637,17 +637,17 @@ events:
       variable: "CMAKE_HAVE_GETHOSTBYNAME"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8f54e/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8f54e.dir/build.make CMakeFiles/cmTC_8f54e.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb'
-        Building C object CMakeFiles/cmTC_8f54e.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_8f54e.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb/CheckFunctionExists.c
-        Linking C executable cmTC_8f54e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f54e.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_8f54e.dir/CheckFunctionExists.c.o -o cmTC_8f54e 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-miintb'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_87185/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_87185.dir/build.make CMakeFiles/cmTC_87185.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY'
+        Building C object CMakeFiles/cmTC_87185.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_87185.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY/CheckFunctionExists.c
+        Linking C executable cmTC_87185
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87185.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_87185.dir/CheckFunctionExists.c.o -o cmTC_87185 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-6dFKyY'
         
       exitCode: 0
   -
@@ -659,16 +659,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for connect"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -678,17 +678,17 @@ events:
       variable: "CMAKE_HAVE_CONNECT"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_40094/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_40094.dir/build.make CMakeFiles/cmTC_40094.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu'
-        Building C object CMakeFiles/cmTC_40094.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_40094.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu/CheckFunctionExists.c
-        Linking C executable cmTC_40094
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40094.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_40094.dir/CheckFunctionExists.c.o -o cmTC_40094 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-gq4HZu'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5d239/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5d239.dir/build.make CMakeFiles/cmTC_5d239.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP'
+        Building C object CMakeFiles/cmTC_5d239.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_5d239.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP/CheckFunctionExists.c
+        Linking C executable cmTC_5d239
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d239.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_5d239.dir/CheckFunctionExists.c.o -o cmTC_5d239 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-5gw3SP'
         
       exitCode: 0
   -
@@ -700,16 +700,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for remove"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -719,17 +719,17 @@ events:
       variable: "CMAKE_HAVE_REMOVE"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3c53a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3c53a.dir/build.make CMakeFiles/cmTC_3c53a.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya'
-        Building C object CMakeFiles/cmTC_3c53a.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_3c53a.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya/CheckFunctionExists.c
-        Linking C executable cmTC_3c53a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c53a.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_3c53a.dir/CheckFunctionExists.c.o -o cmTC_3c53a 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-VKPoya'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_98ee7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_98ee7.dir/build.make CMakeFiles/cmTC_98ee7.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE'
+        Building C object CMakeFiles/cmTC_98ee7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_98ee7.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE/CheckFunctionExists.c
+        Linking C executable cmTC_98ee7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98ee7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_98ee7.dir/CheckFunctionExists.c.o -o cmTC_98ee7 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-Hgh2EE'
         
       exitCode: 0
   -
@@ -741,16 +741,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for shmat"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -760,17 +760,17 @@ events:
       variable: "CMAKE_HAVE_SHMAT"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b90a3/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b90a3.dir/build.make CMakeFiles/cmTC_b90a3.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M'
-        Building C object CMakeFiles/cmTC_b90a3.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_b90a3.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M/CheckFunctionExists.c
-        Linking C executable cmTC_b90a3
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b90a3.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_b90a3.dir/CheckFunctionExists.c.o -o cmTC_b90a3 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MlJT4M'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fd1ff/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fd1ff.dir/build.make CMakeFiles/cmTC_fd1ff.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh'
+        Building C object CMakeFiles/cmTC_fd1ff.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_fd1ff.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh/CheckFunctionExists.c
+        Linking C executable cmTC_fd1ff
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd1ff.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_fd1ff.dir/CheckFunctionExists.c.o -o cmTC_fd1ff 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-zAqjIh'
         
       exitCode: 0
   -
@@ -782,16 +782,16 @@ events:
       - "/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/rviz_ogre_vendorConfig.cmake:41 (include)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
       - "/opt/ros/jazzy/share/rviz_common/cmake/rviz_commonConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
-      - "/home/tamar/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/rviz_visual_tools/share/rviz_visual_tools/cmake/rviz_visual_toolsConfig.cmake:41 (include)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)"
+      - "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_visual_tools/share/moveit_visual_tools/cmake/moveit_visual_toolsConfig.cmake:41 (include)"
       - "CMakeLists.txt:37 (find_package)"
     checks:
       - "Looking for IceConnectionNumber in ICE"
     directories:
-      source: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX"
-      binary: "/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX"
+      source: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1"
+      binary: "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -801,17 +801,17 @@ events:
       variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
       cached: true
       stdout: |
-        Change Dir: '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX'
+        Change Dir: '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3e557/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3e557.dir/build.make CMakeFiles/cmTC_3e557.dir/build
-        gmake[1]: Entering directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX'
-        Building C object CMakeFiles/cmTC_3e557.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_3e557.dir/CheckFunctionExists.c.o -c /home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX/CheckFunctionExists.c
-        Linking C executable cmTC_3e557
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e557.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_3e557.dir/CheckFunctionExists.c.o -o cmTC_3e557  -lICE 
-        gmake[1]: Leaving directory '/home/tamar/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-7YdweX'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e5c39/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e5c39.dir/build.make CMakeFiles/cmTC_e5c39.dir/build
+        gmake[1]: Entering directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1'
+        Building C object CMakeFiles/cmTC_e5c39.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_e5c39.dir/CheckFunctionExists.c.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1/CheckFunctionExists.c
+        Linking C executable cmTC_e5c39
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5c39.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -Wl,--no-as-needed  /opt/ros/jazzy/lib/libbackward.so -Wl,--as-needed   CMakeFiles/cmTC_e5c39.dir/CheckFunctionExists.c.o -o cmTC_e5c39  -lICE 
+        gmake[1]: Leaving directory '/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit2_tutorials/CMakeFiles/CMakeScratch/TryCompile-MnRHB1'
         
       exitCode: 0
 ...

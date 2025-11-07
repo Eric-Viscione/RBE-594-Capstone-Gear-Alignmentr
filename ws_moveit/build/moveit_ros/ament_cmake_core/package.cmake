@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros")
-set(moveit_ros_VERSION "2.12.3")
+set(moveit_ros_VERSION "2.14.1")
 set(moveit_ros_MAINTAINER "Michael Görner <me@v4hn.de>, Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_BUILD_DEPENDS )
 set(moveit_ros_BUILDTOOL_DEPENDS "ament_cmake")

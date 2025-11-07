@@ -16,7 +16,7 @@ set(_moveit_kinematics_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_kinematics_FIND_QUIETLY)
-  message(STATUS "Found moveit_kinematics: 2.12.3 (${moveit_kinematics_DIR})")
+  message(STATUS "Found moveit_kinematics: 2.14.1 (${moveit_kinematics_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_runtime")
-set(moveit_runtime_VERSION "2.12.3")
+set(moveit_runtime_VERSION "2.14.1")
 set(moveit_runtime_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>")
 set(moveit_runtime_BUILD_DEPENDS )
 set(moveit_runtime_BUILDTOOL_DEPENDS "ament_cmake")

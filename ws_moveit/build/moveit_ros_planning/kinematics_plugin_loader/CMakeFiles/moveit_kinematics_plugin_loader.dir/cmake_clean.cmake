@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_kinematics_plugin_loader.dir/src/kinematics_plugin_loader.cpp.o"
   "CMakeFiles/moveit_kinematics_plugin_loader.dir/src/kinematics_plugin_loader.cpp.o.d"
   "libmoveit_kinematics_plugin_loader.pdb"
   "libmoveit_kinematics_plugin_loader.so"
-  "libmoveit_kinematics_plugin_loader.so.2.12.3"
+  "libmoveit_kinematics_plugin_loader.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

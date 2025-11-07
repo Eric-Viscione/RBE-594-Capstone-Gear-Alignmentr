@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/action/detail/move_group_sequence__struct.h"
 #include "moveit_msgs/action/detail/move_group_sequence__type_support.h"
-#include "moveit_msgs/action/detail/move_group_sequence__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/action/detail/move_group_sequence__functions.h"
+#include "moveit_msgs/action/detail/move_group_sequence__struct.h"
 
 #ifdef __cplusplus
 extern "C"

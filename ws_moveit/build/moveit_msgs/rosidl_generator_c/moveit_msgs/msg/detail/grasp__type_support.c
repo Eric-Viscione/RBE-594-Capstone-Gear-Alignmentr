@@ -4,9 +4,9 @@
 
 #include <string.h>
 
+#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/grasp__functions.h"
 #include "moveit_msgs/msg/detail/grasp__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/msg/detail/grasp__type_support.h"
 
 #ifdef __cplusplus

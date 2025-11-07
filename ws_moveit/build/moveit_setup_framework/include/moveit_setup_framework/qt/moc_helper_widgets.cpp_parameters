@@ -1,6 +1,6 @@
--I/home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_framework
--I/home/tamar/ws_moveit/build/moveit_setup_framework
+-I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_framework
+-I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_framework
 -DROS_PACKAGE_NAME="moveit_setup_framework"
 -o
-/home/tamar/ws_moveit/build/moveit_setup_framework/include/moveit_setup_framework/qt/moc_helper_widgets.cpp
-/home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_framework/include/moveit_setup_framework/qt/helper_widgets.hpp
+/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_framework/include/moveit_setup_framework/qt/moc_helper_widgets.cpp
+/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_framework/include/moveit_setup_framework/qt/helper_widgets.hpp

@@ -23,18 +23,18 @@ moveit_msgs__msg__PlaceLocation__get_type_hash(
 #include <string.h>
 
 // Include directives for referenced types
-#include "geometry_msgs/msg/detail/point__functions.h"
 #include "geometry_msgs/msg/detail/vector3_stamped__functions.h"
+#include "geometry_msgs/msg/detail/point__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
+#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
 #include "geometry_msgs/msg/detail/vector3__functions.h"
 #include "geometry_msgs/msg/detail/pose__functions.h"
+#include "builtin_interfaces/msg/detail/duration__functions.h"
 #include "builtin_interfaces/msg/detail/time__functions.h"
 #include "moveit_msgs/msg/detail/gripper_translation__functions.h"
-#include "std_msgs/msg/detail/header__functions.h"
-#include "trajectory_msgs/msg/detail/joint_trajectory_point__functions.h"
 #include "geometry_msgs/msg/detail/quaternion__functions.h"
+#include "std_msgs/msg/detail/header__functions.h"
 #include "geometry_msgs/msg/detail/pose_stamped__functions.h"
-#include "builtin_interfaces/msg/detail/duration__functions.h"
-#include "trajectory_msgs/msg/detail/joint_trajectory__functions.h"
 
 // Hashes for external referenced types
 #ifndef NDEBUG

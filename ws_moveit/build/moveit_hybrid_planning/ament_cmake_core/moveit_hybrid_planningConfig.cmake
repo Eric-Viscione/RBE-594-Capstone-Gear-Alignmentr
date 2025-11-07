@@ -16,7 +16,7 @@ set(_moveit_hybrid_planning_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_hybrid_planning_FIND_QUIETLY)
-  message(STATUS "Found moveit_hybrid_planning: 2.12.3 (${moveit_hybrid_planning_DIR})")
+  message(STATUS "Found moveit_hybrid_planning: 2.14.1 (${moveit_hybrid_planning_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -20,8 +20,8 @@ project(kinova_binary_api-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(kinova_binary_api-populate
                      "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "TRUE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://artifactory.kinovaapps.com:443/artifactory/generic-public/kortex/API/2.5.0/linux_x86-64_x86_gcc.zip" "URL_HASH" "MD5=64bd86e7ab8bda90ef1fc7d6a356e080"
-                    SOURCE_DIR          "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-src"
-                    BINARY_DIR          "/home/tamar/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-build"
+                    SOURCE_DIR          "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-src"
+                    BINARY_DIR          "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_driver/_deps/kinova_binary_api-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

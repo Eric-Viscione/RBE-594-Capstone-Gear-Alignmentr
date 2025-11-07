@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/moveit_planners_stomp
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/test_cost_functions.dir/depend.make
@@ -70,18 +70,18 @@ include test/CMakeFiles/test_cost_functions.dir/progress.make
 include test/CMakeFiles/test_cost_functions.dir/flags.make
 
 test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o: test/CMakeFiles/test_cost_functions.dir/flags.make
-test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o: /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp
+test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp
 test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o: test/CMakeFiles/test_cost_functions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_planners_stomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o"
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o -MF CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o.d -o CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o -c /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o -MF CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o.d -o CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp
 
 test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.i"
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp > CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.i
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp > CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.i
 
 test/CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.s"
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp -o CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.s
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp/test/test_cost_functions.cpp -o CMakeFiles/test_cost_functions.dir/test_cost_functions.cpp.s
 
 # Object files for target test_cost_functions
 test_cost_functions_OBJECTS = \
@@ -94,30 +94,30 @@ test/test_cost_functions: test/CMakeFiles/test_cost_functions.dir/test_cost_func
 test/test_cost_functions: test/CMakeFiles/test_cost_functions.dir/build.make
 test/test_cost_functions: gtest/libgtest_main.a
 test/test_cost_functions: gtest/libgtest.a
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.12.3
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.14.1
 test/test_cost_functions: /opt/ros/jazzy/lib/libstomp.so
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/libLinearMath.so
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libkdl_parser.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.12.3
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.14.1
 test/test_cost_functions: /opt/ros/jazzy/lib/x86_64-linux-gnu/libruckig.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.12.3
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.14.1
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libtf2_ros.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libtf2.so
@@ -132,10 +132,10 @@ test/test_cost_functions: /opt/ros/jazzy/lib/libtf2_msgs__rosidl_typesupport_cpp
 test/test_cost_functions: /opt/ros/jazzy/lib/libtf2_msgs__rosidl_generator_py.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libtf2_msgs__rosidl_typesupport_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libtf2_msgs__rosidl_generator_c.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.12.3
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.12.3
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.14.1
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.14.1
 test/test_cost_functions: /opt/ros/jazzy/lib/libgeometric_shapes.so.2.3.2
 test/test_cost_functions: /opt/ros/jazzy/lib/libvisualization_msgs__rosidl_typesupport_fastrtps_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libvisualization_msgs__rosidl_typesupport_fastrtps_cpp.so
@@ -152,21 +152,21 @@ test/test_cost_functions: /usr/lib/x86_64-linux-gnu/liboctomap.so.1.9.7
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/liboctomath.so.1.9.7
 test/test_cost_functions: /opt/ros/jazzy/lib/libresource_retriever.so
 test/test_cost_functions: /opt/ros/jazzy/lib/librandom_numbers.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_cpp.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_cpp.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_cpp.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_py.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_c.so
-test/test_cost_functions: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
+test/test_cost_functions: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libobject_recognition_msgs__rosidl_typesupport_fastrtps_c.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_fastrtps_c.so
@@ -317,18 +317,18 @@ test/test_cost_functions: /opt/ros/jazzy/lib/librcutils.so
 test/test_cost_functions: /opt/ros/jazzy/lib/libament_index_cpp.so
 test/test_cost_functions: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
 test/test_cost_functions: test/CMakeFiles/test_cost_functions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/ws_moveit/build/moveit_planners_stomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_cost_functions"
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_cost_functions.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_cost_functions"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_cost_functions.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/test_cost_functions.dir/build: test/test_cost_functions
 .PHONY : test/CMakeFiles/test_cost_functions.dir/build
 
 test/CMakeFiles/test_cost_functions.dir/clean:
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp/test && $(CMAKE_COMMAND) -P CMakeFiles/test_cost_functions.dir/cmake_clean.cmake
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test && $(CMAKE_COMMAND) -P CMakeFiles/test_cost_functions.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/test_cost_functions.dir/clean
 
 test/CMakeFiles/test_cost_functions.dir/depend:
-	cd /home/tamar/ws_moveit/build/moveit_planners_stomp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp /home/tamar/ws_moveit/src/moveit2/moveit_planners/stomp/test /home/tamar/ws_moveit/build/moveit_planners_stomp /home/tamar/ws_moveit/build/moveit_planners_stomp/test /home/tamar/ws_moveit/build/moveit_planners_stomp/test/CMakeFiles/test_cost_functions.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_planners/stomp/test /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_planners_stomp/test/CMakeFiles/test_cost_functions.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/CMakeFiles/test_cost_functions.dir/depend
 

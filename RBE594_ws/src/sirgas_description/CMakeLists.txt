@@ -25,6 +25,7 @@ install(PROGRAMS
   scripts/move_panda.py
   scripts/move_pba.py
   scripts/grab_gear.py
+  scripts/grab_cube.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

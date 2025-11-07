@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_rviz_plugin_render_tools_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/moveit_rviz_plugin_render_tools_autogen.dir/ParseCache.txt"
   "moveit_rviz_plugin_render_tools_autogen"
@@ -23,7 +23,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/moveit_rviz_plugin_render_tools.dir/src/trajectory_visualization.cpp.o.d"
   "libmoveit_rviz_plugin_render_tools.pdb"
   "libmoveit_rviz_plugin_render_tools.so"
-  "libmoveit_rviz_plugin_render_tools.so.2.12.3"
+  "libmoveit_rviz_plugin_render_tools.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
   rclcpp::NodeOptions options;
   options.arguments(args);
 
-  std::string library_name = "libmoveit_servo_lib_ros.so.2.12.3";
+  std::string library_name = "libmoveit_servo_lib_ros.so.2.14.1";
   std::string class_name = "rclcpp_components::NodeFactoryTemplate<moveit_servo::ServoNode>";
 
   RCLCPP_DEBUG(logger, "Load library %s", library_name.c_str());

@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_trajectory_cache")
-set(moveit_ros_trajectory_cache_VERSION "2.12.3")
+set(moveit_ros_trajectory_cache_VERSION "2.14.1")
 set(moveit_ros_trajectory_cache_MAINTAINER "Brandon Ong <methylDragon@intrinsic.ai>")
 set(moveit_ros_trajectory_cache_BUILD_DEPENDS "moveit_common" "geometry_msgs" "moveit_ros_planning_interface" "rclcpp" "rclcpp_action" "tf2_ros" "trajectory_msgs")
 set(moveit_ros_trajectory_cache_BUILDTOOL_DEPENDS "ament_cmake")

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_semantic_world.dir/src/semantic_world.cpp.o"
   "CMakeFiles/moveit_semantic_world.dir/src/semantic_world.cpp.o.d"
   "libmoveit_semantic_world.pdb"
   "libmoveit_semantic_world.so"
-  "libmoveit_semantic_world.so.2.12.3"
+  "libmoveit_semantic_world.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

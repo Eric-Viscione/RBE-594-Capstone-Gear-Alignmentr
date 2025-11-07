@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_ros_warehouse")
-set(moveit_ros_warehouse_VERSION "2.12.3")
+set(moveit_ros_warehouse_VERSION "2.14.1")
 set(moveit_ros_warehouse_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_ros_warehouse_BUILD_DEPENDS "moveit_common" "rclcpp" "moveit_core" "warehouse_ros" "moveit_ros_planning" "tf2_eigen" "tf2_ros" "fmt")
 set(moveit_ros_warehouse_BUILDTOOL_DEPENDS "ament_cmake")

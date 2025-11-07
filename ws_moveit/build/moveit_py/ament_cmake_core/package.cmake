@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_py")
-set(moveit_py_VERSION "2.12.3")
+set(moveit_py_VERSION "2.14.1")
 set(moveit_py_MAINTAINER "Peter David Fagan <peterdavidfagan@gmail.com>")
 set(moveit_py_BUILD_DEPENDS "pybind11_vendor" "rclcpp" "rclpy" "geometry_msgs" "octomap_msgs" "moveit_ros_planning_interface" "moveit_ros_planning" "moveit_core")
 set(moveit_py_BUILDTOOL_DEPENDS "ament_cmake")

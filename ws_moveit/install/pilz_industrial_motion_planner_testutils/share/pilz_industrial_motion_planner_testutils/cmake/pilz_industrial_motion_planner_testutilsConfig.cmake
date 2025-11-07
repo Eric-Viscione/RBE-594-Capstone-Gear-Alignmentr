@@ -16,7 +16,7 @@ set(_pilz_industrial_motion_planner_testutils_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT pilz_industrial_motion_planner_testutils_FIND_QUIETLY)
-  message(STATUS "Found pilz_industrial_motion_planner_testutils: 2.12.3 (${pilz_industrial_motion_planner_testutils_DIR})")
+  message(STATUS "Found pilz_industrial_motion_planner_testutils: 2.14.1 (${pilz_industrial_motion_planner_testutils_DIR})")
 endif()
 
 # warn when using a deprecated package

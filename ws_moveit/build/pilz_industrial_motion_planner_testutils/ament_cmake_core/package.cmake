@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "pilz_industrial_motion_planner_testutils")
-set(pilz_industrial_motion_planner_testutils_VERSION "2.12.3")
+set(pilz_industrial_motion_planner_testutils_VERSION "2.14.1")
 set(pilz_industrial_motion_planner_testutils_MAINTAINER "Christian Henkel <c.henkel@pilz.de>, Immanuel Martini <i.martini@pilz.de>")
 set(pilz_industrial_motion_planner_testutils_BUILD_DEPENDS "tf2_eigen" "moveit_common" "rclcpp" "moveit_core" "moveit_msgs")
 set(pilz_industrial_motion_planner_testutils_BUILDTOOL_DEPENDS "ament_cmake" "eigen3_cmake_module")

@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # Make file names absolute:
 #
-get_filename_component(filename "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" ABSOLUTE)
-get_filename_component(directory "/home/tamar/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src" ABSOLUTE)
+get_filename_component(filename "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-subbuild/kinova_binary_api-populate-prefix/src/linux_x86-64_x86_gcc.zip" ABSOLUTE)
+get_filename_component(directory "/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/kortex_api/_deps/kinova_binary_api-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

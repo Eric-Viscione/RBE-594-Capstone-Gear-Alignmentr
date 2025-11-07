@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/moveit_setup_assistant
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant
 
 # Include any dependencies generated for this target.
 include CMakeFiles/moveit_setup_assistant.dir/depend.make
@@ -69,97 +69,97 @@ include CMakeFiles/moveit_setup_assistant.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/moveit_setup_assistant.dir/flags.make
 
-include/moveit_setup_assistant/moc_navigation_widget.cpp: /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/navigation_widget.hpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating include/moveit_setup_assistant/moc_navigation_widget.cpp"
-	cd /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant && /usr/lib/qt5/bin/moc @/home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp_parameters
+include/moveit_setup_assistant/moc_navigation_widget.cpp: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/navigation_widget.hpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating include/moveit_setup_assistant/moc_navigation_widget.cpp"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant && /usr/lib/qt5/bin/moc @/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp_parameters
 
-include/moveit_setup_assistant/moc_setup_assistant_widget.cpp: /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/setup_assistant_widget.hpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating include/moveit_setup_assistant/moc_setup_assistant_widget.cpp"
-	cd /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant && /usr/lib/qt5/bin/moc @/home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp_parameters
+include/moveit_setup_assistant/moc_setup_assistant_widget.cpp: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/include/moveit_setup_assistant/setup_assistant_widget.hpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating include/moveit_setup_assistant/moc_setup_assistant_widget.cpp"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant && /usr/lib/qt5/bin/moc @/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp_parameters
 
 CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
 CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o: moveit_setup_assistant_autogen/mocs_compilation.cpp
 CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o -c /home/tamar/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp > CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp > CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp -o CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/moveit_setup_assistant_autogen/mocs_compilation.cpp -o CMakeFiles/moveit_setup_assistant.dir/moveit_setup_assistant_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
-CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o: /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp
+CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp
 CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o -c /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp > CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp > CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/main.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/main.cpp.s
 
 CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
-CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o: /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp
+CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp
 CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o -c /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/setup_assistant_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/setup_assistant_widget.cpp.s
 
 CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
-CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o: /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp
+CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp
 CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o -c /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant/src/navigation_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/src/navigation_widget.cpp.s
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o: include/moveit_setup_assistant/moc_navigation_widget.cpp
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o -c /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_navigation_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.s
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/flags.make
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o: include/moveit_setup_assistant/moc_setup_assistant_widget.cpp
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o: CMakeFiles/moveit_setup_assistant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o -c /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o -MF CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o.d -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o -c /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp > CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.i
 
 CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp -o CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.s
 
 # Object files for target moveit_setup_assistant
 moveit_setup_assistant_OBJECTS = \
@@ -180,35 +180,35 @@ moveit_setup_assistant: CMakeFiles/moveit_setup_assistant.dir/src/navigation_wid
 moveit_setup_assistant: CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_navigation_widget.cpp.o
 moveit_setup_assistant: CMakeFiles/moveit_setup_assistant.dir/include/moveit_setup_assistant/moc_setup_assistant_widget.cpp.o
 moveit_setup_assistant: CMakeFiles/moveit_setup_assistant.dir/build.make
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_setup_srdf_plugins/lib/libmoveit_setup_srdf_plugins.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_setup_framework/lib/libmoveit_setup_framework.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_motion_planning_rviz_plugin.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_motion_planning_rviz_plugin_core.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_robot_interaction/lib/libmoveit_robot_interaction.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_planning_scene_rviz_plugin.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_robot_state_rviz_plugin.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_robot_state_rviz_plugin_core.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_trajectory_rviz_plugin.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_trajectory_rviz_plugin_core.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_planning_scene_rviz_plugin_core.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_move_group_interface.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_warehouse/lib/libmoveit_warehouse.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_setup_srdf_plugins/lib/libmoveit_setup_srdf_plugins.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_setup_framework/lib/libmoveit_setup_framework.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_motion_planning_rviz_plugin.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_motion_planning_rviz_plugin_core.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_robot_interaction/lib/libmoveit_robot_interaction.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_planning_scene_rviz_plugin.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_robot_state_rviz_plugin.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_robot_state_rviz_plugin_core.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_trajectory_rviz_plugin.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_trajectory_rviz_plugin_core.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_planning_scene_rviz_plugin_core.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_move_group_interface.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_warehouse/lib/libmoveit_warehouse.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/libwarehouse_ros.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libcrypto.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_common_planning_interface_objects.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_planning_scene_interface.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_move_group/lib/libmoveit_move_group_capabilities_base.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_constraint_sampler_manager_loader.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_plan_execution.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline_interfaces.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_trajectory_execution_manager.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_collision_plugin_loader.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_kinematics_plugin_loader.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libmoveit_rdf_loader.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_common_planning_interface_objects.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning_interface/lib/libmoveit_planning_scene_interface.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_move_group/lib/libmoveit_move_group_capabilities_base.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_constraint_sampler_manager_loader.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_plan_execution.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline_interfaces.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_pipeline.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_trajectory_execution_manager.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_collision_plugin_loader.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_kinematics_plugin_loader.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libmoveit_rdf_loader.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/librclcpp_lifecycle.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/librcl_lifecycle.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_c.so
@@ -219,7 +219,7 @@ moveit_setup_assistant: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_typesupport
 moveit_setup_assistant: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_generator_py.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_typesupport_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liblifecycle_msgs__rosidl_generator_c.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_planning/lib/libsrdf_publisher_node.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/lib/libsrdf_publisher_node.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomponent_manager.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
@@ -229,35 +229,35 @@ moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typ
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_generator_py.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_typesupport_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libcomposition_interfaces__rosidl_generator_c.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib/libmoveit_ros_occupancy_map_monitor.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_occupancy_map_monitor/lib/libmoveit_ros_occupancy_map_monitor.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/libstatic_transform_broadcaster_node.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_rviz_plugin_render_tools.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_visualization/lib/libmoveit_rviz_plugin_render_tools.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_bullet.so.2.14.1
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libLinearMath.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_distance_field.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_constraint_samplers.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_distance_field.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_dynamics_solver.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/libkdl_parser.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.12.3
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_metrics.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_interface.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_planning_scene.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematic_constraints.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection_fcl.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_collision_detection.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_smoothing_base.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_test_utils.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_trajectory_processing.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_trajectory.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_state.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_kinematics_base.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_robot_model.so.2.14.1
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_exceptions.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/x86_64-linux-gnu/libruckig.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_transforms.so.2.14.1
 moveit_setup_assistant: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_sensor.so.4.0
 moveit_setup_assistant: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_model_state.so.4.0
 moveit_setup_assistant: /opt/ros/jazzy/lib/x86_64-linux-gnu/liburdfdom_world.so.4.0
@@ -268,7 +268,7 @@ moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libm.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/liboctomap.so.1.9.7
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/liboctomath.so.1.9.7
 moveit_setup_assistant: /opt/ros/jazzy/lib/librandom_numbers.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.12.3
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/lib/libmoveit_utils.so.2.14.1
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.83.0
@@ -311,21 +311,21 @@ moveit_setup_assistant: /opt/ros/jazzy/lib/libnav_msgs__rosidl_generator_py.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libnav_msgs__rosidl_typesupport_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libnav_msgs__rosidl_generator_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/x86_64-linux-gnu/libpoint_cloud_transport.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_c.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_c.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_fastrtps_cpp.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_introspection_cpp.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_cpp.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_py.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_fastrtps_cpp.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_introspection_cpp.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_cpp.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_py.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_typesupport_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_typesupport_c.so
-moveit_setup_assistant: /home/tamar/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
+moveit_setup_assistant: /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/lib/libmoveit_msgs__rosidl_generator_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/liboctomap_msgs__rosidl_generator_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libobject_recognition_msgs__rosidl_typesupport_fastrtps_c.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/libtrajectory_msgs__rosidl_typesupport_fastrtps_c.so
@@ -505,7 +505,7 @@ moveit_setup_assistant: /opt/ros/jazzy/lib/librcpputils.so
 moveit_setup_assistant: /opt/ros/jazzy/lib/librcutils.so
 moveit_setup_assistant: /usr/lib/x86_64-linux-gnu/libtinyxml2.so.10.0.0
 moveit_setup_assistant: CMakeFiles/moveit_setup_assistant.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable moveit_setup_assistant"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable moveit_setup_assistant"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moveit_setup_assistant.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -518,6 +518,6 @@ CMakeFiles/moveit_setup_assistant.dir/clean:
 
 CMakeFiles/moveit_setup_assistant.dir/depend: include/moveit_setup_assistant/moc_navigation_widget.cpp
 CMakeFiles/moveit_setup_assistant.dir/depend: include/moveit_setup_assistant/moc_setup_assistant_widget.cpp
-	cd /home/tamar/ws_moveit/build/moveit_setup_assistant && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant /home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant /home/tamar/ws_moveit/build/moveit_setup_assistant /home/tamar/ws_moveit/build/moveit_setup_assistant /home/tamar/ws_moveit/build/moveit_setup_assistant/CMakeFiles/moveit_setup_assistant.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_assistant /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_assistant/CMakeFiles/moveit_setup_assistant.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/moveit_setup_assistant.dir/depend
 

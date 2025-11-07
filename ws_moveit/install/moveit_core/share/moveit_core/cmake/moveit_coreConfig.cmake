@@ -16,7 +16,7 @@ set(_moveit_core_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_core_FIND_QUIETLY)
-  message(STATUS "Found moveit_core: 2.12.3 (${moveit_core_DIR})")
+  message(STATUS "Found moveit_core: 2.14.1 (${moveit_core_DIR})")
 endif()
 
 # warn when using a deprecated package

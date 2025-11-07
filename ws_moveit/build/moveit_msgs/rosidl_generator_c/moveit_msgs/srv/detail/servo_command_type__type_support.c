@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/srv/detail/servo_command_type__functions.h"
-#include "moveit_msgs/srv/detail/servo_command_type__struct.h"
-#include "moveit_msgs/srv/detail/servo_command_type__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "moveit_msgs/srv/detail/servo_command_type__functions.h"
+#include "moveit_msgs/srv/detail/servo_command_type__type_support.h"
+#include "moveit_msgs/srv/detail/servo_command_type__struct.h"
 
 #ifdef __cplusplus
 extern "C"

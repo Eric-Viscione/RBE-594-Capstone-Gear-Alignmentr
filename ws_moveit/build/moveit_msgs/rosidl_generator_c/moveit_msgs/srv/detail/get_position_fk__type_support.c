@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "moveit_msgs/srv/detail/get_position_fk__struct.h"
-#include "moveit_msgs/srv/detail/get_position_fk__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "moveit_msgs/srv/detail/get_position_fk__functions.h"
+#include "moveit_msgs/srv/detail/get_position_fk__type_support.h"
+#include "moveit_msgs/srv/detail/get_position_fk__struct.h"
 
 #ifdef __cplusplus
 extern "C"

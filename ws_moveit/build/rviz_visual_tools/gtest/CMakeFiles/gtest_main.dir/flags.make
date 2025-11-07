@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DQT_NO_KEYWORDS
 
-CXX_INCLUDES = -I/home/tamar/ws_moveit/build/rviz_visual_tools/gtest -I/opt/ros/jazzy/src/gtest_vendor -I/home/tamar/ws_moveit/build/rviz_visual_tools/gtest/gtest_main_autogen/include -I/home/tamar/ws_moveit/src/rviz_visual_tools/include -I/opt/ros/jazzy/src/gtest_vendor/. -isystem /opt/ros/jazzy/src/gtest_vendor/include
+CXX_INCLUDES = -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/rviz_visual_tools/gtest -I/opt/ros/jazzy/src/gtest_vendor -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/rviz_visual_tools/gtest/gtest_main_autogen/include -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/rviz_visual_tools/include -I/opt/ros/jazzy/src/gtest_vendor/. -isystem /opt/ros/jazzy/src/gtest_vendor/include
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++14 -W -Wall -Wextra -Wwrite-strings -Wunreachable-code -Wpointer-arith -Winit-self -Wredundant-decls -Wno-unused-parameter -Wno-unused-function
 

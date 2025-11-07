@@ -16,7 +16,7 @@ set(_moveit_py_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_py_FIND_QUIETLY)
-  message(STATUS "Found moveit_py: 2.12.3 (${moveit_py_DIR})")
+  message(STATUS "Found moveit_py: 2.14.1 (${moveit_py_DIR})")
 endif()
 
 # warn when using a deprecated package

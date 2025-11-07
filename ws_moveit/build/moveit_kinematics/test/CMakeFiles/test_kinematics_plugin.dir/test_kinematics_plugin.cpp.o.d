@@ -1,5 +1,5 @@
 test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
- /home/tamar/ws_moveit/src/moveit2/moveit_kinematics/test/test_kinematics_plugin.cpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics/test/test_kinematics_plugin.cpp \
  /usr/include/stdc-predef.h \
  /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest.h \
  /usr/include/c++/13/cstddef \
@@ -366,28 +366,8 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /usr/include/c++/13/bits/regex.h /usr/include/c++/13/bits/regex.tcc \
  /usr/include/c++/13/bits/regex_executor.h \
  /usr/include/c++/13/bits/regex_executor.tcc \
- /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp \
- /usr/include/c++/13/csignal \
- /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp \
- /opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp \
- /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp \
- /opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__traits.hpp \
- /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp \
- /opt/ros/jazzy/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp \
+ /opt/ros/jazzy/include/rmw/rmw/rmw.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_description__struct.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h \
@@ -399,33 +379,11 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_hash.h \
  /opt/ros/jazzy/include/rcutils/rcutils/sha256.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__type_support.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/parameter.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/exceptions.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/exceptions/exceptions.hpp \
- /opt/ros/jazzy/include/rcl/rcl/error_handling.h \
- /opt/ros/jazzy/include/rcl/rcl/types.h \
+ /opt/ros/jazzy/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
+ /opt/ros/jazzy/include/rmw/rmw/event.h \
+ /opt/ros/jazzy/include/rmw/rmw/macros.h \
  /opt/ros/jazzy/include/rmw/rmw/types.h \
  /opt/ros/jazzy/include/rmw/rmw/events_statuses/events_statuses.h \
  /opt/ros/jazzy/include/rmw/rmw/events_statuses/incompatible_qos.h \
@@ -441,7 +399,6 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rmw/rmw/init.h \
  /opt/ros/jazzy/include/rmw/rmw/init_options.h \
  /opt/ros/jazzy/include/rmw/rmw/discovery_options.h \
- /opt/ros/jazzy/include/rmw/rmw/macros.h \
  /opt/ros/jazzy/include/rmw/rmw/ret_types.h \
  /opt/ros/jazzy/include/rmw/rmw/domain_id.h \
  /opt/ros/jazzy/include/rmw/rmw/localhost.h \
@@ -449,29 +406,39 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rmw/rmw/serialized_message.h \
  /opt/ros/jazzy/include/rmw/rmw/subscription_content_filter_options.h \
  /opt/ros/jazzy/include/rmw/rmw/time.h \
- /opt/ros/jazzy/include/rclcpp/rclcpp/visibility_control.hpp \
- /opt/ros/jazzy/include/rcpputils/rcpputils/join.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_value.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp \
- /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__type_support.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp \
- /opt/ros/jazzy/include/rcl/rcl/node.h \
+ /opt/ros/jazzy/include/rmw/rmw/event_callback_type.h \
+ /opt/ros/jazzy/include/rmw/rmw/message_sequence.h \
+ /opt/ros/jazzy/include/rmw/rmw/publisher_options.h \
+ /opt/ros/jazzy/include/rmw/rmw/qos_profiles.h \
+ /opt/ros/jazzy/include/rmw/rmw/dynamic_message_type_support.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/serialization_support.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/serialization_support_interface.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/types.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/visibility_control.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/uchar.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_data.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_type.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/dynamic_message_type_support_struct.h \
+ /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/identifier.h \
+ /opt/ros/jazzy/include/rmw/rmw/features.h \
+ /opt/ros/jazzy/include/rmw/rmw/subscription_options.h \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp \
+ /usr/include/c++/13/chrono \
+ /opt/ros/jazzy/include/rcl/rcl/guard_condition.h \
  /opt/ros/jazzy/include/rcl/rcl/allocator.h \
+ /opt/ros/jazzy/include/rcl/rcl/context.h \
  /opt/ros/jazzy/include/rcl/rcl/arguments.h \
  /opt/ros/jazzy/include/rcl/rcl/log_level.h \
  /opt/ros/jazzy/include/rcl/rcl/macros.h \
+ /opt/ros/jazzy/include/rcl/rcl/types.h \
  /opt/ros/jazzy/include/rcl/rcl/visibility_control.h \
  /opt/ros/jazzy/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
- /opt/ros/jazzy/include/rcl/rcl/context.h \
  /opt/ros/jazzy/include/rcl/rcl/init_options.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdalign.h \
- /opt/ros/jazzy/include/rcl/rcl/guard_condition.h \
+ /opt/ros/jazzy/include/rcl/rcl/wait.h \
+ /opt/ros/jazzy/include/rcl/rcl/client.h \
+ /opt/ros/jazzy/include/rcl/rcl/event_callback.h \
+ /opt/ros/jazzy/include/rcl/rcl/node.h \
  /opt/ros/jazzy/include/rcl/rcl/node_options.h \
  /opt/ros/jazzy/include/rcl/rcl/domain_id.h \
  /opt/ros/jazzy/include/type_description_interfaces/type_description_interfaces/srv/get_type_description.h \
@@ -488,52 +455,21 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
  /opt/ros/jazzy/include/type_description_interfaces/type_description_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /opt/ros/jazzy/include/type_description_interfaces/type_description_interfaces/srv/detail/get_type_description__type_support.h \
- /opt/ros/jazzy/include/rcpputils/rcpputils/filesystem_helper.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp \
- /usr/include/c++/13/chrono \
- /opt/ros/jazzy/include/rclcpp/rclcpp/context.hpp \
- /usr/include/c++/13/typeindex /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /opt/ros/jazzy/include/rcl/rcl/wait.h \
- /opt/ros/jazzy/include/rcl/rcl/client.h \
- /opt/ros/jazzy/include/rcl/rcl/event_callback.h \
- /opt/ros/jazzy/include/rmw/rmw/event_callback_type.h \
  /opt/ros/jazzy/include/rcl/rcl/publisher.h \
  /opt/ros/jazzy/include/rcl/rcl/time.h \
  /opt/ros/jazzy/include/rcl/rcl/service_introspection.h \
  /opt/ros/jazzy/include/rcl/rcl/service.h \
  /opt/ros/jazzy/include/rcl/rcl/subscription.h \
- /opt/ros/jazzy/include/rmw/rmw/dynamic_message_type_support.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/serialization_support.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/serialization_support_interface.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/types.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/visibility_control.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/uchar.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_data.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_type.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/dynamic_message_type_support_struct.h \
- /opt/ros/jazzy/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/identifier.h \
- /opt/ros/jazzy/include/rmw/rmw/features.h \
- /opt/ros/jazzy/include/rmw/rmw/message_sequence.h \
  /opt/ros/jazzy/include/rcl/rcl/timer.h \
- /opt/ros/jazzy/include/rmw/rmw/rmw.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
- /opt/ros/jazzy/include/rmw/rmw/event.h \
- /opt/ros/jazzy/include/rmw/rmw/publisher_options.h \
- /opt/ros/jazzy/include/rmw/rmw/qos_profiles.h \
- /opt/ros/jazzy/include/rmw/rmw/subscription_options.h \
  /opt/ros/jazzy/include/rcl/rcl/event.h \
- /opt/ros/jazzy/include/rclcpp/rclcpp/init_options.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/macros.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp \
- /usr/include/c++/13/future /usr/include/c++/13/bits/atomic_futex.h \
- /usr/include/c++/13/bits/std_thread.h \
- /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp \
- /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h \
- /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/executors/executor_notify_waitable.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/guard_condition.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/context.hpp \
+ /usr/include/c++/13/typeindex /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/init_options.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/visibility_control.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/macros.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/contexts/default_context.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/waitable.hpp \
  /opt/ros/jazzy/include/rcpputils/rcpputils/scope_exit.hpp \
@@ -543,12 +479,22 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp \
+ /usr/include/c++/13/future /usr/include/c++/13/bits/atomic_futex.h \
+ /usr/include/c++/13/bits/std_thread.h \
+ /opt/ros/jazzy/include/rcl/rcl/error_handling.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/time.hpp \
+ /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp \
+ /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/traits.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
@@ -556,8 +502,15 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/detail/cpp_callback_trampoline.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/exceptions.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/exceptions/exceptions.hpp \
+ /opt/ros/jazzy/include/rcpputils/rcpputils/join.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp \
+ /opt/ros/jazzy/include/rcpputils/rcpputils/filesystem_helper.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp \
  /opt/ros/jazzy/include/rcl/rcl/graph.h \
  /opt/ros/jazzy/include/rmw/rmw/names_and_types.h \
@@ -572,6 +525,7 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/type_support_decl.hpp \
  /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp \
  /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp \
+ /opt/ros/jazzy/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
  /opt/ros/jazzy/include/rmw/rmw/error_handling.h \
  /opt/ros/jazzy/include/rmw/rmw/impl/cpp/demangle.hpp \
  /opt/ros/jazzy/include/rmw/rmw/impl/config.h \
@@ -614,6 +568,7 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/detail/add_guard_condition_to_rcl_wait_set.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/subscription_content_filter_options.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/timer.hpp \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/this_thread_sleep.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/rate.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_base_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp \
@@ -625,6 +580,12 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/detail/rmw_implementation_specific_subscription_payload.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/qos_overriding_options.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__type_support.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics_state.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/subscription_traits.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp \
@@ -695,15 +656,29 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/wait_set_template.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/executors/executor_entities_collector.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/future_return_code.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/list_parameters_result.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__type_support.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/generic_client.hpp \
  /opt/ros/jazzy/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/message_introspection.hpp \
@@ -719,6 +694,19 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_services_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/parameter.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_value.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__type_support.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_type_descriptions_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp \
@@ -745,6 +733,18 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/get_node_clock_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_clock_interface_traits.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp \
+ /usr/include/c++/13/csignal \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp \
+ /opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp \
+ /opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__traits.hpp \
+ /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp \
+ /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/executors/static_single_threaded_executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor_event_types.hpp \
@@ -1040,22 +1040,22 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_services_interface_traits.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/get_node_logging_interface.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_logging_interface_traits.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematics_base/kinematics_base.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/kinematics_base/kinematics_base.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/pose.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/move_it_error_codes.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/class_forward.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/declare_ptr.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/logger.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit_kinematics_base_export.h \
- /home/tamar/ws_moveit/install/moveit_ros_planning/include/moveit_ros_planning/moveit/rdf_loader/rdf_loader.hpp \
- /home/tamar/ws_moveit/install/moveit_ros_planning/include/moveit_ros_planning/moveit/rdf_loader/synchronized_string_parameter.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/move_it_error_codes.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/move_it_error_codes__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/class_forward.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/macros/declare_ptr.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/logger.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit_kinematics_base_export.h \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/include/moveit_ros_planning/moveit/rdf_loader/rdf_loader.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_ros_planning/include/moveit_ros_planning/moveit/rdf_loader/synchronized_string_parameter.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/string.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__struct.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/string__builder.hpp \
@@ -1077,15 +1077,15 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/urdf/urdf/visibility_control.hpp \
  /opt/ros/jazzy/include/srdfdom/srdfdom/model.h \
  /opt/ros/jazzy/include/srdfdom/srdfdom/visibility_control.h \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/robot_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/exceptions/exceptions.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model_group.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/joint_limits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/robot_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/exceptions/exceptions.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model_group.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/joint_limits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_limits__type_support.hpp \
  /opt/ros/jazzy/include/random_numbers/random_numbers.h \
  /usr/include/boost/random/mersenne_twister.hpp \
  /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp \
@@ -1161,20 +1161,20 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /usr/include/boost/random/detail/int_float_pair.hpp \
  /usr/include/boost/random/uniform_01.hpp \
  /usr/include/boost/random/exponential_distribution.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/link_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/link_model.hpp \
  /opt/ros/jazzy/include/eigen_stl_containers/eigen_stl_containers/eigen_stl_vector_container.h \
  /usr/include/eigen3/Eigen/Core /usr/include/eigen3/Eigen/StdVector \
  /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
  /usr/include/eigen3/Eigen/src/StlSupport/details.h \
  /opt/ros/jazzy/include/geometric_shapes/geometric_shapes/check_isometry.h \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/fixed_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/floating_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/planar_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/revolute_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/prismatic_joint_model.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/robot_state.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/attached_body.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/transforms/transforms.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/fixed_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/floating_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/planar_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/revolute_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_model/prismatic_joint_model.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/robot_state.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/attached_body.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/transforms/transforms.hpp \
  /opt/ros/jazzy/include/eigen_stl_containers/eigen_stl_containers/eigen_stl_containers.h \
  /opt/ros/jazzy/include/eigen_stl_containers/eigen_stl_containers/eigen_stl_map_container.h \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/joint_trajectory.hpp \
@@ -1210,14 +1210,14 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/color_rgba.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/color_rgba__builder.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/color_rgba__type_support.hpp \
- /home/tamar/ws_moveit/src/moveit2/moveit_kinematics/kdl_kinematics_plugin/include/moveit/kdl_kinematics_plugin/kdl_kinematics_plugin.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/get_position_fk.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics/kdl_kinematics_plugin/include/moveit/kdl_kinematics_plugin/kdl_kinematics_plugin.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/get_position_fk.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__struct.hpp \
  /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/multi_dof_joint_state__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/wrench__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__struct.hpp \
  /opt/ros/jazzy/include/object_recognition_msgs/object_recognition_msgs/msg/detail/object_type__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/solid_primitive__struct.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp \
@@ -1225,13 +1225,13 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh_triangle__struct.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/plane__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__traits.hpp \
  /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/multi_dof_joint_state__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/wrench__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/attached_collision_object__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/collision_object__traits.hpp \
  /opt/ros/jazzy/include/object_recognition_msgs/object_recognition_msgs/msg/detail/object_type__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/solid_primitive__traits.hpp \
  /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/polygon__traits.hpp \
@@ -1239,31 +1239,31 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/mesh_triangle__traits.hpp \
  /opt/ros/jazzy/include/shape_msgs/shape_msgs/msg/detail/plane__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/get_position_ik.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_ik_request__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_ik_request__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/kinematic_solver_info.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_fk__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/get_position_ik.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_ik_request__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_ik_request__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/constraints__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/joint_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/position_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/bounding_volume__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/orientation_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/visibility_constraint__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/srv/detail/get_position_ik__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/kinematic_solver_info.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/kinematic_solver_info__type_support.hpp \
  /usr/include/kdl/config.h /usr/include/kdl/chainfksolver.hpp \
  /usr/include/kdl/chain.hpp /usr/include/kdl/segment.hpp \
  /usr/include/kdl/frames.hpp /usr/include/kdl/utilities/kdl-config.h \
@@ -1278,8 +1278,8 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /usr/include/kdl/jntarray.hpp /usr/include/kdl/jacobian.hpp \
  /usr/include/kdl/jntarrayvel.hpp /usr/include/kdl/jntarrayacc.hpp \
  /usr/include/kdl/solveri.hpp /usr/include/kdl/chainiksolver.hpp \
- /home/tamar/ws_moveit/src/moveit2/moveit_kinematics/kdl_kinematics_plugin/include/moveit/kdl_kinematics_plugin/joint_mimic.hpp \
- /home/tamar/ws_moveit/build/moveit_kinematics/kdl_kinematics_plugin/include/moveit_kinematics/kdl_kinematics_parameters.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics/kdl_kinematics_plugin/include/moveit/kdl_kinematics_plugin/joint_mimic.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics/kdl_kinematics_plugin/include/moveit_kinematics/kdl_kinematics_parameters.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/lifecycle_node.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp \
  /opt/ros/jazzy/include/lifecycle_msgs/lifecycle_msgs/msg/transition.hpp \
@@ -1316,24 +1316,24 @@ test/CMakeFiles/test_kinematics_plugin.dir/test_kinematics_plugin.cpp.o: \
  /opt/ros/jazzy/include/tcb_span/span.hpp \
  /opt/ros/jazzy/include/rsl/rsl/parameter_validators.hpp \
  /opt/ros/jazzy/include/rsl/rsl/export.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/conversions.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_state.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/display_trajectory.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_state/conversions.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_state.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_state__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/display_trajectory.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__struct.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__struct.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory__struct.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__struct.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__traits.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__traits.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory__traits.hpp \
  /opt/ros/jazzy/include/trajectory_msgs/trajectory_msgs/msg/detail/multi_dof_joint_trajectory_point__traits.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_trajectory/robot_trajectory.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_trajectory.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__builder.hpp \
- /home/tamar/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__type_support.hpp \
- /home/tamar/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/robot_model_test_utils.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/display_trajectory__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/robot_trajectory/robot_trajectory.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/robot_trajectory.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__builder.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_msgs/include/moveit_msgs/moveit_msgs/msg/detail/robot_trajectory__type_support.hpp \
+ /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/install/moveit_core/include/moveit_core/moveit/utils/robot_model_test_utils.hpp \
  /opt/ros/jazzy/include/srdfdom/srdfdom/srdf_writer.h

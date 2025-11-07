@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tamar/ws_moveit/src/serial/include
+CXX_INCLUDES = -I/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/serial/include
 
 CXX_FLAGS = -O3 -DNDEBUG -fPIC
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tamar/ws_moveit/src/moveit2/moveit_kinematics
+CMAKE_SOURCE_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tamar/ws_moveit/build/moveit_kinematics
+CMAKE_BINARY_DIR = /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/tamar/ws_moveit/build/moveit_kinematics && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/ws_moveit/src/moveit2/moveit_kinematics /home/tamar/ws_moveit/src/moveit2/moveit_kinematics /home/tamar/ws_moveit/build/moveit_kinematics /home/tamar/ws_moveit/build/moveit_kinematics /home/tamar/ws_moveit/build/moveit_kinematics/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_kinematics /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics /home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_kinematics/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

@@ -1,4 +1,4 @@
 -DROS_PACKAGE_NAME="moveit_setup_srdf_plugins"
 -o
-/home/tamar/ws_moveit/build/moveit_setup_srdf_plugins/include/moveit_setup_srdf_plugins/moc_rotated_header_view.cpp
-/home/tamar/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_srdf_plugins/include/moveit_setup_srdf_plugins/rotated_header_view.hpp
+/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/build/moveit_setup_srdf_plugins/include/moveit_setup_srdf_plugins/moc_rotated_header_view.cpp
+/home/tamar/RBE-594-Capstone-Gear-Alignmentr/ws_moveit/src/moveit2/moveit_setup_assistant/moveit_setup_srdf_plugins/include/moveit_setup_srdf_plugins/rotated_header_view.hpp

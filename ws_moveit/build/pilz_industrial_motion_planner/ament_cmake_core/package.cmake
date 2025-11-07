@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "pilz_industrial_motion_planner")
-set(pilz_industrial_motion_planner_VERSION "2.12.3")
+set(pilz_industrial_motion_planner_VERSION "2.14.1")
 set(pilz_industrial_motion_planner_MAINTAINER "Christian Henkel <c.henkel@pilz.de>, Immanuel Martini <i.martini@pilz.de>")
 set(pilz_industrial_motion_planner_BUILD_DEPENDS "moveit_common" "generate_parameter_library" "geometry_msgs" "moveit_msgs" "moveit_core" "moveit_ros_planning" "moveit_ros_move_group" "orocos_kdl_vendor" "pluginlib" "rclcpp" "tf2" "tf2_eigen" "tf2_geometry_msgs" "tf2_kdl" "tf2_eigen_kdl" "tf2_ros")
 set(pilz_industrial_motion_planner_BUILDTOOL_DEPENDS "ament_cmake" "eigen3_cmake_module")

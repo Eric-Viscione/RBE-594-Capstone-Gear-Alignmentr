@@ -16,7 +16,7 @@ set(_moveit_setup_assistant_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT moveit_setup_assistant_FIND_QUIETLY)
-  message(STATUS "Found moveit_setup_assistant: 2.12.3 (${moveit_setup_assistant_DIR})")
+  message(STATUS "Found moveit_setup_assistant: 2.14.1 (${moveit_setup_assistant_DIR})")
 endif()
 
 # warn when using a deprecated package

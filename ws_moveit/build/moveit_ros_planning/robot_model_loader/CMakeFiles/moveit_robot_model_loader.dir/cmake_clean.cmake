@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  ".2.12.3"
+  ".2.14.1"
   "CMakeFiles/moveit_robot_model_loader.dir/src/robot_model_loader.cpp.o"
   "CMakeFiles/moveit_robot_model_loader.dir/src/robot_model_loader.cpp.o.d"
   "libmoveit_robot_model_loader.pdb"
   "libmoveit_robot_model_loader.so"
-  "libmoveit_robot_model_loader.so.2.12.3"
+  "libmoveit_robot_model_loader.so.2.14.1"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -5,7 +5,7 @@
     <link name="world"/>
     
     <!-- Import UR20 Robot - directly include without macro call -->
-    <xacro:include filename="$(find sirgas_description)/urdf/ur20_starter2.urdf.xacro" />
+    <xacro:include filename="$(find sirgas_description)/urdf/ur20_starter.urdf.xacro" />
 
     <!-- Import PBA Robot - directly include without macro call -->
     <xacro:include filename="$(find sirgas_description)/urdf/pba2.urdf.xacro" />

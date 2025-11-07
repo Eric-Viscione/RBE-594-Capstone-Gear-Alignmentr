@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "moveit_kinematics")
-set(moveit_kinematics_VERSION "2.12.3")
+set(moveit_kinematics_VERSION "2.14.1")
 set(moveit_kinematics_MAINTAINER "Henning Kayser <henningkayser@picknik.ai>, Tyler Weaver <tyler@picknik.ai>, G.A. vd. Hoorn <g.a.vanderhoorn@tudelft.nl>, Jorge Nicho <jorge.nicho@swri.org>, MoveIt Release Team <moveit_releasers@googlegroups.com>")
 set(moveit_kinematics_BUILD_DEPENDS "moveit_common" "moveit_core" "class_loader" "pluginlib" "generate_parameter_library" "eigen" "tf2" "tf2_kdl" "orocos_kdl_vendor" "moveit_msgs" "moveit_ros_planning" "rsl")
 set(moveit_kinematics_BUILDTOOL_DEPENDS "ament_cmake")
