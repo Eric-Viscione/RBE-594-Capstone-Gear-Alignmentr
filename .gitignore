@@ -60,3 +60,4 @@ RBE594_ws/install/
 RBE594_ws/log/
 **/__pycache__/
 *.pyc
+/venv
