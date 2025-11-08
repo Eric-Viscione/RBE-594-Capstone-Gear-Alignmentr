@@ -14,7 +14,7 @@
     <xacro:include filename="$(find sirgas_description)/urdf/camera2.urdf.xacro" />
 
     <!-- Import Cube for test grabbing -->
-    <xacro:include filename="$(find sirgas_description)/urdf/cube.urdf.xacro" />
+    <!-- <xacro:include filename="$(find sirgas_description)/urdf/cube.urdf.xacro" /> -->
 
     <ros2_control name="combined_controller" type="system">  
         <hardware>

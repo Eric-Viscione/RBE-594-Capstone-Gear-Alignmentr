@@ -343,7 +343,7 @@ class MoveItPanda(Node):
         orient_constraint.absolute_x_axis_tolerance = 5e-4
         orient_constraint.absolute_y_axis_tolerance = 5e-4
         orient_constraint.absolute_z_axis_tolerance = 5e-4
-        orient_constraint.weight = 1.0
+        orient_constraint.weight = 0.7
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints

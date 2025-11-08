@@ -26,6 +26,7 @@ install(PROGRAMS
   scripts/move_pba.py
   scripts/grab_gear.py
   scripts/grab_cube.py
+  scripts/grab_vcube.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
