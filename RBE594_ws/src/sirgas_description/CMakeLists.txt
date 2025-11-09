@@ -27,6 +27,7 @@ install(PROGRAMS
   scripts/grab_gear.py
   scripts/grab_cube.py
   scripts/grab_vcube.py
+  scripts/grab_vgears.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -5,7 +5,7 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 moveit_simple_controller_manager:
   controller_names:
     - panda_arm_controller
-    - panda_hand_controller
+    - hand_controller
 
   panda_arm_controller:
     type: FollowJointTrajectory
@@ -25,7 +25,7 @@ moveit_simple_controller_manager:
     execution_duration_monitoring: false
     allowed_execution_duration_scaling: 50.0  
     allowed_goal_duration_margin: 10.0 
-  panda_hand_controller:
+  hand_controller:
     type: FollowJointTrajectory
     joints:
       - panda_finger_joint1

@@ -22,7 +22,7 @@ from moveit_msgs.msg import AttachedCollisionObject
 GEAR_HEIGHT = 0.025   # Height 2.5 cm
 GEAR_DIAMETER = 0.07  # Diameter 7 cm (User corrected value)
 GEAR_RADIUS = GEAR_DIAMETER / 2.0 # 0.035m
-GEAR_BASE_Z = 0.125   # Base Z position
+GEAR_BASE_Z = 0.15   # Base Z position
 GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) # 0.1375m
 # -----------------------------
 
@@ -50,7 +50,7 @@ class MoveItPanda(Node):
         self.gripper_positions = {
             'close': 0.0,
             'open': 0.04,
-            'grasp': 0.0325
+            'grasp': 0.0
         }
         
         self.get_logger().info("MoveIt Panda node initialized")
@@ -78,7 +78,7 @@ class MoveItPanda(Node):
         self.current_joint_state = filtered_state
         self.joint_state_event.set()
 
-    def wait_for_joint_state(self, timeout=10.0):
+    def wait_for_joint_state(self, timeout=1.0):
         """Wait for joint state message"""
         self.get_logger().info("Waiting for joint state...")
         if self.current_joint_state is not None:
@@ -118,7 +118,6 @@ class MoveItPanda(Node):
         ps_msg.world.collision_objects.append(co_remove_world)
         
         # 2. Remove from the attached list (AttachedCollisionObject REMOVE)
-        # This handles cases where it was attached but failed to remove from the world.
         aco_detach = AttachedCollisionObject()
         aco_detach.link_name = "panda_hand"
         aco_detach.object.id = "first_gear"
@@ -173,13 +172,11 @@ class MoveItPanda(Node):
         """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
         self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
         
-        # Re-create geometry and pose (CRITICAL: MoveIt needs this for successful attachment)
+        # Re-create geometry and pose 
         cylinder = SolidPrimitive()
         cylinder.type = SolidPrimitive.CYLINDER
         cylinder.dimensions = [GEAR_HEIGHT, GEAR_RADIUS] 
         
-        # NOTE: The pose should be the pose relative to the link it is attached to (panda_hand), 
-        # but in this case, we use the world frame pose and let MoveIt transform it on attach.
         gear_pose = Pose()
         gear_pose.position.x = 0.0
         gear_pose.position.y = 0.0
@@ -193,12 +190,11 @@ class MoveItPanda(Node):
         aco.object.id = "first_gear"
         aco.object.operation = CollisionObject.ADD 
         
-        # FIX: Explicitly include geometry when attaching
+        # Explicitly include geometry when attaching
         aco.object.primitives.append(cylinder) 
         aco.object.primitive_poses.append(gear_pose) 
 
-        # FIX: Define the links the attached object is allowed to touch
-        # This prevents self-collision errors (gear colliding with fingers)
+        # Define the links the attached object is allowed to touch (CRITICAL FIX)
         aco.touch_links = ['panda_link7', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
         
         ps_msg = PlanningScene()
@@ -231,10 +227,9 @@ class MoveItPanda(Node):
         
         self.get_logger().info("'first_gear' explicitly removed from world collision objects.")
     
-    # NOTE: The 'detach_gear_from_hand' function was removed as 'clear_gear_references' handles this robustly for final cleanup.
-
-    def plan_with_moveit(self, target_joints=None, target_pose=None):
-        """Use MoveIt to plan a trajectory (function body omitted for brevity but is necessary)"""
+    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
+    def plan_with_moveit(self, target_joints=None, target_pose=None): 
+        """Use MoveIt to plan a trajectory"""
         self.get_logger().info("Planning with MoveIt...")
         
         if not self.moveit_action_client.wait_for_server(timeout_sec=10.0):
@@ -244,10 +239,10 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 25  
-        request.allowed_planning_time = 10.0 
-        request.max_velocity_scaling_factor = 0.5
-        request.max_acceleration_scaling_factor = 0.5
+        request.num_planning_attempts = 100 
+        request.allowed_planning_time = 60.0 
+        request.max_velocity_scaling_factor = 5.0
+        request.max_acceleration_scaling_factor = 5.0
         
         if self.current_joint_state:
             robot_state = RobotState()
@@ -266,7 +261,9 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 10
+        planning_options.replan_attempts = 100
+        
+        # <<< REMOVED: planning_options.allow_start_state_collision = allow_start_state_collision >>>
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -292,7 +289,7 @@ class MoveItPanda(Node):
             return None
 
     def create_joint_constraint(self, target_joints):
-        """Create joint constraints for planning (function body omitted for brevity but is necessary)"""
+        """Create joint constraints for planning"""
         from moveit_msgs.msg import Constraints, JointConstraint
         
         constraints = Constraints()
@@ -314,7 +311,7 @@ class MoveItPanda(Node):
         return constraints
 
     def create_pose_constraint(self, target_pose):
-        """Create pose constraints for planning (function body omitted for brevity but is necessary)"""
+        """Create pose constraints for planning"""
         from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
         from shape_msgs.msg import SolidPrimitive
         
@@ -340,16 +337,16 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 5e-4
-        orient_constraint.absolute_y_axis_tolerance = 5e-4
-        orient_constraint.absolute_z_axis_tolerance = 5e-4
-        orient_constraint.weight = 0.7
+        orient_constraint.absolute_x_axis_tolerance = 5e-5
+        orient_constraint.absolute_y_axis_tolerance = 5e-5
+        orient_constraint.absolute_z_axis_tolerance = 5e-5
+        orient_constraint.weight = 0.8
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
 
     def execute_trajectory(self, joint_trajectory):
-        """Execute trajectory using direct action client (function body omitted for brevity but is necessary)"""
+        """Execute trajectory using direct action client"""
         self.get_logger().info("Executing trajectory...")
         
         if not self.trajectory_action_client.wait_for_server(timeout_sec=5.0):
@@ -379,8 +376,9 @@ class MoveItPanda(Node):
             self.get_logger().error("Trajectory execution failed!")
             return False
 
+    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
     def move_to_joints(self, target_joints):
-        """Move to joint positions using MoveIt planning (function body omitted for brevity but is necessary)"""
+        """Move to joint positions using MoveIt planning"""
         if not self.wait_for_joint_state():
             self.get_logger().warn("Continuing with default joint state")
             
@@ -390,7 +388,7 @@ class MoveItPanda(Node):
         return False
 
     def move_gripper(self, position):
-        """Move gripper to specified position using action client, with a timeout. (function body omitted for brevity but is necessary)"""
+        """Move gripper to specified position using action client, with a timeout."""
         self.get_logger().info(f"Moving gripper to position: {position}")
         
         if not self.gripper_action_client.wait_for_server(timeout_sec=5.0):
@@ -400,7 +398,7 @@ class MoveItPanda(Node):
         goal_msg = GripperCommand.Goal()
         command = GripperCommandMsg()
         command.position = position
-        command.max_effort = 10.0
+        command.max_effort = 100.0
         
         goal_msg.command = command
         
@@ -453,8 +451,9 @@ class MoveItPanda(Node):
         self.get_logger().error(f"Gripper movement failed with status: {status}")
         return False
 
-    def move_to_pose(self, target_pose: Pose):
-        """Move the end-effector to a specified Pose (position and orientation) using MoveIt planning. (function body omitted for brevity but is necessary)"""
+    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
+    def move_to_pose(self, target_pose: Pose): 
+        """Move the end-effector to a specified Pose (position and orientation) using MoveIt planning."""
         if not self.wait_for_joint_state():
             self.get_logger().warn("Continuing with default joint state")
             
@@ -467,6 +466,7 @@ class MoveItPanda(Node):
         """
         Execute the complete motion sequence.
         """
+        from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, OrientationConstraint
         self.get_logger().info("Starting complete motion sequence...")
         
         # --- STEP 0: FORCEFUL CLEANUP ---
@@ -497,7 +497,7 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.250 
+        PICK_Z = 0.255
         PRE_PICK_Z = 0.35
         # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
@@ -529,9 +529,11 @@ class MoveItPanda(Node):
             
             # 5A: Attach gear to the hand
             self.attach_gear_to_hand()
+            time.sleep(3.0)
 
             # 5B: Explicitly remove the original world copy to avoid CheckStartStateCollision
             self.remove_gear_from_world_after_attach()
+            time.sleep(3.0)
         else:
             self.get_logger().error("FAILED: Gripper failed to close!")
             return False
@@ -544,6 +546,8 @@ class MoveItPanda(Node):
         lift_pose = Pose(position=Point(x=0.0, y=0.0, z=LIFT_Z), orientation=target_pose.orientation)
         
         self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
+        
+        # <<< CRITICAL FIX: The call is now simplified, relying on touch_links >>>
         if self.move_to_pose(lift_pose):
             self.get_logger().info("SUCCESS: Lift complete!")
         else:
@@ -562,9 +566,7 @@ class MoveItPanda(Node):
             self.get_logger().error("FAILED: Could not reach ready position! Proceeding to cleanup.")
             # Do NOT return here, ensuring cleanup runs.
 
-        # FIX: The redundant call to detach_gear_from_hand() was removed.
-        # We rely solely on clear_gear_references() now for final, robust cleanup.
-        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---")
+        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
 
         if not move_success:

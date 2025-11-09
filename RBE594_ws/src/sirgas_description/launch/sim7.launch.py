@@ -11,8 +11,8 @@ from moveit_configs_utils import MoveItConfigsBuilder
 from moveit_configs_utils.launches import generate_move_group_launch
 
 # Define the package name
-packageName = 'moveit_test_ws'
-test_ws_path = FindPackageShare('moveit_test_ws').find('moveit_test_ws')
+packageName = 'test_ws'
+test_ws_path = FindPackageShare('test_ws').find('test_ws')
 sirgas_path  = FindPackageShare('sirgas_description').find('sirgas_description')
  # Absolute package path
 pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
@@ -29,6 +29,52 @@ rvizConfigPath = os.path.join(pkgPath, 'config', 'moveit.rviz')
 
 # Define the new controller manager name
 controller_manager_name = '/combined_controller_manager'
+
+# Absolute xacro model path for the cube
+cubeXacroPath = os.path.join(sirgas_path, 'urdf', 'cube.urdf.xacro')
+
+# Get the cube description from the xacro model file
+cube_desc = xacro.process_file(cubeXacroPath).toxml()
+
+# Define a parameter with the cube xacro description
+cube_description = {'cube_description': cube_desc}
+
+'''-----------Gear Paths-----------'''
+# Absolute xacro model path for the Starter Gear
+starter_gearXacroPath = os.path.join(sirgas_path, 'urdf', 'starter_gear.urdf.xacro')
+
+# Get the Starter Gear description from the xacro model file
+starter_gear_desc = xacro.process_file(starter_gearXacroPath).toxml()
+
+# Define a parameter with the Starter Gear xacro description
+starter_gear_description = {'starter_gear_description': starter_gear_desc}
+
+# Absolute xacro model path for the First Gear
+first_gearXacroPath = os.path.join(sirgas_path, 'urdf', 'first_gear.urdf.xacro')
+
+# Get the First Gear description from the xacro model file
+first_gear_desc = xacro.process_file(first_gearXacroPath).toxml()
+
+# Define a parameter with the First Gear xacro description
+first_gear_description = {'first_gear_description': first_gear_desc}
+
+# Absolute xacro model path for the Second Gear
+second_gearXacroPath = os.path.join(sirgas_path, 'urdf', 'second_gear.urdf.xacro')
+
+# Get the Second Gear description from the xacro model file
+second_gear_desc = xacro.process_file(second_gearXacroPath).toxml()
+
+# Define a parameter with the Second Gear xacro description
+second_gear_description = {'second_gear_description': second_gear_desc}
+
+# Absolute xacro model path for the Third Gear
+third_gearXacroPath = os.path.join(sirgas_path, 'urdf', 'third_gear.urdf.xacro')
+
+# Get the Third Gear description from the xacro model file
+third_gear_desc = xacro.process_file(third_gearXacroPath).toxml()
+
+# Define a parameter with the Third Gear xacro description
+third_gear_description = {'second_gear_description': third_gear_desc}
 
 
 def generate_launch_description():
@@ -64,7 +110,7 @@ def generate_launch_description():
 
     # Moveit Config
     moveit_config = (
-        MoveItConfigsBuilder('panda_pba_robots', package_name='moveit_test_ws')
+        MoveItConfigsBuilder('panda_pba_robots', package_name='test_ws')
         .robot_description(file_path='config/panda_pba_robots.urdf.xacro')
         .robot_description_semantic(file_path='config/panda_pba_robots.srdf')
         .robot_description_kinematics(file_path='config/kinematics.yaml')
@@ -171,6 +217,87 @@ def generate_launch_description():
             {'use_sim_time': use_sim_time}
         ],
     )
+    # Spawn cube
+    gz_spawn_cube = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            cube_desc,
+            '-name',
+            'pickup_cube',
+            '-allow_renaming',
+            'true',
+            # Set the initial position (e.g., at x=0, y=-1.0, z=0.025 for a 0.05m cube)
+            '-x','0','-y','-1.0','-z','0.025' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    gz_spawn_starter_gear = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            starter_gear_desc,
+            '-name',
+            'starter_gear',
+            '-allow_renaming',
+            'true',
+            '-x','-0.375','-y','0.0','-z','0.125' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    gz_spawn_first_gear = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            first_gear_desc,
+            '-name',
+            'first_gear',
+            '-allow_renaming',
+            'true',
+            '-x','0.0','-y','0.0','-z','0.125' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    gz_spawn_second_gear = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            second_gear_desc,
+            '-name',
+            'second_gear',
+            '-allow_renaming',
+            'true',
+            '-x','0.25','-y','0.0','-z','0.125' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    gz_spawn_third_gear = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            third_gear_desc,
+            '-name',
+            'third_gear',
+            '-allow_renaming',
+            'true',
+            '-x','0.45','-y','0.0','-z','0.125' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
 
     # Joint State Broadcasters
     panda_jsb_spawner = launch_ros.actions.Node(
@@ -217,9 +344,14 @@ def generate_launch_description():
         pba_jsb_spawner, # Use specific pba joint state broadcaster
         spawn_sim_cam, # New: Camera Spawner
         timer_bridge_sim_cam, # New: Timer and Camera Bridge
-        pba_v_controller_spawner,
+        # pba_v_controller_spawner,
         arm_controller,
         hand_controller,
+        # gz_spawn_cube,
+        gz_spawn_starter_gear,
+        gz_spawn_first_gear,
+        gz_spawn_second_gear,
+        gz_spawn_third_gear,
         # ... (include all other necessary controller spawners like scaled_joint_trajectory_controller)
     ]
     

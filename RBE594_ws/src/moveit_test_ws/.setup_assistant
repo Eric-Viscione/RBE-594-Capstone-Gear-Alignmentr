@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Tamar Boone
     author_email: tboone@wpi.edu
-    generated_timestamp: 1762553717
+    generated_timestamp: 1762636636
   control_xacro:
     command:
       - position

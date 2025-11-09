@@ -30,6 +30,15 @@ rvizConfigPath = os.path.join(pkgPath, 'config', 'moveit.rviz')
 # Define the new controller manager name
 controller_manager_name = '/combined_controller_manager'
 
+# Absolute xacro model path for the cube
+cubeXacroPath = os.path.join(sirgas_path, 'urdf', 'cube.urdf.xacro')
+
+# Get the cube description from the xacro model file
+cube_desc = xacro.process_file(cubeXacroPath).toxml()
+
+# Define a parameter with the cube xacro description
+cube_description = {'cube_description': cube_desc}
+
 
 def generate_launch_description():
     # Absolute package path
@@ -171,6 +180,23 @@ def generate_launch_description():
             {'use_sim_time': use_sim_time}
         ],
     )
+    # Spawn cube
+    gz_spawn_cube = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-string',
+            cube_desc,
+            '-name',
+            'pickup_cube',
+            '-allow_renaming',
+            'true',
+            # Set the initial position (e.g., at x=0, y=-1.0, z=0.025 for a 0.05m cube)
+            '-x','0','-y','-1.0','-z','0.025' 
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
 
     # Joint State Broadcasters
     panda_jsb_spawner = launch_ros.actions.Node(
@@ -220,6 +246,7 @@ def generate_launch_description():
         pba_v_controller_spawner,
         arm_controller,
         hand_controller,
+        # gz_spawn_cube,
         # ... (include all other necessary controller spawners like scaled_joint_trajectory_controller)
     ]
     
