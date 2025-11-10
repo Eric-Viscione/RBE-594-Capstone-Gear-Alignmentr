@@ -40,7 +40,7 @@
     <joint name="liner2_pbs" type="fixed">
         <parent link="starter_gear"/>
         <child link="liner2"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.0655"/>
         <axis xyz="0 0 1"/>
     </joint>
 

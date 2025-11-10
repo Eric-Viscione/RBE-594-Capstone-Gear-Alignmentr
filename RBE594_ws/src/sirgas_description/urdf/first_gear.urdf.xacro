@@ -36,7 +36,7 @@
     <joint name="liner4_pbf" type="fixed">
         <parent link="first_gear"/>
         <child link="liner4"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.0655"/>
         <axis xyz="0 0 1"/>
     </joint>
 

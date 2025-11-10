@@ -230,7 +230,7 @@ def generate_launch_description():
             '-allow_renaming',
             'true',
             # Set the initial position (e.g., at x=0, y=-1.0, z=0.025 for a 0.05m cube)
-            '-x','0','-y','-1.0','-z','0.025' 
+            '-x','0','-y','-1.0','-z','0.025',
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )
@@ -262,7 +262,7 @@ def generate_launch_description():
             'first_gear',
             '-allow_renaming',
             'true',
-            '-x','0.0','-y','0.0','-z','0.125' 
+            '-x','0.0','-y','0.0','-z','0.125'
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )

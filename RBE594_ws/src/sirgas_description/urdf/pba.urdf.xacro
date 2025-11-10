@@ -30,4 +30,81 @@
         </inertial>
     </link>
 
+    <!-- Liner Info -->
+    <link name="liner1">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner1_pbs" type="fixed">
+        <parent link="peg_board"/>
+        <child link="liner1"/>
+        <origin rpy="0 0 0" xyz="-0.375 -0.02225 0.191"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="liner3">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner3_pbf" type="fixed">
+        <parent link="peg_board"/>
+        <child link="liner3"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.02225 0.1905"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="liner5">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner5_pbf" type="fixed">
+        <parent link="peg_board"/>
+        <child link="liner5"/>
+        <origin rpy="0 0 0" xyz="0.25 -0.02225 0.1905"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="liner7">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner7_pbt" type="fixed">
+        <parent link="peg_board"/>
+        <child link="liner7"/>
+        <origin rpy="0 0 0" xyz="0.45 -0.02225 0.1905"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
 </robot>

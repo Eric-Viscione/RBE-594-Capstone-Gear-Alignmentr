@@ -41,7 +41,7 @@
     <joint name="liner8_pbt" type="fixed">
         <parent link="third_gear"/>
         <child link="liner8"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.0655"/>
         <axis xyz="0 0 1"/>
     </joint>
 

@@ -19,10 +19,10 @@ from rclpy.executors import MultiThreadedExecutor
 from moveit_msgs.msg import AttachedCollisionObject 
 
 # --- CONSTANTS FOR GRASPING ---
-GEAR_HEIGHT = 0.025   # Height 2.5 cm
+GEAR_HEIGHT = 0.07   # Height 2.5 cm
 GEAR_DIAMETER = 0.07  # Diameter 7 cm (User corrected value)
 GEAR_RADIUS = GEAR_DIAMETER / 2.0 # 0.035m
-GEAR_BASE_Z = 0.15   # Base Z position
+GEAR_BASE_Z = 0.12   # Base Z position
 GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) # 0.1375m
 # -----------------------------
 
@@ -337,10 +337,10 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 5e-5
-        orient_constraint.absolute_y_axis_tolerance = 5e-5
-        orient_constraint.absolute_z_axis_tolerance = 5e-5
-        orient_constraint.weight = 0.8
+        orient_constraint.absolute_x_axis_tolerance = 2.5e-5
+        orient_constraint.absolute_y_axis_tolerance = 2.5e-5
+        orient_constraint.absolute_z_axis_tolerance = 2.5e-5
+        orient_constraint.weight = 1.0
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
@@ -497,10 +497,11 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.255
-        PRE_PICK_Z = 0.35
+        PICK_Z = 0.266
+        PRE_PICK_Z = 0.4
         # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
+        y_parallel_orientation = Quaternion(x=-np.sqrt(2)/2, y=np.sqrt(2)/2, z=np.sqrt(2)/2, w=np.sqrt(2)/2)
 
         # 4A. Move to Pre-Pick Waypoint (High Z)
         pre_pick_pose = Pose(position=Point(x=0.0, y=0.0, z=PRE_PICK_Z), orientation=face_down_orientation)

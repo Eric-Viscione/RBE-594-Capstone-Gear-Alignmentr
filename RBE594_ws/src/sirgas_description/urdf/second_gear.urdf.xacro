@@ -40,7 +40,7 @@
     <joint name="liner6_pb2" type="fixed">
         <parent link="second_gear"/>
         <child link="liner6"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.0655"/>
         <axis xyz="0 0 1"/>
     </joint>
 
