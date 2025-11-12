@@ -19,11 +19,10 @@ from rclpy.executors import MultiThreadedExecutor
 from moveit_msgs.msg import AttachedCollisionObject 
 
 # --- CONSTANTS FOR GRASPING ---
-GEAR_HEIGHT = 0.07   # Height 2.5 cm
-GEAR_DIAMETER = 0.07  # Diameter 7 cm (User corrected value)
-GEAR_RADIUS = GEAR_DIAMETER / 2.0 # 0.035m
-GEAR_BASE_Z = 0.12   # Base Z position
-GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) # 0.1375m
+GEAR_HEIGHT = 0.1   # Height 10 cm
+GEAR_SIZE = 0.07  # Diameter 7 cm (User corrected value)
+GEAR_BASE_Z = 0.0  # Base Z position
+GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) 
 # -----------------------------
 
 class MoveItPanda(Node):
@@ -50,7 +49,7 @@ class MoveItPanda(Node):
         self.gripper_positions = {
             'close': 0.0,
             'open': 0.04,
-            'grasp': 0.0
+            'grasp': 0.015
         }
         
         self.get_logger().info("MoveIt Panda node initialized")
@@ -137,23 +136,23 @@ class MoveItPanda(Node):
 
     def add_gear_to_scene(self):
         """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
-        self.get_logger().info(f"Adding 'first_gear' (Cylinder D={GEAR_DIAMETER}m, R={GEAR_RADIUS}m) to the planning scene...")
+        self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
         
         gear_co = CollisionObject()
         gear_co.header.frame_id = "world" 
         gear_co.id = "first_gear"
         
-        cylinder = SolidPrimitive()
-        cylinder.type = SolidPrimitive.CYLINDER
-        cylinder.dimensions = [GEAR_HEIGHT, GEAR_RADIUS] 
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
         
         gear_pose = Pose()
         gear_pose.position.x = 0.0
-        gear_pose.position.y = 0.0
+        gear_pose.position.y = -1.0
         gear_pose.position.z = GEAR_CENTER_Z 
         gear_pose.orientation.w = 1.0 
         
-        gear_co.primitives.append(cylinder) 
+        gear_co.primitives.append(box) 
         gear_co.primitive_poses.append(gear_pose) 
         gear_co.operation = CollisionObject.ADD 
         
@@ -173,13 +172,14 @@ class MoveItPanda(Node):
         self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
         
         # Re-create geometry and pose 
-        cylinder = SolidPrimitive()
-        cylinder.type = SolidPrimitive.CYLINDER
-        cylinder.dimensions = [GEAR_HEIGHT, GEAR_RADIUS] 
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        
         
         gear_pose = Pose()
         gear_pose.position.x = 0.0
-        gear_pose.position.y = 0.0
+        gear_pose.position.y = -1.0
         gear_pose.position.z = GEAR_CENTER_Z 
         gear_pose.orientation.w = 1.0 
 
@@ -191,7 +191,7 @@ class MoveItPanda(Node):
         aco.object.operation = CollisionObject.ADD 
         
         # Explicitly include geometry when attaching
-        aco.object.primitives.append(cylinder) 
+        aco.object.primitives.append(box) 
         aco.object.primitive_poses.append(gear_pose) 
 
         # Define the links the attached object is allowed to touch (CRITICAL FIX)
@@ -239,10 +239,10 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 100 
+        request.num_planning_attempts = 1000
         request.allowed_planning_time = 60.0 
-        request.max_velocity_scaling_factor = 5.0
-        request.max_acceleration_scaling_factor = 5.0
+        request.max_velocity_scaling_factor = 1.0
+        request.max_acceleration_scaling_factor = 1.0
         
         if self.current_joint_state:
             robot_state = RobotState()
@@ -261,9 +261,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 100
-        
-        # <<< REMOVED: planning_options.allow_start_state_collision = allow_start_state_collision >>>
+        planning_options.replan_attempts = 1000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -332,14 +330,14 @@ class MoveItPanda(Node):
         pos_constraint.weight = 1.0 
         constraints.position_constraints.append(pos_constraint)
         
-        # Orientation constraint (loose)
+        # Orientation constraint (tight)
         orient_constraint = OrientationConstraint()
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 2.5e-5
-        orient_constraint.absolute_y_axis_tolerance = 2.5e-5
-        orient_constraint.absolute_z_axis_tolerance = 2.5e-5
+        orient_constraint.absolute_x_axis_tolerance = 1.75e-5
+        orient_constraint.absolute_y_axis_tolerance = 1.75e-5
+        orient_constraint.absolute_z_axis_tolerance = 1.75e-5
         orient_constraint.weight = 1.0
         constraints.orientation_constraints.append(orient_constraint)
         
@@ -398,7 +396,7 @@ class MoveItPanda(Node):
         goal_msg = GripperCommand.Goal()
         command = GripperCommandMsg()
         command.position = position
-        command.max_effort = 100.0
+        command.max_effort = 1750.0
         
         goal_msg.command = command
         
@@ -497,23 +495,22 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.266
-        PRE_PICK_Z = 0.4
+        PICK_Z = 0.1725
+        PRE_PICK_Z = 0.25
         # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
-        y_parallel_orientation = Quaternion(x=-np.sqrt(2)/2, y=np.sqrt(2)/2, z=np.sqrt(2)/2, w=np.sqrt(2)/2)
 
         # 4A. Move to Pre-Pick Waypoint (High Z)
-        pre_pick_pose = Pose(position=Point(x=0.0, y=0.0, z=PRE_PICK_Z), orientation=face_down_orientation)
+        pre_pick_pose = Pose(position=Point(x=0.0, y=-1.0, z=PRE_PICK_Z), orientation=face_down_orientation)
         
         self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
         if not self.move_to_pose(pre_pick_pose):
             self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
             return False
-        time.sleep(1.0)
+        time.sleep(5.0)
 
         # 4B. Move down to Final Pick Position (Low Z)
-        target_pose = Pose(position=Point(x=0.0, y=0.0, z=PICK_Z), orientation=face_down_orientation)
+        target_pose = Pose(position=Point(x=0.0, y=-1.0, z=PICK_Z), orientation=face_down_orientation)
         
         self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
         if self.move_to_pose(target_pose):
@@ -521,7 +518,7 @@ class MoveItPanda(Node):
         else:
             self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
             return False
-        time.sleep(2.0)
+        time.sleep(5.0)
         
         # 5. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
         self.get_logger().info(f"Step 5: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
@@ -542,13 +539,11 @@ class MoveItPanda(Node):
         time.sleep(3.0)
         
         # 6. LIFT STRAIGHT UP 0.3m
-        LIFT_DISTANCE = 0.30
+        LIFT_DISTANCE = 0.40
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
-        lift_pose = Pose(position=Point(x=0.0, y=0.0, z=LIFT_Z), orientation=target_pose.orientation)
+        lift_pose = Pose(position=Point(x=0.0, y=-1.0, z=LIFT_Z), orientation=target_pose.orientation)
         
         self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
-        
-        # <<< CRITICAL FIX: The call is now simplified, relying on touch_links >>>
         if self.move_to_pose(lift_pose):
             self.get_logger().info("SUCCESS: Lift complete!")
         else:
@@ -557,15 +552,37 @@ class MoveItPanda(Node):
 
         time.sleep(2.0)
         
-        # 7. Move arm back to ready position (safe endpoint)
+        # 7. Move arm back to ready position
         self.get_logger().info("Step 7: Moving arm back to ready position...")
         move_success = self.move_to_joints(self.poses['ready'])
         
         if move_success:
             self.get_logger().info("SUCCESS: Ready position reached!")
         else:
-            self.get_logger().error("FAILED: Could not reach ready position! Proceeding to cleanup.")
-            # Do NOT return here, ensuring cleanup runs.
+            self.get_logger().error("FAILED: Could not reach ready position!")
+
+        time.sleep(2.0)
+        
+        # 8. Place gear on Peg Board
+        self.get_logger().info("Step 8: Moving Gear to Peg Board...")
+        place_pose = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=target_pose.orientation)
+        if self.move_to_pose(place_pose):
+            self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
+        else:
+            self.get_logger().error("FAILED: Could not place Gear on Peg Board!")
+            return False
+        
+        time.sleep(15.0)
+
+        # 9. Operate gripper (Open)
+        self.get_logger().info("Step 2: Opening gripper...")
+        if self.move_gripper(self.gripper_positions['open']):
+            self.get_logger().info("SUCCESS: Gripper opened!")
+        else:
+            self.get_logger().warn("Gripper movement may have failed")
+        
+        time.sleep(1.0)
+
 
         self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
@@ -576,6 +593,8 @@ class MoveItPanda(Node):
             
         self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
         return True
+
+        
 
 def main(args=None):
     rclpy.init(args=args)

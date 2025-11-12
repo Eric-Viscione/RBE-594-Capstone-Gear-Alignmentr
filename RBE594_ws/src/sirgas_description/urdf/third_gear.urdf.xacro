@@ -32,8 +32,8 @@
             <geometry>
                 <box size="0.005 0.005 0.001"/>
             </geometry>
-            <material name="Red">
-                <color rgba="1.0 0 0 1.0" />
+            <material name="Purple">
+                <color rgba="1.0 0 1.0 1.0" />
             </material>
         </visual>
     </link>
@@ -41,7 +41,7 @@
     <joint name="liner8_pbt" type="fixed">
         <parent link="third_gear"/>
         <child link="liner8"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.0655"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.101"/>
         <axis xyz="0 0 1"/>
     </joint>
 
