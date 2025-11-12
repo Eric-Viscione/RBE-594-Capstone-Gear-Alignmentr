@@ -239,7 +239,7 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 1000
+        request.num_planning_attempts = 2000
         request.allowed_planning_time = 60.0 
         request.max_velocity_scaling_factor = 1.0
         request.max_acceleration_scaling_factor = 1.0
@@ -261,7 +261,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 1000
+        planning_options.replan_attempts = 2000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -538,7 +538,7 @@ class MoveItPanda(Node):
         
         time.sleep(3.0)
         
-        # 6. LIFT STRAIGHT UP 0.3m
+        # 6. LIFT STRAIGHT UP 0.4m
         LIFT_DISTANCE = 0.40
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
         lift_pose = Pose(position=Point(x=0.0, y=-1.0, z=LIFT_Z), orientation=target_pose.orientation)
@@ -565,7 +565,7 @@ class MoveItPanda(Node):
         
         # 8. Place gear on Peg Board
         self.get_logger().info("Step 8: Moving Gear to Peg Board...")
-        place_pose = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=0.0, y=-0.01, z=0.425), orientation=target_pose.orientation)
         if self.move_to_pose(place_pose):
             self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
         else:
