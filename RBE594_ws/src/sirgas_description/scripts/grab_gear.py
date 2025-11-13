@@ -239,8 +239,8 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 2000
-        request.allowed_planning_time = 60.0 
+        request.num_planning_attempts = 6000
+        request.allowed_planning_time = 15.0 
         request.max_velocity_scaling_factor = 1.0
         request.max_acceleration_scaling_factor = 1.0
         
@@ -261,7 +261,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 2000
+        planning_options.replan_attempts = 6000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -301,8 +301,8 @@ class MoveItPanda(Node):
             constraint = JointConstraint()
             constraint.joint_name = name
             constraint.position = position
-            constraint.tolerance_above = 0.01
-            constraint.tolerance_below = 0.01
+            constraint.tolerance_above = 0.001
+            constraint.tolerance_below = 0.001
             constraint.weight = 1.0
             constraints.joint_constraints.append(constraint)
             
@@ -338,7 +338,7 @@ class MoveItPanda(Node):
         orient_constraint.absolute_x_axis_tolerance = 1.75e-5
         orient_constraint.absolute_y_axis_tolerance = 1.75e-5
         orient_constraint.absolute_z_axis_tolerance = 1.75e-5
-        orient_constraint.weight = 1.0
+        orient_constraint.weight = 0.95
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
