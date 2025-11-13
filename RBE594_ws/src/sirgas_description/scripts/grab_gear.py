@@ -239,8 +239,8 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 6000
-        request.allowed_planning_time = 15.0 
+        request.num_planning_attempts = 8000
+        request.allowed_planning_time = 20.0 
         request.max_velocity_scaling_factor = 1.0
         request.max_acceleration_scaling_factor = 1.0
         
@@ -261,7 +261,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 6000
+        planning_options.replan_attempts = 8000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -495,13 +495,14 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.1725
+        PICK_Z = 0.08
         PRE_PICK_Z = 0.25
         # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
+        side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
 
         # 4A. Move to Pre-Pick Waypoint (High Z)
-        pre_pick_pose = Pose(position=Point(x=0.0, y=-1.0, z=PRE_PICK_Z), orientation=face_down_orientation)
+        pre_pick_pose = Pose(position=Point(x=-0.1, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
         if not self.move_to_pose(pre_pick_pose):
@@ -510,7 +511,7 @@ class MoveItPanda(Node):
         time.sleep(5.0)
 
         # 4B. Move down to Final Pick Position (Low Z)
-        target_pose = Pose(position=Point(x=0.0, y=-1.0, z=PICK_Z), orientation=face_down_orientation)
+        target_pose = Pose(position=Point(x=-0.1, y=-1.0, z=PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
         if self.move_to_pose(target_pose):
@@ -565,7 +566,7 @@ class MoveItPanda(Node):
         
         # 8. Place gear on Peg Board
         self.get_logger().info("Step 8: Moving Gear to Peg Board...")
-        place_pose = Pose(position=Point(x=0.0, y=-0.01, z=0.425), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=-0.1, y=0.0, z=0.325), orientation=target_pose.orientation)
         if self.move_to_pose(place_pose):
             self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
         else:

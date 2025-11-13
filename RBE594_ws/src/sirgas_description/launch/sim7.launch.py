@@ -344,11 +344,11 @@ def generate_launch_description():
         pba_jsb_spawner, # Use specific pba joint state broadcaster
         spawn_sim_cam, # New: Camera Spawner
         timer_bridge_sim_cam, # New: Timer and Camera Bridge
-        # pba_v_controller_spawner,
+        pba_v_controller_spawner,
         arm_controller,
         hand_controller,
         # gz_spawn_cube,
-        gz_spawn_starter_gear,
+        # gz_spawn_starter_gear,
         gz_spawn_first_gear,
         gz_spawn_second_gear,
         gz_spawn_third_gear,
