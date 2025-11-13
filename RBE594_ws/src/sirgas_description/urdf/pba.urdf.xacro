@@ -62,6 +62,70 @@
         </inertial>
     </link>
 
+    <joint name="pb_second_joint" type="continuous">
+        <parent link="peg_board"/>
+        <child link="second_gear"/>
+        <origin rpy="0 0 0" xyz="0.25 0 0.125"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="1500.0" velocity="10.0"/>
+        <dynamics damping="0.1" friction="0.01"/>
+    </joint>
+
+    <link name="second_gear">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find sirgas_description)/meshes/Second_Gear.stl" />
+            </geometry>
+            <material name="DarkGrey">
+                <color rgba="0.25 0.25 0.25 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find sirgas_description)/meshes/Second_Gear.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.141"/>
+            <origin rpy="0 0 0" xyz="0 0 0.01359774"/>
+            <inertia ixx="0.00406128" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.00406281" iyz="0.0" izx="0.0" izy= "0.0" izz="0.00794573"/>
+        </inertial>
+    </link>
+
+    <joint name="pb_third_joint" type="continuous">
+        <parent link="peg_board"/>
+        <child link="third_gear"/>
+        <origin rpy="0 0 0" xyz="0.45 0 0.125"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="1500.0" velocity="10.0"/>
+        <dynamics damping="0.1" friction="0.01"/>
+    </joint>
+
+    <link name="third_gear">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find sirgas_description)/meshes/Third_Gear.stl" />
+            </geometry>
+            <material name="DarkGrey">
+                <color rgba="0.25 0.25 0.25 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find sirgas_description)/meshes/Third_Gear.stl" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.538"/>
+            <origin rpy="0 0 0" xyz="0 0 0.01483255"/>
+            <inertia ixx="0.00095806" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.00095831" iyz="0.0" izx="0.0" izy= "0.0" izz="0.00180386"/>
+        </inertial>
+    </link>
+
     <!-- Liner Info -->
     <link name="liner1">
         <visual>
@@ -139,6 +203,25 @@
         <axis xyz="0 0 1"/>
     </joint>
 
+    <link name="liner6">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner6_pb2" type="fixed">
+        <parent link="second_gear"/>
+        <child link="liner6"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
     <link name="liner7">
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -155,6 +238,25 @@
         <parent link="peg_board"/>
         <child link="liner7"/>
         <origin rpy="0 0 0" xyz="0.45 -0.013125 0.226"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="liner8">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.005 0.005 0.001"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="liner8_pbt" type="fixed">
+        <parent link="third_gear"/>
+        <child link="liner8"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
         <axis xyz="0 0 1"/>
     </joint>
 

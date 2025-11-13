@@ -350,8 +350,8 @@ def generate_launch_description():
         # gz_spawn_cube,
         # gz_spawn_starter_gear,
         gz_spawn_first_gear,
-        gz_spawn_second_gear,
-        gz_spawn_third_gear,
+        # gz_spawn_second_gear,
+        # gz_spawn_third_gear,
         # ... (include all other necessary controller spawners like scaled_joint_trajectory_controller)
     ]
     

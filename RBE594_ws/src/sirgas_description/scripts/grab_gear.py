@@ -18,6 +18,10 @@ import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
 from moveit_msgs.msg import AttachedCollisionObject 
 
+# NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
+from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
+from moveit_msgs.srv import GetCartesianPath
+
 # --- CONSTANTS FOR GRASPING ---
 GEAR_HEIGHT = 0.1   # Height 10 cm
 GEAR_SIZE = 0.07  # Diameter 7 cm (User corrected value)
@@ -35,6 +39,7 @@ class MoveItPanda(Node):
         self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         self.planning_scene_pub = self.create_publisher(PlanningScene, '/planning_scene', 10)
+        self.cartesian_path_client = self.create_client(GetCartesianPath, '/compute_cartesian_path')
         
         self.current_joint_state = None
         self.joint_state_event = Event()
@@ -51,6 +56,9 @@ class MoveItPanda(Node):
             'open': 0.04,
             'grasp': 0.015
         }
+        
+        # NOTE: End-effector link is needed for constraint definition. Assuming "panda_hand"
+        self.end_effector_link = "panda_hand" 
         
         self.get_logger().info("MoveIt Panda node initialized")
 
@@ -239,8 +247,8 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 8000
-        request.allowed_planning_time = 20.0 
+        request.num_planning_attempts = 60000
+        request.allowed_planning_time = 30.0
         request.max_velocity_scaling_factor = 1.0
         request.max_acceleration_scaling_factor = 1.0
         
@@ -261,7 +269,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 8000
+        planning_options.replan_attempts = 60000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -301,8 +309,8 @@ class MoveItPanda(Node):
             constraint = JointConstraint()
             constraint.joint_name = name
             constraint.position = position
-            constraint.tolerance_above = 0.001
-            constraint.tolerance_below = 0.001
+            constraint.tolerance_above = 0.01
+            constraint.tolerance_below = 0.01
             constraint.weight = 1.0
             constraints.joint_constraints.append(constraint)
             
@@ -335,10 +343,10 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 1.75e-5
-        orient_constraint.absolute_y_axis_tolerance = 1.75e-5
-        orient_constraint.absolute_z_axis_tolerance = 1.75e-5
-        orient_constraint.weight = 0.95
+        orient_constraint.absolute_x_axis_tolerance = 5e-5
+        orient_constraint.absolute_y_axis_tolerance = 5e-5
+        orient_constraint.absolute_z_axis_tolerance = 5e-5
+        orient_constraint.weight = 0.9
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
@@ -460,6 +468,69 @@ class MoveItPanda(Node):
             return self.execute_trajectory(trajectory)
         return False
         
+    # ----------------------------------------------------------------------
+    # NEW FUNCTIONS FOR STEP 8B (ROS 2 Cartesian Path via Constraints)
+    # ----------------------------------------------------------------------
+
+    def move_cartesian_straight_line(self, final_pose: Pose):
+        """
+        Use MoveIt's compute_cartesian_path service for straight-line Cartesian motion.
+        This is the most direct equivalent to the RViz checkbox.
+        """
+        from moveit_msgs.srv import GetCartesianPath
+        from geometry_msgs.msg import PoseStamped
+        
+        self.get_logger().info("Computing Cartesian path...")
+        
+        # Create service client
+        cartesian_client = self.create_client(GetCartesianPath, '/compute_cartesian_path')
+        
+        if not cartesian_client.wait_for_service(timeout_sec=5.0):
+            self.get_logger().error("Cartesian path service not available!")
+            return False
+        
+        # Prepare request
+        request = GetCartesianPath.Request()
+        
+        # Set start state
+        if self.current_joint_state:
+            request.start_state.joint_state = self.current_joint_state
+        
+        request.group_name = "panda_arm"
+        request.link_name = self.end_effector_link
+        
+        # Create waypoints - for straight line, we just need the final pose
+        waypoint_pose = PoseStamped()
+        waypoint_pose.header.frame_id = "world"
+        waypoint_pose.pose = final_pose
+        request.waypoints = [waypoint_pose.pose]
+        
+        request.max_step = 0.01  # Resolution of Cartesian path
+        request.jump_threshold = 0.0  # Disable jump prevention for straight line
+        request.prismatic_jump_threshold = 0.0
+        request.revolute_jump_threshold = 0.0
+        request.avoid_collisions = False  # This is the key - don't avoid collisions
+        
+        # Send request
+        future = cartesian_client.call_async(request)
+        rclpy.spin_until_future_complete(self, future)
+        
+        if future.result() is not None:
+            response = future.result()
+            if response.error_code.val == response.error_code.SUCCESS:
+                self.get_logger().info("Cartesian path computation successful!")
+                return self.execute_trajectory(response.solution.joint_trajectory)
+            else:
+                self.get_logger().error(f"Cartesian path computation failed! Error code: {response.error_code.val}")
+        else:
+            self.get_logger().error("Service call failed!")
+        
+        return False
+
+    # ----------------------------------------------------------------------
+    # END OF NEW FUNCTIONS
+    # ----------------------------------------------------------------------
+
     def execute_complete_sequence(self):
         """
         Execute the complete motion sequence.
@@ -495,14 +566,13 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.08
+        PICK_Z = 0.075
         PRE_PICK_Z = 0.25
-        # Quaternion for the gripper facing straight down (x=sqrt(2)/2, y=sqrt(2)/2)
-        face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
+        # Orientation for the gripper facing to the side (Y-axis down)
         side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
 
         # 4A. Move to Pre-Pick Waypoint (High Z)
-        pre_pick_pose = Pose(position=Point(x=-0.1, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
+        pre_pick_pose = Pose(position=Point(x=-0.1075, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
         if not self.move_to_pose(pre_pick_pose):
@@ -511,7 +581,7 @@ class MoveItPanda(Node):
         time.sleep(5.0)
 
         # 4B. Move down to Final Pick Position (Low Z)
-        target_pose = Pose(position=Point(x=-0.1, y=-1.0, z=PICK_Z), orientation=side_orientation)
+        target_pose = Pose(position=Point(x=-0.1075, y=-1.0, z=PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
         if self.move_to_pose(target_pose):
@@ -540,9 +610,10 @@ class MoveItPanda(Node):
         time.sleep(3.0)
         
         # 6. LIFT STRAIGHT UP 0.4m
-        LIFT_DISTANCE = 0.40
+        LIFT_DISTANCE = 0.4
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
-        lift_pose = Pose(position=Point(x=0.0, y=-1.0, z=LIFT_Z), orientation=target_pose.orientation)
+        # Using -0.1, -1.0 for X/Y position from 4B/5/6
+        lift_pose = Pose(position=Point(x=-0.1, y=-1.0, z=LIFT_Z), orientation=target_pose.orientation) 
         
         self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
         if self.move_to_pose(lift_pose):
@@ -561,22 +632,38 @@ class MoveItPanda(Node):
             self.get_logger().info("SUCCESS: Ready position reached!")
         else:
             self.get_logger().error("FAILED: Could not reach ready position!")
+            return False # Fail if this move fails
 
         time.sleep(2.0)
         
-        # 8. Place gear on Peg Board
-        self.get_logger().info("Step 8: Moving Gear to Peg Board...")
-        place_pose = Pose(position=Point(x=-0.1, y=0.0, z=0.325), orientation=target_pose.orientation)
-        if self.move_to_pose(place_pose):
+        # Define the final drop pose (Place Pose) and the approach pose
+        pre_drop_pose = Pose(position=Point(x=-0.1075, y=0.0, z=0.45), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=-0.1075, y=0.0, z=0.325), orientation=target_pose.orientation)
+        
+        # 8A. Move to Pre-Drop Location (PTP Move)
+        self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
+        if self.move_to_pose(pre_drop_pose):
+            self.get_logger().info("SUCCESS: Pre-Drop Location reached!")
+        else:
+            self.get_logger().error("FAILED: Could not reach Pre-Drop Location!")
+            return False
+            
+        time.sleep(5.0)
+
+        # 8B. Drop Gear via Cartesian Path (NEW STEP)
+        self.get_logger().info("Step 8B: Dropping Gear via Cartesian Path (Linear Down) to Z=0.325m...")
+        # This uses path constraints (ROS 2 method) to ensure a straight vertical drop 
+        # while maintaining the X and Y coordinates.
+        if self.move_cartesian_straight_line(place_pose):
             self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
         else:
-            self.get_logger().error("FAILED: Could not place Gear on Peg Board!")
+            self.get_logger().error("FAILED: Could not execute Cartesian Drop!")
             return False
         
         time.sleep(15.0)
 
         # 9. Operate gripper (Open)
-        self.get_logger().info("Step 2: Opening gripper...")
+        self.get_logger().info("Step 9: Opening gripper...")
         if self.move_gripper(self.gripper_positions['open']):
             self.get_logger().info("SUCCESS: Gripper opened!")
         else:

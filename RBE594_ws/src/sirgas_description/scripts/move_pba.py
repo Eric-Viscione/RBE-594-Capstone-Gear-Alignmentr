@@ -111,7 +111,7 @@ def main(args=None):
         
         # 1. Move forward at 1.0 rad/s for 5 seconds
         move_time_sec = 5
-        velocity_forward = 5.0
+        velocity_forward = 1.0
         
         node.get_logger().info(f"Moving PBA starter joint forward at {velocity_forward} rad/s for {move_time_sec}s")
         start_time = time.time()
