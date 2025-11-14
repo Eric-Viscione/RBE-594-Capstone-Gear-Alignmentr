@@ -167,9 +167,9 @@
 
     <link name="liner3">
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="0 0 0" xyz="0 .0125 0"/>
             <geometry>
-                <box size="0.005 0.005 0.001"/>
+                <box size="0.005 0.025 0.001"/>
             </geometry>
             <material name="Green">
                 <color rgba="0 1.0 0 1.0" />

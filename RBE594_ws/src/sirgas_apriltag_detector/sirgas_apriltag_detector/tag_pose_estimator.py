@@ -19,12 +19,18 @@ from .helpers import (
 @dataclass
 class DetectorConfig:
     # thresholding
-    t_dark: int = 50                     # dark cutoff in [0,255]
+    t_dark: int = 20                     # dark cutoff in [0,255]
     close_kernel: tuple = (3, 3)
     open_kernel: tuple = (1, 1)
+    color_mode: str = "hsv"
 
+    # HSV range if using color_mode="hsv"
+    hsv_low:  tuple = (100, 100, 100)   # a bit above yellow
+    hsv_high: tuple = (130, 255, 255) 
+    
+    
     # contour filters
-    min_area_frac: float = 0.0000001        # min area as fraction of image
+    min_area_frac: float = 0.00001        # min area as fraction of image
     max_area_frac: float = 0.6           # max area as fraction of image
     max_ratio: float = 10.0               # max aspect ratio (long/short)
     eps_frac: float = 0.05             # approxPolyDP epsilon fraction
@@ -146,9 +152,8 @@ class TagPoseEstimator:
         """
         # 1) preprocess
         gray, norm, blur = self._preprocess(img_bgr)
+        bw, bw_m = self._threshold_and_morph(blur, img_bgr=img_bgr)
 
-        # 2) threshold + morphology
-        bw, bw_m = self._threshold_and_morph(blur)
 
         # 3) find best quadrilateral + have access to all contours
         best_quad, overlay_all, cnts = self._find_best_quad(gray, bw_m)
@@ -160,7 +165,7 @@ class TagPoseEstimator:
                 ps_cam=None, ps_world=None, overlay=None
             )
             self._debug_no_detection(gray, bw_m, cnts)
-            return None, None
+            return None, None, None, None
 
         # 5) TL,TR,BR,BL ordering
         img_pts = order_corners(best_quad)
@@ -174,11 +179,19 @@ class TagPoseEstimator:
         # 8) PnP
         R, tvec = self._solve_pnp(obj_pts, img_pts, K, D)
         if R is None:
-            return None, None
+            return None, None, None, None
 
         # 9) Pose in camera
         ps_cam, long_axis_cam, long_axis_world = self._pose_in_camera(
             R, tvec, cam_frame, stamp, long_axis_idx
+        )
+
+        # 9b) Build Stamped Vector Messages (using PoseStamped position for the vector)
+        ps_long_cam = self._build_vector_stamped(
+            long_axis_cam, cam_frame, stamp, is_world_vector=False
+        )
+        ps_long_world = self._build_vector_stamped(
+            long_axis_world, 'world', stamp, is_world_vector=True
         )
 
         # 10) Pose in world
@@ -205,13 +218,38 @@ class TagPoseEstimator:
 
         # 13) Save debug images (if enabled)
         self._maybe_save_debug(
-            img_bgr, blur, bw, bw_m, overlay_all,
-            ps_cam=ps_cam, ps_world=ps_world, overlay=overlay
-        )
+                img_bgr, blur, bw, bw_m, overlay_all,
+                ps_cam=ps_cam, ps_world=ps_world, 
+                ps_long_cam=ps_long_cam, ps_long_world=ps_long_world, # <--- FIX: Add these arguments
+                overlay=overlay
+            )
 
-        return ps_cam, ps_world
+        return ps_cam, ps_world, ps_long_cam, ps_long_world
 
-    # ---------- pipeline steps ----------
+    def _build_vector_stamped(self, vector: np.ndarray, frame_id: str, stamp, is_world_vector: bool) -> PoseStamped:
+            """Helper to package the long axis vector into a PoseStamped message."""
+            ps = PoseStamped()
+            ps.header.stamp = stamp
+            ps.header.frame_id = frame_id
+            
+            # The vector components are stored in the position field
+            ps.pose.position.x = float(vector[0])
+            ps.pose.position.y = float(vector[1])
+            ps.pose.position.z = float(vector[2])
+            
+            # Orientation is left as identity/zero since we only care about the vector
+            ps.pose.orientation.x = 0.0
+            ps.pose.orientation.y = 0.0
+            ps.pose.orientation.z = 0.0
+            ps.pose.orientation.w = 1.0
+            
+            # Log vector for verification
+            self.log.info(
+                f"{'World' if is_world_vector else 'Cam'} Long Axis Vector: "
+                f"({vector[0]:.3f}, {vector[1]:.3f}, {vector[2]:.3f})"
+            )
+            
+            return ps
 
     def _preprocess(self, img_bgr):
         gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
@@ -220,10 +258,32 @@ class TagPoseEstimator:
         blur = norm.copy()
         return gray, norm, blur
 
-    def _threshold_and_morph(self, blur):
-        t_dark = self.cfg.t_dark
-        bw = (blur < t_dark).astype(np.uint8) * 255
+    def _threshold_and_morph(self, blur, img_bgr=None):
+        """
+        Produce a binary image 'bw' where the tag is white (255) and background black (0),
+        using either:
+        - dark/bright grayscale thresholding, or
+        - HSV color thresholding.
+        """
+        mode = getattr(self.cfg, "color_mode", "dark")
 
+        if mode == "hsv" and img_bgr is not None:
+            # --- HSV color thresholding ---
+            hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
+            low = np.array(self.cfg.hsv_low, dtype=np.uint8)
+            high = np.array(self.cfg.hsv_high, dtype=np.uint8)
+            bw = cv2.inRange(hsv, low, high)  # tag-colored = white, others black
+        else:
+            # --- grayscale thresholding ---
+            t = self.cfg.t_dark
+            if mode == "bright":
+                # detect light tag on dark background
+                bw = (blur > t).astype(np.uint8) * 255
+            else:
+                # default: detect dark tag on light background
+                bw = (blur < t).astype(np.uint8) * 255
+
+        # morphology to clean up
         k_close = cv2.getStructuringElement(cv2.MORPH_RECT, self.cfg.close_kernel)
         bw_m = cv2.morphologyEx(bw, cv2.MORPH_CLOSE, k_close, iterations=1)
 
@@ -231,6 +291,7 @@ class TagPoseEstimator:
         bw_m = cv2.morphologyEx(bw_m, cv2.MORPH_OPEN, k_open, iterations=1)
 
         return bw, bw_m.astype(np.uint8)
+
 
     def _find_best_quad(self, gray, bw_m):
         cnts, _ = cv2.findContours(bw_m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -384,10 +445,11 @@ class TagPoseEstimator:
             cv2.line(overlay, tuple(pts[1]), tuple(pts[2]), (255, 0, 255), 2)
         return overlay
 
-    # ---------- debug saving ----------
 
     def _maybe_save_debug(self, img_bgr, blur, bw, bw_m, overlay_all,
-                          ps_cam=None, ps_world=None, overlay=None):
+                          ps_cam=None, ps_world=None, 
+                          ps_long_cam=None, ps_long_world=None, # MODIFIED: added new arguments
+                          overlay=None):
         if not self.save_debug:
             return
         self._dbg_count += 1
@@ -416,6 +478,15 @@ class TagPoseEstimator:
                 txt_wld = (
                     f"world=({ps_world.pose.position.x:.3f},"
                     f"{ps_world.pose.position.y:.3f},{ps_world.pose.position.z:.3f})"
+                )
+                if ps_long_world is not None:
+                    txt_long = (
+                        f"axis_wld=({ps_long_world.pose.position.x:.3f},"
+                        f"{ps_long_world.pose.position.y:.3f},{ps_long_world.pose.position.z:.3f})"
+                    )
+                cv2.putText(
+                    overlay_annot, txt_long, (10, 75),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2
                 )
                 cv2.putText(
                     overlay_annot, txt_cam, (10, 25),

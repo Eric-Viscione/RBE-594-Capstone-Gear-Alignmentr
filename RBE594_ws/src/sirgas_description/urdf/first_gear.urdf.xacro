@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="first_gear" xmlns:xacro="http://wiki.ros.org/xacro" >
-    <!-- <xacro:include filename="$(find sirgas_description)/urdf/inc/apriltag_card.xacro"/> -->
+    <xacro:include filename="$(find sirgas_description)/urdf/inc/apriltag_card.xacro"/>
 
     <link name="first_gear">
         <visual>
@@ -24,14 +24,14 @@
             <inertia ixx="0.00615061" ixy="0.0" ixz="0.0" iyx="0.0" iyy="0.00615163" iyz="0.0" izx="0.0" izy= "0.0" izz="0.01209542"/>
         </inertial>
     </link>
-    <!-- <xacro:attach_apriltag_card
+    <xacro:attach_apriltag_card
         parent_link="first_gear"
-        tag_size=".5"                
-        tag_thickness="0.00001"           
-        xyz="0 .06 1.0"                  
-        rpy="0 3.0 0"                     
-        link_name="first_gear_apriltag"
-    /> -->
+        tag_size="0.02"
+        extra_len="0.03"            
+        tag_thickness="0.0005"
+        xyz="0 0.075 0.025"
+        rpy="0 3.14 .15"
+        link_name="first_gear_apriltag"/>
 
     <joint name="liner4_pbf" type="fixed">
         <parent link="first_gear"/>
