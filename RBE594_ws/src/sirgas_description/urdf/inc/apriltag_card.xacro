@@ -4,7 +4,8 @@
   <!-- Attach a thin AprilTag "card" to parent_link -->
   <xacro:macro name="attach_apriltag_card" params="
       parent_link
-      tag_size:=0.05
+      tag_size:=0.02              
+      extra_len:=0.03             
       tag_thickness:=0.001
       xyz:='0 0 0.02'
       rpy:='0 0 0'
@@ -13,13 +14,15 @@
       texture_path:='package://sirgas_description/meshes/Apriltag36_11_00000/materials/textures/tag36_11_00000.png'
       add_back_visual:=false
       back_epsilon:=0.0005">
-
+    <xacro:property name="size_x" value="${tag_size}"/>             
+    <xacro:property name="size_y" value="${tag_size + extra_len}"/> 
+    <xacro:property name="size_z" value="${tag_thickness}"/>
     <link name="${link_name}">
       <!-- front face -->
       <visual>
         <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
-          <box size="${tag_size} ${tag_size} ${tag_thickness}"/>
+          <box size="${size_x} ${size_y} ${size_z}"/>
         </geometry>
         <material name="${link_name}_front_tex">
           <texture filename="${texture_path}"/>
@@ -42,19 +45,18 @@
       <collision>
         <origin xyz="${xyz}" rpy="${rpy}"/>
         <geometry>
-          <box size="${tag_size} ${tag_size} ${tag_thickness}"/>
+           <box size="${size_x} ${size_y} ${size_z}"/>
         </geometry>
       </collision>
 
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${mass}"/>
-        <inertia
-          ixx="${mass*((tag_size*tag_size + tag_thickness*tag_thickness)/12.0)}"
-          iyy="${mass*((tag_size*tag_size + tag_thickness*tag_thickness)/12.0)}"
-          izz="${mass*((tag_size*tag_size + tag_size*tag_size)/12.0)}"
-          ixy="0" ixz="0" iyz="0"/>
-      </inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="${mass}"/>
+          <xacro:property name="Ixx" value="${mass*((size_y*size_y + size_z*size_z)/12.0)}"/>
+          <xacro:property name="Iyy" value="${mass*((size_x*size_x + size_z*size_z)/12.0)}"/>
+          <xacro:property name="Izz" value="${mass*((size_x*size_x + size_y*size_y)/12.0)}"/>
+          <inertia ixx="${Ixx}" iyy="${Iyy}" izz="${Izz}" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
     </link>
 
     <joint name="${link_name}_fixed" type="fixed">
