@@ -24,7 +24,7 @@ from moveit_msgs.srv import GetCartesianPath
 
 # --- CONSTANTS FOR GRASPING ---
 GEAR_HEIGHT = 0.1   # Height 10 cm
-GEAR_SIZE = 0.07  # Diameter 7 cm (User corrected value)
+GEAR_SIZE = 0.06  # Diameter 7 cm (User corrected value)
 GEAR_BASE_Z = 0.0  # Base Z position
 GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2) 
 # -----------------------------
@@ -343,9 +343,9 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 5e-5
-        orient_constraint.absolute_y_axis_tolerance = 5e-5
-        orient_constraint.absolute_z_axis_tolerance = 5e-5
+        orient_constraint.absolute_x_axis_tolerance = 2.75e-5
+        orient_constraint.absolute_y_axis_tolerance = 2.75e-5
+        orient_constraint.absolute_z_axis_tolerance = 2.75e-5
         orient_constraint.weight = 0.9
         constraints.orientation_constraints.append(orient_constraint)
         
@@ -567,7 +567,7 @@ class MoveItPanda(Node):
 
         # Define Poses
         PICK_Z = 0.075
-        PRE_PICK_Z = 0.25
+        PRE_PICK_Z = 0.2
         # Orientation for the gripper facing to the side (Y-axis down)
         side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
 
