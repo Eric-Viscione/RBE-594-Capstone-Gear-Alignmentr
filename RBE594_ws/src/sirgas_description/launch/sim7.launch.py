@@ -331,6 +331,53 @@ def generate_launch_description():
         executable='spawner',
         arguments=['pba_velocity_controller', '-c', controller_manager_name],
         parameters=[{'use_sim_time': use_sim_time}])
+    green_detector_node = launch_ros.actions.Node(
+        package='sirgas_apriltag_detector', # Replace with your actual package name if different
+        executable='black_tag_detector',
+        name='green_tag_detector', # Unique name
+        output='screen',
+        parameters=[
+            {'use_sim_time': use_sim_time},
+            # Configuration for Green (H=50-70)
+            {'color_mode': "hsv"},
+            {'hsv_low': [50, 100, 100]},
+            {'hsv_high': [70, 255, 255]},
+            {'image_topic': '/camera_feed/image'},
+            # Set unique output topics
+            {'pose_topic_cam': '/tag_pose_cam/green'},
+            {'pose_topic_world': '/tag_pose_world/green'},
+            {'long_axis_cam_topic': '/tag_long_axis_cam/green'},
+            {'long_axis_world_topic': '/tag_long_axis_world/green'},
+            # Optional debug settings
+            {'save_debug_images': True},
+            {'debug_images_dir': '~/RBE594_ws/debug_images/green'},
+            {'debug_save_every_n': 5}
+        ]
+    )
+    
+    # 2. Black Tag Detector (Grayscale 'dark' mode)
+    black_detector_node = launch_ros.actions.Node(
+        package='sirgas_apriltag_detector', # Replace with your actual package name if different
+        executable='black_tag_detector',
+        name='black_tag_detector', # Unique name
+        output='screen',
+        parameters=[
+            {'use_sim_time': use_sim_time},
+            # Configuration for Black/Dark Contrast (default)
+            {'color_mode': "dark"},
+            {'t_dark': 20}, # Dark threshold in [0, 255]
+            {'image_topic': '/camera_feed/image'},
+            # Set unique output topics
+            {'pose_topic_cam': '/tag_pose_cam/black'},
+            {'pose_topic_world': '/tag_pose_world/black'},
+            {'long_axis_cam_topic': '/tag_long_axis_cam/black'},
+            {'long_axis_world_topic': '/tag_long_axis_world/black'},
+            # Optional debug settings
+            {'save_debug_images': True},
+            {'debug_images_dir': '~/RBE594_ws/debug_images/black'},
+            {'debug_save_every_n': 5}
+        ]
+    )
     
     nodeList = [
         set_gz_resources,
@@ -342,17 +389,18 @@ def generate_launch_description():
         rviz_node,
         panda_jsb_spawner,
         pba_jsb_spawner, # Use specific pba joint state broadcaster
-        spawn_sim_cam, # New: Camera Spawner
-        timer_bridge_sim_cam, # New: Timer and Camera Bridge
+        spawn_sim_cam, # 
+        timer_bridge_sim_cam, # 
         pba_v_controller_spawner,
         arm_controller,
         hand_controller,
         # gz_spawn_cube,
         # gz_spawn_starter_gear,
         gz_spawn_first_gear,
+        green_detector_node,
+        black_detector_node
         # gz_spawn_second_gear,
         # gz_spawn_third_gear,
-        # ... (include all other necessary controller spawners like scaled_joint_trajectory_controller)
     ]
     
     return launch.LaunchDescription(declared_arguments + nodeList)

@@ -11,7 +11,8 @@ setup(
          ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', ['launch/black_tag_detector.launch.py',
-                                                'launch/apriltag_detector.launch.py']),
+                                                'launch/apriltag_detector.launch.py',
+                                                'launch/tag_processing.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +25,7 @@ setup(
         'console_scripts': [
             'apriltag_detector = sirgas_apriltag_detector.apriltag_detector:main',
             'black_tag_detector = sirgas_apriltag_detector.black_tag_detector:main',
+            'tag_axis_comparator = sirgas_apriltag_detector.tag_axis_comparator:main',
         ],
     },
 )
