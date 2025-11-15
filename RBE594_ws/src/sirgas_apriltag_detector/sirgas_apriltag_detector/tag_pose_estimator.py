@@ -58,17 +58,25 @@ class TagPoseEstimator:
                  config: DetectorConfig,
                  logger=None,
                  debug_dir: str = None,
+                 subfolder_name: str = None, 
                  save_debug: bool = True,
                  debug_every: int = 5):
         self.cfg = config
         self.logger = logger
-        self.log = logger or _
+        self.log = logger 
         self.debug_dir = os.path.expanduser(debug_dir) if debug_dir else None
         self.save_debug = save_debug and (self.debug_dir is not None)
         self.debug_every = max(1, int(debug_every))
         self._dbg_count = 0
 
         if self.save_debug:
+            base_dir = os.path.expanduser(debug_dir)
+            if subfolder_name:
+                # Append the subfolder name (e.g., 'green' or 'black') to the path
+                self.debug_dir = os.path.join(base_dir, subfolder_name)
+            else:
+                self.debug_dir = base_dir
+                
             os.makedirs(self.debug_dir, exist_ok=True)
             self.log.info(f"Saving debug images to: {self.debug_dir}")
     def _log(self, msg: str):

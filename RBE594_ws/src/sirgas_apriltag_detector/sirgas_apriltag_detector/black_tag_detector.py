@@ -61,6 +61,7 @@ class MinimalTagPose(Node):
         self.caminfo_topic = self.get_parameter('camera_info_topic').value
         self.cam_frame = self.get_parameter('camera_optical_frame').value
 
+        subfolder_name = self.get_name().split('_')[0]
         rect_w = float(self.get_parameter('rect_w').value)
         rect_h = float(self.get_parameter('rect_h').value)
 
@@ -82,7 +83,6 @@ class MinimalTagPose(Node):
                 rect_h=rect_h,
                 R_world_cam=R_world_cam,
                 t_world_cam=t_world_cam,
-                
                 color_mode=color_mode,
                 hsv_low=tuple(hsv_low),
                 hsv_high=tuple(hsv_high))
@@ -91,6 +91,7 @@ class MinimalTagPose(Node):
             logger=self.get_logger(),
             config=cfg,
             debug_dir=debug_dir,
+            subfolder_name=subfolder_name,
             save_debug=save_debug,
             debug_every=debug_every,
         )
