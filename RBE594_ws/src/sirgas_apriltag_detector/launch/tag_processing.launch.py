@@ -49,7 +49,7 @@ def generate_launch_description():
         parameters=[
             {'use_sim_time': use_sim_time},
             {'color_mode': 'dark'},
-            {'t_dark': 10},
+            {'t_dark': 20},
             
             # Topics
             {'pose_topic_cam': '/tag_pose_cam/black'},

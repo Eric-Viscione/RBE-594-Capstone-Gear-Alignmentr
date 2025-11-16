@@ -59,7 +59,7 @@ class TagPoseEstimator:
                  logger=None,
                  debug_dir: str = None,
                  subfolder_name: str = None, 
-                 save_debug: bool = True,
+                 save_debug: bool = False,
                  debug_every: int = 5):
         self.cfg = config
         self.logger = logger
@@ -68,6 +68,7 @@ class TagPoseEstimator:
         self.save_debug = save_debug and (self.debug_dir is not None)
         self.debug_every = max(1, int(debug_every))
         self._dbg_count = 0
+        self.log_message = False
 
         if self.save_debug:
             base_dir = os.path.expanduser(debug_dir)
@@ -85,32 +86,31 @@ class TagPoseEstimator:
 
     # ------------- debug when no detection -------------
     def _debug_no_detection(self, gray, bw_m, contours):
-        """
-        Called when no quadrilateral passes the filters.
-        Logs useful stats about contours and thresholds.
-        """
+
         if not self.cfg.enable_debug_log:
             return
 
         H, W = gray.shape[:2]
         n = len(contours)
-        self._log(
-            f"[DEBUG] No valid quad found. image={W}x{H}, "
-            f"num_contours={n}"
-        )
+        if self.log_message:
+            self._log(
+                f"[DEBUG] No valid quad found. image={W}x{H}, "
+                f"num_contours={n}"
+            )
 
         # convert area thresholds from fractions to pixels
         img_area = float(W * H)
         min_area_px = self.cfg.min_area_frac * img_area
         max_area_px = self.cfg.max_area_frac * img_area
-        self._log(
-            f"[DEBUG] area thresholds: "
-            f"min_area_frac={self.cfg.min_area_frac:.6f} "
-            f"({min_area_px:.1f} px), "
-            f"max_area_frac={self.cfg.max_area_frac:.3f} "
-            f"({max_area_px:.1f} px), "
-            f"max_ratio={self.cfg.max_ratio:.2f}"
-        )
+        if self.log_message:
+            self._log(
+                f"[DEBUG] area thresholds: "
+                f"min_area_frac={self.cfg.min_area_frac:.6f} "
+                f"({min_area_px:.1f} px), "
+                f"max_area_frac={self.cfg.max_area_frac:.3f} "
+                f"({max_area_px:.1f} px), "
+                f"max_ratio={self.cfg.max_ratio:.2f}"
+            )
 
         # summarize top-K contours by area
         contour_stats = []
@@ -138,13 +138,13 @@ class TagPoseEstimator:
                 reason.append("ratio > max_ratio")
             if not reason:
                 reason.append("failed quad/convex filter or scoring")
-
-            self._log(
-                f"[DEBUG] contour {i}: "
-                f"area={area:.1f}, w_rect={w_rect:.1f}, "
-                f"h_rect={h_rect:.1f}, ratio={ratio:.2f} "
-                f"-> {'; '.join(reason)}"
-            )
+            if self.log_message:
+                self._log(
+                    f"[DEBUG] contour {i}: "
+                    f"area={area:.1f}, w_rect={w_rect:.1f}, "
+                    f"h_rect={h_rect:.1f}, ratio={ratio:.2f} "
+                    f"-> {'; '.join(reason)}"
+                )
     # ---------- main entry point ----------
 
     def process_frame(self, img_bgr, K, D, cam_frame: str, stamp):
@@ -206,20 +206,21 @@ class TagPoseEstimator:
         ps_world = self._pose_in_world(R, tvec, stamp)
 
         # 11) Logging pose + orientation info
-        self.log.info(
-            f"tag@cam: xyz=({ps_cam.pose.position.x:.3f},"
-            f"{ps_cam.pose.position.y:.3f},{ps_cam.pose.position.z:.3f})"
-        )
-        self.log.info(
-            f"long_edge_img={long_edge_img} (e_x={e_x:.1f}, e_y={e_y:.1f}), "
-            f"model_used w={w_used:.3f} h={h_used:.3f}"
-        )
-        self.log.info(
-            f"long_axis_cam=({long_axis_cam[0]:.3f},"
-            f"{long_axis_cam[1]:.3f},{long_axis_cam[2]:.3f}), "
-            f"long_axis_world=({long_axis_world[0]:.3f},"
-            f"{long_axis_world[1]:.3f},{long_axis_world[2]:.3f})"
-        )
+        if self.log_message:
+            self.log.info(
+                f"tag@cam: xyz=({ps_cam.pose.position.x:.3f},"
+                f"{ps_cam.pose.position.y:.3f},{ps_cam.pose.position.z:.3f})"
+            )
+            self.log.info(
+                f"long_edge_img={long_edge_img} (e_x={e_x:.1f}, e_y={e_y:.1f}), "
+                f"model_used w={w_used:.3f} h={h_used:.3f}"
+            )
+            self.log.info(
+                f"long_axis_cam=({long_axis_cam[0]:.3f},"
+                f"{long_axis_cam[1]:.3f},{long_axis_cam[2]:.3f}), "
+                f"long_axis_world=({long_axis_world[0]:.3f},"
+                f"{long_axis_world[1]:.3f},{long_axis_world[2]:.3f})"
+            )
 
         # 12) Build overlay for debug
         overlay = self._make_overlay(img_bgr, img_pts, long_edge_img)
@@ -252,10 +253,11 @@ class TagPoseEstimator:
             ps.pose.orientation.w = 1.0
             
             # Log vector for verification
-            self.log.info(
-                f"{'World' if is_world_vector else 'Cam'} Long Axis Vector: "
-                f"({vector[0]:.3f}, {vector[1]:.3f}, {vector[2]:.3f})"
-            )
+            if self.log_message:
+                self.log.info(
+                    f"{'World' if is_world_vector else 'Cam'} Long Axis Vector: "
+                    f"({vector[0]:.3f}, {vector[1]:.3f}, {vector[2]:.3f})"
+                )
             
             return ps
 
@@ -332,10 +334,11 @@ class TagPoseEstimator:
             if min(w_rect, h_rect) <= 1e-6:
                 continue
             ratio = max(w_rect, h_rect) / max(1e-6, min(w_rect, h_rect))
-            self.log.info(
-                f"candidate: area={area:.1f}, w_rect={w_rect:.1f}, "
-                f"h_rect={h_rect:.1f}, aspect={ratio:.2f}"
-            )
+            if self.log_message:
+                self.log.info(
+                    f"candidate: area={area:.1f}, w_rect={w_rect:.1f}, "
+                    f"h_rect={h_rect:.1f}, aspect={ratio:.2f}"
+                )
             if ratio > self.cfg.max_ratio:
                 continue
 
@@ -348,7 +351,6 @@ class TagPoseEstimator:
                 best_score = score
                 best = approx.reshape(-1, 2).astype(np.float32)
 
-        # NOTE: return contours as third value
         return best, overlay_all, cnts
 
     def _build_rect_model(self, long_edge_img: str):

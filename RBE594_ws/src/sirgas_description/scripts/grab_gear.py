@@ -866,8 +866,25 @@ class MoveItPanda(Node):
             return False # Fail if this move fails
 
         time.sleep(2.0)
+<<<<<<< HEAD
 
         # 11. Move to Pre-Pick Waypoint (High Z)        
+=======
+        self.get_logger().info("Step 1: Waiting for FIRST axis difference measurement (max 5s)...")
+        start_time = time.time()
+        while (self.angle_correction_rad is None) and (time.time() - start_time < 15.0):
+             rclpy.spin_once(self, timeout_sec=0.1)
+        if self.angle_correction_rad is None:
+             self.get_logger().warn("Axis measurement TIMEOUT. Proceeding with NO rotation (correction=0.0).")
+             correction_angle = 0.0
+        else:
+            correction_angle = self.angle_correction_rad
+            self.get_logger().info(f"Step 1 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
+        self.destroy_subscription(self.axis_diff_sub)
+        self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+        # 11. Move to Pre-Pick Waypoint (High Z)
+        #         
+>>>>>>> f6e3d8a9 (updating workspace and files)
         self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
         self.add_gear_to_scene2()
         time.sleep(1.0)
@@ -916,6 +933,45 @@ class MoveItPanda(Node):
         self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
 
+<<<<<<< HEAD
+=======
+        # --- NEW STEPS FOR AXIS ALIGNMENT ---
+        
+        # Step 14: Wait for the TagAxisComparator to publish the angle.
+        # This assumes your TagAxisComparator is running and publishing.
+        self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
+        
+        if abs(correction_angle) > 1e-4: # Only rotate if the angle is significant
+            self.get_logger().info(f"Step 2: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
+            if not self.rotate_panda_hand_z(angle_radians=correction_angle):
+                 self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
+                 return False
+            time.sleep(2.0)
+        else:
+            self.get_logger().info("Step 2: Correction angle near zero. Skipping rotation.")
+        
+        # --- CRITICAL: UNSUBSCRIBE TO PREVENT STALE READINGS ---
+        self.destroy_subscription(self.axis_diff_sub)
+        self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+        
+        # --- REST OF ORIGINAL SEQUENCE STARTS HERE ---
+        
+        # 3. Move arm to pre-grasp position for gear #2 (Original Step 1)
+        # ... continue with your original sequence of picking the gear ...
+        
+        # Move back to a safe ready position if needed
+        self.get_logger().info("Step 15: Opening gripper...")
+        if self.move_gripper(self.gripper_positions['open']):
+            self.get_logger().info("SUCCESS: Gripper opened!")
+        else:
+            self.get_logger().warn("Gripper movement may have failed")
+        
+        time.sleep(1.0)
+
+        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+        self.clear_gear_references() 
+        move_success = self.move_to_joints(self.poses['home']) 
+>>>>>>> f6e3d8a9 (updating workspace and files)
         if not move_success:
             self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
             return False
