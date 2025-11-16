@@ -11,14 +11,13 @@ from control_msgs.msg import GripperCommand as GripperCommandMsg
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Pose, Point, Quaternion
 from action_msgs.msg import GoalStatus
-from shape_msgs.msg import SolidPrimitive # Import needed for the Cylinder
+from shape_msgs.msg import SolidPrimitive 
 import time
 from threading import Event
 import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
 from moveit_msgs.msg import AttachedCollisionObject 
-
-# NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
+from geometry_msgs.msg import PoseStamped
 from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
 from moveit_msgs.srv import GetCartesianPath
 import math
@@ -65,8 +64,14 @@ class MoveItPanda(Node):
             'open': 0.04,
             'grasp': 0.015
         }
-        
-        # NOTE: End-effector link is needed for constraint definition. Assuming "panda_hand"
+        self.angle_correction_rad = None # Initialize as None so the wait loop knows it hasn't received a value
+        self.axis_diff_sub = self.create_subscription(
+            PoseStamped, 
+            '/tag_axis_difference', 
+            self.axis_diff_callback, 
+            1
+        )
+        self.get_logger().info("Subscribed to /tag_axis_difference.")
         self.end_effector_link = "panda_hand" 
         
         self.get_logger().info("MoveIt Panda node initialized")
@@ -93,6 +98,14 @@ class MoveItPanda(Node):
         
         self.current_joint_state = filtered_state
         self.joint_state_event.set()
+        self.axis_diff_sub = self.create_subscription(
+            PoseStamped, 
+            '/tag_axis_difference', 
+            self.axis_diff_callback, 
+            1
+        )
+        self.angle_correction_rad = 0.0
+        # self.get_logger().info("Subscribed to /tag_axis_difference.")
 
     def wait_for_joint_state(self, timeout=1.0):
         """Wait for joint state message"""
@@ -426,9 +439,9 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 3e-5
-        orient_constraint.absolute_y_axis_tolerance = 3e-5
-        orient_constraint.absolute_z_axis_tolerance = 3e-5
+        orient_constraint.absolute_x_axis_tolerance = 0.01
+        orient_constraint.absolute_y_axis_tolerance = 0.01
+        orient_constraint.absolute_z_axis_tolerance = 0.01
         orient_constraint.weight = 0.95
         constraints.orientation_constraints.append(orient_constraint)
         
@@ -609,7 +622,16 @@ class MoveItPanda(Node):
             self.get_logger().error("Service call failed!")
         
         return False
-    
+    def axis_diff_callback(self, msg: PoseStamped):
+        """
+        Stores the Z-axis rotation error (in radians) from the comparator node.
+        The error is the angle needed to align the green tag with the black tag.
+        """
+        # The TagAxisComparator publishes the signed Z-axis error in pose.position.x (radians)
+        self.angle_correction_rad = msg.pose.position.x
+        # self.get_logger().info(
+        #     f"Received Z-axis correction angle: {np.degrees(self.angle_correction_rad):.2f} degrees"
+        # )
     def get_current_pose(self) -> Pose:
         """
         Retrieves the current end-effector pose using the MoveIt Forward Kinematics service.
@@ -816,10 +838,10 @@ class MoveItPanda(Node):
             return False # Fail if this move fails
 
         time.sleep(2.0)
-        
+       
         # Define the final drop pose (Place Pose) and the approach pose
         pre_drop_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.45), orientation=target_pose.orientation)
-        place_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.325), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.300), orientation=target_pose.orientation)
         
         # 8A. Move to Pre-Drop Location (PTP Move)
         self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
@@ -855,9 +877,9 @@ class MoveItPanda(Node):
         self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
 
-        # 10. Move arm back to ready position
-        self.get_logger().info("Step 10: Moving arm back to ready position...")
-        move_success = self.move_to_joints(self.poses['ready'])
+        # 10. Move arm back to Home position
+        self.get_logger().info("Step 10: Moving arm back to Home position...")
+        move_success = self.move_to_joints(self.poses['home'])
         
         if move_success:
             self.get_logger().info("SUCCESS: Ready position reached!")
@@ -866,8 +888,18 @@ class MoveItPanda(Node):
             return False # Fail if this move fails
 
         time.sleep(2.0)
-
-        # 11. Move to Pre-Pick Waypoint (High Z)        
+        self.get_logger().info("Step 1: Waiting for FIRST axis difference measurement (max 5s)...")
+        start_time = time.time()
+        while (self.angle_correction_rad is None) and (time.time() - start_time < 5.0):
+             rclpy.spin_once(self, timeout_sec=0.1)
+        if self.angle_correction_rad is None:
+             self.get_logger().warn("Axis measurement TIMEOUT. Proceeding with NO rotation (correction=0.0).")
+             correction_angle = 0.0
+        else:
+            correction_angle = self.angle_correction_rad
+            self.get_logger().info(f"Step 1 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
+        # 11. Move to Pre-Pick Waypoint (High Z)
+        #         
         self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
         self.add_gear_to_scene2()
         time.sleep(1.0)
@@ -911,17 +943,80 @@ class MoveItPanda(Node):
         time.sleep(3.0)
 
         # 14. Turn Robot Hand
-        self.rotate_panda_hand_z(angle_radians=0.707)
+        # self.rotate_panda_hand_z(angle_radians=0.707)
 
         self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
+        time.sleep(3.0) # Ensure attach is complete
 
+        # --- NEW STEPS FOR AXIS ALIGNMENT ---
+        
+        # Step 14: Wait for the TagAxisComparator to publish the angle.
+        # This assumes your TagAxisComparator is running and publishing.
+        self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
+        
+        if abs(correction_angle) > 1e-4: # Only rotate if the angle is significant
+            self.get_logger().info(f"Step 2: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
+            if not self.rotate_panda_hand_z(angle_radians=correction_angle):
+                 self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
+                 return False
+            time.sleep(2.0)
+        else:
+            self.get_logger().info("Step 2: Correction angle near zero. Skipping rotation.")
+        
+        # --- CRITICAL: UNSUBSCRIBE TO PREVENT STALE READINGS ---
+        self.destroy_subscription(self.axis_diff_sub)
+        self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+        
+        # --- REST OF ORIGINAL SEQUENCE STARTS HERE ---
+        
+        # 3. Move arm to pre-grasp position for gear #2 (Original Step 1)
+        # ... continue with your original sequence of picking the gear ...
+        
+        # Move back to a safe ready position if needed
+        move_success = self.move_to_joints(self.poses['ready']) 
         if not move_success:
             self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
             return False
             
         self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
         return True
+        # self.get_logger().info("Step 14: Waiting for axis difference measurement (max 5s)...")
+        # start_time = time.time()
+        # while (self.angle_correction_rad > .250) and (time.time() - start_time < 5.0):
+        #      rclpy.spin_once(self, timeout_sec=0.1)
+        #      if self.angle_correction_rad != 0.0:
+        #          break
+        
+        # if self.angle_correction_rad >.250:
+        #      self.get_logger().warn("Axis measurement timeout or angle is zero. Skipping rotation.")
+        #      correction_angle = 0.0
+        # else:
+        #      correction_angle = self.angle_correction_rad
+        #      self.get_logger().info(f"Step 14 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
+        
+        # # Step 15: Rotate the hand by the measured angle
+        # self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
+        # if not self.rotate_panda_hand_z(angle_radians=correction_angle):
+        #      self.get_logger().error("FAILED: Hand rotation for alignment failed.")
+        #      # You might choose to return False here or continue with a warning
+        #      return False
+
+        # time.sleep(2.0)
+        
+        # # Step 16: Move arm back to ready position
+        # self.get_logger().info("Step 16: Moving arm back to ready position for next step...")
+        # move_success = self.move_to_joints(self.poses['ready'])
+
+        # # --- SCENE CLEANUP: Clearing all gear references ---
+        # self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+        # self.clear_gear_references()
+        # if not move_success:
+        #     self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
+        #     return False
+            
+        # self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
+        # return True
 
         
 

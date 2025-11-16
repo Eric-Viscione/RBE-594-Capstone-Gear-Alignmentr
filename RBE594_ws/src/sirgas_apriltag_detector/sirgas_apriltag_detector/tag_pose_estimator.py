@@ -32,7 +32,7 @@ class DetectorConfig:
     # contour filters
     min_area_frac: float = 0.00001        # min area as fraction of image
     max_area_frac: float = 0.6           # max area as fraction of image
-    max_ratio: float = 10.0               # max aspect ratio (long/short)
+    max_ratio: float = 1000.0               # max aspect ratio (long/short)
     eps_frac: float = 0.05             # approxPolyDP epsilon fraction
 
     # rectangle physical size (meters)

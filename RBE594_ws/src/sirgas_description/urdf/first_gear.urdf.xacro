@@ -30,17 +30,16 @@
         extra_len="0.03"            
         tag_thickness="0.0005"
         xyz="0 0.075 0.025"
-        rpy="0 3.14 .15"
+        rpy="0 3.14 0"
         link_name="first_gear_apriltag"/>
 
-    <joint name="liner4_pbf" type="fixed">
+    <!-- <joint name="liner4_pbf" type="fixed">
         <parent link="first_gear"/>
         <child link="liner4"/>
         <origin rpy="0 0 0" xyz="0.0 -0.028 0.101"/>
         <axis xyz="0 0 1"/>
     </joint>
 
-    <!-- Liner Info -->
     <link name="liner4">
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -51,6 +50,6 @@
                 <color rgba="0 1.0 0 1.0" />
             </material>
         </visual>
-    </link>
+    </link> -->
 
 </robot>
