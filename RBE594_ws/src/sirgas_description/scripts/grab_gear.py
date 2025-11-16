@@ -884,7 +884,7 @@ class MoveItPanda(Node):
         # 12B. Move down to Final Pick Position (Low Z)
         pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3125), orientation=face_down_orientation)
         
-        self.get_logger().info(f"Step 11B: Moving to FINAL PICK pose (Z={0.3}m)...")
+        self.get_logger().info(f"Step 11B: Moving to FINAL PICK pose (Z={0.3125}m)...")
         if self.move_to_pose(pick_pose2):
             self.get_logger().info("SUCCESS: Final pick pose reached!")
         else:
