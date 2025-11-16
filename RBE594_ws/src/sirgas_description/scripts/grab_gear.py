@@ -21,6 +21,10 @@ from moveit_msgs.msg import AttachedCollisionObject
 # NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
 from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
 from moveit_msgs.srv import GetCartesianPath
+import math
+from scipy.spatial.transform import Rotation as R
+from moveit_msgs.srv import GetPositionFK
+from moveit_msgs.msg import RobotState
 
 # --- CONSTANTS FOR GRASPING ---
 GEAR_HEIGHT = 0.1   # Height 10 cm
@@ -40,6 +44,11 @@ class MoveItPanda(Node):
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         self.planning_scene_pub = self.create_publisher(PlanningScene, '/planning_scene', 10)
         self.cartesian_path_client = self.create_client(GetCartesianPath, '/compute_cartesian_path')
+        # --- NEW: Forward Kinematics Service Client ---
+        self.fk_client = self.create_client(GetPositionFK, 'compute_fk')
+        while not self.fk_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('FK service not available, waiting again...')
+        self.get_logger().info('FK service client created.')
         
         self.current_joint_state = None
         self.joint_state_event = Event()
@@ -168,12 +177,12 @@ class MoveItPanda(Node):
         ps_msg.world.collision_objects.append(gear_co)
         ps_msg.is_diff = True 
         
-        self.get_logger().info("Publishing 'first_gear' (CYLINDER) to planning scene...")
+        self.get_logger().info("Publishing 'first_gear' (BOX) to planning scene...")
         for _ in range(5):
             self.planning_scene_pub.publish(ps_msg)
             time.sleep(0.1) 
             
-        self.get_logger().info("'first_gear' (CYLINDER) should now be in the planning scene.")
+        self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
 
     def attach_gear_to_hand(self):
         """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
@@ -203,7 +212,81 @@ class MoveItPanda(Node):
         aco.object.primitive_poses.append(gear_pose) 
 
         # Define the links the attached object is allowed to touch (CRITICAL FIX)
-        aco.touch_links = ['panda_link7', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
+        aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
+        
+        ps_msg = PlanningScene()
+        ps_msg.robot_state.attached_collision_objects.append(aco) 
+        ps_msg.robot_state.is_diff = True
+        ps_msg.is_diff = True
+        
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1)
+            
+        self.get_logger().info("'first_gear' is now attached to the hand.")
+
+    def add_gear_to_scene2(self):
+        """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
+        self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
+        
+        gear_co = CollisionObject()
+        gear_co.header.frame_id = "world" 
+        gear_co.id = "first_gear"
+        
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        
+        gear_pose = Pose()
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = 0.0
+        gear_pose.position.z = 0.185
+        gear_pose.orientation.w = 1.0 
+        
+        gear_co.primitives.append(box) 
+        gear_co.primitive_poses.append(gear_pose) 
+        gear_co.operation = CollisionObject.ADD 
+        
+        ps_msg = PlanningScene()
+        ps_msg.world.collision_objects.append(gear_co)
+        ps_msg.is_diff = True 
+        
+        self.get_logger().info("Publishing 'first_gear' (BOX) to planning scene...")
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1) 
+            
+        self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
+
+    def attach_gear_to_hand2(self):
+        """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
+        self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
+        
+        # Re-create geometry and pose 
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        
+        
+        gear_pose = Pose()
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = 0.0
+        gear_pose.position.z = 0.185
+        gear_pose.orientation.w = 1.0 
+
+        aco = AttachedCollisionObject()
+        aco.link_name = "panda_hand" 
+        
+        aco.object.header.frame_id = "world"
+        aco.object.id = "first_gear"
+        aco.object.operation = CollisionObject.ADD 
+        
+        # Explicitly include geometry when attaching
+        aco.object.primitives.append(box) 
+        aco.object.primitive_poses.append(gear_pose) 
+
+        # Define the links the attached object is allowed to touch (CRITICAL FIX)
+        aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
         
         ps_msg = PlanningScene()
         ps_msg.robot_state.attached_collision_objects.append(aco) 
@@ -247,8 +330,8 @@ class MoveItPanda(Node):
         goal_msg = MoveGroup.Goal()
         request = MotionPlanRequest()
         request.group_name = "panda_arm"
-        request.num_planning_attempts = 60000
-        request.allowed_planning_time = 30.0
+        request.num_planning_attempts = 15000
+        request.allowed_planning_time = 15.0
         request.max_velocity_scaling_factor = 1.0
         request.max_acceleration_scaling_factor = 1.0
         
@@ -269,7 +352,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 60000
+        planning_options.replan_attempts = 15000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -343,10 +426,10 @@ class MoveItPanda(Node):
         orient_constraint.header.frame_id = "world"
         orient_constraint.link_name = "panda_hand"
         orient_constraint.orientation = target_pose.orientation
-        orient_constraint.absolute_x_axis_tolerance = 2.75e-5
-        orient_constraint.absolute_y_axis_tolerance = 2.75e-5
-        orient_constraint.absolute_z_axis_tolerance = 2.75e-5
-        orient_constraint.weight = 0.9
+        orient_constraint.absolute_x_axis_tolerance = 3e-5
+        orient_constraint.absolute_y_axis_tolerance = 3e-5
+        orient_constraint.absolute_z_axis_tolerance = 3e-5
+        orient_constraint.weight = 0.95
         constraints.orientation_constraints.append(orient_constraint)
         
         return constraints
@@ -526,6 +609,103 @@ class MoveItPanda(Node):
             self.get_logger().error("Service call failed!")
         
         return False
+    
+    def get_current_pose(self) -> Pose:
+        """
+        Retrieves the current end-effector pose using the MoveIt Forward Kinematics service.
+        """
+        if self.current_joint_state is None:
+            self.get_logger().error("Cannot compute FK: Current joint state is not available.")
+            return None
+
+        # 1. Build the FK request
+        fk_request = GetPositionFK.Request()
+        fk_request.fk_link_names = [self.end_effector_link]  # self.end_effector_link should be 'panda_hand'
+        
+        # 2. Populate the RobotState message with current joint data
+        fk_request.robot_state.joint_state = self.current_joint_state
+        
+        # 3. Call the FK service
+        future = self.fk_client.call_async(fk_request)
+        rclpy.spin_until_future_complete(self, future)
+        
+        if future.result() is not None:
+            response = future.result()
+            
+            # 4. Check for success and return the pose
+            if response.error_code.val == response.error_code.SUCCESS:
+                # The response contains a list of poses, we only requested one link
+                return response.pose_stamped[0].pose 
+            else:
+                self.get_logger().error(f"FK service failed with error code: {response.error_code.val}")
+                return None
+        else:
+            self.get_logger().error("FK service call failed (No response).")
+            return None
+    
+    def multiply_quaternions(self, q1: Quaternion, q2: Quaternion) -> Quaternion:
+        """
+        Multiplies two ROS Quaternion messages (q1 * q2) using scipy's Rotation.
+        This performs the composition of rotations (q1 followed by q2).
+        """
+        # Convert ROS Quaternions to scipy Rotation objects (xyzw format)
+        r1 = R.from_quat([q1.x, q1.y, q1.z, q1.w])
+        r2 = R.from_quat([q2.x, q2.y, q2.z, q2.w])
+        
+        # Perform multiplication (composition)
+        r_new = r1 * r2
+        
+        # Convert back to ROS Quaternion message
+        q_out_array = r_new.as_quat()
+        
+        q_out = Quaternion()
+        q_out.x = q_out_array[0]
+        q_out.y = q_out_array[1]
+        q_out.z = q_out_array[2]
+        q_out.w = q_out_array[3]
+        return q_out
+    
+    def rotate_panda_hand_z(self, angle_radians: float) -> bool:
+        """
+        Rotates the Panda hand by a specified angle (in radians) about 
+        the Z-axis relative to the end-effector frame.
+        """
+        self.get_logger().info(f"Attempting to rotate hand by {angle_radians:.2f} radians around Z-axis...")
+
+        # 1. Get the current pose (You MUST implement this helper function!)
+        current_pose = self.get_current_pose()
+        if not current_pose:
+            self.get_logger().error("Failed to retrieve current pose for Z-axis rotation.")
+            return False
+
+        # 2. Convert the rotation angle to a quaternion
+        # 'z' means rotation about Z-axis
+        rotation = R.from_euler('z', angle_radians)
+            
+        # Convert the rotation to a Quaternion message
+        q_rot = Quaternion()
+        q_rot_array = rotation.as_quat()
+        q_rot.x = q_rot_array[0]
+        q_rot.y = q_rot_array[1]
+        q_rot.z = q_rot_array[2]
+        q_rot.w = q_rot_array[3]
+
+        # 3. Apply the new rotation: q_new = q_current * q_rotation
+        q_current = current_pose.orientation
+        new_orientation = self.multiply_quaternions(q_current, q_rot)
+        
+        # 4. Create the target pose (keep position, update orientation)
+        target_pose = Pose()
+        target_pose.position = current_pose.position
+        target_pose.orientation = new_orientation
+
+        # 5. Move to the new pose using your existing method
+        if self.move_to_pose(target_pose):
+            self.get_logger().info("SUCCESS: Hand rotated to new orientation.")
+            return True
+        else:
+            self.get_logger().error("FAILED: MoveIt planning failed during hand rotation.")
+            return False
 
     # ----------------------------------------------------------------------
     # END OF NEW FUNCTIONS
@@ -566,13 +746,14 @@ class MoveItPanda(Node):
         time.sleep(1.0)
 
         # Define Poses
-        PICK_Z = 0.075
+        PICK_Z = 0.0775
         PRE_PICK_Z = 0.2
         # Orientation for the gripper facing to the side (Y-axis down)
         side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
+        face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
 
         # 4A. Move to Pre-Pick Waypoint (High Z)
-        pre_pick_pose = Pose(position=Point(x=-0.1075, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
+        pre_pick_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
         if not self.move_to_pose(pre_pick_pose):
@@ -581,7 +762,7 @@ class MoveItPanda(Node):
         time.sleep(5.0)
 
         # 4B. Move down to Final Pick Position (Low Z)
-        target_pose = Pose(position=Point(x=-0.1075, y=-1.0, z=PICK_Z), orientation=side_orientation)
+        target_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PICK_Z), orientation=side_orientation)
         
         self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
         if self.move_to_pose(target_pose):
@@ -637,8 +818,8 @@ class MoveItPanda(Node):
         time.sleep(2.0)
         
         # Define the final drop pose (Place Pose) and the approach pose
-        pre_drop_pose = Pose(position=Point(x=-0.1075, y=0.0, z=0.45), orientation=target_pose.orientation)
-        place_pose = Pose(position=Point(x=-0.1075, y=0.0, z=0.325), orientation=target_pose.orientation)
+        pre_drop_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.45), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.325), orientation=target_pose.orientation)
         
         # 8A. Move to Pre-Drop Location (PTP Move)
         self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
@@ -671,6 +852,66 @@ class MoveItPanda(Node):
         
         time.sleep(1.0)
 
+        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+        self.clear_gear_references() 
+
+        # 10. Move arm back to ready position
+        self.get_logger().info("Step 10: Moving arm back to ready position...")
+        move_success = self.move_to_joints(self.poses['ready'])
+        
+        if move_success:
+            self.get_logger().info("SUCCESS: Ready position reached!")
+        else:
+            self.get_logger().error("FAILED: Could not reach ready position!")
+            return False # Fail if this move fails
+
+        time.sleep(2.0)
+
+        # 11. Move to Pre-Pick Waypoint (High Z)        
+        self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
+        self.add_gear_to_scene2()
+        time.sleep(1.0)
+
+        # 12A. Move to Pre-Pick Waypoint (High Z)
+        pre_pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=face_down_orientation)
+        
+        self.get_logger().info(f"Step 11A: Moving to PRE-PICK pose ({pre_pick_pose2}m)...")
+        if not self.move_to_pose(pre_pick_pose2):
+            self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
+            return False
+        time.sleep(5.0)
+
+        # 12B. Move down to Final Pick Position (Low Z)
+        pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3125), orientation=face_down_orientation)
+        
+        self.get_logger().info(f"Step 11B: Moving to FINAL PICK pose (Z={0.3}m)...")
+        if self.move_to_pose(pick_pose2):
+            self.get_logger().info("SUCCESS: Final pick pose reached!")
+        else:
+            self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
+            return False
+        time.sleep(5.0)
+
+        # 13. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
+        self.get_logger().info(f"Step 12: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
+        if self.move_gripper(self.gripper_positions['grasp']):
+            self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+            
+            # 13A: Attach gear to the hand
+            self.attach_gear_to_hand2()
+            time.sleep(3.0)
+
+            # 13B: Explicitly remove the original world copy to avoid CheckStartStateCollision
+            self.remove_gear_from_world_after_attach()
+            time.sleep(3.0)
+        else:
+            self.get_logger().error("FAILED: Gripper failed to close!")
+            return False
+        
+        time.sleep(3.0)
+
+        # 14. Turn Robot Hand
+        self.rotate_panda_hand_z(angle_radians=0.707)
 
         self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
         self.clear_gear_references() 
