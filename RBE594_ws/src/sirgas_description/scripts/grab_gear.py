@@ -13,14 +13,17 @@ from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
 from action_msgs.msg import GoalStatus
 from shape_msgs.msg import SolidPrimitive # Import needed for the Cylinder
 import time
+import subprocess
 from threading import Event
 import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
 from moveit_msgs.msg import AttachedCollisionObject 
 
 # NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
-from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
 from moveit_msgs.srv import GetCartesianPath
+from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, OrientationConstraint
+
+
 import math
 from scipy.spatial.transform import Rotation as R
 from moveit_msgs.srv import GetPositionFK
@@ -38,6 +41,7 @@ class MoveItPanda(Node):
         super().__init__('moveit_panda')
         
         # Action clients and publishers
+        self.tag_processing_process = None
         self.moveit_action_client = ActionClient(self, MoveGroup, '/move_action')
         self.trajectory_action_client = ActionClient(self, FollowJointTrajectory, '/panda_arm_controller/follow_joint_trajectory')
         self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
@@ -230,7 +234,27 @@ class MoveItPanda(Node):
             time.sleep(0.1)
             
         self.get_logger().info("'first_gear' is now attached to the hand.")
-
+    def launch_tag_processing(self):
+            """Launches the tag_processing.launch.py via subprocess."""
+            self.get_logger().warn("Starting tag_processing.launch.py via subprocess ")
+            
+            # The command to execute
+            command = [
+                'ros2', 'launch', 
+                'sirgas_apriltag_detector', 
+                'tag_processing.launch.py'
+            ]
+            
+            try:
+                self.tag_processing_process = subprocess.Popen(command)
+                self.get_logger().info(f"Tag processing launched with PID: {self.tag_processing_process.pid}")
+                return True
+            except FileNotFoundError:
+                self.get_logger().error("ROS 2 command not found. Ensure your environment is sourced.")
+                return False
+            except Exception as e:
+                self.get_logger().error(f"Error launching tag processing: {e}")
+                return False
     def add_gear_to_scene2(self):
         """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
         self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
@@ -358,7 +382,7 @@ class MoveItPanda(Node):
         planning_options.plan_only = True
         planning_options.look_around = False
         planning_options.replan = True
-        planning_options.replan_attempts = 15000
+        planning_options.replan_attempts = 75000
         
         goal_msg.request = request
         goal_msg.planning_options = planning_options
@@ -385,7 +409,6 @@ class MoveItPanda(Node):
 
     def create_joint_constraint(self, target_joints):
         """Create joint constraints for planning"""
-        from moveit_msgs.msg import Constraints, JointConstraint
         
         constraints = Constraints()
         joint_names = [
@@ -407,8 +430,7 @@ class MoveItPanda(Node):
 
     def create_pose_constraint(self, target_pose):
         """Create pose constraints for planning"""
-        from moveit_msgs.msg import Constraints, PositionConstraint, OrientationConstraint
-        from shape_msgs.msg import SolidPrimitive
+
         
         constraints = Constraints()
         
@@ -444,7 +466,7 @@ class MoveItPanda(Node):
         """Execute trajectory using direct action client"""
         self.get_logger().info("Executing trajectory...")
         
-        if not self.trajectory_action_client.wait_for_server(timeout_sec=5.0):
+        if not self.trajectory_action_client.wait_for_server(timeout_sec=10.0):
             self.get_logger().error("Trajectory action server not available!")
             return False
 
@@ -557,17 +579,14 @@ class MoveItPanda(Node):
             return self.execute_trajectory(trajectory)
         return False
         
-    # ----------------------------------------------------------------------
-    # NEW FUNCTIONS FOR STEP 8B (ROS 2 Cartesian Path via Constraints)
-    # ----------------------------------------------------------------------
+
 
     def move_cartesian_straight_line(self, final_pose: Pose):
         """
         Use MoveIt's compute_cartesian_path service for straight-line Cartesian motion.
         This is the most direct equivalent to the RViz checkbox.
         """
-        from moveit_msgs.srv import GetCartesianPath
-        from geometry_msgs.msg import PoseStamped
+
         
         self.get_logger().info("Computing Cartesian path...")
         
@@ -670,71 +689,156 @@ class MoveItPanda(Node):
         q_out.z = q_out_array[2]
         q_out.w = q_out_array[3]
         return q_out
-    
-    def rotate_panda_hand_z(self, angle_radians: float) -> bool:
-        """
-        Rotates the Panda hand by a specified angle (in radians) about 
-        the Z-axis relative to the end-effector frame.
-        """
-        self.get_logger().info(f"Attempting to rotate hand by {angle_radians:.2f} radians around Z-axis...")
-
-        # 1. Get the current pose (You MUST implement this helper function!)
-        current_pose = self.get_current_pose()
-        if not current_pose:
-            self.get_logger().error("Failed to retrieve current pose for Z-axis rotation.")
-            return False
-
-        # 2. Convert the rotation angle to a quaternion
-        # 'z' means rotation about Z-axis
-        rotation = R.from_euler('z', angle_radians)
-            
-        # Convert the rotation to a Quaternion message
-        q_rot = Quaternion()
-        q_rot_array = rotation.as_quat()
-        q_rot.x = q_rot_array[0]
-        q_rot.y = q_rot_array[1]
-        q_rot.z = q_rot_array[2]
-        q_rot.w = q_rot_array[3]
-
-        # 3. Apply the new rotation: q_new = q_current * q_rotation
-        q_current = current_pose.orientation
-        new_orientation = self.multiply_quaternions(q_current, q_rot)
+    def create_partial_orientation_constraint(self, link_name, target_pose, free_axis='z', tolerance_rpy=None):
+        """Creates an OrientationConstraint message that locks specific axes."""
+        oc = OrientationConstraint()
+        oc.header.frame_id = target_pose.header.frame_id if hasattr(target_pose, 'header') else 'panda_link0'
+        oc.link_name = link_name
+        oc.orientation = target_pose.orientation # Constrain to the current orientation
         
-        # 4. Create the target pose (keep position, update orientation)
-        target_pose = Pose()
-        target_pose.position = current_pose.position
-        target_pose.orientation = new_orientation
+        # Set tolerances (roll, pitch, yaw)
+        if tolerance_rpy is None:
+            tolerance_rpy = [0.01, 0.01, 0.01] # Default tight tolerance
+        
+        oc.absolute_x_axis_tolerance = tolerance_rpy[0]
+        oc.absolute_y_axis_tolerance = tolerance_rpy[1]
+        oc.absolute_z_axis_tolerance = tolerance_rpy[2]
 
-        # 5. Move to the new pose using your existing method
-        if self.move_to_pose(target_pose):
-            self.get_logger().info("SUCCESS: Hand rotated to new orientation.")
-            return True
-        else:
-            self.get_logger().error("FAILED: MoveIt planning failed during hand rotation.")
-            return False
+        # Explicitly loosen the tolerance for the axis we want to rotate around
+        if free_axis == 'z':
+            oc.absolute_z_axis_tolerance = math.pi # Allow full rotation
+        elif free_axis == 'x':
+            oc.absolute_x_axis_tolerance = math.pi
+        elif free_axis == 'y':
+            oc.absolute_y_axis_tolerance = math.pi
+            
+        oc.weight = 1.0 # Set high weight for a strict constraint
+        return oc
+    def create_position_constraint(self, link_name, target_pose, tolerance_xyz):
+        """Creates a PositionConstraint message."""
+        pc = PositionConstraint()
+        pc.header.frame_id = target_pose.header.frame_id if hasattr(target_pose, 'header') else 'panda_link0'
+        pc.link_name = link_name
+        pc.target_point_offset.x = 0.0
+        pc.target_point_offset.y = 0.0
+        pc.target_point_offset.z = 0.0
+        
+        # Define the bounding region for the constraint (a box around the current point)
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [2 * tolerance_xyz, 2 * tolerance_xyz, 2 * tolerance_xyz]
+        
+        # Set the constraint frame to the target position
+        pc.constraint_region.primitives.append(box)
+        pc.constraint_region.primitive_poses.append(target_pose.pose if hasattr(target_pose, 'pose') else target_pose)
+        
+        pc.weight = 1.0 # Set high weight for a strict constraint
+        return pc
+    def rotate_panda_hand_z(self, angle_radians: float) -> bool:
+            """
+            Rotates the Panda hand by a specified angle (in radians) about 
+            the Z-axis relative to the end-effector frame, using constraints 
+            to enforce in-place rotation.
+            """
+            self.get_logger().info(f"Attempting to rotate hand by {angle_radians:.2f} radians around Z-axis...")
 
+            current_pose = self.get_current_pose()
+            if not current_pose:
+                self.get_logger().error("Failed to retrieve current pose for Z-axis rotation.")
+                return False
+
+            # 1. Calculate Target Pose (Orientation is the only change)
+            rotation = R.from_euler('z', angle_radians)
+            q_rot = Quaternion()
+            q_rot_array = rotation.as_quat()
+            q_rot.x = q_rot_array[0]
+            q_rot.y = q_rot_array[1]
+            q_rot.z = q_rot_array[2]
+            q_rot.w = q_rot_array[3]
+
+            q_current = current_pose.orientation
+            new_orientation = self.multiply_quaternions(q_current, q_rot)
+            
+            target_pose = Pose()
+            target_pose.position = current_pose.position
+            target_pose.orientation = new_orientation
+
+            # 2. CREATE CONSTRAINTS TO LOCK POSITION AND ORIENTATION (Crucial Fix)
+            
+            # A. Position Constraint: Lock the hand's current position
+            position_constraint = self.create_position_constraint(
+                link_name="panda_link8",
+                target_pose=current_pose,
+                tolerance_xyz=0.001  # 1 mm tolerance: enforce position lock
+            )
+
+            # B. Orientation Constraint: Lock the roll (X) and pitch (Y) axes
+            # (This prevents unwanted tilting while allowing Z-rotation)
+            orientation_constraint = self.create_partial_orientation_constraint(
+                link_name="panda_link8",
+                target_pose=current_pose,
+                free_axis='z',         # Allow rotation only about Z
+                tolerance_rpy=[0.01, 0.01, math.pi] # Lock X/Y to 0.01 rad, allow full Z range
+            )
+
+            # 3. Combine constraints into a single Constraints message
+            constraints = Constraints()
+            constraints.position_constraints.append(position_constraint)
+            constraints.orientation_constraints.append(orientation_constraint)
+            
+            # 4. Move to the new pose using the explicit constraints
+            # You must ensure your move_to_pose method accepts and applies these constraints.
+            if self.move_to_pose(target_pose, path_constraints=constraints):
+                self.get_logger().info("SUCCESS: Hand rotated in place with constraints.")
+                return True
+            else:
+                self.get_logger().error("FAILED: MoveIt planning failed during constrained hand rotation.")
+                return False
     def axis_diff_callback(self, msg: PoseStamped):
 
         self.angle_correction_rad = msg.pose.position.x
         self.get_logger().info(
             f"Received Z-axis correction angle: {np.degrees(self.angle_correction_rad):.2f} degrees"
         )
-
+    def cleanup_subprocesses(self):
+        """Terminates the tag processing subprocess if it is running."""
+        if self.tag_processing_process:
+            self.get_logger().warn("Executing graceful subprocess termination...")
+            
+            # 1. Terminate (sends SIGTERM)
+            self.tag_processing_process.terminate()
+            
+            # 2. Wait for it to terminate, with a timeout
+            try:
+                self.tag_processing_process.wait(timeout=2)
+                self.get_logger().info("Subprocess terminated gracefully.")
+            except subprocess.TimeoutExpired:
+                # 3. If it times out, force-kill (sends SIGKILL)
+                self.get_logger().error("Subprocess termination timed out. Forcing kill.")
+                self.tag_processing_process.kill() 
+                self.tag_processing_process.wait()
+            
+            self.tag_processing_process = None
     def execute_complete_sequence(self):
         """
         Execute the complete motion sequence.
         """
-        from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, OrientationConstraint
+        
         self.get_logger().info("Starting complete motion sequence...")
         test = True
         PICK_Z = 0.0775
         PRE_PICK_Z = 0.2
+        base_correction_angle = 2.00 #typically 2.35
         side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
         pre_pick_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
         target_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PICK_Z), orientation=side_orientation)
         pre_drop_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.45), orientation=target_pose.orientation)
         place_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.325), orientation=target_pose.orientation)
+        pre_pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=face_down_orientation)
+        pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3125), orientation=face_down_orientation)
+        pre_rotate_pose =  Pose(position=Point(x=0.0, y=0.0, z=0.425), orientation=face_down_orientation)
+        post_rotate_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.3), orientation=face_down_orientation)
         LIFT_DISTANCE = 0.4
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
         # Using -0.1, -1.0 for X/Y position from 4B/5/6
@@ -856,8 +960,17 @@ class MoveItPanda(Node):
                 return False
             
         time.sleep(3.0)
-
+        if test:
+            self.get_logger().info("Step 1: Moving arm to ready position...")
+            if self.move_to_joints(self.poses['ready']):
+                self.get_logger().info("SUCCESS: Ready position reached!")
+            else:
+                self.get_logger().error("FAILED: Could not reach ready position!")
+                return False
+            
+            time.sleep(2.0)
         # 9. Operate gripper (Open)
+        self.launch_tag_processing()
         self.get_logger().info("Step 9: Opening gripper...")
         if self.move_gripper(self.gripper_positions['open']):
             self.get_logger().info("SUCCESS: Gripper opened!")
@@ -874,15 +987,18 @@ class MoveItPanda(Node):
         move_success = self.move_to_joints(self.poses['home'])
         
         if move_success:
-            self.get_logger().info("SUCCESS: Ready position reached!")
+            self.get_logger().info("SUCCESS: Home position reached!")
         else:
-            self.get_logger().error("FAILED: Could not reach ready position!")
+            self.get_logger().error("FAILED: Could not reach Home position!")
             return False # Fail if this move fails
 
         time.sleep(2.0)
-        self.get_logger().info("Step 1: Waiting for FIRST axis difference measurement (max 5s)...")
+        
+        timeout = 15.0
+        # 11. Take axis measurment, with arm out of way
+        self.get_logger().info(f"Step 11: Waiting for FIRST axis difference measurement (max {timeout})...")
         start_time = time.time()
-        while (self.angle_correction_rad is None) and (time.time() - start_time < 15.0):
+        while (self.angle_correction_rad is None) and (time.time() - start_time < timeout):
              rclpy.spin_once(self, timeout_sec=0.1)
         if self.angle_correction_rad is None:
              self.get_logger().warn("Axis measurement TIMEOUT. Proceeding with NO rotation (correction=0.0).")
@@ -890,99 +1006,105 @@ class MoveItPanda(Node):
         else:
             correction_angle = self.angle_correction_rad
             self.get_logger().info(f"Step 1 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
+        if self.tag_processing_process:
+            self.get_logger().info("Stopping tag_processing.launch.py subprocess...")
+            self.tag_processing_process.terminate()
+            # Wait briefly for the process to terminate gracefully
+            try:
+                self.tag_processing_process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                # If it doesn't terminate, try to kill it
+                self.tag_processing_process.kill() 
+                self.tag_processing_process.wait()
+            self.tag_processing_process = None
+            self.get_logger().info("Subprocess stopped and cleaned up.")
         self.destroy_subscription(self.axis_diff_sub)
         self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+        if correction_angle-base_correction_angle <= 0.0:
+            # 12. Move to Pre-Pick Waypoint (High Z)
+            self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
+            self.add_gear_to_scene2()
+            time.sleep(1.0)
 
-        # 11. Move to Pre-Pick Waypoint (High Z)
-        #         
-        self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
-        self.add_gear_to_scene2()
-        time.sleep(1.0)
-
-        # 12A. Move to Pre-Pick Waypoint (High Z)
-        pre_pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=face_down_orientation)
-        
-        self.get_logger().info(f"Step 11A: Moving to PRE-PICK pose ({pre_pick_pose2}m)...")
-        if not self.move_to_pose(pre_pick_pose2):
-            self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
-            return False
-        time.sleep(5.0)
-
-        # 12B. Move down to Final Pick Position (Low Z)
-        pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3125), orientation=face_down_orientation)
-        
-        self.get_logger().info(f"Step 11B: Moving to FINAL PICK pose (Z={0.3125}m)...")
-        if self.move_to_pose(pick_pose2):
-            self.get_logger().info("SUCCESS: Final pick pose reached!")
-        else:
-            self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
-            return False
-        time.sleep(5.0)
-
-        # 13. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
-        self.get_logger().info(f"Step 12: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
-        if self.move_gripper(self.gripper_positions['grasp']):
-            self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+            # 12A. Move to Pre-Pick Waypoint (High Z)
             
-            # 13A: Attach gear to the hand
-            self.attach_gear_to_hand2()
+            self.get_logger().info(f"Step 12A: Moving to PRE-PICK pose ({pre_pick_pose2}m)...")
+            if not self.move_to_pose(pre_pick_pose2):
+                self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
+                return False
+            time.sleep(5.0)
+
+            # 12B. Move down to Final Pick Position (Low Z)
+            
+            self.get_logger().info(f"Step 12B: Moving to FINAL PICK pose (Z={pick_pose2.position.z:.4f}m)...")
+            if self.move_cartesian_straight_line(pick_pose2):
+                self.get_logger().info("SUCCESS: Final pick pose reached!")
+            else:
+                self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
+                return False
+            time.sleep(5.0)
+
+            # 13. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
+            self.get_logger().info(f"Step 13: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
+            if self.move_gripper(self.gripper_positions['grasp']):
+                self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+                
+                # 13A: Attach gear to the hand
+                self.attach_gear_to_hand2()
+                time.sleep(3.0)
+
+                # 13B: Explicitly remove the original world copy to avoid CheckStartStateCollision
+                self.remove_gear_from_world_after_attach()
+                time.sleep(3.0)
+            else:
+                self.get_logger().error("FAILED: Gripper failed to close!")
+                return False
+            
             time.sleep(3.0)
 
-            # 13B: Explicitly remove the original world copy to avoid CheckStartStateCollision
-            self.remove_gear_from_world_after_attach()
-            time.sleep(3.0)
-        else:
-            self.get_logger().error("FAILED: Gripper failed to close!")
-            return False
-        
-        time.sleep(3.0)
+            self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+            self.clear_gear_references() 
 
-        # 14. Turn Robot Hand
-        self.rotate_panda_hand_z(angle_radians=0.707)
-
-        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
-        self.clear_gear_references() 
-
-        # --- NEW STEPS FOR AXIS ALIGNMENT ---
-        
-        # Step 14: Wait for the TagAxisComparator to publish the angle.
-        # This assumes your TagAxisComparator is running and publishing.
-        self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
-        
-        if abs(correction_angle) > 1e-4: # Only rotate if the angle is significant
-            self.get_logger().info(f"Step 2: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
-            if not self.rotate_panda_hand_z(angle_radians=correction_angle):
-                 self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
-                 return False
-            time.sleep(2.0)
-        else:
-            self.get_logger().info("Step 2: Correction angle near zero. Skipping rotation.")
-        
-        # --- CRITICAL: UNSUBSCRIBE TO PREVENT STALE READINGS ---
-        self.destroy_subscription(self.axis_diff_sub)
-        self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
-        
-        # --- REST OF ORIGINAL SEQUENCE STARTS HERE ---
-        
-        # 3. Move arm to pre-grasp position for gear #2 (Original Step 1)
-        # ... continue with your original sequence of picking the gear ...
-        
-        # Move back to a safe ready position if needed
-        self.get_logger().info("Step 15: Opening gripper...")
-        if self.move_gripper(self.gripper_positions['open']):
-            self.get_logger().info("SUCCESS: Gripper opened!")
-        else:
-            self.get_logger().warn("Gripper movement may have failed")
-        
-        time.sleep(1.0)
-
-        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
-        self.clear_gear_references() 
-        move_success = self.move_to_joints(self.poses['home']) 
-        if not move_success:
-            self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
-            return False
+            #step 14: move gear straight up to avoid other gears
+            self.get_logger().info(f"Step 14: Moving to PRE-rotate pose ({pre_rotate_pose.position.z:.4f}m)...")
+            if not self.move_to_pose(pre_rotate_pose):
+                self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
+                return False
+            time.sleep(5.0)
             
+            # Step 15: Wait for the TagAxisComparator to publish the angle.
+            # This assumes your TagAxisComparator is running and publishing.
+            self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
+            
+            if abs(correction_angle) < base_correction_angle: # Only rotate if the angle is significant
+                self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
+                if not self.rotate_panda_hand_z(angle_radians=correction_angle):
+                    self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
+                    return False
+                time.sleep(2.0)
+            else:
+                self.get_logger().info("Step 15: Correction angle near zero. Skipping rotation.")
+            self.get_logger().info(f"Step 14: Moving to PRE-PICK pose ({pre_rotate_pose}m)...")
+            if not self.move_to_pose(post_rotate_pose):
+                self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
+                return False
+            time.sleep(5.0)
+
+            self.get_logger().info("Step 16: Opening gripper...")
+            if self.move_gripper(self.gripper_positions['open']):
+                self.get_logger().info("SUCCESS: Gripper opened!")
+            else:
+                self.get_logger().warn("Gripper movement may have failed")
+            
+            time.sleep(1.0)
+
+            self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+            self.clear_gear_references() 
+            move_success = self.move_to_joints(self.poses['home']) 
+            if not move_success:
+                self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
+                return False
+          
         self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
         return True
 
@@ -1005,6 +1127,7 @@ def main(args=None):
         node.get_logger().error(f"Error: {e}")
         
     finally:
+        node.cleanup_subprocesses() 
         node.destroy_node()
         rclpy.shutdown()
 

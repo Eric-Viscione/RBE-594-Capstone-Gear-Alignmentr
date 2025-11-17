@@ -40,7 +40,7 @@ class DetectorConfig:
     rect_h: float = 0.05                 # long side
 
     # debugging
-    enable_debug_log: bool = True       # <-- NEW: controls extra prints
+    enable_debug_log: bool = True       #  controls extra prints
     max_debug_contours: int = 5          # how many top contours to log
 
     # world <- camera transform (3x3 R, 3x1 t)
@@ -79,6 +79,19 @@ class TagPoseEstimator:
                 self.debug_dir = base_dir
                 
             os.makedirs(self.debug_dir, exist_ok=True)
+            file_count = 0
+            for filename in os.listdir(self.debug_dir):
+                file_path = os.path.join(self.debug_dir, filename)
+                # Only delete files, not subdirectories
+                if os.path.isfile(file_path):
+                    try:
+                        os.unlink(file_path)
+                        file_count += 1
+                    except Exception as e:
+                        self.log.warn(f"Failed to delete old debug file {file_path}. Reason: {e}")
+
+            if file_count > 0:
+                self.log.info(f"Cleaned up {file_count} old debug files.")
             self.log.info(f"Saving debug images to: {self.debug_dir}")
     def _log(self, msg: str):
         if self.cfg.enable_debug_log:
