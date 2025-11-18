@@ -5,7 +5,7 @@ from rclpy.node import Node
 from rclpy.action import ActionClient
 from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import MotionPlanRequest, PlanningOptions, RobotState, CollisionObject, PlanningScene 
-from trajectory_msgs.msg import JointTrajectory
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from control_msgs.action import FollowJointTrajectory, GripperCommand
 from control_msgs.msg import GripperCommand as GripperCommandMsg 
 from sensor_msgs.msg import JointState
@@ -735,66 +735,70 @@ class MoveItPanda(Node):
         
         pc.weight = 1.0 # Set high weight for a strict constraint
         return pc
-    def rotate_panda_hand_z(self, angle_radians: float) -> bool:
-            """
-            Rotates the Panda hand by a specified angle (in radians) about 
-            the Z-axis relative to the end-effector frame, using constraints 
-            to enforce in-place rotation.
-            """
-            self.get_logger().info(f"Attempting to rotate hand by {angle_radians:.2f} radians around Z-axis...")
+    
+    def get_current_joint_positions(self):
+        """Returns the current joint positions as a list, ordered by name."""
+        if self.current_joint_state is None:
+            self.get_logger().error("Cannot retrieve joint positions: State not available.")
+            return None
 
-            current_pose = self.get_current_pose()
-            if not current_pose:
-                self.get_logger().error("Failed to retrieve current pose for Z-axis rotation.")
-                return False
+        # Order of joints must match the controller's expectation (panda_joint1 to panda_joint7)
+        ordered_names = [
+            'panda_joint1', 'panda_joint2', 'panda_joint3', 'panda_joint4', 
+            'panda_joint5', 'panda_joint6', 'panda_joint7'
+        ]
 
-            # 1. Calculate Target Pose (Orientation is the only change)
-            rotation = R.from_euler('z', angle_radians)
-            q_rot = Quaternion()
-            q_rot_array = rotation.as_quat()
-            q_rot.x = q_rot_array[0]
-            q_rot.y = q_rot_array[1]
-            q_rot.z = q_rot_array[2]
-            q_rot.w = q_rot_array[3]
+        # Create a dictionary for quick lookup by name
+        name_to_pos = dict(zip(self.current_joint_state.name, self.current_joint_state.position))
 
-            q_current = current_pose.orientation
-            new_orientation = self.multiply_quaternions(q_current, q_rot)
+        # Return positions in the canonical order
+        return [name_to_pos.get(name, 0.0) for name in ordered_names]
+    
+    def rotate_joint7_directly(self, angle_radians: float) -> bool:
+        """
+        Directly commands panda_joint7 to rotate by a relative angle 
+        using the FollowJointTrajectory action client, bypassing MoveIt planning.
+        """
+        self.get_logger().info(f"Attempting direct rotation of panda_joint7 by {np.degrees(angle_radians):.2f} degrees...")
+
+        current_positions = self.get_current_joint_positions()
+        if current_positions is None:
+            return False
+
+        # Calculate the new target position for joint 7
+        target_positions = list(current_positions)
+        # Joint 7 is at index 6 in the list (0-indexed)
+        target_positions[6] += angle_radians 
+
+        # --- Create JointTrajectory Message ---
+        trajectory = JointTrajectory()
+        trajectory.joint_names = [
+            'panda_joint1', 'panda_joint2', 'panda_joint3', 'panda_joint4', 
+            'panda_joint5', 'panda_joint6', 'panda_joint7'
+        ]
+
+        # 1. Start point (current position) - Optional, but good practice
+        point_start = JointTrajectoryPoint()
+        point_start.positions = current_positions
+        point_start.time_from_start.sec = 0  # Start immediately
+
+        # 2. End point (target position)
+        point_end = JointTrajectoryPoint()
+        point_end.positions = target_positions
+        # Set a duration for the movement (e.g., 2 seconds)
+        point_end.time_from_start.sec = 2 
+
+        trajectory.points.append(point_start)
+        trajectory.points.append(point_end)
+
+        # Execute the trajectory using the existing executor
+        if self.execute_trajectory(trajectory):
+            self.get_logger().info("SUCCESS: Direct rotation of panda_joint7 complete.")
+            return True
+        else:
+            self.get_logger().error("FAILED: Direct joint trajectory execution failed.")
+            return False
             
-            target_pose = Pose()
-            target_pose.position = current_pose.position
-            target_pose.orientation = new_orientation
-
-            # 2. CREATE CONSTRAINTS TO LOCK POSITION AND ORIENTATION (Crucial Fix)
-            
-            # A. Position Constraint: Lock the hand's current position
-            position_constraint = self.create_position_constraint(
-                link_name="panda_hand",
-                target_pose=current_pose,
-                tolerance_xyz=0.010  # 1 mm tolerance: enforce position lock
-            )
-
-            # B. Orientation Constraint: Lock the roll (X) and pitch (Y) axes
-            # (This prevents unwanted tilting while allowing Z-rotation)
-            orientation_constraint = self.create_partial_orientation_constraint(
-                link_name="panda_hand",
-                target_pose=current_pose,
-                free_axis='z',         # Allow rotation only about Z
-                tolerance_rpy=[0.05, 0.05, math.pi] # Lock X/Y to 0.01 rad, allow full Z range
-            )
-
-            # 3. Combine constraints into a single Constraints message
-            constraints = Constraints()
-            constraints.position_constraints.append(position_constraint)
-            constraints.orientation_constraints.append(orientation_constraint)
-            
-            # 4. Move to the new pose using the explicit constraints
-            # You must ensure your move_to_pose method accepts and applies these constraints.
-            if self.move_to_pose(target_pose, path_constraints=constraints):
-                self.get_logger().info("SUCCESS: Hand rotated in place with constraints.")
-                return True
-            else:
-                self.get_logger().error("FAILED: MoveIt planning failed during constrained hand rotation.")
-                return False
     def axis_diff_callback(self, msg: PoseStamped):
 
         self.angle_correction_rad = msg.pose.position.x
@@ -820,6 +824,7 @@ class MoveItPanda(Node):
                 self.tag_processing_process.wait()
             
             self.tag_processing_process = None
+
     def execute_complete_sequence(self):
         """
         Execute the complete motion sequence.
@@ -1064,8 +1069,8 @@ class MoveItPanda(Node):
             
             time.sleep(3.0)
 
-            self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
-            self.clear_gear_references() 
+            # self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+            # self.clear_gear_references() 
 
             #step 14: move gear straight up to avoid other gears
             self.get_logger().info(f"Step 14: Moving to PRE-rotate pose ({pre_rotate_pose.position.z:.4f}m)...")
@@ -1082,14 +1087,14 @@ class MoveItPanda(Node):
             
             if abs(correction_angle) < base_correction_angle: # Only rotate if the angle is significant
                 self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
-                if not self.rotate_panda_hand_z(angle_radians=correction_angle):
+                if not self.rotate_joint7_directly(angle_radians=correction_angle):
                     self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
                     return False
                 time.sleep(2.0)
             else:
                 self.get_logger().info("Step 15: Correction angle near zero. Skipping rotation.")
-            self.get_logger().info(f"Step 14: Moving to PRE-PICK pose ({pre_rotate_pose}m)...")
-            if not self.move_to_pose(post_rotate_pose):
+            self.get_logger().info(f"Step 14: Moving to PRE-Rotate pose ({pre_rotate_pose}m)...")
+            if not self.move_to_pose(pre_rotate_pose):
                 self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
                 return False
             time.sleep(5.0)
