@@ -349,7 +349,7 @@ class MoveItPanda(Node):
         self.get_logger().info("'first_gear' explicitly removed from world collision objects.")
     
     # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
-    def plan_with_moveit(self, target_joints=None, target_pose=None): 
+    def plan_with_moveit(self, target_joints=None, target_pose=None, path_constraints=None): 
         """Use MoveIt to plan a trajectory"""
         self.get_logger().info("Planning with MoveIt...")
         
@@ -377,7 +377,8 @@ class MoveItPanda(Node):
         else:
             self.get_logger().error("No target specified!")
             return None
-        
+        if path_constraints:
+            request.path_constraints = path_constraints
         planning_options = PlanningOptions()
         planning_options.plan_only = True
         planning_options.look_around = False
@@ -569,12 +570,12 @@ class MoveItPanda(Node):
         return False
 
     # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
-    def move_to_pose(self, target_pose: Pose): 
+    def move_to_pose(self, target_pose: Pose, path_constraints=None): 
         """Move the end-effector to a specified Pose (position and orientation) using MoveIt planning."""
         if not self.wait_for_joint_state():
             self.get_logger().warn("Continuing with default joint state")
             
-        trajectory = self.plan_with_moveit(target_pose=target_pose)
+        trajectory = self.plan_with_moveit(target_pose=target_pose, path_constraints=path_constraints)
         if trajectory:
             return self.execute_trajectory(trajectory)
         return False
@@ -767,18 +768,18 @@ class MoveItPanda(Node):
             
             # A. Position Constraint: Lock the hand's current position
             position_constraint = self.create_position_constraint(
-                link_name="panda_link8",
+                link_name="panda_hand",
                 target_pose=current_pose,
-                tolerance_xyz=0.001  # 1 mm tolerance: enforce position lock
+                tolerance_xyz=0.010  # 1 mm tolerance: enforce position lock
             )
 
             # B. Orientation Constraint: Lock the roll (X) and pitch (Y) axes
             # (This prevents unwanted tilting while allowing Z-rotation)
             orientation_constraint = self.create_partial_orientation_constraint(
-                link_name="panda_link8",
+                link_name="panda_hand",
                 target_pose=current_pose,
                 free_axis='z',         # Allow rotation only about Z
-                tolerance_rpy=[0.01, 0.01, math.pi] # Lock X/Y to 0.01 rad, allow full Z range
+                tolerance_rpy=[0.05, 0.05, math.pi] # Lock X/Y to 0.01 rad, allow full Z range
             )
 
             # 3. Combine constraints into a single Constraints message
@@ -847,7 +848,8 @@ class MoveItPanda(Node):
 
         # --- STEP 0: FORCEFUL CLEANUP ---
         self.clear_gear_references()
-
+        if test:
+            self.get_logger().info("Test Mode Active: Gear on PBA at start")
         if not test:
             # 1. Move arm to ready position (Fixes StartStateCollision before adding object)
             self.get_logger().info("Step 1: Moving arm to ready position...")
@@ -1067,7 +1069,9 @@ class MoveItPanda(Node):
 
             #step 14: move gear straight up to avoid other gears
             self.get_logger().info(f"Step 14: Moving to PRE-rotate pose ({pre_rotate_pose.position.z:.4f}m)...")
-            if not self.move_to_pose(pre_rotate_pose):
+            # if not self.move_to_pose(pre_rotate_pose):
+            if not self.move_cartesian_straight_line(pre_rotate_pose):
+
                 self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
                 return False
             time.sleep(5.0)

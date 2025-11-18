@@ -23,7 +23,8 @@ xacroRelativePath = os.path.join('config', 'panda_pba_robots.urdf.xacro')
 # Absolute camera SDF model path
 
 sirgas_share = get_package_share_directory('sirgas_description')
-cameraSdfPath = os.path.join(sirgas_share, 'meshes', 'sim_cam', 'model.sdf')
+cameraSdfPath = os.path.join(sirgas_share, 'meshes', 'sim_cam', 'model.sdf')    
+recordingCameraSdfPath = os.path.join(sirgas_share, 'meshes', 'sim_cam', 'model2.sdf')
 # RViz config file path respect to the package path
 rvizConfigPath = os.path.join(pkgPath, 'config', 'moveit.rviz')
 
@@ -197,6 +198,35 @@ def generate_launch_description():
             )
         ]
     )
+    spawn_recording_cam = launch_ros.actions.Node(
+        package='ros_gz_sim',
+        executable='create',
+        name='spawn_recording_cam',
+        output='screen',
+        arguments=[
+            '-file', recordingCameraSdfPath,
+            '-name', 'recording_cam',    # model name inside Gazebo
+            '-x','1.0','-y','0.5','-z','2.0',   # <<< different position
+            '-R','0','-P','0','-Y','1.57'       # <<< different orientation (optional)
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+    timer_bridge_recording_cam = launch.actions.TimerAction(
+        period=2.0,
+        actions=[
+            launch_ros.actions.Node(
+                package='ros_gz_bridge',
+                executable='parameter_bridge',
+                name='bridge_recording_cam',
+                output='screen',
+                arguments=[
+                    '/recording_feed/image@sensor_msgs/msg/Image@gz.msgs.Image',
+                    '/recording_feed/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'
+                ],
+                parameters=[{'use_sim_time': use_sim_time}]
+            )
+        ]
+    )
     
     # --- Camera Launch Logic Ends Here ---
     # Robot state publisher node
@@ -267,6 +297,7 @@ def generate_launch_description():
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )
+    
 
     gz_spawn_second_gear = launch_ros.actions.Node(
         package='ros_gz_sim',
@@ -349,6 +380,8 @@ def generate_launch_description():
         pba_v_controller_spawner,
         arm_controller,
         hand_controller,
+        # spawn_recording_cam,         
+        # timer_bridge_recording_cam,   
         # gz_spawn_cube,
         # gz_spawn_starter_gear,
         gz_spawn_first_gear,
