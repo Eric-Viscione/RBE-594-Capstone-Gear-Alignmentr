@@ -292,8 +292,8 @@ def generate_launch_description():
             'first_gear',
             '-allow_renaming',
             'true',
-            # '-x','0.0','-y','-1.0','-z','0.025'
-            '-x','0.0','-y','0.0','-z','0.25'
+            '-x','0.0','-y','-1.0','-z','0.025','-Y','1.57'
+            # '-x','0.0','-y','0.0','-z','0.25'
         ],
         parameters=[{'use_sim_time': use_sim_time}]
     )

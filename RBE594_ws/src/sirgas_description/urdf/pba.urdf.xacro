@@ -142,7 +142,7 @@
     <joint name="liner1_pbs" type="fixed">
         <parent link="peg_board"/>
         <child link="liner1"/>
-        <origin rpy="0 0 0" xyz="-0.375 -0.013125 0.226"/>
+        <origin rpy="0 0 0" xyz="-0.375 -0.01 0.226"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -167,7 +167,7 @@
 
     <link name="liner3">
         <visual>
-            <origin rpy="0 0 0" xyz="0 .0125 0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
                 <box size="0.005 0.025 0.001"/>
             </geometry>
@@ -180,7 +180,7 @@
     <joint name="liner3_pbf" type="fixed">
         <parent link="peg_board"/>
         <child link="liner3"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.013125 0.226"/>
+        <origin rpy="0 0 0" xyz="0.0 0 0.226"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -199,7 +199,7 @@
     <joint name="liner5_pbf" type="fixed">
         <parent link="peg_board"/>
         <child link="liner5"/>
-        <origin rpy="0 0 0" xyz="0.25 -0.013125 0.226"/>
+        <origin rpy="0 0 0" xyz="0.25 -0.01 0.226"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -218,7 +218,7 @@
     <joint name="liner6_pb2" type="fixed">
         <parent link="second_gear"/>
         <child link="liner6"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.101"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -237,7 +237,7 @@
     <joint name="liner7_pbt" type="fixed">
         <parent link="peg_board"/>
         <child link="liner7"/>
-        <origin rpy="0 0 0" xyz="0.45 -0.013125 0.226"/>
+        <origin rpy="0 0 0" xyz="0.45 -0.01 0.226"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -256,7 +256,7 @@
     <joint name="liner8_pbt" type="fixed">
         <parent link="third_gear"/>
         <child link="liner8"/>
-        <origin rpy="0 0 0" xyz="0.0 -0.028 0.051"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.028 0.101"/>
         <axis xyz="0 0 1"/>
     </joint>
 

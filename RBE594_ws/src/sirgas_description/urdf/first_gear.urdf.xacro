@@ -26,7 +26,7 @@
     </link>
     <xacro:attach_apriltag_card
         parent_link="first_gear"
-        tag_size="0.02"
+        tag_size="0.01"
         extra_len="0.03"            
         tag_thickness="0.0005"
         xyz="0 0.075 0.025"

@@ -164,52 +164,53 @@ class MoveItPanda(Node):
         time.sleep(2.0) 
         self.get_logger().warn("Forceful scene cleanup complete. Scene should be clear for planning.")
 
-    def add_gear_to_scene(self):
-        """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
-        self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
+    # def add_gear_to_scene(self):
+    #     """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
+    #     self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
         
-        gear_co = CollisionObject()
-        gear_co.header.frame_id = "world" 
-        gear_co.id = "first_gear"
+    #     gear_co = CollisionObject()
+    #     gear_co.header.frame_id = "world" 
+    #     gear_co.id = "first_gear"
         
-        # box = SolidPrimitive()
-        # box.type = SolidPrimitive.BOX
-        # box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+    #     # box = SolidPrimitive()
+    #     # box.type = SolidPrimitive.BOX
+    #     # box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
 
-        # 1. Create a Mesh object
-        gear_mesh = Mesh()
+    #     # 1. Create a Mesh object
+    #     gear_mesh = Mesh()
 
-        # 2. Define the path to your STL file
-        # NOTE: This path MUST be accessible by the MoveIt process.
-        # You might need to use a package path resolver, similar to how it's done in the URDF:
-        gear_mesh.filename = "package://sirgas_description/meshes/First_Gear.stl" 
+    #     # 2. Define the path to your STL file
+    #     # NOTE: This path MUST be accessible by the MoveIt process.
+    #     # You might need to use a package path resolver, similar to how it's done in the URDF:
+    #     gear_mesh.filename = "package://sirgas_description/meshes/First_Gear.stl" 
 
-        # 3. Define a scale factor (usually 1.0)
-        gear_mesh.scale = [1.0, 1.0, 1.0]
-        gear_pose = Pose()
-        gear_pose.position.x = 0.0
-        gear_pose.position.y = -1.0
-        gear_pose.position.z = GEAR_CENTER_Z 
-        gear_pose.orientation.w = 1.0 
-        # 4. Assign the mesh to the Collision Object
-        co.meshes.append(gear_mesh)
-        co.mesh_poses.append(gear_pose) # Use the same pose as before
+    #     # 3. Define a scale factor (usually 1.0)
+    #     gear_mesh.scale = [1.0, 1.0, 1.0]
+    #     gear_pose = Pose()
+    #     gear_pose.position.x = 0.0
+    #     gear_pose.position.y = -1.0
+    #     gear_pose.position.z = GEAR_CENTER_Z 
+    #     gear_pose.orientation.w = 1.0 
+    #     # 4. Assign the mesh to the Collision Object
+    #     co.meshes.append(gear_mesh)
+    #     co.mesh_poses.append(gear_pose) # Use the same pose as before
   
         
-        # gear_co.primitives.append(box) 
-        gear_co.primitive_poses.append(gear_pose) 
-        gear_co.operation = CollisionObject.ADD 
+    #     # gear_co.primitives.append(box) 
+    #     gear_co.primitive_poses.append(gear_pose) 
+    #     gear_co.operation = CollisionObject.ADD 
         
-        ps_msg = PlanningScene()
-        ps_msg.world.collision_objects.append(gear_co)
-        ps_msg.is_diff = True 
+    #     ps_msg = PlanningScene()
+    #     ps_msg.world.collision_objects.append(gear_co)
+    #     ps_msg.is_diff = True 
         
-        self.get_logger().info("Publishing 'first_gear' (BOX) to planning scene...")
-        for _ in range(5):
-            self.planning_scene_pub.publish(ps_msg)
-            time.sleep(0.1) 
+    #     self.get_logger().info("Publishing 'first_gear' (BOX) to planning scene...")
+    #     for _ in range(5):
+    #         self.planning_scene_pub.publish(ps_msg)
+    #         time.sleep(0.1) 
             
-        self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
+    #     self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
+
     def add_gear_to_scene(self):
         """Adds a collision object representing the gear using the accurate Mesh (.stl) geometry."""
         self.get_logger().info(f"Adding 'first_gear' (Mesh: First_Gear.stl) to the planning scene...")
@@ -221,22 +222,25 @@ class MoveItPanda(Node):
         # ... (header setup)
         
         # 1. Define the geometry as a SolidPrimitive (Cylinder)
-        cylinder = SolidPrimitive()
-        cylinder.type = SolidPrimitive.CYLINDER
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
         
         # Adjust dimensions: Use a cylinder that represents the outer, graspable part.
         # If the outer diameter is 0.06m, use slightly less for the cylinder radius.
         # R = 0.03m (GEAR_SIZE / 2.0)
         # Dimensions are [height, radius]
         # Set radius to a size that prevents the planner from passing through the graspable area.
-        cylinder.dimensions = [GEAR_HEIGHT, 0.035] # Radius slightly larger than 0.03m
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] # Radius slightly larger than 0.03m
 
         # 2. Define the Pose
         gear_pose = Pose()
-        # ... (pose setup)
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = -1.0
+        gear_pose.position.z = GEAR_CENTER_Z 
+        gear_pose.orientation.w = 1.0 
         
         # 3. Assign the primitive and its pose
-        gear_co.primitives.append(cylinder) 
+        gear_co.primitives.append(box) 
         gear_co.primitive_poses.append(gear_pose) 
         
         # 4. Set the operation
@@ -256,6 +260,7 @@ class MoveItPanda(Node):
             time.sleep(0.1) 
             
         self.get_logger().info("'first_gear' (MESH) should now be in the planning scene.")
+
     def launch_tag_processing(self):
             """Launches the tag_processing.launch.py via subprocess."""
             self.get_logger().warn("Starting tag_processing.launch.py via subprocess ")
@@ -277,6 +282,7 @@ class MoveItPanda(Node):
             except Exception as e:
                 self.get_logger().error(f"Error launching tag processing: {e}")
                 return False
+            
     def add_gear_to_scene2(self):
         """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
         self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
@@ -310,6 +316,47 @@ class MoveItPanda(Node):
             
         self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
 
+    def attach_gear_to_hand(self):
+        """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
+        self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
+        
+        # Re-create geometry and pose 
+        box = SolidPrimitive()
+        box.type = SolidPrimitive.BOX
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        
+        
+        gear_pose = Pose()
+        gear_pose.position.x = 0.0
+        gear_pose.position.y = -1.0
+        gear_pose.position.z = GEAR_CENTER_Z
+        gear_pose.orientation.w = 1.0 
+
+        aco = AttachedCollisionObject()
+        aco.link_name = "panda_hand" 
+        
+        aco.object.header.frame_id = "world"
+        aco.object.id = "first_gear"
+        aco.object.operation = CollisionObject.ADD 
+        
+        # Explicitly include geometry when attaching
+        aco.object.primitives.append(box) 
+        aco.object.primitive_poses.append(gear_pose) 
+
+        # Define the links the attached object is allowed to touch (CRITICAL FIX)
+        aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
+        
+        ps_msg = PlanningScene()
+        ps_msg.robot_state.attached_collision_objects.append(aco) 
+        ps_msg.robot_state.is_diff = True
+        ps_msg.is_diff = True
+        
+        for _ in range(5):
+            self.planning_scene_pub.publish(ps_msg)
+            time.sleep(0.1)
+            
+        self.get_logger().info("'first_gear' is now attached to the hand.")
+    
     def attach_gear_to_hand2(self):
         """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
         self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
@@ -868,6 +915,7 @@ class MoveItPanda(Node):
         pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3), orientation=face_down_orientation)
         pre_rotate_pose =  Pose(position=Point(x=0.0, y=0.0, z=0.35), orientation=face_down_orientation)
         post_rotate_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.31), orientation=face_down_orientation)
+        push_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.285), orientation=face_down_orientation)
         LIFT_DISTANCE = 0.4
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
         # Using -0.1, -1.0 for X/Y position from 4B/5/6
@@ -904,9 +952,6 @@ class MoveItPanda(Node):
                 self.add_gear_to_scene()
                 time.sleep(1.0)
 
-            
-                
-
                 # 4A. Move to Pre-Pick Waypoint (High Z)
             
                 self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
@@ -931,7 +976,7 @@ class MoveItPanda(Node):
                     self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
                     
                     # 5A: Attach gear to the hand
-                    self.attach_gear_to_hand2()
+                    self.attach_gear_to_hand()
                     time.sleep(3.0)
 
                     # 5B: Explicitly remove the original world copy to avoid CheckStartStateCollision
@@ -1131,6 +1176,9 @@ class MoveItPanda(Node):
                     self.get_logger().warn("Gripper movement may have failed")
                 
                 time.sleep(1.0)
+
+                self.get_logger().info("Step 18: Pushing gear down")
+                self.move_cartesian_straight_line(push_pose)
 
                 self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
                 self.clear_gear_references() 
