@@ -12,6 +12,9 @@ from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
 from action_msgs.msg import GoalStatus
 from shape_msgs.msg import SolidPrimitive # Import needed for the Cylinder
+from shape_msgs.msg import Mesh
+from move_pba import PBARobotVelocityController
+
 import time
 import subprocess
 from threading import Event
@@ -72,8 +75,8 @@ class MoveItPanda(Node):
         # Gripper positions
         self.gripper_positions = {
             'close': 0.0,
-            'open': 0.04,
-            'grasp': 0.015
+            'open': 0.06,
+            'grasp': 0.02
         }
         
         # NOTE: End-effector link is needed for constraint definition. Assuming "panda_hand"
@@ -169,17 +172,31 @@ class MoveItPanda(Node):
         gear_co.header.frame_id = "world" 
         gear_co.id = "first_gear"
         
-        box = SolidPrimitive()
-        box.type = SolidPrimitive.BOX
-        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
-        
+        # box = SolidPrimitive()
+        # box.type = SolidPrimitive.BOX
+        # box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+
+        # 1. Create a Mesh object
+        gear_mesh = Mesh()
+
+        # 2. Define the path to your STL file
+        # NOTE: This path MUST be accessible by the MoveIt process.
+        # You might need to use a package path resolver, similar to how it's done in the URDF:
+        gear_mesh.filename = "package://sirgas_description/meshes/First_Gear.stl" 
+
+        # 3. Define a scale factor (usually 1.0)
+        gear_mesh.scale = [1.0, 1.0, 1.0]
         gear_pose = Pose()
         gear_pose.position.x = 0.0
         gear_pose.position.y = -1.0
         gear_pose.position.z = GEAR_CENTER_Z 
         gear_pose.orientation.w = 1.0 
+        # 4. Assign the mesh to the Collision Object
+        co.meshes.append(gear_mesh)
+        co.mesh_poses.append(gear_pose) # Use the same pose as before
+  
         
-        gear_co.primitives.append(box) 
+        # gear_co.primitives.append(box) 
         gear_co.primitive_poses.append(gear_pose) 
         gear_co.operation = CollisionObject.ADD 
         
@@ -193,47 +210,52 @@ class MoveItPanda(Node):
             time.sleep(0.1) 
             
         self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
+    def add_gear_to_scene(self):
+        """Adds a collision object representing the gear using the accurate Mesh (.stl) geometry."""
+        self.get_logger().info(f"Adding 'first_gear' (Mesh: First_Gear.stl) to the planning scene...")
+        
+        gear_co = CollisionObject()
+        gear_co.header.frame_id = "world" 
+        gear_co.id = "first_gear"
+        
+        # ... (header setup)
+        
+        # 1. Define the geometry as a SolidPrimitive (Cylinder)
+        cylinder = SolidPrimitive()
+        cylinder.type = SolidPrimitive.CYLINDER
+        
+        # Adjust dimensions: Use a cylinder that represents the outer, graspable part.
+        # If the outer diameter is 0.06m, use slightly less for the cylinder radius.
+        # R = 0.03m (GEAR_SIZE / 2.0)
+        # Dimensions are [height, radius]
+        # Set radius to a size that prevents the planner from passing through the graspable area.
+        cylinder.dimensions = [GEAR_HEIGHT, 0.035] # Radius slightly larger than 0.03m
 
-    def attach_gear_to_hand(self):
-        """Attaches the gear to the robot hand, explicitly providing geometry for robustness."""
-        self.get_logger().info("Attaching 'first_gear' to 'panda_hand'...")
-        
-        # Re-create geometry and pose 
-        box = SolidPrimitive()
-        box.type = SolidPrimitive.BOX
-        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
-        
-        
+        # 2. Define the Pose
         gear_pose = Pose()
-        gear_pose.position.x = 0.0
-        gear_pose.position.y = -1.0
-        gear_pose.position.z = GEAR_CENTER_Z 
-        gear_pose.orientation.w = 1.0 
+        # ... (pose setup)
+        
+        # 3. Assign the primitive and its pose
+        gear_co.primitives.append(cylinder) 
+        gear_co.primitive_poses.append(gear_pose) 
+        
+        # 4. Set the operation
+        gear_co.operation = CollisionObject.ADD
 
-        aco = AttachedCollisionObject()
-        aco.link_name = "panda_hand" 
+        # 5. Set the operation
+        gear_co.operation = CollisionObject.ADD 
         
-        aco.object.header.frame_id = "world"
-        aco.object.id = "first_gear"
-        aco.object.operation = CollisionObject.ADD 
-        
-        # Explicitly include geometry when attaching
-        aco.object.primitives.append(box) 
-        aco.object.primitive_poses.append(gear_pose) 
-
-        # Define the links the attached object is allowed to touch (CRITICAL FIX)
-        aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
-        
+        # 6. Publish the Planning Scene update
         ps_msg = PlanningScene()
-        ps_msg.robot_state.attached_collision_objects.append(aco) 
-        ps_msg.robot_state.is_diff = True
-        ps_msg.is_diff = True
+        ps_msg.world.collision_objects.append(gear_co)
+        ps_msg.is_diff = True 
         
+        self.get_logger().info("Publishing 'first_gear' (MESH) to planning scene...")
         for _ in range(5):
             self.planning_scene_pub.publish(ps_msg)
-            time.sleep(0.1)
+            time.sleep(0.1) 
             
-        self.get_logger().info("'first_gear' is now attached to the hand.")
+        self.get_logger().info("'first_gear' (MESH) should now be in the planning scene.")
     def launch_tag_processing(self):
             """Launches the tag_processing.launch.py via subprocess."""
             self.get_logger().warn("Starting tag_processing.launch.py via subprocess ")
@@ -443,7 +465,7 @@ class MoveItPanda(Node):
         # Create a small tolerance volume
         volume = SolidPrimitive()
         volume.type = SolidPrimitive.SPHERE
-        volume.dimensions = [0.025] 
+        volume.dimensions = [0.0025] 
         
         pos_constraint.constraint_region.primitives.append(volume)
         pos_constraint.constraint_region.primitive_poses.append(target_pose)
@@ -831,20 +853,21 @@ class MoveItPanda(Node):
         """
         
         self.get_logger().info("Starting complete motion sequence...")
-        test = True
+        test_rotate = False
+        test_pba = False
         PICK_Z = 0.0775
         PRE_PICK_Z = 0.2
-        base_correction_angle = 2.00 #typically 2.35
+        base_correction_angle = 0 #typically 2.35
         side_orientation = Quaternion(x=np.sqrt(2)/2, y=0.0, z=np.sqrt(2)/2, w=0.0)
         face_down_orientation = Quaternion(x=np.sqrt(2)/2, y=np.sqrt(2)/2, z=0.0, w=0.0)
         pre_pick_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PRE_PICK_Z), orientation=side_orientation)
-        target_pose = Pose(position=Point(x=-0.105, y=-1.0, z=PICK_Z), orientation=side_orientation)
-        pre_drop_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.45), orientation=target_pose.orientation)
-        place_pose = Pose(position=Point(x=-0.109, y=0.0, z=0.325), orientation=target_pose.orientation)
+        target_pose = Pose(position=Point(x=-0.103, y=-1.0, z=PICK_Z), orientation=side_orientation)
+        pre_drop_pose = Pose(position=Point(x=-0.103, y=0.0, z=0.45), orientation=target_pose.orientation)
+        place_pose = Pose(position=Point(x=-0.105, y=0.0, z=0.315), orientation=target_pose.orientation)
         pre_pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.4), orientation=face_down_orientation)
-        pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3125), orientation=face_down_orientation)
-        pre_rotate_pose =  Pose(position=Point(x=0.0, y=0.0, z=0.425), orientation=face_down_orientation)
-        post_rotate_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.3), orientation=face_down_orientation)
+        pick_pose2 = Pose(position=Point(x=0.0, y=0.0, z=0.3), orientation=face_down_orientation)
+        pre_rotate_pose =  Pose(position=Point(x=0.0, y=0.0, z=0.35), orientation=face_down_orientation)
+        post_rotate_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.31), orientation=face_down_orientation)
         LIFT_DISTANCE = 0.4
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
         # Using -0.1, -1.0 for X/Y position from 4B/5/6
@@ -853,253 +876,132 @@ class MoveItPanda(Node):
 
         # --- STEP 0: FORCEFUL CLEANUP ---
         self.clear_gear_references()
-        if test:
-            self.get_logger().info("Test Mode Active: Gear on PBA at start")
-        if not test:
-            # 1. Move arm to ready position (Fixes StartStateCollision before adding object)
-            self.get_logger().info("Step 1: Moving arm to ready position...")
-            if self.move_to_joints(self.poses['ready']):
-                self.get_logger().info("SUCCESS: Ready position reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach ready position!")
-                return False
-            
-            time.sleep(2.0)
-            
-            # 2. Operate gripper (Open)
-            self.get_logger().info("Step 2: Opening gripper...")
-            if self.move_gripper(self.gripper_positions['open']):
-                self.get_logger().info("SUCCESS: Gripper opened!")
-            else:
-                self.get_logger().warn("Gripper movement may have failed")
-            
-            time.sleep(1.0)
-            
-            # 3. ADD GEAR CYLINDER TO SCENE 
-            self.get_logger().info("Step 3: Adding gear to the planning scene now that robot is in a clear position...")
-            self.add_gear_to_scene()
-            time.sleep(1.0)
-
-        
-            
-
-            # 4A. Move to Pre-Pick Waypoint (High Z)
-        
-            self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
-            if not self.move_to_pose(pre_pick_pose):
-                self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
-                return False
-            time.sleep(5.0)
-
-            # 4B. Move down to Final Pick Position (Low Z)
-            
-            self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
-            if self.move_to_pose(target_pose):
-                self.get_logger().info("SUCCESS: Final pick pose reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
-                return False
-            time.sleep(5.0)
-            
-            # 5. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
-            self.get_logger().info(f"Step 5: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
-            if self.move_gripper(self.gripper_positions['grasp']):
-                self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
-                
-                # 5A: Attach gear to the hand
-                self.attach_gear_to_hand()
-                time.sleep(3.0)
-
-                # 5B: Explicitly remove the original world copy to avoid CheckStartStateCollision
-                self.remove_gear_from_world_after_attach()
-                time.sleep(3.0)
-            else:
-                self.get_logger().error("FAILED: Gripper failed to close!")
-                return False
-            
-            time.sleep(3.0)
-            
-            # 6. LIFT STRAIGHT UP 0.4m
-
-            
-            self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
-            if self.move_to_pose(lift_pose):
-                self.get_logger().info("SUCCESS: Lift complete!")
-            else:
-                self.get_logger().error("FAILED: Could not lift gear!")
-                return False
-
-            time.sleep(2.0)
-            
-            # 7. Move arm back to ready position
-            self.get_logger().info("Step 7: Moving arm back to ready position...")
-            move_success = self.move_to_joints(self.poses['ready'])
-            
-            if move_success:
-                self.get_logger().info("SUCCESS: Ready position reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach ready position!")
-                return False # Fail if this move fails
-
-            time.sleep(2.0)
-            
-            # Define the final drop pose (Place Pose) and the approach pose
-
-            
-            # 8A. Move to Pre-Drop Location (PTP Move)
-            self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
-            if self.move_to_pose(pre_drop_pose):
-                self.get_logger().info("SUCCESS: Pre-Drop Location reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach Pre-Drop Location!")
-                return False
-                
-            time.sleep(5.0)
-
-            # 8B. Drop Gear via Cartesian Path (NEW STEP)
-            self.get_logger().info("Step 8B: Dropping Gear via Cartesian Path (Linear Down) to Z=0.325m...")
-            # This uses path constraints (ROS 2 method) to ensure a straight vertical drop 
-            # while maintaining the X and Y coordinates.
-            if self.move_cartesian_straight_line(place_pose):
-                self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
-            else:
-                self.get_logger().error("FAILED: Could not execute Cartesian Drop!")
-                return False
-            
-        time.sleep(3.0)
-        if test:
-            self.get_logger().info("Step 1: Moving arm to ready position...")
-            if self.move_to_joints(self.poses['ready']):
-                self.get_logger().info("SUCCESS: Ready position reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach ready position!")
-                return False
-            
-            time.sleep(2.0)
-        # 9. Operate gripper (Open)
-        self.launch_tag_processing()
-        self.get_logger().info("Step 9: Opening gripper...")
-        if self.move_gripper(self.gripper_positions['open']):
-            self.get_logger().info("SUCCESS: Gripper opened!")
-        else:
-            self.get_logger().warn("Gripper movement may have failed")
-        
-        time.sleep(1.0)
-
-        self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
-        self.clear_gear_references() 
-
-        # 10. Move arm back to Home position
-        self.get_logger().info("Step 10: Moving arm back to Home position...")
-        move_success = self.move_to_joints(self.poses['home'])
-        
-        if move_success:
-            self.get_logger().info("SUCCESS: Home position reached!")
-        else:
-            self.get_logger().error("FAILED: Could not reach Home position!")
-            return False # Fail if this move fails
-
-        time.sleep(2.0)
-        
-        timeout = 15.0
-        # 11. Take axis measurment, with arm out of way
-        self.get_logger().info(f"Step 11: Waiting for FIRST axis difference measurement (max {timeout})...")
-        start_time = time.time()
-        while (self.angle_correction_rad is None) and (time.time() - start_time < timeout):
-             rclpy.spin_once(self, timeout_sec=0.1)
-        if self.angle_correction_rad is None:
-             self.get_logger().warn("Axis measurement TIMEOUT. Proceeding with NO rotation (correction=0.0).")
-             correction_angle = 0.0
-        else:
-            correction_angle = self.angle_correction_rad
-            self.get_logger().info(f"Step 1 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
-        if self.tag_processing_process:
-            self.get_logger().info("Stopping tag_processing.launch.py subprocess...")
-            self.tag_processing_process.terminate()
-            # Wait briefly for the process to terminate gracefully
-            try:
-                self.tag_processing_process.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                # If it doesn't terminate, try to kill it
-                self.tag_processing_process.kill() 
-                self.tag_processing_process.wait()
-            self.tag_processing_process = None
-            self.get_logger().info("Subprocess stopped and cleaned up.")
-        self.destroy_subscription(self.axis_diff_sub)
-        self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
-        if correction_angle-base_correction_angle <= 0.0:
-            # 12. Move to Pre-Pick Waypoint (High Z)
-            self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
-            self.add_gear_to_scene2()
-            time.sleep(1.0)
-
-            # 12A. Move to Pre-Pick Waypoint (High Z)
-            
-            self.get_logger().info(f"Step 12A: Moving to PRE-PICK pose ({pre_pick_pose2}m)...")
-            if not self.move_to_pose(pre_pick_pose2):
-                self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
-                return False
-            time.sleep(5.0)
-
-            # 12B. Move down to Final Pick Position (Low Z)
-            
-            self.get_logger().info(f"Step 12B: Moving to FINAL PICK pose (Z={pick_pose2.position.z:.4f}m)...")
-            if self.move_cartesian_straight_line(pick_pose2):
-                self.get_logger().info("SUCCESS: Final pick pose reached!")
-            else:
-                self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
-                return False
-            time.sleep(5.0)
-
-            # 13. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
-            self.get_logger().info(f"Step 13: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
-            if self.move_gripper(self.gripper_positions['grasp']):
-                self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
-                
-                # 13A: Attach gear to the hand
-                self.attach_gear_to_hand2()
-                time.sleep(3.0)
-
-                # 13B: Explicitly remove the original world copy to avoid CheckStartStateCollision
-                self.remove_gear_from_world_after_attach()
-                time.sleep(3.0)
-            else:
-                self.get_logger().error("FAILED: Gripper failed to close!")
-                return False
-            
-            time.sleep(3.0)
-
-            # self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
-            # self.clear_gear_references() 
-
-            #step 14: move gear straight up to avoid other gears
-            self.get_logger().info(f"Step 14: Moving to PRE-rotate pose ({pre_rotate_pose.position.z:.4f}m)...")
-            # if not self.move_to_pose(pre_rotate_pose):
-            if not self.move_cartesian_straight_line(pre_rotate_pose):
-
-                self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
-                return False
-            time.sleep(5.0)
-            
-            # Step 15: Wait for the TagAxisComparator to publish the angle.
-            # This assumes your TagAxisComparator is running and publishing.
-            self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
-            
-            if abs(correction_angle) < base_correction_angle: # Only rotate if the angle is significant
-                self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
-                if not self.rotate_joint7_directly(angle_radians=correction_angle):
-                    self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
+        if not test_pba:
+            if test_rotate:
+                self.get_logger().info("Test Mode Active: Gear on PBA at start")
+            if not test_rotate:
+                # 1. Move arm to ready position (Fixes StartStateCollision before adding object)
+                self.get_logger().info("Step 1: Moving arm to ready position...")
+                if self.move_to_joints(self.poses['ready']):
+                    self.get_logger().info("SUCCESS: Ready position reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach ready position!")
                     return False
+                
                 time.sleep(2.0)
-            else:
-                self.get_logger().info("Step 15: Correction angle near zero. Skipping rotation.")
-            self.get_logger().info(f"Step 14: Moving to PRE-Rotate pose ({pre_rotate_pose}m)...")
-            if not self.move_to_pose(pre_rotate_pose):
-                self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
-                return False
-            time.sleep(5.0)
+                
+                # 2. Operate gripper (Open)
+                self.get_logger().info("Step 2: Opening gripper...")
+                if self.move_gripper(self.gripper_positions['open']):
+                    self.get_logger().info("SUCCESS: Gripper opened!")
+                else:
+                    self.get_logger().warn("Gripper movement may have failed")
+                
+                time.sleep(1.0)
+                
+                # 3. ADD GEAR CYLINDER TO SCENE 
+                self.get_logger().info("Step 3: Adding gear to the planning scene now that robot is in a clear position...")
+                self.add_gear_to_scene()
+                time.sleep(1.0)
 
-            self.get_logger().info("Step 16: Opening gripper...")
+            
+                
+
+                # 4A. Move to Pre-Pick Waypoint (High Z)
+            
+                self.get_logger().info(f"Step 4A: Moving to PRE-PICK pose (Z={PRE_PICK_Z}m)...")
+                if not self.move_to_pose(pre_pick_pose):
+                    self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
+                    return False
+                time.sleep(5.0)
+
+                # 4B. Move down to Final Pick Position (Low Z)
+                
+                self.get_logger().info(f"Step 4B: Moving to FINAL PICK pose (Z={PICK_Z}m)...")
+                if self.move_to_pose(target_pose):
+                    self.get_logger().info("SUCCESS: Final pick pose reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
+                    return False
+                time.sleep(5.0)
+                
+                # 5. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
+                self.get_logger().info(f"Step 5: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
+                if self.move_gripper(self.gripper_positions['grasp']):
+                    self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+                    
+                    # 5A: Attach gear to the hand
+                    self.attach_gear_to_hand2()
+                    time.sleep(3.0)
+
+                    # 5B: Explicitly remove the original world copy to avoid CheckStartStateCollision
+                    self.remove_gear_from_world_after_attach()
+                    time.sleep(3.0)
+                else:
+                    self.get_logger().error("FAILED: Gripper failed to close!")
+                    return False
+                
+                time.sleep(3.0)
+                
+                # 6. LIFT STRAIGHT UP 0.4m
+
+                
+                self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
+                if self.move_to_pose(lift_pose):
+                    self.get_logger().info("SUCCESS: Lift complete!")
+                else:
+                    self.get_logger().error("FAILED: Could not lift gear!")
+                    return False
+
+                time.sleep(2.0)
+                
+                # 7. Move arm back to ready position
+                self.get_logger().info("Step 7: Moving arm back to ready position...")
+                move_success = self.move_to_joints(self.poses['ready'])
+                
+                if move_success:
+                    self.get_logger().info("SUCCESS: Ready position reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach ready position!")
+                    return False # Fail if this move fails
+
+                time.sleep(2.0)
+                
+                # Define the final drop pose (Place Pose) and the approach pose
+
+                
+                # 8A. Move to Pre-Drop Location (PTP Move)
+                self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
+                if self.move_to_pose(pre_drop_pose):
+                    self.get_logger().info("SUCCESS: Pre-Drop Location reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach Pre-Drop Location!")
+                    return False
+                    
+                time.sleep(5.0)
+
+                # 8B. Drop Gear via Cartesian Path (NEW STEP)
+                self.get_logger().info("Step 8B: Dropping Gear via Cartesian Path (Linear Down) to Z=0.325m...")
+                # This uses path constraints (ROS 2 method) to ensure a straight vertical drop 
+                # while maintaining the X and Y coordinates.
+                if self.move_cartesian_straight_line(place_pose):
+                    self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
+                else:
+                    self.get_logger().error("FAILED: Could not execute Cartesian Drop!")
+                    return False
+                
+            time.sleep(3.0)
+            if test_rotate:
+                self.get_logger().info("Step 1: Moving arm to ready position...")
+                if self.move_to_joints(self.poses['ready']):
+                    self.get_logger().info("SUCCESS: Ready position reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach ready position!")
+                    return False
+                
+                time.sleep(2.0)
+            # 9. Operate gripper (Open)
+            self.get_logger().info("Step 9: Opening gripper...")
             if self.move_gripper(self.gripper_positions['open']):
                 self.get_logger().info("SUCCESS: Gripper opened!")
             else:
@@ -1109,10 +1011,133 @@ class MoveItPanda(Node):
 
             self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
             self.clear_gear_references() 
-            move_success = self.move_to_joints(self.poses['home']) 
-            if not move_success:
-                self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
-                return False
+
+            # 10. Move arm back to Home position
+            self.get_logger().info("Step 10: Moving arm back to Home position...")
+            move_success = self.move_to_joints(self.poses['home'])
+            
+            if move_success:
+                self.get_logger().info("SUCCESS: Home position reached!")
+            else:
+                self.get_logger().error("FAILED: Could not reach Home position!")
+                return False # Fail if this move fails
+            
+            ##Start tag identification
+            self.launch_tag_processing()
+
+            time.sleep(2.0)
+            
+            timeout = 15.0
+            # 11. Take axis measurment, with arm out of way
+            self.get_logger().info(f"Step 11: Waiting for FIRST axis difference measurement (max {timeout})...")
+            start_time = time.time()
+            while (self.angle_correction_rad is None) and (time.time() - start_time < timeout):
+                rclpy.spin_once(self, timeout_sec=0.1)
+            if self.angle_correction_rad is None:
+                self.get_logger().warn("Axis measurement TIMEOUT. Proceeding with NO rotation (correction=0.0).")
+                correction_angle = 0.0
+            else:
+                correction_angle = self.angle_correction_rad
+                self.get_logger().info(f"Step 1 SUCCESS: Received correction angle of {np.degrees(correction_angle):.2f} degrees.")
+            if self.tag_processing_process:
+                self.get_logger().info("Stopping tag_processing.launch.py subprocess...")
+                self.tag_processing_process.terminate()
+                # Wait briefly for the process to terminate gracefully
+                try:
+                    self.tag_processing_process.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    # If it doesn't terminate, try to kill it
+                    self.tag_processing_process.kill() 
+                    self.tag_processing_process.wait()
+                self.tag_processing_process = None
+                self.get_logger().info("Subprocess stopped and cleaned up.")
+            self.destroy_subscription(self.axis_diff_sub)
+            self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+            if correction_angle-base_correction_angle > 0.0:
+                # 12. Move to Pre-Pick Waypoint (High Z)
+                self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
+                self.add_gear_to_scene2()
+                time.sleep(1.0)
+
+                # 12A. Move to Pre-Pick Waypoint (High Z)
+                
+                self.get_logger().info(f"Step 12A: Moving to PRE-PICK pose ({pre_pick_pose2}m)...")
+                if not self.move_to_pose(pre_pick_pose2):
+                    self.get_logger().error("FAILED: Could not reach PRE-PICK pose!")
+                    return False
+                time.sleep(5.0)
+
+                # 12B. Move down to Final Pick Position (Low Z)
+                
+                self.get_logger().info(f"Step 12B: Moving to FINAL PICK pose (Z={pick_pose2.position.z:.4f}m)...")
+                if self.move_cartesian_straight_line(pick_pose2):
+                    self.get_logger().info("SUCCESS: Final pick pose reached!")
+                else:
+                    self.get_logger().error("FAILED: Could not reach FINAL PICK pose!")
+                    return False
+                time.sleep(5.0)
+
+                # 13. Operate gripper (Close), ATTACH GEAR, and REMOVE WORLD COPY
+                self.get_logger().info(f"Step 13: Closing gripper to GRASP position ({self.gripper_positions['grasp']}m)...")
+                if self.move_gripper(self.gripper_positions['grasp']):
+                    self.get_logger().info("SUCCESS: Gripper closed (or gear grasped)! Attaching gear to hand.")
+                    
+                    # 13A: Attach gear to the hand
+                    self.attach_gear_to_hand2()
+                    time.sleep(3.0)
+
+                    # 13B: Explicitly remove the original world copy to avoid CheckStartStateCollision
+                    self.remove_gear_from_world_after_attach()
+                    time.sleep(3.0)
+                else:
+                    self.get_logger().error("FAILED: Gripper failed to close!")
+                    return False
+                
+                time.sleep(3.0)
+
+
+                #step 14: move gear straight up to avoid other gears
+                self.get_logger().info(f"Step 14: Moving to PRE-rotate pose ({pre_rotate_pose.position.z:.4f}m)...")
+                # if not self.move_to_pose(pre_rotate_pose):
+                if not self.move_cartesian_straight_line(pre_rotate_pose):
+                    self.get_logger().error("FAILED: Could not reach PRE-rotate pose!")
+                    return False
+                time.sleep(5.0)
+                
+                # Step 15: Wait for the TagAxisComparator to publish the angle.
+                # self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
+                
+                if abs(correction_angle) < base_correction_angle: # Only rotate if the angle is significant
+                    self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
+                    if not self.rotate_joint7_directly(angle_radians=correction_angle):
+                        self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
+                        return False
+                    time.sleep(2.0)
+                else:
+                    self.get_logger().info("Step 15: Correction angle near zero. Skipping rotation.")
+
+
+
+                self.get_logger().info(f"Step 16: Moving to Post-Rotate pose ({post_rotate_pose.position.z:.4f}m)...")
+                if not self.move_to_pose(post_rotate_pose):
+                    self.get_logger().error("FAILED: Could not reach post-rotate pose!")
+                    return False
+                time.sleep(5.0)
+
+                self.get_logger().info("Step 17: Opening gripper...")
+                if self.move_gripper(self.gripper_positions['open']):
+                    self.get_logger().info("SUCCESS: Gripper opened!")
+                else:
+                    self.get_logger().warn("Gripper movement may have failed")
+                
+                time.sleep(1.0)
+
+                self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
+                self.clear_gear_references() 
+                move_success = self.move_to_joints(self.poses['home']) 
+                if not move_success:
+                    self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")
+                    return False
           
         self.get_logger().info("COMPLETE: All motion sequences finished successfully!")
         return True
@@ -1123,21 +1148,36 @@ def main(args=None):
     rclpy.init(args=args)
     
     node = MoveItPanda()
+    pba_node = PBARobotVelocityController()
     executor = MultiThreadedExecutor()
     executor.add_node(node)
+    executor.add_node(pba_node)
     
     try:
         node.get_logger().info("Waiting for initialization...")
         time.sleep(5.0)
         
         node.execute_complete_sequence()
-            
+        pba_node.get_logger().info("\\n--- Starting PBA Velocity Movement Sequence ---")
+        pba_node.start_time = time.time()
+        
+        # 1. Move forward at 1.0 rad/s for 5 seconds (The logic from the previous step)
+        move_time_sec = 5
+        velocity_forward = 1.0
+        
+        pba_node.is_recording = True 
+        start_time = time.time()
+        
+        while rclpy.ok() and (time.time() - start_time) < move_time_sec:
+            pba_node.send_velocity_command(velocity_forward)
+            executor.spin_once(timeout_sec=0.01)
     except Exception as e:
         node.get_logger().error(f"Error: {e}")
         
     finally:
         node.cleanup_subprocesses() 
         node.destroy_node()
+        pba_node.destroy_node()
         rclpy.shutdown()
 
 if __name__ == "__main__":

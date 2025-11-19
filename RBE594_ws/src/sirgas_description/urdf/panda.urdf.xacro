@@ -256,6 +256,13 @@
           <inertia ixx="2.375E-6" iyy="2.375E-6" izz="7.5E-7" ixy="0" ixz="0" iyz="0"/>
         </inertial>
     </link>
+    <gazebo reference="panda_leftfinger">
+        <mu1>1.0</mu1> 
+        <mu2>1.0</mu2>
+        
+        <kp>100000000.0</kp>
+        <kd>1.0</kd>
+    </gazebo>
     <link name="panda_rightfinger">
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
@@ -275,6 +282,13 @@
           <inertia ixx="2.375E-6" iyy="2.375E-6" izz="7.5E-7" ixy="0" ixz="0" iyz="0"/>
         </inertial>
     </link>
+    <gazebo reference="panda_rightfinger">
+        <mu1>1.0</mu1> 
+        <mu2>1.0</mu2>
+        
+        <kp>100000000.0</kp>
+        <kd>1.0</kd>
+    </gazebo>
     <joint name="panda_finger_joint1" type="prismatic">
         <parent link="panda_hand" />
         <child link="panda_leftfinger" />

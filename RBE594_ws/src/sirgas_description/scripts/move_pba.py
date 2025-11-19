@@ -7,15 +7,6 @@ from sensor_msgs.msg import JointState # Import the JointState message type
 import time
 import matplotlib.pyplot as plt
 
-# The PBA robot's starter joint has a velocity command interface.
-# We will publish to its command topic to make it move.
-CONTROLLER_COMMAND_TOPIC = '/pba_velocity_controller/commands'
-
-# The standard topic for all joint state information, including effort/torque
-JOINT_STATES_TOPIC = '/joint_states' 
-
-# The specific joint name we are interested in
-TARGET_JOINT_NAME = 'pb_starter_joint' 
 
 class PBARobotVelocityController(Node):
     """
@@ -24,7 +15,16 @@ class PBARobotVelocityController(Node):
     """
     def __init__(self):
         super().__init__('pba_robot_velocity_publisher')
-        
+        # The PBA robot's starter joint has a velocity command interface.
+        # We will publish to its command topic to make it move.
+        CONTROLLER_COMMAND_TOPIC = '/pba_velocity_controller/commands'
+
+        # The standard topic for all joint state information, including effort/torque
+        JOINT_STATES_TOPIC = '/joint_states' 
+
+        # The specific joint name we are interested in
+        TARGET_JOINT_NAME = 'pb_starter_joint' 
+
         # Publisher for velocity commands
         self.publisher_ = self.create_publisher(Float64MultiArray, CONTROLLER_COMMAND_TOPIC, 10)
         self.get_logger().info(f"PBA Velocity Publisher created on topic: {CONTROLLER_COMMAND_TOPIC}")
