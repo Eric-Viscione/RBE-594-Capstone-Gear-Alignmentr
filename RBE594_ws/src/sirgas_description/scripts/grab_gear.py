@@ -20,6 +20,7 @@ import subprocess
 from threading import Event
 import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
+from rclpy.callback_groups import ReentrantCallbackGroup # 
 from moveit_msgs.msg import AttachedCollisionObject 
 
 # NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
@@ -42,12 +43,30 @@ GEAR_CENTER_Z = GEAR_BASE_Z + (GEAR_HEIGHT / 2)
 class MoveItPanda(Node):
     def __init__(self):
         super().__init__('moveit_panda')
+        self.listening_for_tag = False 
         
+        # 2. Kill any existing instances of the tag processor to ensure a fresh start
+        self.get_logger().info("Ensuring environment is clean: Killing old tag_processing instances...")
+        try:
+            # pkill -f finds processes matching the command line argument
+            subprocess.run(['pkill', '-f', 'tag_processing.launch.py'], 
+                           stdout=subprocess.DEVNULL, 
+                           stderr=subprocess.DEVNULL)
+            time.sleep(1.0) # Give it a moment to die
+        except Exception as e:
+            self.get_logger().warn(f"Could not kill old processes: {e}")
+        self.cb_group = ReentrantCallbackGroup()
         # Action clients and publishers
         self.tag_processing_process = None
         self.moveit_action_client = ActionClient(self, MoveGroup, '/move_action')
         self.trajectory_action_client = ActionClient(self, FollowJointTrajectory, '/panda_arm_controller/follow_joint_trajectory')
-        self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
+        # self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
+        self.gripper_action_client = ActionClient(
+            self, 
+            GripperCommand, 
+            '/hand_controller/gripper_cmd',
+            callback_group=self.cb_group 
+        )
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         self.planning_scene_pub = self.create_publisher(PlanningScene, '/planning_scene', 10)
         self.cartesian_path_client = self.create_client(GetCartesianPath, '/compute_cartesian_path')
@@ -323,7 +342,9 @@ class MoveItPanda(Node):
         # Re-create geometry and pose 
         box = SolidPrimitive()
         box.type = SolidPrimitive.BOX
-        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        safe_size = GEAR_SIZE - 0.005 
+        box.dimensions = [safe_size, safe_size, GEAR_HEIGHT]
+        # box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
         
         
         gear_pose = Pose()
@@ -364,7 +385,8 @@ class MoveItPanda(Node):
         # Re-create geometry and pose 
         box = SolidPrimitive()
         box.type = SolidPrimitive.BOX
-        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
+        safe_size = GEAR_SIZE - 0.005 
+        box.dimensions = [safe_size, safe_size, GEAR_HEIGHT]
         
         
         gear_pose = Pose()
@@ -585,7 +607,7 @@ class MoveItPanda(Node):
         goal_msg = GripperCommand.Goal()
         command = GripperCommandMsg()
         command.position = position
-        command.max_effort = 1750.0
+        command.max_effort = 200.0
         
         goal_msg.command = command
         
@@ -822,7 +844,52 @@ class MoveItPanda(Node):
 
         # Return positions in the canonical order
         return [name_to_pos.get(name, 0.0) for name in ordered_names]
-    
+    def get_quaternion_from_axis_angle(self, axis_x, axis_y, axis_z, angle_radians):
+        """Converts an axis-angle rotation into a Quaternion message."""
+        
+        # Calculate components using the formula: Q = [cos(angle/2), axis*sin(angle/2)]
+        s = np.sin(angle_radians / 2.0)
+        c = np.cos(angle_radians / 2.0)
+
+        q = Quaternion()
+        q.x = axis_x * s
+        q.y = axis_y * s
+        q.z = axis_z * s
+        q.w = c
+        
+        return q
+
+    def multiply_quaternions(self, q1: Quaternion, q2: Quaternion) -> Quaternion:
+        """Multiplies two Quaternion messages (q_result = q1 * q2)."""
+        
+        x1, y1, z1, w1 = q1.x, q1.y, q1.z, q1.w
+        x2, y2, z2, w2 = q2.x, q2.y, q2.z, q2.w
+
+        q_out = Quaternion()
+        
+        # Quaternion multiplication formula (Hamilton product)
+        q_out.w = w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2
+        q_out.x = w1 * x2 + x1 * w2 + y1 * z2 - z1 * y2
+        q_out.y = w1 * y2 - x1 * z2 + y1 * w2 + z1 * x2
+        q_out.z = w1 * z2 + x1 * y2 - y1 * x2 + z1 * w2
+        
+        return q_out
+
+    def apply_z_rotation_to_pose(self, base_orientation: Quaternion, rotation_angle: float) -> Quaternion:
+        """
+        Combines the base orientation with a new rotation around the Z-axis.
+        
+        The new rotation (Q_corr) is applied *before* the base orientation (Q_base) 
+        in the multiplication: Q_final = Q_corr * Q_base.
+        """
+        # 1. Create a Quaternion for the correction rotation (around Z-axis)
+        correction_quaternion = self.get_quaternion_from_axis_angle(0, 0, 1, rotation_angle)
+        
+        # 2. Multiply the correction by the base orientation
+        # NOTE: The order is crucial: new rotation * existing orientation
+        corrected_orientation = self.multiply_quaternions(correction_quaternion, base_orientation)
+        
+        return corrected_orientation
     def rotate_joint7_directly(self, angle_radians: float) -> bool:
         """
         Directly commands panda_joint7 to rotate by a relative angle 
@@ -869,6 +936,9 @@ class MoveItPanda(Node):
             return False
             
     def axis_diff_callback(self, msg: PoseStamped):
+
+        if not self.listening_for_tag:
+            return
 
         self.angle_correction_rad = msg.pose.position.x
         self.get_logger().info(
@@ -1071,7 +1141,8 @@ class MoveItPanda(Node):
             self.launch_tag_processing()
 
             time.sleep(2.0)
-            
+            self.listening_for_tag = True
+            self.angle_correction_rad = None
             timeout = 15.0
             # 11. Take axis measurment, with arm out of way
             self.get_logger().info(f"Step 11: Waiting for FIRST axis difference measurement (max {timeout})...")
@@ -1098,6 +1169,7 @@ class MoveItPanda(Node):
                 self.get_logger().info("Subprocess stopped and cleaned up.")
             self.destroy_subscription(self.axis_diff_sub)
             self.get_logger().info("Destroyed axis difference subscription to lock in alignment.")
+            self.listening_for_tag = False
             if correction_angle-base_correction_angle > 0.0:
                 # 12. Move to Pre-Pick Waypoint (High Z)
                 self.get_logger().info("Step 11: Adding gear to the planning scene now that robot is in a clear position...")
@@ -1152,7 +1224,7 @@ class MoveItPanda(Node):
                 # Step 15: Wait for the TagAxisComparator to publish the angle.
                 # self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
                 
-                if abs(correction_angle) < base_correction_angle: # Only rotate if the angle is significant
+                if abs(correction_angle) > base_correction_angle: # Only rotate if the angle is significant
                     self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
                     if not self.rotate_joint7_directly(angle_radians=correction_angle):
                         self.get_logger().error("FAILED: Initial hand rotation for alignment failed.")
@@ -1160,14 +1232,24 @@ class MoveItPanda(Node):
                     time.sleep(2.0)
                 else:
                     self.get_logger().info("Step 15: Correction angle near zero. Skipping rotation.")
-
-
-
-                self.get_logger().info(f"Step 16: Moving to Post-Rotate pose ({post_rotate_pose.position.z:.4f}m)...")
-                if not self.move_to_pose(post_rotate_pose):
-                    self.get_logger().error("FAILED: Could not reach post-rotate pose!")
+                current_pose_after_rotate = self.get_current_pose()
+                
+                if current_pose_after_rotate is None:
+                    self.get_logger().error("Failed to get current pose after rotation! Aborting.")
                     return False
-                time.sleep(5.0)
+                
+                real_orientation = current_pose_after_rotate.orientation
+
+                # 2. Apply this REAL orientation to both the Push pose and the Lift (post_rotate) pose.
+                # This ensures the robot maintains its exact current angle during the push and lift.
+                push_pose.orientation = real_orientation
+                post_rotate_pose.orientation = real_orientation
+
+                # self.get_logger().info(f"Step 16: Moving to Post-Rotate pose ({post_rotate_pose.position.z:.4f}m)...")
+                # if not self.move_to_pose(post_rotate_pose):
+                #     self.get_logger().error("FAILED: Could not reach post-rotate pose!")
+                #     return False
+                # time.sleep(5.0)
 
                 self.get_logger().info("Step 17: Opening gripper...")
                 if self.move_gripper(self.gripper_positions['open']):
@@ -1182,6 +1264,9 @@ class MoveItPanda(Node):
 
                 self.get_logger().info("--- SCENE CLEANUP: Clearing all gear references ---\n")
                 self.clear_gear_references() 
+                self.get_logger().info("Step 19: Moving arm straight up")
+                self.move_cartesian_straight_line(post_rotate_pose)
+                self.get_logger().info("Step 20: Moving arm back to Home position...")
                 move_success = self.move_to_joints(self.poses['home']) 
                 if not move_success:
                     self.get_logger().error("SEQUENCE FAILED: Final arm move failed.")

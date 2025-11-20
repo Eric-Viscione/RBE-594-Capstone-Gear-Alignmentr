@@ -23,7 +23,7 @@ class PBARobotVelocityController(Node):
         JOINT_STATES_TOPIC = '/joint_states' 
 
         # The specific joint name we are interested in
-        TARGET_JOINT_NAME = 'pb_starter_joint' 
+        self.TARGET_JOINT_NAME = 'pb_starter_joint' 
 
         # Publisher for velocity commands
         self.publisher_ = self.create_publisher(Float64MultiArray, CONTROLLER_COMMAND_TOPIC, 10)
@@ -62,7 +62,7 @@ class PBARobotVelocityController(Node):
         if self.is_recording:
             try:
                 # 1. Find the index of the TARGET_JOINT_NAME in the 'name' array
-                joint_index = msg.name.index(TARGET_JOINT_NAME)
+                joint_index = msg.name.index(self.TARGET_JOINT_NAME)
                 
                 # 2. Extract the effort (torque) from the 'effort' array using that index
                 # Ensure the 'effort' array is long enough
@@ -73,11 +73,11 @@ class PBARobotVelocityController(Node):
                     self.torque_data.append(torque)
                     self.time_data.append(current_time)
                 else:
-                    self.get_logger().warn(f"Joint '{TARGET_JOINT_NAME}' found, but effort data is missing or out of sync.")
+                    self.get_logger().warn(f"Joint '{self.TARGET_JOINT_NAME}' found, but effort data is missing or out of sync.")
 
             except ValueError:
                 # This happens if TARGET_JOINT_NAME is not in msg.name
-                self.get_logger().debug(f"Joint '{TARGET_JOINT_NAME}' not yet in JointState message.")
+                self.get_logger().debug(f"Joint '{self.TARGET_JOINT_NAME}' not yet in JointState message.")
             except Exception as e:
                 self.get_logger().error(f"Error in joint_states_callback: {e}")
 
@@ -91,7 +91,7 @@ class PBARobotVelocityController(Node):
 
         plt.figure()
         plt.plot(self.time_data, self.torque_data)
-        plt.title(f'PBA {TARGET_JOINT_NAME} Torque vs. Time')
+        plt.title(f'PBA {self.TARGET_JOINT_NAME} Torque vs. Time')
         plt.xlabel('Time (s)')
         plt.ylabel('Joint Torque (Nm)')
         plt.grid(True)
