@@ -11,10 +11,9 @@ from control_msgs.msg import GripperCommand as GripperCommandMsg
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Pose, Point, Quaternion, PoseStamped
 from action_msgs.msg import GoalStatus
-from shape_msgs.msg import SolidPrimitive # Import needed for the Cylinder
+from shape_msgs.msg import SolidPrimitive 
 from shape_msgs.msg import Mesh
 from move_pba import PBARobotVelocityController
-
 import time
 import subprocess
 from threading import Event
@@ -22,12 +21,8 @@ import numpy as np
 from rclpy.executors import MultiThreadedExecutor 
 from rclpy.callback_groups import ReentrantCallbackGroup # 
 from moveit_msgs.msg import AttachedCollisionObject 
-
-# NEW IMPORTS FOR CARTESIAN PATH CONSTRAINTS (ROS 2 Method)
 from moveit_msgs.srv import GetCartesianPath
 from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, OrientationConstraint
-
-
 import math
 from scipy.spatial.transform import Rotation as R
 from moveit_msgs.srv import GetPositionFK
@@ -60,7 +55,6 @@ class MoveItPanda(Node):
         self.tag_processing_process = None
         self.moveit_action_client = ActionClient(self, MoveGroup, '/move_action')
         self.trajectory_action_client = ActionClient(self, FollowJointTrajectory, '/panda_arm_controller/follow_joint_trajectory')
-        # self.gripper_action_client = ActionClient(self, GripperCommand, '/hand_controller/gripper_cmd')
         self.gripper_action_client = ActionClient(
             self, 
             GripperCommand, 
@@ -98,7 +92,6 @@ class MoveItPanda(Node):
             'grasp': 0.02
         }
         
-        # NOTE: End-effector link is needed for constraint definition. Assuming "panda_hand"
         self.end_effector_link = "panda_hand" 
         
         self.get_logger().info("MoveIt Panda node initialized")
@@ -183,53 +176,6 @@ class MoveItPanda(Node):
         time.sleep(2.0) 
         self.get_logger().warn("Forceful scene cleanup complete. Scene should be clear for planning.")
 
-    # def add_gear_to_scene(self):
-    #     """Adds a collision object representing the gear using a SolidPrimitive (Cylinder)."""
-    #     self.get_logger().info(f"Adding 'first_gear' (Rectangular Prism Length & Width={GEAR_SIZE}m, height={GEAR_HEIGHT}) to the planning scene...")
-        
-    #     gear_co = CollisionObject()
-    #     gear_co.header.frame_id = "world" 
-    #     gear_co.id = "first_gear"
-        
-    #     # box = SolidPrimitive()
-    #     # box.type = SolidPrimitive.BOX
-    #     # box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
-
-    #     # 1. Create a Mesh object
-    #     gear_mesh = Mesh()
-
-    #     # 2. Define the path to your STL file
-    #     # NOTE: This path MUST be accessible by the MoveIt process.
-    #     # You might need to use a package path resolver, similar to how it's done in the URDF:
-    #     gear_mesh.filename = "package://sirgas_description/meshes/First_Gear.stl" 
-
-    #     # 3. Define a scale factor (usually 1.0)
-    #     gear_mesh.scale = [1.0, 1.0, 1.0]
-    #     gear_pose = Pose()
-    #     gear_pose.position.x = 0.0
-    #     gear_pose.position.y = -1.0
-    #     gear_pose.position.z = GEAR_CENTER_Z 
-    #     gear_pose.orientation.w = 1.0 
-    #     # 4. Assign the mesh to the Collision Object
-    #     co.meshes.append(gear_mesh)
-    #     co.mesh_poses.append(gear_pose) # Use the same pose as before
-  
-        
-    #     # gear_co.primitives.append(box) 
-    #     gear_co.primitive_poses.append(gear_pose) 
-    #     gear_co.operation = CollisionObject.ADD 
-        
-    #     ps_msg = PlanningScene()
-    #     ps_msg.world.collision_objects.append(gear_co)
-    #     ps_msg.is_diff = True 
-        
-    #     self.get_logger().info("Publishing 'first_gear' (BOX) to planning scene...")
-    #     for _ in range(5):
-    #         self.planning_scene_pub.publish(ps_msg)
-    #         time.sleep(0.1) 
-            
-    #     self.get_logger().info("'first_gear' (BOX) should now be in the planning scene.")
-
     def add_gear_to_scene(self):
         """Adds a collision object representing the gear using the accurate Mesh (.stl) geometry."""
         self.get_logger().info(f"Adding 'first_gear' (Mesh: First_Gear.stl) to the planning scene...")
@@ -240,16 +186,10 @@ class MoveItPanda(Node):
         
         # ... (header setup)
         
-        # 1. Define the geometry as a SolidPrimitive (Cylinder)
+        # 1. Define the geometry as a SolidPrimitive (BOX)
         box = SolidPrimitive()
         box.type = SolidPrimitive.BOX
-        
-        # Adjust dimensions: Use a cylinder that represents the outer, graspable part.
-        # If the outer diameter is 0.06m, use slightly less for the cylinder radius.
-        # R = 0.03m (GEAR_SIZE / 2.0)
-        # Dimensions are [height, radius]
-        # Set radius to a size that prevents the planner from passing through the graspable area.
-        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] # Radius slightly larger than 0.03m
+        box.dimensions = [GEAR_SIZE, GEAR_SIZE, GEAR_HEIGHT] 
 
         # 2. Define the Pose
         gear_pose = Pose()
@@ -264,9 +204,6 @@ class MoveItPanda(Node):
         
         # 4. Set the operation
         gear_co.operation = CollisionObject.ADD
-
-        # 5. Set the operation
-        gear_co.operation = CollisionObject.ADD 
         
         # 6. Publish the Planning Scene update
         ps_msg = PlanningScene()
@@ -364,7 +301,7 @@ class MoveItPanda(Node):
         aco.object.primitives.append(box) 
         aco.object.primitive_poses.append(gear_pose) 
 
-        # Define the links the attached object is allowed to touch (CRITICAL FIX)
+        # Define the links the attached object is allowed to touch
         aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
         
         ps_msg = PlanningScene()
@@ -406,7 +343,7 @@ class MoveItPanda(Node):
         aco.object.primitives.append(box) 
         aco.object.primitive_poses.append(gear_pose) 
 
-        # Define the links the attached object is allowed to touch (CRITICAL FIX)
+        # Define the links the attached object is allowed to touch
         aco.touch_links = ['panda_link8', 'panda_hand', 'panda_leftfinger', 'panda_rightfinger']
         
         ps_msg = PlanningScene()
@@ -439,7 +376,6 @@ class MoveItPanda(Node):
         
         self.get_logger().info("'first_gear' explicitly removed from world collision objects.")
     
-    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
     def plan_with_moveit(self, target_joints=None, target_pose=None, path_constraints=None): 
         """Use MoveIt to plan a trajectory"""
         self.get_logger().info("Planning with MoveIt...")
@@ -585,7 +521,6 @@ class MoveItPanda(Node):
             self.get_logger().error("Trajectory execution failed!")
             return False
 
-    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
     def move_to_joints(self, target_joints):
         """Move to joint positions using MoveIt planning"""
         if not self.wait_for_joint_state():
@@ -660,7 +595,6 @@ class MoveItPanda(Node):
         self.get_logger().error(f"Gripper movement failed with status: {status}")
         return False
 
-    # --- MODIFIED FUNCTION: allow_start_state_collision ARGUMENT REMOVED ---
     def move_to_pose(self, target_pose: Pose, path_constraints=None): 
         """Move the end-effector to a specified Pose (position and orientation) using MoveIt planning."""
         if not self.wait_for_joint_state():
@@ -678,7 +612,6 @@ class MoveItPanda(Node):
         Use MoveIt's compute_cartesian_path service for straight-line Cartesian motion.
         This is the most direct equivalent to the RViz checkbox.
         """
-
         
         self.get_logger().info("Computing Cartesian path...")
         
@@ -699,7 +632,7 @@ class MoveItPanda(Node):
         request.group_name = "panda_arm"
         request.link_name = self.end_effector_link
         
-        # Create waypoints - for straight line, we just need the final pose
+        # Create waypoints - for straight line
         waypoint_pose = PoseStamped()
         waypoint_pose.header.frame_id = "world"
         waypoint_pose.pose = final_pose
@@ -709,7 +642,7 @@ class MoveItPanda(Node):
         request.jump_threshold = 0.0  # Disable jump prevention for straight line
         request.prismatic_jump_threshold = 0.0
         request.revolute_jump_threshold = 0.0
-        request.avoid_collisions = False  # This is the key - don't avoid collisions
+        request.avoid_collisions = False  
         
         # Send request
         future = cartesian_client.call_async(request)
@@ -737,7 +670,7 @@ class MoveItPanda(Node):
 
         # 1. Build the FK request
         fk_request = GetPositionFK.Request()
-        fk_request.fk_link_names = [self.end_effector_link]  # self.end_effector_link should be 'panda_hand'
+        fk_request.fk_link_names = [self.end_effector_link] 
         
         # 2. Populate the RobotState message with current joint data
         fk_request.robot_state.joint_state = self.current_joint_state
@@ -751,7 +684,6 @@ class MoveItPanda(Node):
             
             # 4. Check for success and return the pose
             if response.error_code.val == response.error_code.SUCCESS:
-                # The response contains a list of poses, we only requested one link
                 return response.pose_stamped[0].pose 
             else:
                 self.get_logger().error(f"FK service failed with error code: {response.error_code.val}")
@@ -781,6 +713,7 @@ class MoveItPanda(Node):
         q_out.z = q_out_array[2]
         q_out.w = q_out_array[3]
         return q_out
+    
     def create_partial_orientation_constraint(self, link_name, target_pose, free_axis='z', tolerance_rpy=None):
         """Creates an OrientationConstraint message that locks specific axes."""
         oc = OrientationConstraint()
@@ -844,6 +777,7 @@ class MoveItPanda(Node):
 
         # Return positions in the canonical order
         return [name_to_pos.get(name, 0.0) for name in ordered_names]
+    
     def get_quaternion_from_axis_angle(self, axis_x, axis_y, axis_z, angle_radians):
         """Converts an axis-angle rotation into a Quaternion message."""
         
@@ -886,7 +820,6 @@ class MoveItPanda(Node):
         correction_quaternion = self.get_quaternion_from_axis_angle(0, 0, 1, rotation_angle)
         
         # 2. Multiply the correction by the base orientation
-        # NOTE: The order is crucial: new rotation * existing orientation
         corrected_orientation = self.multiply_quaternions(correction_quaternion, base_orientation)
         
         return corrected_orientation
@@ -913,7 +846,7 @@ class MoveItPanda(Node):
             'panda_joint5', 'panda_joint6', 'panda_joint7'
         ]
 
-        # 1. Start point (current position) - Optional, but good practice
+        # 1. Start point (current position) 
         point_start = JointTrajectoryPoint()
         point_start.positions = current_positions
         point_start.time_from_start.sec = 0  # Start immediately
@@ -944,6 +877,7 @@ class MoveItPanda(Node):
         self.get_logger().info(
             f"Received Z-axis correction angle: {np.degrees(self.angle_correction_rad):.2f} degrees"
         )
+
     def cleanup_subprocesses(self):
         """Terminates the tag processing subprocess if it is running."""
         if self.tag_processing_process:
@@ -988,7 +922,6 @@ class MoveItPanda(Node):
         push_pose = Pose(position=Point(x=0.0, y=0.0, z = 0.285), orientation=face_down_orientation)
         LIFT_DISTANCE = 0.4
         LIFT_Z = PICK_Z + LIFT_DISTANCE 
-        # Using -0.1, -1.0 for X/Y position from 4B/5/6
         lift_pose = Pose(position=Point(x=-0.1, y=-1.0, z=LIFT_Z), orientation=target_pose.orientation) 
 
 
@@ -1017,7 +950,7 @@ class MoveItPanda(Node):
                 
                 time.sleep(1.0)
                 
-                # 3. ADD GEAR CYLINDER TO SCENE 
+                # 3. ADD GEAR BOX TO SCENE 
                 self.get_logger().info("Step 3: Adding gear to the planning scene now that robot is in a clear position...")
                 self.add_gear_to_scene()
                 time.sleep(1.0)
@@ -1060,7 +993,6 @@ class MoveItPanda(Node):
                 
                 # 6. LIFT STRAIGHT UP 0.4m
 
-                
                 self.get_logger().info(f"Step 6: Lifting gear straight up {LIFT_DISTANCE}m to Z={LIFT_Z}...")
                 if self.move_to_pose(lift_pose):
                     self.get_logger().info("SUCCESS: Lift complete!")
@@ -1084,7 +1016,6 @@ class MoveItPanda(Node):
                 
                 # Define the final drop pose (Place Pose) and the approach pose
 
-                
                 # 8A. Move to Pre-Drop Location (PTP Move)
                 self.get_logger().info("Step 8A: Moving Gear to Pre-Drop Location (PTP) at Z=0.45m...")
                 if self.move_to_pose(pre_drop_pose):
@@ -1097,8 +1028,7 @@ class MoveItPanda(Node):
 
                 # 8B. Drop Gear via Cartesian Path (NEW STEP)
                 self.get_logger().info("Step 8B: Dropping Gear via Cartesian Path (Linear Down) to Z=0.325m...")
-                # This uses path constraints (ROS 2 method) to ensure a straight vertical drop 
-                # while maintaining the X and Y coordinates.
+                # This uses path constraints to ensure a straight vertical drop while maintaining the X and Y coordinates.
                 if self.move_cartesian_straight_line(place_pose):
                     self.get_logger().info("SUCCESS: Gear is placed on Peg Board!")
                 else:
@@ -1137,7 +1067,7 @@ class MoveItPanda(Node):
                 self.get_logger().error("FAILED: Could not reach Home position!")
                 return False # Fail if this move fails
             
-            ##Start tag identification
+            # Start tag identification
             self.launch_tag_processing()
 
             time.sleep(2.0)
@@ -1222,7 +1152,6 @@ class MoveItPanda(Node):
                 time.sleep(5.0)
                 
                 # Step 15: Wait for the TagAxisComparator to publish the angle.
-                # self.get_logger().info("--- STARTING ALIGNMENT CHECK ---")
                 
                 if abs(correction_angle) > base_correction_angle: # Only rotate if the angle is significant
                     self.get_logger().info(f"Step 15: Rotating hand by {np.degrees(correction_angle):.2f} degrees around Z...")
@@ -1244,12 +1173,6 @@ class MoveItPanda(Node):
                 # This ensures the robot maintains its exact current angle during the push and lift.
                 push_pose.orientation = real_orientation
                 post_rotate_pose.orientation = real_orientation
-
-                # self.get_logger().info(f"Step 16: Moving to Post-Rotate pose ({post_rotate_pose.position.z:.4f}m)...")
-                # if not self.move_to_pose(post_rotate_pose):
-                #     self.get_logger().error("FAILED: Could not reach post-rotate pose!")
-                #     return False
-                # time.sleep(5.0)
 
                 self.get_logger().info("Step 17: Opening gripper...")
                 if self.move_gripper(self.gripper_positions['open']):
