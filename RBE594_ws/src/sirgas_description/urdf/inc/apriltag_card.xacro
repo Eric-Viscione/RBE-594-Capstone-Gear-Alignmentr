@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
-  <!-- Attach a thin AprilTag "card" to parent_link -->
   <xacro:macro name="attach_apriltag_card" params="
       parent_link
       tag_size:=0.02              
@@ -29,7 +28,6 @@
         </material>
       </visual>
 
-      <!-- optional back face for RViz (flipped 180 deg around Y) -->
       <xacro:if value="${add_back_visual}">
         <visual>
           <origin xyz="${xyz}" rpy="0 3.141592653589793 0"/>

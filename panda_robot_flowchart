@@ -1,0 +1,49 @@
+// Panda Robot Gear Assembly Process
+digraph {
+	rankdir=TB
+	node [fontname=Arial shape=rect style=rounded]
+	edge [fontname=Arial fontsize=10]
+	Start [label=Start fillcolor=lightgrey shape=ellipse style=filled]
+	End [label="Operation Complete" fillcolor=lightgrey shape=ellipse style=filled]
+	MoveReady [label="Panda Robot moves
+to \"Ready\" position"]
+	BaselineTorque [label="Spin starter gear
+Record initial baseline torque"]
+	PickGear [label="Arm moves to pick up
+gear from intro location"]
+	PlaceGear [label="Plan moves & align gear
+onto peg board/gear train"]
+	MoveReady2 [label="Arm moves to
+Ready position"]
+	CameraCheck [label="Camera Check:
+Measure offset between
+gear and pegboard markers"]
+	DecisionAlign [label="Is Misalignment
+Detected?" fillcolor=white shape=diamond style=filled]
+	PlanGrasp [label="Plan and Grasp Gear"]
+	AdjustGear [label="Adjust gear to account
+for misalignment"]
+	PlaceBack [label="Place gear back
+on pegboard"]
+	ReturnHome [label="Panda Robot
+returns Home"]
+	FinalCamCheck [label="Final Camera Check
+for misalignment"]
+	FinalTorque [label="Spin Pegboard
+Record final torque value"]
+	Start -> MoveReady
+	MoveReady -> BaselineTorque
+	BaselineTorque -> PickGear
+	PickGear -> PlaceGear
+	PlaceGear -> MoveReady2
+	MoveReady2 -> CameraCheck
+	CameraCheck -> DecisionAlign
+	DecisionAlign -> PlanGrasp [label="Yes (Misaligned)"]
+	PlanGrasp -> AdjustGear
+	AdjustGear -> PlaceBack
+	PlaceBack -> CameraCheck [label="Repeat Check"]
+	DecisionAlign -> ReturnHome [label="No (Within Tolerance)"]
+	ReturnHome -> FinalCamCheck
+	FinalCamCheck -> FinalTorque
+	FinalTorque -> End
+}

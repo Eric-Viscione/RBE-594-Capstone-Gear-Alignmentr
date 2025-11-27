@@ -30,7 +30,7 @@ class MinimalTagPose(Node):
         super().__init__('minimal_tag_pose')
         self.get_logger().info(f"RUNNING FILE: {__file__}")
         default_cfg = DetectorConfig()
-        # ---- Parameters ----
+        # Parameters 
         default_cam_topic = f"/tag_pose_cam"
         default_world_topic = f"/tag_pose_world"
         self.declare_parameter('long_axis_cam_topic', '/tag_long_axis/cam')
@@ -69,7 +69,7 @@ class MinimalTagPose(Node):
         save_debug = bool(self.get_parameter('save_debug_images').value)
         debug_every = int(self.get_parameter('debug_save_every_n').value)
 
-        # ---- Camera intrinsics state ----
+        # Camera intrinsics state 
         self.bridge = CvBridge()
         self.have_caminfo = False
         self.K = np.eye(3, dtype=np.float64)
@@ -96,7 +96,7 @@ class MinimalTagPose(Node):
             debug_every=debug_every,
         )
 
-        # ---- Publishers ----
+        # qPublishers 
         self.pose_cam_pub = self.create_publisher(PoseStamped, self.pose_topic_cam, 10)
         self.pose_world_pub = self.create_publisher(PoseStamped, self.pose_topic_world, 10)
         self.long_axis_cam_pub = self.create_publisher(PoseStamped, self.long_axis_cam_topic, 10)
@@ -106,7 +106,7 @@ class MinimalTagPose(Node):
         
         self.get_logger().info(f"Publishing to {self.pose_topic_cam} and {self.pose_topic_world}")
 
-        # ---- Subscriptions ----
+        #  Subscriptions 
         caminfo_qos = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_LAST,
@@ -117,7 +117,7 @@ class MinimalTagPose(Node):
 
         self.get_logger().info(f"Listening to {self.image_topic} and {self.caminfo_topic}")
 
-    # ---------- CameraInfo callback ----------
+    #  CameraInfo callback 
 
     def _caminfo_cb(self, msg: CameraInfo):
         self.K = np.array(msg.k, dtype=np.float64).reshape(3, 3)
@@ -127,7 +127,7 @@ class MinimalTagPose(Node):
             self.get_logger().info(f"CameraInfo received. frame={self.cam_frame}\nK=\n{self.K}")
         self.have_caminfo = True
 
-    # ---------- Image callback ----------
+    #  Image callback 
 
     def _image_cb(self, msg: Image):
         if not self.have_caminfo:

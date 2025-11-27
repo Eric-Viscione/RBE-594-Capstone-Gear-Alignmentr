@@ -1,0 +1,49 @@
+// Panda Robot Row Layout
+digraph {
+	nodesep=0.4 rankdir=TB ranksep=0.6 splines=ortho
+	node [fillcolor=white fontname=Arial shape=rect style="rounded,filled" width=1.5]
+	edge [fontname=Arial fontsize=10]
+	subgraph row1 {
+		rank=same
+		Start [label=Start fillcolor=lightgrey shape=ellipse width=1.0]
+		MoveReady [label="1. Move to Ready"]
+		BaselineTorque [label="2. Baseline Torque"]
+		PickGear [label="3. Pick Gear"]
+		Start -> MoveReady
+		MoveReady -> BaselineTorque
+		BaselineTorque -> PickGear
+	}
+	subgraph row2 {
+		rank=same
+		PlaceGear [label="4. Place & Align"]
+		MoveReady2 [label="5. Return to Ready"]
+		CameraCheck [label="6. Camera Check
+(Measure Offset)"]
+		DecisionAlign [label="Misalignment?" shape=diamond width=1.8]
+		PlaceGear -> MoveReady2
+		MoveReady2 -> CameraCheck
+		CameraCheck -> DecisionAlign
+	}
+	subgraph row3 {
+		rank=same
+		PlanGrasp [label="7. Plan & Grasp"]
+		AdjustGear [label="8. Adjust Alignment"]
+		PlaceBack [label="9. Place Back"]
+		PlanGrasp -> AdjustGear
+		AdjustGear -> PlaceBack
+	}
+	subgraph row4 {
+		rank=same
+		ReturnHome [label="10. Return Home"]
+		FinalCamCheck [label="11. Final Camera Check"]
+		FinalTorque [label="12. Final Torque"]
+		End [label="Operation Complete" fillcolor=lightgrey shape=ellipse width=1.5]
+		ReturnHome -> FinalCamCheck
+		FinalCamCheck -> FinalTorque
+		FinalTorque -> End
+	}
+	PickGear -> PlaceGear
+	DecisionAlign -> PlanGrasp [label=Yes xlabel=Yes]
+	PlaceBack -> CameraCheck [label=Repeat constraint=false style=dashed]
+	DecisionAlign -> ReturnHome [label=No]
+}

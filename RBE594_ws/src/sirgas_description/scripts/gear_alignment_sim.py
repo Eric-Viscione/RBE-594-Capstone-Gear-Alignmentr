@@ -5,7 +5,6 @@ from std_msgs.msg import Float64, Bool
 from collections import deque
 
 def spectrum_amp(x, fs, freq):
-    # small helper if you want to debug peak amplitudes (not used for std)
     X = np.fft.rfft(x - np.mean(x))
     f = np.fft.rfftfreq(len(x), d=1.0/fs)
     i = np.argmin(np.abs(f - freq))
@@ -60,8 +59,7 @@ class GearTorqueStdNode(Node):
         self.buf = deque(maxlen=int(self.std_window_sec * self.rate_hz))
 
         # precompute RPMs for each gear in a simple train (each on its own shaft):
-        # speeds propagate by adjacent pair ratios:
-        # rpm2 = rpm1*(z1/z2), rpm3 = rpm2*(z2/z3), rpm4 = rpm3*(z3/z4)
+       
         self.rpm2 = self.rpm1 * (self.z1 / self.z2)
         self.rpm3 = self.rpm2 * (self.z2 / self.z3)
         self.rpm4 = self.rpm3 * (self.z3 / self.z4)
@@ -71,12 +69,11 @@ class GearTorqueStdNode(Node):
         eta_total = self.eta12 * self.eta23 * self.eta34
         self.Tout_nom = self.Tin_nom * ratio * eta_total
 
-        # mesh frequencies (driver = upstream gear each time)
+        # mesh frequencies 
         self.f12 = self.z1 * (self.rpm1/60.0)
         self.f23 = self.z2 * (self.rpm2/60.0)
         self.f34 = self.z3 * (self.rpm3/60.0)
 
-        # phases (deterministic)
         rng = np.random.RandomState(7)
         self.ph12 = rng.rand(6)*2*np.pi
         self.ph23 = rng.rand(6)*2*np.pi

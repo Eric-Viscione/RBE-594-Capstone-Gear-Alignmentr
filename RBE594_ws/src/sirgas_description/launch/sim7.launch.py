@@ -16,11 +16,8 @@ test_ws_path = FindPackageShare('test_ws').find('test_ws')
 sirgas_path  = FindPackageShare('sirgas_description').find('sirgas_description')
  # Absolute package path
 pkgPath = launch_ros.substitutions.FindPackageShare(package=packageName).find(packageName)
-#Relative path of the apriltag xacro 
 
-# Relative path of the xacro file with respect to the package path
 xacroRelativePath = os.path.join('config', 'panda_pba_robots.urdf.xacro')
-# Absolute camera SDF model path
 
 sirgas_share = get_package_share_directory('sirgas_description')
 cameraSdfPath = os.path.join(sirgas_share, 'meshes', 'sim_cam', 'model.sdf')    
@@ -40,7 +37,6 @@ cube_desc = xacro.process_file(cubeXacroPath).toxml()
 # Define a parameter with the cube xacro description
 cube_description = {'cube_description': cube_desc}
 
-'''-----------Gear Paths-----------'''
 # Absolute xacro model path for the Starter Gear
 starter_gearXacroPath = os.path.join(sirgas_path, 'urdf', 'starter_gear.urdf.xacro')
 
@@ -163,7 +159,6 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
             )
             
-     # --- Camera Launch Logic Starts Here ---
 
     # Camera Spawner Node
     spawn_sim_cam = launch_ros.actions.Node(
@@ -180,11 +175,10 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    # Timer Action for delay before starting the bridge (2.0 seconds)
+    # Timer Action for delay before starting the bridge 
     timer_bridge_sim_cam = launch.actions.TimerAction(
         period=2.0,
         actions=[
-            # Camera Bridge Node
             launch_ros.actions.Node(
                 package='ros_gz_bridge',
                 executable='parameter_bridge',
@@ -198,37 +192,8 @@ def generate_launch_description():
             )
         ]
     )
-    spawn_recording_cam = launch_ros.actions.Node(
-        package='ros_gz_sim',
-        executable='create',
-        name='spawn_recording_cam',
-        output='screen',
-        arguments=[
-            '-file', recordingCameraSdfPath,
-            '-name', 'recording_cam',    # model name inside Gazebo
-            '-x','1.0','-y','0.5','-z','2.0',   # <<< different position
-            '-R','0','-P','0','-Y','1.57'       # <<< different orientation (optional)
-        ],
-        parameters=[{'use_sim_time': use_sim_time}]
-    )
-    timer_bridge_recording_cam = launch.actions.TimerAction(
-        period=2.0,
-        actions=[
-            launch_ros.actions.Node(
-                package='ros_gz_bridge',
-                executable='parameter_bridge',
-                name='bridge_recording_cam',
-                output='screen',
-                arguments=[
-                    '/recording_feed/image@sensor_msgs/msg/Image@gz.msgs.Image',
-                    '/recording_feed/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo'
-                ],
-                parameters=[{'use_sim_time': use_sim_time}]
-            )
-        ]
-    )
+
     
-    # --- Camera Launch Logic Ends Here ---
     # Robot state publisher node
     robot_state_publisher_node = launch_ros.actions.Node(
         package='robot_state_publisher',

@@ -14,11 +14,10 @@ def generate_launch_description():
         description='Use simulation (Gazebo) clock if true'
     )
     
-    # --- Substitutions ---
     pkg_name = 'sirgas_apriltag_detector'
     use_sim_time = LaunchConfiguration('use_sim_time')
     
-    # --- 1. Green Tag Detector Node ---
+    # 1. Green Tag Detector Node ---
     green_detector_node = Node(
         package=pkg_name, 
         executable='black_tag_detector', # Uses the black_tag_detector logic
@@ -26,8 +25,8 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
-            {'t_dark': 20}, # Assuming green uses a dark threshold or specific config
-            {'color_mode': 'hsv'}, # Assuming specific color mode for green
+            {'t_dark': 20}, 
+            {'color_mode': 'hsv'}, 
             {'hsv_low': [50, 100, 100]},
             {'hsv_high': [70, 255, 255]},
             
@@ -40,7 +39,6 @@ def generate_launch_description():
     )
     
 
-    # --- 2. Black Tag Detector Node ---
     black_detector_node = Node(
         package=pkg_name, 
         executable='black_tag_detector',
@@ -67,7 +65,6 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
-            # Must match the topics defined above
             {'green_axis_topic': '/tag_long_axis_world/green'},
             {'black_axis_topic': '/tag_long_axis_world/black'},
             {'output_topic': '/tag_axis_difference'}

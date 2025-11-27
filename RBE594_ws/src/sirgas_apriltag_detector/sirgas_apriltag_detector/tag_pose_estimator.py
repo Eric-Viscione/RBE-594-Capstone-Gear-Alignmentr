@@ -2,10 +2,8 @@
 import os
 from dataclasses import dataclass, field
 from datetime import datetime
-
 import numpy as np
 import cv2
-
 from geometry_msgs.msg import PoseStamped
 
 from .helpers import (
@@ -14,8 +12,6 @@ from .helpers import (
     build_rect_model_pts,
     pick_long_edge_from_image,
 )
-
-
 @dataclass
 class DetectorConfig:
     # thresholding
@@ -25,7 +21,7 @@ class DetectorConfig:
     color_mode: str = "hsv"
 
     # HSV range if using color_mode="hsv"
-    hsv_low:  tuple = (100, 100, 100)   # a bit above yellow
+    hsv_low:  tuple = (100, 100, 100)   
     hsv_high: tuple = (130, 255, 255) 
     
     
@@ -471,7 +467,7 @@ class TagPoseEstimator:
 
     def _maybe_save_debug(self, img_bgr, blur, bw, bw_m, overlay_all,
                           ps_cam=None, ps_world=None, 
-                          ps_long_cam=None, ps_long_world=None, # MODIFIED: added new arguments
+                          ps_long_cam=None, ps_long_world=None, 
                           overlay=None):
         if not self.save_debug:
             return

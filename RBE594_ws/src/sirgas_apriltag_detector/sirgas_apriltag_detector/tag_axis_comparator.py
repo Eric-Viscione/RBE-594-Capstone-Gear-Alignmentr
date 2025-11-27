@@ -14,7 +14,6 @@ class TagAxisComparator(Node):
     def __init__(self):
         super().__init__('tag_axis_comparator')
         
-        # 1. FIX: Define the local test flag here
         self.test_mode = True 
         
         # ---- Parameters for Topic Names ----
@@ -32,9 +31,8 @@ class TagAxisComparator(Node):
         self.diff_pub = self.create_publisher(PoseStamped, output_topic, 10)
         
 
-        # ---- Subscriptions & Synchronization ----
+        # ---- Subscriptions 
         if not self.test_mode:
-            # LIVE Mode: Use ApproximateTimeSynchronizer (ATS)
             self.get_logger().info("Running in LIVE mode: Synchronizing Green and Black axes.")
             self.sub_green = Subscriber(self, PoseStamped, green_topic, qos_profile=qos_profile_sensor_data)
             self.sub_black = Subscriber(self, PoseStamped, black_topic, qos_profile=qos_profile_sensor_data)
@@ -64,7 +62,7 @@ class TagAxisComparator(Node):
         """
         Callback triggered by Black axis message when in TEST mode.
         """
-        # Use the fixed green vector and call the helper
+        # Use the fixed green vectr and call the helper
         self._calculate_and_publish(self.fixed_green_vector, msg_black, is_test=True)
 
 
@@ -79,7 +77,6 @@ class TagAxisComparator(Node):
             msg_green.pose.position.z
         ])
         
-        # 2. FIX: Use the unified helper function
         self._calculate_and_publish(v_green, msg_black, is_test=False)
 
 
